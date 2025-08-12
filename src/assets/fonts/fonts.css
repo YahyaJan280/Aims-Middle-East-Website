@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Gotham HTF';
+  src: url('./GothamHTF.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ParagraphFont';
+  src: url('./ParagraphFont.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
