@@ -170,7 +170,7 @@ const Achievements = () => {
       ref={sectionRef}
       className="py-18 lg:mt-8 mt-12 lg:py-4 bg-muted/30"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-8">
           <h2 className="text-3xl  md:text-4xl lg:text-5xl font-bold mb-4 animate-on-scroll opacity-0">
             <span className="gradient-text" style={{ fontFamily: "Gotham HTF" }}>
@@ -183,7 +183,7 @@ const Achievements = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" style={{border:'2px solid black', display:'none'}}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto" style={{border:'2px solid black', display:'none'}}>
           {achievements.map((achievement, index) => (
             <CounterCard
               key={index}
@@ -214,7 +214,7 @@ const Achievements = () => {
             </p>
             <div className="space-y-4">
               <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
-                <Heart className="w-6 h-6 text-primary mt-1" />
+                <Heart className="lg:w-6 lg:h-6 w-14 h-14 text-primary mt-1" />
                 <div>
                   <h4 className="font-semibold text-foreground" style={{ fontFamily: "Gotham HTF" }}>
                     Patient-Centered Care
@@ -225,7 +225,7 @@ const Achievements = () => {
                 </div>
               </div>
               <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-secondary">
-                <Users className="w-6 h-6 text-secondary mt-1" />
+                <Users className="lg:w-6 lg:h-6 w-14 h-14 text-secondary mt-1" />
                 <div>
                   <h4 className="font-semibold text-foreground" style={{ fontFamily: "Gotham HTF" }}>
                     Community Empowerment
@@ -236,7 +236,7 @@ const Achievements = () => {
                 </div>
               </div>
               <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
-                <TrendingUp className="w-6 h-6 text-primary mt-1" />
+                <TrendingUp className="lg:w-6 lg:h-6 w-14 h-14 text-primary mt-1" />
                 <div>
                   <h4 className="font-semibold text-foreground" style={{ fontFamily: "Gotham HTF" }}>
                     Continuous Improvement

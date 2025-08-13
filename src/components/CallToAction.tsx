@@ -91,7 +91,7 @@ const CallToAction = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-48 translate-y-48"></div>
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <div className="px-6 sm:px-8 lg:px-12 relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2
             className="text-4xl lg:text-6xl font-bold text-white mb-6 animate-on-scroll opacity-0"
@@ -109,6 +109,7 @@ const CallToAction = () => {
           </p>
         </div>
 
+        {/* Cards */}
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-16">
           {actionCards.map((card, index) => (
             <div key={index} className="animate-on-scroll opacity-0 group">
@@ -152,7 +153,7 @@ const CallToAction = () => {
           ))}
         </div>
 
-        {/* Contact Information */}
+        {/* Contact Section */}
         <div className="animate-on-scroll opacity-0">
           <div className="bg-white/10 backdrop-blur-md p-8 lg:p-12 rounded-2xl border border-white/20 text-center">
             <h3

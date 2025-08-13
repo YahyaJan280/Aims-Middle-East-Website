@@ -10,7 +10,7 @@ import {
   ArrowUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import aimsLogo from '@/assets/Footer-Logo.png';
+import aimsLogo from "@/assets/Footer-Logo.png";
 
 const Footer = () => {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -72,14 +72,20 @@ const Footer = () => {
 
   return (
     <footer id="footer" ref={footerRef} className="bg-muted/50 pt-20 pb-8">
-      <div className="container mx-auto px-4 lg:px-8">
+      {/* Added max-width and consistent responsive paddings */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
+          
           {/* Logo & Description */}
           <div className="lg:col-span-2 animate-on-scroll opacity-0">
             <div className="flex items-center space-x-3 mb-6">
-                  <img src={aimsLogo} alt="AIMS Middle East Logo" className="h-12 hover:scale-105 transition-transform duration-300" />
-              
+              <img
+                src={aimsLogo}
+                alt="AIMS Middle East Logo"
+                className="h-12 hover:scale-105 transition-transform duration-300"
+              />
             </div>
             <p className="paragraph-text text-muted-foreground mb-6 leading-relaxed max-w-md">
               Like the flowing waters of the Abaseen river, we bring life, hope,
@@ -188,39 +194,12 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Subscription */}
-        <div className="animate-on-scroll opacity-0 mb-12">
-          <div className="bg-gradient-primary/5 p-8 lg:p-12 rounded-2xl border border-primary/10 text-center">
-            <h3
-              className="text-2xl font-bold gradient-text mb-4"
-              style={{ fontFamily: "Gotham HTF" }}
-            >
-              Stay Connected
-            </h3>
-            <p className="paragraph-text text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Subscribe to our newsletter for updates on our projects, research
-              breakthroughs, and ways to get involved in transforming
-              healthcare.
-            </p>
-            <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-border/50 bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
-              />
-              <Button variant="gradient" className="whitespace-nowrap">
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Bar */}
         <div className="border-t border-border/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="animate-on-scroll opacity-0">
+            <div className="animate-on-scroll opacity-0 text-center md:text-left">
               <p className="paragraph-text text-sm text-muted-foreground">
-                © 2024 AIMS Middle East. All Rights Reserved.
+                © {new Date().getFullYear()} AIMS Middle East. All Rights Reserved.
               </p>
               <p className="paragraph-text text-xs text-muted-foreground mt-1">
                 Flowing care to those in need, like the eternal Abaseen river.

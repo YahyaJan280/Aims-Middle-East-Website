@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroHealthcare from "@/assets/hero-healthcare.jpg";
 import heroCommunity from "@/assets/hero-community.jpg";
 import heroCompassion from "@/assets/hero-compassion.jpg";
+
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
   const slides = [
     {
       image: heroHealthcare,
-      title: "Welcome to AIMS Middle East",
+      title: "AIMS Middle East",
       subtitle: "Strength in Care",
       description:
         "Leading comprehensive diabetes healthcare across the Middle East",
@@ -28,29 +29,25 @@ const HeroSlider = () => {
       description: "Empowering healthcare professionals and transforming lives",
     },
   ];
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 6000);
     return () => clearInterval(timer);
   }, [slides.length]);
+
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-      });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   return (
     <section id="hero" className="relative h-screen overflow-hidden">
       {/* Background Images */}
@@ -73,19 +70,19 @@ const HeroSlider = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
-        <div className="max-w-4xl mx-auto">
+      <div className="relative z-10 h-full flex items-center justify-center text-center px-4 sm:px-8 lg:px-16">
+        <div className="w-full max-w-5xl mx-auto">
           <h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-slide-up"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-slide-up"
             style={{ fontFamily: "Gotham HTF" }}
           >
             <span className="block">{slides[currentSlide].title}</span>
-            <span className="block text-white md:text-7xl lg:text-7xl mt-2 text-6xl text-stone-50">
+            <span className="block mt-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
               {slides[currentSlide].subtitle}
             </span>
           </h1>
 
-          <p className="paragraph-text text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-slide-up animate-delay-200">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-slide-up animate-delay-200">
             {slides[currentSlide].description}
           </p>
 
@@ -110,29 +107,8 @@ const HeroSlider = () => {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
-      {/* <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 group"
-      >
-        <ChevronLeft
-          size={24}
-          className="group-hover:scale-110 transition-transform"
-        />
-      </button>
-
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 group"
-      >
-        <ChevronRight
-          size={24}
-          className="group-hover:scale-110 transition-transform"
-        />
-      </button> */}
-
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-6">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -155,4 +131,5 @@ const HeroSlider = () => {
     </section>
   );
 };
+
 export default HeroSlider;
