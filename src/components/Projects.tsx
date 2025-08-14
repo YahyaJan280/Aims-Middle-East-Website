@@ -127,7 +127,7 @@ const Projects = () => {
               </div>
 
               {/* Right Column */}
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div>
                   <h4 className="text-lg sm:text-xl font-bold gradient-text mb-2">
                     Key Features
@@ -135,7 +135,7 @@ const Projects = () => {
                   <ul className="space-y-2">
                     {projects[activeProject].features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <div className="mt-1 w-2 h-2 bg-gradient-primary rounded-full"></div>
+                        <div className="mt-2 w-2 h-2 bg-gradient-primary rounded-full"></div>
                         <span className="text-sm sm:text-base">{feature}</span>
                       </li>
                     ))}
@@ -152,7 +152,7 @@ const Projects = () => {
                         key={i}
                         className="flex items-start gap-2 p-2 bg-accent/10 border-l-4 border-secondary"
                       >
-                        <div className="mt-1 w-2 h-2 bg-gradient-secondary rounded-full"></div>
+                        <div className="mt-2 w-2 h-2 bg-gradient-secondary rounded-full"></div>
                         <span className="text-sm sm:text-base">{impact}</span>
                       </li>
                     ))}
