@@ -168,7 +168,7 @@ const Achievements = () => {
     <section
       id="achievements"
       ref={sectionRef}
-      className="py-18 lg:mt-8 mt-12 lg:py-4 bg-muted/30"
+      className="py-18 lg:mt-4 mt-10 lg:py-4 bg-muted/30"
     >
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-8">

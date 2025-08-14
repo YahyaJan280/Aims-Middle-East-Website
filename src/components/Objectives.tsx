@@ -87,7 +87,7 @@ const Objectives = () => {
     <section
   id="objectives"
   ref={sectionRef}
-  className="bg-muted/30 pb-10 px-4 sm:px-6 lg:px-8"
+  className="bg-muted/30 pb-10 py-4 px-4 sm:px-6 lg:px-8"
 >
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-16">
@@ -112,11 +112,11 @@ const Objectives = () => {
         >
           <div className="relative bg-card p-6 sm:p-8 lg:p-10 rounded-2xl shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 hover:border-primary/20 h-full">
             {/* Floating Icon */}
-            <div className="relative mb-8">
+            <div className="relative mb-8 ml-4">
               <div
                 className={`absolute -top-4 -left-4 w-16 h-16 ${objective.gradient} rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 pulse-glow`}
               >
-                <objective.icon className="w-8 h-8 text-white" />
+                <objective.icon className="w-8 h-8 text-white " />
               </div>
               <div className="w-12 h-12"></div>
             </div>
@@ -157,7 +157,7 @@ const Objectives = () => {
     </div>
 
     {/* Additional Impact Section */}
-    <div className="lg:mt-20 mt-8 grid md:grid-cols-3 gap-8 text-center">
+    <div className="lg:mt-16 mt-12 grid md:grid-cols-3 gap-8 text-center ">
       <div className="animate-on-scroll opacity-0">
         <div className="p-6 bg-card rounded-xl shadow-card border border-border/50">
           <Stethoscope className="w-12 h-12 text-primary mx-auto mb-4 animate-float" />
@@ -173,7 +173,7 @@ const Objectives = () => {
         </div>
       </div>
 
-      <div className="animate-on-scroll opacity-0">
+      <div className="animate-on-scroll py-4 lg:py-0 opacity-0">
         <div className="p-6 bg-card rounded-xl shadow-card border border-border/50">
           <BookOpen
             className="w-12 h-12 text-secondary mx-auto mb-4 animate-float"

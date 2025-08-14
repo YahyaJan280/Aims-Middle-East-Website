@@ -41,11 +41,11 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" ref={sectionRef} className="py-10 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" ref={sectionRef} className=" bg-background mt-10 lg:mt-0">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         
         {/* Heading */}
-        <div className="text-center mb-10 sm:mb-16">
+        <div className="text-center mb-10 sm:mb-16 ">
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 animate-on-scroll opacity-0">
             <span className="gradient-text">Our Projects</span>
           </h2>

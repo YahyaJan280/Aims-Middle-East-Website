@@ -39,7 +39,7 @@ const MissionVision = () => {
     <section
       id="mission"
       ref={sectionRef}
-      className="py-16 sm:py-20 bg-background"
+      className="py-10 lg:py-8 bg-background"
     >
       {/* Container with responsive padding */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,7 +63,7 @@ const MissionVision = () => {
         {/* Cards Grid */}
         <div className="grid gap-12 lg:gap-16 lg:grid-cols-2 items-start">
           {/* Vision Card */}
-          <div className="animate-on-scroll opacity-0">
+          <div className="animate-on-scroll opacity-0 ">
             <div className="bg-card p-6 sm:p-8 lg:p-12 bg-muted/30 rounded-2xl hover:shadow-glow transition-all duration-500 border border-border/50 hover:border-primary/20 group">
               <div className="flex items-start gap-4 mb-6">
                 <img src={visionIcon} alt="" className="h-12" />
@@ -99,8 +99,8 @@ const MissionVision = () => {
 
           {/* Mission Card */}
           <div className="animate-on-scroll opacity-0">
-            <div className="p-6 sm:p-8 lg:p-12 rounded-2xl bg-muted/30 hover:shadow-glow transition-all duration-500 border border-border/50 group">
-              <div className="flex items-start gap-4 mb-6">
+            <div className="p-6 sm:p-8 lg:p-10 rounded-2xl bg-muted/30 hover:shadow-glow transition-all duration-500 border border-border/50 group">
+              <div className="flex items-start gap-4 mb-4">
                 <img src={missionIcon} alt="" className="h-12" />
                 <h3
                   className="text-2xl lg:text-3xl mt-2 font-bold gradient-text mb-4"
@@ -134,7 +134,7 @@ const MissionVision = () => {
         </div>
 
         {/* River Metaphor Section */}
-        <div className="mt-16 sm:mt-20 text-center animate-on-scroll opacity-0 relative overflow-hidden bg-gradient-to-br from-[#4B61D1] to-[#4B61D1]/90 rounded-2xl">
+        <div className="mt-14  text-center animate-on-scroll opacity-0 relative overflow-hidden bg-gradient-to-br from-[#4B61D1] to-[#4B61D1]/90 rounded-2xl">
           {/* Decorative Overlays */}
           <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-br-full opacity-20 mix-blend-lighten z-10"></div>
           <div className="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-tl-full opacity-20 mix-blend-lighten z-10"></div>
