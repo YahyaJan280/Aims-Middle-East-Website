@@ -71,7 +71,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer id="footer" ref={footerRef} className="bg-muted/50 pt-20 pb-8">
+    <footer id="footer" ref={footerRef} className="bg-muted/50 pt-10 pb-8">
       {/* Added max-width and consistent responsive paddings */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
