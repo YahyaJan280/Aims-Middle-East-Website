@@ -62,7 +62,7 @@ const Navigation = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:block animate-slide-left mr-[130px]">
+          <div className="hidden lg:block animate-slide-left lg:mr-[130px]">
             <Button
               onClick={() => scrollToSection('cta')}
               className="text-sm font-semibold text-primary bg-white hover:bg-white hover:text-primary"
