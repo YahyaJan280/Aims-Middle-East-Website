@@ -41,8 +41,8 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" ref={sectionRef} className=" bg-background mt-10 lg:mt-0">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+    <section id="projects" ref={sectionRef} className=" bg-background  mt-10 lg:mt-0">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 ">
         
         {/* Heading */}
         <div className="text-center mb-10 sm:mb-16 ">
@@ -72,13 +72,13 @@ const Projects = () => {
         </div>
 
         {/* Card */}
-        <div className="animate-on-scroll opacity-0">
+        <div className="animate-on-scroll opacity-0 lg:max-w-[1210px] lg:ml-[60px]">
           <div className="bg-card rounded-2xl p-6 sm:p-8 lg:p-12 shadow-card">
             <div className="grid gap-8 lg:grid-cols-2">
               
               {/* Left Column */}
               <div>
-                <div className="flex items-center gap-4 mb-4 sm:mb-6">
+                <div className="flex items-center gap-4 mb-4 sm:mb-6 ">
                   <div className="p-3 bg-gradient-primary rounded-xl">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
@@ -165,7 +165,7 @@ const Projects = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-12 sm:mt-16 text-center animate-on-scroll opacity-0 relative bg-gradient-to-br from-[#4B61D1] to-[#4B61D1]/90 rounded-2xl overflow-hidden">
+        <div className="mt-12 sm:mt-16 text-center animate-on-scroll lg:max-w-[1210px] lg:ml-[60px] opacity-0 relative bg-gradient-to-br from-[#4B61D1] to-[#4B61D1]/90 rounded-2xl overflow-hidden">
          <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-br-full opacity-20 mix-blend-lighten z-10"></div>
           <div className="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-tl-full opacity-20 mix-blend-lighten z-10"></div>
           <div className="relative z-10 p-6 sm:p-8 lg:p-12">

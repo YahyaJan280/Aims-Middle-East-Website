@@ -89,7 +89,7 @@ const Objectives = () => {
   ref={sectionRef}
   className="bg-muted/30 pb-10 py-4 px-4 sm:px-6 lg:px-8"
 >
-  <div className="max-w-7xl mx-auto">
+  <div className="lg:max-w-[1210px] mx-auto ">
     <div className="text-center mb-16">
       <h2
         className="text-4xl lg:text-6xl font-bold mb-6 animate-on-scroll opacity-0"
@@ -97,18 +97,18 @@ const Objectives = () => {
       >
         <span className="gradient-text">Our Objectives</span>
       </h2>
-      <p className="paragraph-text text-xl text-muted-foreground max-w-3xl mx-auto animate-on-scroll opacity-0">
+      <p className="paragraph-text text-xl text-muted-foreground lg:max-w-3xl mx-auto animate-on-scroll opacity-0">
         Three pillars of excellence that guide our mission to transform
         healthcare delivery across the region
       </p>
     </div>
 
     {/* Objectives Cards */}
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3  gap-8 lg:gap-10">
       {objectives.map((objective, index) => (
         <div
           key={index}
-          className="animate-on-scroll mt-[20px] opacity-0 group"
+          className="animate-on-scroll mt-[20px] opacity-0 group "
         >
           <div className="relative bg-card p-6 sm:p-8 lg:p-10 rounded-2xl shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 hover:border-primary/20 h-full">
             {/* Floating Icon */}

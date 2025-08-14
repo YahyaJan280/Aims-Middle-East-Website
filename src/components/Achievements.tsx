@@ -168,22 +168,22 @@ const Achievements = () => {
     <section
       id="achievements"
       ref={sectionRef}
-      className="py-18 lg:mt-4 mt-10 lg:py-4 bg-muted/30"
+      className="py-18 lg:mt-4 mt-10 lg:py-4 bg-muted/30 "
     >
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 ">
         <div className="text-center mb-8">
           <h2 className="text-3xl  md:text-4xl lg:text-5xl font-bold mb-4 animate-on-scroll opacity-0">
             <span className="gradient-text" style={{ fontFamily: "Gotham HTF" }}>
               Our Impact
             </span>
           </h2>
-          <p className="paragraph-text text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-on-scroll opacity-0">
+          <p className="paragraph-text text-lg md:text-xl text-muted-foreground lg:max-w-3xl mx-auto animate-on-scroll opacity-0">
             Measurable results that demonstrate our commitment to transforming
             healthcare and improving lives across the Middle East
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto" style={{border:'2px solid black', display:'none'}}>
+        <div className="grid  grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center  lg:max-w-7xl mx-auto" style={{border:'2px solid black', display:'none'}}>
           {achievements.map((achievement, index) => (
             <CounterCard
               key={index}
@@ -197,9 +197,9 @@ const Achievements = () => {
           ))}
         </div>
          {/* Transforming Lives & Recognition Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:ml-10 lg:gap-12 items-center">
           {/* Left: Transforming Lives */}
-          <div className="animate-on-scroll opacity-0">
+          <div className="animate-on-scroll opacity-0 ">
             <h3
               className="text-2xl md:text-3xl font-bold gradient-text mb-4"
               style={{ fontFamily: "Gotham HTF" }}
@@ -212,7 +212,7 @@ const Achievements = () => {
               building healthier communities, stronger families, and a more
               sustainable healthcare future.
             </p>
-            <div className="space-y-4">
+            <div className="space-y-4 ">
               <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
                 <Heart className="lg:w-6 lg:h-6 w-14 h-14 text-primary mt-1" />
                 <div>
@@ -224,16 +224,18 @@ const Achievements = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-secondary">
+               <div className="space-y-4 ">
+              <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
                 <Users className="lg:w-6 lg:h-6 w-14 h-14 text-secondary mt-1" />
                 <div>
                   <h4 className="font-semibold text-foreground" style={{ fontFamily: "Gotham HTF" }}>
-                    Community Empowerment
+                    community Empowerment
                   </h4>
                   <p className="paragraph-text text-sm text-muted-foreground">
                     Building local capacity and knowledge for sustainable health outcomes
                   </p>
                 </div>
+              </div>
               </div>
               <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
                 <TrendingUp className="lg:w-6 lg:h-6 w-14 h-14 text-primary mt-1" />
@@ -250,15 +252,15 @@ const Achievements = () => {
           </div>
 
           {/* Right: Recognition & Awards */}
-          <div className="animate-on-scroll opacity-0">
-            <div className="bg-gradient-primary/5 p-6 lg:p-10 rounded-2xl border border-primary/10">
+          <div className="animate-on-scroll opacity-0 lg:mr-2">
+            <div className="bg-gradient-primary/5 p-6 lg:p-10 rounded-2xl border border-primary/10 ">
               <h4
                 className="text-xl md:text-2xl font-bold gradient-text mb-4 text-center"
                 style={{ fontFamily: "Gotham HTF" }}
               >
                 Recognition & Awards
               </h4>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div className="text-center p-4 bg-card rounded-xl shadow-card">
                   <Award className="w-12 h-12 text-primary mx-auto mb-3" />
                   <h5 className="font-bold text-foreground mb-2" style={{ fontFamily: "Gotham HTF" }}>

@@ -32,18 +32,18 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0  left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-primary/95 backdrop-blur-md shadow-card' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+      <div className="max-w-full mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center py-4 sm:py-6 animate-slide-right">
+          <div className="flex items-center py-4 sm:py-6 animate-slide-right lg:ml-[114px]">
             <img
               src={aimsLogo}
               alt="AIMS Logo"
-              className="h-10 sm:h-12 w-auto max-w-[120px] lg:ml-16 hover:scale-105 transition-transform duration-300"
+              className="h-10 sm:h-12 w-auto max-w-[120px] ml-2  hover:scale-105 transition-transform duration-300"
             />
           </div>
 
@@ -62,7 +62,7 @@ const Navigation = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:block animate-slide-left">
+          <div className="hidden lg:block animate-slide-left mr-[130px]">
             <Button
               onClick={() => scrollToSection('cta')}
               className="text-sm font-semibold text-primary bg-white hover:bg-white hover:text-primary"
@@ -73,7 +73,7 @@ const Navigation = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden p-2 text-white hover:text-white transition duration-300"
+            className="lg:hidden px-2 text-white hover:text-white transition duration-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >

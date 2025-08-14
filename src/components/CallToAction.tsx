@@ -83,7 +83,7 @@ const CallToAction = () => {
     <section
       id="cta"
       ref={sectionRef}
-      className="py-8 mt-10 lg:mt-6 lg:py-10 bg-gradient-hero relative overflow-hidden"
+      className="py-8 mt-10 lg:mt-6 lg:py-10  bg-gradient-hero relative overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 ">
@@ -91,7 +91,7 @@ const CallToAction = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-48 translate-y-48"></div>
       </div>
 
-      <div className="px-6 sm:px-8 lg:px-12 relative z-10 max-w-7xl mx-auto">
+      <div className="px-6 sm:px-8 lg:px-12 lg:ml-[105px] relative z-10 lg:max-w-[1300px] mx-auto ">
         <div className="text-center mb-16">
           <h2
             className="text-4xl lg:text-6xl font-bold text-white mb-6 animate-on-scroll opacity-0"
@@ -110,7 +110,7 @@ const CallToAction = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-16 ">
           {actionCards.map((card, index) => (
             <div key={index} className="animate-on-scroll opacity-0 group">
               <div className="bg-white/10 backdrop-blur-md p-8 lg:p-10 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 hover:shadow-glow h-full">
