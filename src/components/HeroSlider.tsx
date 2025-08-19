@@ -108,7 +108,7 @@ const HeroSlider = () => {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-6">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-4">
         {slides.map((_, index) => (
           <button
             key={index}
