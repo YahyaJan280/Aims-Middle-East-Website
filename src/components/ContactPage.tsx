@@ -1,93 +1,159 @@
 import { Button } from "@/components/ui/button";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"; // Importing icons
-import aimsLogo from '@/assets/Navbar-Logo-White.png';
-import Navigation from "@/components/Navigation"; // Import the updated Navigation component
-import Footer from '@/components/Footer'; // Import Footer component
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import contactImage from "@/assets/contactImage.jpg";
 
 const ContactPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col">
-      {/* Updated Navbar */}
-      <Navigation /> {/* Use the updated Navigation component */}
+      {/* Navbar */}
+      <Navigation />
 
-      {/* Contact Section with Padding Top */}
+      {/* Contact Section */}
       <section className="py-20 bg-white px-6 md:px-16 pt-32">
-        <div className="max-w-screen-xl mx-auto">
-          <h2 className="font-roboto font-bold text-3xl  text-center text-gray-800 mb-6">Contact Us</h2>
+        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-12 items-stretch">
+          {/* Left: Contact Form + Cards */}
+          <div className="flex-1 flex flex-col justify-between">
+            {/* Contact Form */}
+            <div>
+              <h2 className="font-roboto font-bold text-3xl text-gray-800 mb-2">
+                Talk to Us
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Meet Xperience-AI – your intelligent productivity sidekick. From
+                generation.
+              </p>
 
-          {/* Contact Info and Form */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Left: Contact Details */}
-            <div className="bg-blue-100 p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-700 mb-4">You can reach us using the details below:</h3>
-              <div className="space-y-6">
-                {/* Phone */}
-                <div className="flex items-center space-x-4">
-                  <FaPhoneAlt className="h-6 text-gray-700" />
-                  <span className="text-gray-700">(+92) 91 5892728</span>
-                </div>
-                {/* Email */}
-                <div className="flex items-center space-x-4">
-                  <FaEnvelope className="h-6 text-gray-700" />
-                  <span className="text-gray-700">contact@sugarhospital.com</span>
-                </div>
-                {/* Location */}
-                <div className="flex items-center space-x-4">
-                  <FaMapMarkerAlt className="h-6 text-gray-700" />
-                  <span className="text-gray-700">A-6 B/3, Phase 5, Opposite Edhi Homes, Peshawar, Pakistan</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Contact Form */}
-            <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
               <form action="#" method="POST" className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
                     type="text"
-                    id="name"
                     name="name"
-                    placeholder="Your Name"
-                    className="w-full p-3 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    placeholder="Full Name"
+                    className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
                     required
                   />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
                   <input
                     type="email"
-                    id="email"
                     name="email"
-                    placeholder="Your Email"
-                    className="w-full p-3 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-600"
+                    placeholder="Email"
+                    className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
                     required
                   />
                 </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Your Message"
-                    className="w-full p-3 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-600"
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone number"
+                    className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
                     required
-                  ></textarea>
+                  />
+                  <select
+                    name="reason"
+                    className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    required
+                  >
+                    <option value="">Select option</option>
+                    <option value="support">Support</option>
+                    <option value="sales">Sales</option>
+                    <option value="other">Other</option>
+                  </select>
                 </div>
-                <button
+
+                <textarea
+                  name="message"
+                  placeholder="How can we help?"
+                  className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  required
+                ></textarea>
+
+                <Button
                   type="submit"
                   className="w-full py-3 bg-primary/90 text-white rounded-md shadow-md hover:bg-blue-700 transition duration-300"
                 >
-                  Send Message
-                </button>
+                  Send your message
+                </Button>
               </form>
+
+              <p className="text-xs text-gray-500 mt-4">
+                By clicking, you agree to our{" "}
+                <a href="#" className="underline">
+                  Terms & Conditions
+                </a>
+                ,{" "}
+                <a href="#" className="underline">
+                  Privacy
+                </a>{" "}
+                and{" "}
+                <a href="#" className="underline">
+                  Data Protection Policy
+                </a>
+                .
+              </p>
             </div>
+
+            {/* Contact Info Cards */}
+            <div className=" py-10 px-4">
+              <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-start gap-6">
+                {/* Office Location Card */}
+                <div className="bg-white p-6 rounded-xl rounded-br-[3rem] shadow-lg w-full md:w-1/3 text-center">
+                  <div className="text-red-600 text-5xl mb-4">📍</div>
+                  <h3 className="font-roboto text-lg font-bold text-gray-800 mb-2">
+                    Office Locations
+                  </h3>
+                  <p className="font-roboto font-medium text-gray-600 text-sm leading-relaxed">
+                    102/B, Elephant Rd, Motijheel
+                    <br />
+                    Dhaka - 1212
+                  </p>
+                </div>
+
+                {/* Phone Number Card */}
+                <div className="bg-white p-6 rounded-xl rounded-br-[2rem] shadow-lg w-full md:w-1/3 text-center">
+                  <div className="font-roboto text-blue-600 text-5xl mb-4">
+                    📞
+                  </div>
+                  <h3 className="font-roboto text-lg font-bold text-gray-800 mb-2">
+                    Feel Free to Call Us
+                  </h3>
+                  <p className="font-roboto font-medium text-gray-600 text-sm leading-relaxed">
+                    +00 123 4567 890
+                    <br />
+                    Emergency
+                  </p>
+                </div>
+
+                {/* Email Card */}
+                <div className="bg-white p-6 rounded-xl rounded-br-[2rem] shadow-lg w-full md:w-1/3 text-center">
+                  <div className="text-red-600 text-5xl mb-4">✉️</div>
+                  <h3 className="font-roboto text-lg font-bold text-gray-800 mb-2">
+                    Send E-Mail
+                  </h3>
+                  <p className="font-roboto font-medium text-gray-600 text-sm leading-relaxed">
+                    yourmail@domain.com
+                    <br />
+                    example@gmail.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Image */}
+          <div className="flex-1 flex justify-center items-center">
+            <img
+              src={contactImage}
+              alt="Contact Office"
+              className="rounded-lg shadow-lg w-full h-full max-h-[700px] object-cover"
+            />
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <Footer /> {/* The footer component */}
+      <Footer />
     </div>
   );
 };

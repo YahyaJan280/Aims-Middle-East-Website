@@ -95,11 +95,11 @@ const CallToAction = () => {
         <div className="text-center mb-16">
           <h2 className="font-roboto text-4xl lg:text-6xl font-bold text-white mb-6 animate-on-scroll opacity-0">
             Join Us in Building
-            <span className="font-roboto block text-5xl lg:text-7xl mt-2 text-white/90">
+            <span className="font-roboto block text-5xl lg:text-7xl mt-2 text-white">
               Accessible Care
             </span>
           </h2>
-          <p className="font-roboto font-medium text-xl text-white/90 max-w-3xl mx-auto animate-on-scroll opacity-0">
+          <p className="font-roboto font-medium text-xl text-white max-w-3xl mx-auto animate-on-scroll opacity-0">
             Together, we can flow like the Abaseen river—bringing life, hope,
             and healing to every corner of our region. Your support creates
             ripples of positive change that transform entire communities.
@@ -121,7 +121,7 @@ const CallToAction = () => {
                   {card.title}
                 </h3>
 
-                <p className="font-roboto font-medium text-white/80 mb-6 leading-relaxed">
+                <p className="font-roboto font-medium text-white mb-6 leading-relaxed">
                   {card.description}
                 </p>
 
@@ -133,7 +133,7 @@ const CallToAction = () => {
                       style={{ transitionDelay: `${featureIndex * 100}ms` }}
                     >
                       <div className="w-2 h-2 bg-white/70 rounded-full"></div>
-                      <span className="font-roboto font-medium text-white/80 text-sm">
+                      <span className="font-roboto font-medium text-white text-sm">
                         {feature}
                       </span>
                     </div>
@@ -158,7 +158,7 @@ const CallToAction = () => {
             <h3 className="font-roboto text-2xl lg:text-3xl font-bold text-white mb-6">
               Ready to Make a Difference?
             </h3>
-            <p className="font-roboto font-medium text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="font-roboto font-medium text-white mb-8 max-w-2xl mx-auto">
               Connect with us today and become part of a movement that's
               transforming healthcare across the Middle East. Every action, no
               matter how small, creates waves of positive change.
@@ -167,7 +167,7 @@ const CallToAction = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <a
                 href="mailto:info@aimsmiddleeast.org"
-                className="font-roboto font-medium flex items-center space-x-3 text-white/90 hover:text-white transition-colors duration-300 group"
+                className="font-roboto font-medium flex items-center space-x-3 text-white hover:text-white transition-colors duration-300 group"
               >
                 <Mail className="font-roboto w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>info@aimsmiddleeast.org</span>
@@ -175,7 +175,7 @@ const CallToAction = () => {
               <div className="font-roboto hidden sm:block w-px h-6 bg-white/30"></div>
               <a
                 href="tel:+92000000000"
-                className="flex items-center space-x-3 text-white/90 hover:text-white transition-colors duration-300 group"
+                className="flex items-center space-x-3 text-white hover:text-white transition-colors duration-300 group"
               >
                 <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>+92 (000) 000-0000</span>

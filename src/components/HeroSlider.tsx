@@ -79,7 +79,7 @@ const HeroSlider = () => {
             </span>
           </h1>
 
-          <p className="font-roboto font-normal text-xl sm:text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-slide-up animate-delay-200">
+          <p className="font-roboto font-normal text-xl sm:text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto animate-slide-up animate-delay-200">
             {slides[currentSlide].description}
           </p>
 

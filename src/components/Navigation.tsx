@@ -10,8 +10,7 @@ const navItems = [
   { name: "Objectives", id: "objectives" },
   { name: "Projects", id: "projects" },
   { name: "Impact", id: "achievements" },
-  { name: "Contact", id: "footer" },
-  { name: "ContactPage", path: "/contact" }, // Updated: Added path for ContactPage
+  { name: "Contact Us", path: "/contact" }, // Updated: Added path for ContactPage
 ];
 
 const Navigation = () => {
