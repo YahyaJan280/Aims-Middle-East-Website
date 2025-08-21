@@ -62,7 +62,7 @@ const HeroSlider = () => {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover font-roboto font-bold text-3xl"
             />
             <div className="absolute inset-0 bg-gradient-hero"></div>
           </div>
@@ -70,28 +70,25 @@ const HeroSlider = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center justify-center text-center px-4 sm:px-8 lg:px-16">
+      <div className="font-roboto font-bold text-3xl relative z-10 h-full flex items-center justify-center text-center px-4 sm:px-8 lg:px-16">
         <div className="w-full max-w-5xl mx-auto">
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-slide-up"
-            style={{ fontFamily: "Gotham HTF" }}
-          >
+          <h1 className="font-roboto font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 animate-slide-up">
             <span className="block">{slides[currentSlide].title}</span>
             <span className="block mt-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
               {slides[currentSlide].subtitle}
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-slide-up animate-delay-200">
+          <p className="font-roboto font-normal text-xl sm:text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-slide-up animate-delay-200">
             {slides[currentSlide].description}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animate-delay-400">
+          <div className="font-roboto font-bold text-3xl flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animate-delay-400">
             <Button
               variant="gradient-outline"
               size="lg"
               onClick={() => scrollToSection("mission")}
-              className="bg-transparent border-white text-white hover:bg-white hover:text-primary transition-colors duration-300"
+              className=" font-roboto font-normal text-xl bg-transparent border-white text-white hover:bg-white hover:text-primary transition-colors duration-300"
             >
               Our Mission
             </Button>
@@ -99,7 +96,7 @@ const HeroSlider = () => {
             <Button
               size="lg"
               onClick={() => scrollToSection("projects")}
-              className="text-white bg-[#ea1e26] hover:bg-white hover:text-secondary transition-colors duration-300"
+              className="font-roboto font-normal text-xl text-white bg-[#ea1e26] hover:bg-white hover:text-secondary transition-colors duration-300"
             >
               View Projects
             </Button>
@@ -108,7 +105,7 @@ const HeroSlider = () => {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-4">
+      <div className="font-roboto text-3xl absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-4">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -121,8 +118,6 @@ const HeroSlider = () => {
           />
         ))}
       </div>
-
-     
     </section>
   );
 };

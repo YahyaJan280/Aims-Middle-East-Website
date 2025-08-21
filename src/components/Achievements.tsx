@@ -173,17 +173,20 @@ const Achievements = () => {
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 ">
         <div className="text-center mb-8">
           <h2 className="text-3xl  md:text-4xl lg:text-5xl font-bold mb-4 animate-on-scroll opacity-0">
-            <span className="gradient-text" style={{ fontFamily: "Gotham HTF" }}>
+            <span className="font-roboto font-bold gradient-text">
               Our Impact
             </span>
           </h2>
-          <p className="paragraph-text text-lg md:text-xl text-muted-foreground lg:max-w-3xl mx-auto animate-on-scroll opacity-0">
+          <p className="font-roboto font-normal text-lg md:text-xl text-muted-foreground lg:max-w-3xl mx-auto animate-on-scroll opacity-0">
             Measurable results that demonstrate our commitment to transforming
             healthcare and improving lives across the Middle East
           </p>
         </div>
 
-        <div className="grid  grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center  lg:max-w-7xl mx-auto" style={{border:'2px solid black', display:'none'}}>
+        <div
+          className="grid  grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center  lg:max-w-7xl mx-auto"
+          style={{ border: "2px solid black", display: "none" }}
+        >
           {achievements.map((achievement, index) => (
             <CounterCard
               key={index}
@@ -196,17 +199,14 @@ const Achievements = () => {
             />
           ))}
         </div>
-         {/* Transforming Lives & Recognition Section */}
+        {/* Transforming Lives & Recognition Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:ml-10 lg:gap-12 items-center">
           {/* Left: Transforming Lives */}
           <div className="animate-on-scroll opacity-0 ">
-            <h3
-              className="text-2xl md:text-3xl font-bold gradient-text mb-4"
-              style={{ fontFamily: "Gotham HTF" }}
-            >
+            <h3 className="font-roboto  text-2xl md:text-3xl font-bold gradient-text mb-4">
               Transforming Lives, One Patient at a Time
             </h3>
-            <p className="paragraph-text text-md md:text-lg text-muted-foreground mb-4 leading-relaxed">
+            <p className="font-roboto font-medium text-md md:text-lg text-muted-foreground mb-4 leading-relaxed">
               Behind every statistic is a human story of hope, resilience, and
               transformation. Our impact extends far beyond numbers—we're
               building healthier communities, stronger families, and a more
@@ -216,35 +216,38 @@ const Achievements = () => {
               <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
                 <Heart className="lg:w-6 lg:h-6 w-14 h-14 text-primary mt-1" />
                 <div>
-                  <h4 className="font-semibold text-foreground" style={{ fontFamily: "Gotham HTF" }}>
+                  <h4 className="font-roboto font-bold text-foreground">
                     Patient-Centered Care
                   </h4>
-                  <p className="paragraph-text text-sm text-muted-foreground">
-                    Every treatment plan is personalized to meet individual needs and circumstances
+                  <p className="font-roboto font-medium text-sm text-muted-foreground">
+                    Every treatment plan is personalized to meet individual
+                    needs and circumstances
                   </p>
                 </div>
               </div>
-               <div className="space-y-4 ">
-              <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
-                <Users className="lg:w-6 lg:h-6 w-14 h-14 text-secondary mt-1" />
-                <div>
-                  <h4 className="font-semibold text-foreground" style={{ fontFamily: "Gotham HTF" }}>
-                    community Empowerment
-                  </h4>
-                  <p className="paragraph-text text-sm text-muted-foreground">
-                    Building local capacity and knowledge for sustainable health outcomes
-                  </p>
+              <div className="space-y-4 ">
+                <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
+                  <Users className="lg:w-6 lg:h-6 w-14 h-14 text-secondary mt-1" />
+                  <div>
+                    <h4 className="font-roboto font-bold text-foreground">
+                      community Empowerment
+                    </h4>
+                    <p className="font-roboto font-medium text-sm text-muted-foreground">
+                      Building local capacity and knowledge for sustainable
+                      health outcomes
+                    </p>
+                  </div>
                 </div>
-              </div>
               </div>
               <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
                 <TrendingUp className="lg:w-6 lg:h-6 w-14 h-14 text-primary mt-1" />
                 <div>
-                  <h4 className="font-semibold text-foreground" style={{ fontFamily: "Gotham HTF" }}>
+                  <h4 className="font-roboto font-bold text-foreground">
                     Continuous Improvement
                   </h4>
-                  <p className="paragraph-text text-sm text-muted-foreground">
-                    Data-driven approaches ensure our programs evolve and improve
+                  <p className="font-roboto font-medium text-sm text-muted-foreground">
+                    Data-driven approaches ensure our programs evolve and
+                    improve
                   </p>
                 </div>
               </div>
@@ -254,37 +257,34 @@ const Achievements = () => {
           {/* Right: Recognition & Awards */}
           <div className="animate-on-scroll opacity-0 lg:mr-2">
             <div className="bg-gradient-primary/5 p-6 lg:p-10 rounded-2xl border border-primary/10 ">
-              <h4
-                className="text-xl md:text-2xl font-bold gradient-text mb-4 text-center"
-                style={{ fontFamily: "Gotham HTF" }}
-              >
+              <h4 className="font-roboto text-2xl md:text-2xl font-bold gradient-text mb-4 text-center">
                 Recognition & Awards
               </h4>
               <div className="space-y-6">
                 <div className="text-center p-4 bg-card rounded-xl shadow-card">
                   <Award className="w-12 h-12 text-primary mx-auto mb-3" />
-                  <h5 className="font-bold text-foreground mb-2" style={{ fontFamily: "Gotham HTF" }}>
+                  <h5 className="font-roboto font-bold text-foreground mb-2">
                     Excellence in Healthcare Delivery
                   </h5>
-                  <p className="paragraph-text text-sm text-muted-foreground">
+                  <p className="font-roboto font-medium text-sm text-muted-foreground">
                     Regional Healthcare Innovation Award 2023
                   </p>
                 </div>
                 <div className="text-center p-4 bg-card rounded-xl shadow-card">
                   <Globe className="w-12 h-12 text-secondary mx-auto mb-3" />
-                  <h5 className="font-bold text-foreground mb-2" style={{ fontFamily: "Gotham HTF" }}>
+                  <h5 className="font-roboto font-bold text-foreground mb-2">
                     International Research Recognition
                   </h5>
-                  <p className="paragraph-text text-sm text-muted-foreground">
+                  <p className="font-roboto font-medium text-sm text-muted-foreground">
                     WHO Diabetes Research Excellence 2023
                   </p>
                 </div>
                 <div className="text-center p-4 bg-card rounded-xl shadow-card">
                   <Users className="w-12 h-12 text-primary mx-auto mb-3" />
-                  <h5 className="font-bold text-foreground mb-2" style={{ fontFamily: "Gotham HTF" }}>
+                  <h5 className="font-roboto font-bold text-foreground mb-2">
                     Community Impact Award
                   </h5>
-                  <p className="paragraph-text text-sm text-muted-foreground">
+                  <p className="font-roboto font-medium text-sm text-muted-foreground">
                     Pakistan Health Ministry Recognition 2022
                   </p>
                 </div>
@@ -292,8 +292,7 @@ const Achievements = () => {
             </div>
           </div>
         </div>
-        </div>
-    
+      </div>
     </section>
   );
 };

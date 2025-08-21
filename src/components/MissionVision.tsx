@@ -43,18 +43,12 @@ const MissionVision = () => {
     >
       {/* Container with responsive padding */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 animate-on-scroll opacity-0">
-            <span
-              className="gradient-text"
-              style={{ fontFamily: "Gotham HTF" }}
-            >
-              Our Purpose
-            </span>
+            <span className="gradient-text font-roboto">Our Purpose</span>
           </h2>
-          <p className="paragraph-text text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto animate-on-scroll opacity-0">
+          <p className="font-roboto  text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto animate-on-scroll opacity-0">
             Like the flowing waters of the Abaseen river, we bring life, hope,
             and healing to communities across the Middle East
           </p>
@@ -64,17 +58,14 @@ const MissionVision = () => {
         <div className="grid gap-12 lg:gap-12 lg:grid-cols-2 items-start">
           {/* Vision Card */}
           <div className="animate-on-scroll opacity-0 ">
-            <div className="bg-card p-6 sm:p-8 lg:p-12 bg-muted/30 rounded-2xl hover:shadow-glow transition-all duration-500 border border-border/50 hover:border-primary/20 group">
+            <div className="p-6 sm:p-8 lg:p-12 bg-muted/30 rounded-2xl hover:shadow-glow transition-all duration-500 border border-border/50 hover:border-primary/20 group">
               <div className="flex items-start gap-4 mb-6">
                 <img src={visionIcon} alt="" className="h-12" />
-                <h3
-                  className="text-2xl lg:text-3xl font-bold gradient-text mt-2 mb-4"
-                  style={{ fontFamily: "Gotham HTF" }}
-                >
+                <h3 className="font-roboto text-xl lg:text-3xl font-bold gradient-text mt-2 mb-4">
                   Our Vision
                 </h3>
               </div>
-              <p className="paragraph-text text-lg text-muted-foreground leading-relaxed">
+              <p className="font-roboto text-lg text-muted-foreground leading-relaxed">
                 To be the leading institution in providing comprehensive,
                 affordable, and accessible diabetes healthcare across the Middle
                 East, transforming lives through innovative medical care and
@@ -86,7 +77,10 @@ const MissionVision = () => {
                   "Community-centered Approach",
                   "Medical Excellence",
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
+                  <div
+                    key={idx}
+                    className="font-roboto flex items-center gap-3"
+                  >
                     <img src={arrow} alt="" className="w-5 h-5" />
                     <span className="text-foreground font-semibold">
                       {item}
@@ -102,14 +96,11 @@ const MissionVision = () => {
             <div className="p-6 sm:p-8 lg:p-10 lg: rounded-2xl bg-muted/30 hover:shadow-glow transition-all duration-500 border border-border/50 group">
               <div className="flex items-start gap-4 mb-4">
                 <img src={missionIcon} alt="" className="h-12" />
-                <h3
-                  className="text-2xl lg:text-3xl mt-2 font-bold gradient-text mb-4"
-                  style={{ fontFamily: "Gotham HTF" }}
-                >
+                <h3 className="font-roboto text-xl lg:text-3xl mt-2 font-bold gradient-text mb-4">
                   Our Mission
                 </h3>
               </div>
-              <p className="paragraph-text text-lg text-muted-foreground leading-relaxed mb-6">
+              <p className="font-roboto text-lg text-muted-foreground leading-relaxed mb-6">
                 To pool public and private sector resources to enhance
                 accessibility to quality diabetes and non-communicable disease
                 (NCD) care in Khyber Pakhtunkhwa and across Pakistan, while
@@ -121,7 +112,10 @@ const MissionVision = () => {
                   "Quality Care Access",
                   "Research & Development",
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
+                  <div
+                    key={idx}
+                    className="font-roboto flex items-center gap-3"
+                  >
                     <img src={arrow} alt="" className="w-5 h-5" />
                     <span className="text-foreground font-semibold">
                       {item}
@@ -141,13 +135,10 @@ const MissionVision = () => {
 
           {/* Main Content */}
           <div className="relative z-20 lg:max-w-4xl mx-auto p-4 sm:px-8 py-10 lg:py-12 bg-gradient-primary/5 rounded-2xl border border-primary/10">
-            <h3
-              className="text-2xl lg:text-3xl font-bold text-white mb-6"
-              style={{ fontFamily: "Gotham HTF" }}
-            >
+            <h3 className="font-roboto text-2xl lg:text-5xl font-bold text-white mb-6">
               The Abaseen Spirit
             </h3>
-            <p className="paragraph-text text-lg text-white leading-relaxed">
+            <p className="font-roboto font-normal text-lg text-white leading-relaxed">
               Just as the Abaseen river flows through the landscapes of our
               region, bringing life and sustenance to all it touches, AIMS
               Middle East flows through communities, bringing hope, healing, and
@@ -156,7 +147,6 @@ const MissionVision = () => {
             </p>
           </div>
         </div>
-
       </div>
     </section>
   );

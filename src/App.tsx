@@ -7,7 +7,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-
+import ContactPage from "./components/ContactPage";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -17,6 +17,7 @@ const App = () => (
       <Sonner />
       <HashRouter>
         <Routes>
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -93,16 +93,13 @@ const CallToAction = () => {
 
       <div className="px-6 sm:px-8 lg:px-12 relative z-10 max-w-[1300px] mx-auto">
         <div className="text-center mb-16">
-          <h2
-            className="text-4xl lg:text-6xl font-bold text-white mb-6 animate-on-scroll opacity-0"
-            style={{ fontFamily: "Gotham HTF" }}
-          >
+          <h2 className="font-roboto text-4xl lg:text-6xl font-bold text-white mb-6 animate-on-scroll opacity-0">
             Join Us in Building
-            <span className="block text-5xl lg:text-7xl mt-2 text-white/90">
+            <span className="font-roboto block text-5xl lg:text-7xl mt-2 text-white/90">
               Accessible Care
             </span>
           </h2>
-          <p className="paragraph-text text-xl text-white/90 max-w-3xl mx-auto animate-on-scroll opacity-0">
+          <p className="font-roboto font-medium text-xl text-white/90 max-w-3xl mx-auto animate-on-scroll opacity-0">
             Together, we can flow like the Abaseen river—bringing life, hope,
             and healing to every corner of our region. Your support creates
             ripples of positive change that transform entire communities.
@@ -120,11 +117,11 @@ const CallToAction = () => {
                   <card.icon className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:scale-105 transition-transform duration-300">
+                <h3 className="font-roboto text-2xl font-bold text-white mb-4 group-hover:scale-105 transition-transform duration-300">
                   {card.title}
                 </h3>
 
-                <p className="paragraph-text text-white/80 mb-6 leading-relaxed">
+                <p className="font-roboto font-medium text-white/80 mb-6 leading-relaxed">
                   {card.description}
                 </p>
 
@@ -136,14 +133,16 @@ const CallToAction = () => {
                       style={{ transitionDelay: `${featureIndex * 100}ms` }}
                     >
                       <div className="w-2 h-2 bg-white/70 rounded-full"></div>
-                      <span className="text-white/80 text-sm">{feature}</span>
+                      <span className="font-roboto font-medium text-white/80 text-sm">
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>
 
                 <Button
                   variant="outline"
-                  className="w-full bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary group-hover:scale-105 transition-all duration-300"
+                  className="font-roboto font-medium w-full bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary group-hover:scale-105 transition-all duration-300"
                 >
                   {card.buttonText}
                   <ArrowRight className="w-4 h-4 lg:ml-2 group-hover:translate-x-1 transition-transform" />
@@ -156,13 +155,10 @@ const CallToAction = () => {
         {/* Contact Section */}
         <div className="animate-on-scroll opacity-0">
           <div className="bg-white/10 backdrop-blur-md p-8 lg:p-12 rounded-2xl border border-white/20 text-center">
-            <h3
-              className="text-2xl lg:text-3xl font-bold text-white mb-6"
-              style={{ fontFamily: "Gotham HTF" }}
-            >
+            <h3 className="font-roboto text-2xl lg:text-3xl font-bold text-white mb-6">
               Ready to Make a Difference?
             </h3>
-            <p className="paragraph-text text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="font-roboto font-medium text-white/80 mb-8 max-w-2xl mx-auto">
               Connect with us today and become part of a movement that's
               transforming healthcare across the Middle East. Every action, no
               matter how small, creates waves of positive change.
@@ -171,12 +167,12 @@ const CallToAction = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <a
                 href="mailto:info@aimsmiddleeast.org"
-                className="flex items-center space-x-3 text-white/90 hover:text-white transition-colors duration-300 group"
+                className="font-roboto font-medium flex items-center space-x-3 text-white/90 hover:text-white transition-colors duration-300 group"
               >
-                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <Mail className="font-roboto w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>info@aimsmiddleeast.org</span>
               </a>
-              <div className="hidden sm:block w-px h-6 bg-white/30"></div>
+              <div className="font-roboto hidden sm:block w-px h-6 bg-white/30"></div>
               <a
                 href="tel:+92000000000"
                 className="flex items-center space-x-3 text-white/90 hover:text-white transition-colors duration-300 group"
@@ -190,7 +186,7 @@ const CallToAction = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="bg-white text-primary hover:bg-primary/90 border-white group"
+                className="font-roboto font-medium bg-white text-primary hover:bg-primary/90 border-white group"
               >
                 Contact Us Today
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -198,7 +194,7 @@ const CallToAction = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white/30 text-primary hover:bg-white hover:bg-primary/90 group"
+                className="font-roboto font-medium border-white/30 text-primary hover:bg-white hover:bg-primary/90 group"
               >
                 Learn More
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

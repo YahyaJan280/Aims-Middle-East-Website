@@ -74,20 +74,18 @@ const Footer = () => {
     <footer id="footer" ref={footerRef} className="bg-muted/50 pt-10 pb-8">
       {/* Added max-width and consistent responsive paddings */}
       <div className="max-w-7xl mx-auto px-4 sm:px-2 lg:px-8 lg:ml-[120px]">
-        
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
-          
           {/* Logo & Description */}
           <div className="lg:col-span-2 animate-on-scroll opacity-0">
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="font-roboto font-medium flex items-center space-x-3 mb-6">
               <img
                 src={aimsLogo}
                 alt="AIMS Middle East Logo"
                 className="h-12 hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <p className="paragraph-text text-muted-foreground mb-6 leading-relaxed max-w-md">
+            <p className="font-roboto font-medium text-muted-foreground mb-6 leading-relaxed max-w-md">
               Like the flowing waters of the Abaseen river, we bring life, hope,
               and healing to communities across the Middle East. Our mission is
               to transform healthcare delivery through innovation, compassion,
@@ -98,14 +96,11 @@ const Footer = () => {
             <div className="bg-card p-6 rounded-xl border border-border/50 shadow-card">
               <div className="flex items-center space-x-3 mb-3">
                 <Heart className="w-5 h-5 text-primary" />
-                <span
-                  className="font-semibold gradient-text"
-                  style={{ fontFamily: "Gotham HTF" }}
-                >
+                <span className="font-roboto font-medium  gradient-text">
                   Our Promise
                 </span>
               </div>
-              <p className="paragraph-text text-sm text-muted-foreground">
+              <p className="font-roboto font-medium text-sm text-muted-foreground">
                 Comprehensive, affordable, and accessible diabetes healthcare
                 for all. Building healthier communities, one patient at a time.
               </p>
@@ -114,10 +109,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="animate-on-scroll opacity-0">
-            <h3
-              className="text-lg font-bold gradient-text mb-6"
-              style={{ fontFamily: "Gotham HTF" }}
-            >
+            <h3 className="font-roboto text-lg font-bold gradient-text mb-6">
               Quick Links
             </h3>
             <div className="space-y-3">
@@ -125,7 +117,7 @@ const Footer = () => {
                 <button
                   key={index}
                   onClick={link.action}
-                  className="block text-muted-foreground hover:text-primary transition-colors duration-300 hover:translate-x-2 transform"
+                  className="font-roboto font-bolf block text-muted-foreground hover:text-primary transition-colors duration-300 hover:translate-x-2 transform"
                 >
                   {link.name}
                 </button>
@@ -135,17 +127,14 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div className="animate-on-scroll opacity-0">
-            <h3
-              className="text-lg font-bold gradient-text mb-6"
-              style={{ fontFamily: "Gotham HTF" }}
-            >
+            <h3 className="font-roboto text-lg font-bold gradient-text mb-6">
               Contact Us
             </h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3 group">
                 <MapPin className="w-5 h-5 text-primary mt-1 group-hover:scale-110 transition-transform" />
                 <div>
-                  <p className="paragraph-text text-sm text-muted-foreground">
+                  <p className="font-roboto font-medium text-sm text-muted-foreground">
                     Peshawar, Khyber Pakhtunkhwa
                     <br />
                     Pakistan
@@ -158,7 +147,9 @@ const Footer = () => {
                 className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
               >
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">info@aimsmiddleeast.org</span>
+                <span className="font-roboto font-medium text-sm">
+                  info@aimsmiddleeast.org
+                </span>
               </a>
 
               <a
@@ -172,10 +163,7 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="mt-8">
-              <h4
-                className="font-semibold text-foreground mb-4"
-                style={{ fontFamily: "Gotham HTF" }}
-              >
+              <h4 className="font-roboto font-medium  text-foreground mb-4">
                 Follow Us
               </h4>
               <div className="flex space-x-4">
@@ -183,7 +171,7 @@ const Footer = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className="p-3 bg-card rounded-xl border border-border/50 text-muted-foreground hover:text-white hover:bg-gradient-primary transition-all duration-300 hover:scale-110 hover:shadow-glow group"
+                    className="font-roboto font-medium p-3 bg-card rounded-xl border border-border/50 text-muted-foreground hover:text-white hover:bg-gradient-primary transition-all duration-300 hover:scale-110 hover:shadow-glow group"
                     aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -198,10 +186,11 @@ const Footer = () => {
         <div className="border-t border-border/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="animate-on-scroll opacity-0 text-center md:text-left">
-              <p className="paragraph-text text-sm text-muted-foreground">
-                © {new Date().getFullYear()} AIMS Middle East. All Rights Reserved.
+              <p className="font-roboto font-medium text-sm text-muted-foreground">
+                © {new Date().getFullYear()} AIMS Middle East. All Rights
+                Reserved.
               </p>
-              <p className="paragraph-text text-xs text-muted-foreground mt-1">
+              <p className="font-roboto font-medium text-xs text-muted-foreground mt-1">
                 Flowing care to those in need, like the eternal Abaseen river.
               </p>
             </div>
@@ -209,13 +198,13 @@ const Footer = () => {
             <div className="flex items-center space-x-6 animate-on-scroll opacity-0">
               <a
                 href="#"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+                className="font-roboto font-medium text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 Privacy Policy
               </a>
               <a
                 href="#"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+                className="font-roboto font-medium text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 Terms of Service
               </a>
