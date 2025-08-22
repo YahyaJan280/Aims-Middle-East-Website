@@ -1,31 +1,77 @@
 import { Button } from "@/components/ui/button";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import contactImage from "@/assets/contactImage.jpg";
+import { useState } from "react";
+import { Link } from "react-router-dom"; // To use Link for navigation
+import Aims from '@/assets/Navbar-Logo-White.png'
 
 const ContactPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col">
       {/* Navbar */}
-      <Navigation />
+      <header className="sticky top-0 z-50">
+        <nav className="flex justify-between items-center bg-primary p-4 w-full">
+          {/* Logo with margin and link to Home */}
+          <div className="flex items-center ml-2 lg:ml-8">
+            <Link to="/"> {/* Clicking the logo redirects to the home page */}
+              <img
+                src={Aims}
+                alt="AIMS Logo"
+                className="h-10 lg:ml-28 ml-[-8px] sm:h-12 w-auto max-w-[120px] hover:scale-105 transition-transform duration-300"
+              />
+            </Link>
+          </div>
+
+          {/* Navigation Links */}
+          <ul
+            className={`${
+              isOpen ? 'flex' : 'hidden'
+            } flex-col sm:flex sm:flex-row sm:gap-6 gap-4 absolute sm:relative top-16 left-0 sm:top-auto sm:left-auto w-full sm:w-auto bg-primary sm:bg-transparent p-5 sm:p-0 sm:items-center`}
+          >
+            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Home</a></li>
+            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Mission</a></li>
+            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Objectives</a></li>
+            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Projects</a></li>
+            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Impact</a></li>
+            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Contact Us</a></li>
+          </ul>
+
+          {/* Get Involved Button */}
+          <button className="font-roboto font-medium hidden sm:block bg-white text-primary lg:mr-36 px-5 py-2 rounded-lg hover:bg-gray-100">
+            Get Involved
+          </button>
+
+          {/* Mobile Menu Toggle */}
+          <div
+            className="sm:hidden flex flex-col cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+            <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+            <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+          </div>
+        </nav>
+      </header>
 
       {/* Contact Section */}
-      <section className="py-20 bg-white px-6 md:px-16 pt-32">
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-12 items-stretch">
+      <section className="py-20 px-4 md:px-16 pt-22">
+        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row lg:gap-12 items-stretch">
           {/* Left: Contact Form + Cards */}
-          <div className="flex-1 flex flex-col justify-between">
+          <div className="flex-1 flex flex-col justify-between space-y-12">
             {/* Contact Form */}
             <div>
               <h2 className="font-roboto font-bold text-3xl text-gray-800 mb-2">
                 Talk to Us
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="font-roboto font-medium text-gray-600 mb-6">
                 Meet Xperience-AI – your intelligent productivity sidekick. From
                 generation.
               </p>
 
               <form action="#" method="POST" className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="font-roboto font-medium grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
                     type="text"
                     name="name"
@@ -71,23 +117,23 @@ const ContactPage = () => {
 
                 <Button
                   type="submit"
-                  className="w-full py-3 bg-primary/90 text-white rounded-md shadow-md hover:bg-blue-700 transition duration-300"
+                  className="w-full py-3 bg-primary text-white rounded-md shadow-md hover:bg-blue-700 transition duration-300"
                 >
                   Send your message
                 </Button>
               </form>
 
-              <p className="text-xs text-gray-500 mt-4">
+              <p className="font-roboto font-medium text-xs text-gray-500 mt-4">
                 By clicking, you agree to our{" "}
                 <a href="#" className="underline">
                   Terms & Conditions
                 </a>
                 ,{" "}
-                <a href="#" className="underline">
+                <a href="#" className="font-roboto font-medium underline">
                   Privacy
                 </a>{" "}
                 and{" "}
-                <a href="#" className="underline">
+                <a href="#" className="font-roboto font-medium underline">
                   Data Protection Policy
                 </a>
                 .
@@ -95,10 +141,10 @@ const ContactPage = () => {
             </div>
 
             {/* Contact Info Cards */}
-            <div className=" py-10 px-4">
-              <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-start gap-6">
+            <div className="py-10">
+              <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-center items-start gap-6">
                 {/* Office Location Card */}
-                <div className="bg-white p-6 rounded-xl rounded-br-[3rem] shadow-lg w-full md:w-1/3 text-center">
+                <div className="bg-white p-6 rounded-xl rounded-br-[3rem] shadow-lg w-full sm:w-1/3 text-center">
                   <div className="text-red-600 text-5xl mb-4">📍</div>
                   <h3 className="font-roboto text-lg font-bold text-gray-800 mb-2">
                     Office Locations
@@ -111,7 +157,7 @@ const ContactPage = () => {
                 </div>
 
                 {/* Phone Number Card */}
-                <div className="bg-white p-6 rounded-xl rounded-br-[2rem] shadow-lg w-full md:w-1/3 text-center">
+                <div className="bg-white p-6 rounded-xl rounded-br-[2rem] shadow-lg w-full sm:w-1/3 text-center">
                   <div className="font-roboto text-blue-600 text-5xl mb-4">
                     📞
                   </div>
@@ -126,7 +172,7 @@ const ContactPage = () => {
                 </div>
 
                 {/* Email Card */}
-                <div className="bg-white p-6 rounded-xl rounded-br-[2rem] shadow-lg w-full md:w-1/3 text-center">
+                <div className="bg-white p-6 rounded-xl rounded-br-[2rem] shadow-lg w-full sm:w-1/3 text-center">
                   <div className="text-red-600 text-5xl mb-4">✉️</div>
                   <h3 className="font-roboto text-lg font-bold text-gray-800 mb-2">
                     Send E-Mail
