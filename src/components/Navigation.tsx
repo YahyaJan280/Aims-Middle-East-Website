@@ -1,21 +1,36 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import aimsLogo from "@/assets/Navbar-Logo-White.png";
 
 const navItems = [
   { name: "Home", id: "hero" },
-  { name: "Mission", id: "mission" },
+  {
+    name: "Purpose",
+    children: [
+      { name: "Our Mission", id: "mission" },
+      { name: "Our Vision", id: "vision" },
+    ],
+  },
   { name: "Objectives", id: "objectives" },
   { name: "Projects", id: "projects" },
   { name: "Impact", id: "achievements" },
-  { name: "Contact Us", path: "/contact" }, // Updated: Added path for ContactPage
+  { name: "Dubai Humanitarian", id: "dubai-humanitarian" },
+  {
+    name: "Events & Activities",
+    children: [
+      { name: "Past Events", id: "past-events" },
+      { name: "Upcoming Events", id: "upcoming-events" },
+    ],
+  },
+  { name: "Contact Us", path: "/contact" },
 ];
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -23,18 +38,22 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleDropdown = (name) => {
+    setOpenDropdown(openDropdown === name ? null : name);
+  };
+
   return (
     <nav
-      className={`font-roboto font-normal  fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`font-roboto fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-primary/95 backdrop-blur-md shadow-card"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-full mx-auto bg-primary/95  px-2 sm:px-4 md:px-6 lg:px-8">
+      <div className="max-w-full mx-auto bg-primary/95 px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center py-4 sm:py-6 animate-slide-right lg:ml-[114px]">
+          <div className="flex items-center py-4 sm:py-6 lg:ml-[114px]">
             <img
               src={aimsLogo}
               alt="AIMS Logo"
@@ -43,20 +62,48 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
-            {navItems.map((item, index) =>
-              item.path ? (
-                // If the item has a path (for ContactPage), use Link
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-6">
+            {navItems.map((item) =>
+              item.children ? (
+                <div key={item.name} className="relative">
+                  <button
+                    onClick={() => toggleDropdown(item.name)}
+                    className="flex items-center text-white text-sm xl:text-base font-medium hover:text-white transition"
+                  >
+                    {item.name}
+                    <ChevronDown
+                      className={`ml-1 h-4 w-4 transition-transform ${
+                        openDropdown === item.name ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {openDropdown === item.name && (
+                    <div className="absolute left-0 mt-2 bg-white text-black rounded-lg shadow-lg min-w-[180px]">
+                      {item.children.map((child) => (
+                        <button
+                          key={child.name}
+                          onClick={() =>
+                            document
+                              .getElementById(child.id)
+                              ?.scrollIntoView({ behavior: "smooth" })
+                          }
+                          className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                        >
+                          {child.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : item.path ? (
                 <Link
                   key={item.name}
-                  to={item.path} // Navigate to the Contact page
-                  className="font-roboto  text-white text-sm xl:text-base hover:text-white transition duration-300 font-medium relative group animate-slide-up animate-delay-${(index + 1) * 100}"
+                  to={item.path}
+                  className="text-white text-sm xl:text-base font-medium hover:text-white transition"
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full" />
                 </Link>
               ) : (
-                // If the item is a section to scroll to (e.g., Mission, Projects)
                 <button
                   key={item.id}
                   onClick={() =>
@@ -64,24 +111,23 @@ const Navigation = () => {
                       .getElementById(item.id)
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
-                  className="text-white text-sm xl:text-base hover:text-white transition duration-300 font-medium relative group animate-slide-up animate-delay-${(index + 1) * 100}"
+                  className="text-white text-sm xl:text-base font-medium hover:text-white transition"
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full" />
                 </button>
               )
             )}
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:block animate-slide-left lg:mr-[130px]">
+          <div className="hidden lg:block lg:mr-[130px]">
             <Button
               onClick={() =>
                 document
                   .getElementById("cta")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="font-roboto  text-sm font-semibold text-primary bg-white hover:bg-white hover:text-primary"
+              className="text-sm font-semibold text-primary hover:bg-white  bg-white hover:text-primary"
             >
               Get Involved
             </Button>
@@ -89,7 +135,7 @@ const Navigation = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden px-2 text-white hover:text-white transition duration-300"
+            className="lg:hidden px-2 text-white hover:text-white transition"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -100,30 +146,52 @@ const Navigation = () => {
         {/* Mobile Menu */}
         <div
           className={`lg:hidden transition-all duration-300 overflow-hidden ${
-            isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            isMobileMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="py-4 space-y-2 bg-background/95 backdrop-blur-md rounded-lg mt-2 border border-border">
+          <div className="py-4 space-y-1 bg-background/95 backdrop-blur-md rounded-lg mt-2 border border-border text-left">
             {navItems.map((item) =>
-              item.path ? (
-                // If the item has a path (for ContactPage), use Link
+              item.children ? (
+                <div key={item.name} className="px-4">
+                  <details>
+                    <summary className="cursor-pointer py-2 text-sm sm:text-base text-foreground font-medium text-left">
+                      {item.name}
+                    </summary>
+                    <ul className="pl-4">
+                      {item.children.map((child) => (
+                        <li key={child.name}>
+                          <button
+                            onClick={() =>
+                              document
+                                .getElementById(child.id)
+                                ?.scrollIntoView({ behavior: "smooth" })
+                            }
+                            className="block w-full py-1 text-sm sm:text-base text-foreground hover:text-primary text-left"
+                          >
+                            {child.name}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                </div>
+              ) : item.path ? (
                 <Link
                   key={item.name}
-                  to={item.path} // Navigate to the Contact page
-                  className="font-roboto block w-full text-left px-4 py-2 text-sm sm:text-base text-foreground hover:text-primary hover:bg-accent/10 transition duration-300 font-medium"
+                  to={item.path}
+                  className="block w-full px-4 py-2 text-sm sm:text-base text-foreground hover:text-primary hover:bg-accent/10 font-medium text-left"
                 >
                   {item.name}
                 </Link>
               ) : (
-                // If the item is a section to scroll to
                 <button
                   key={item.id}
-                  onClick={() =>
-                    document
-                      .getElementById(item.id)
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="block w-full text-left px-4 py-2 text-sm sm:text-base text-foreground hover:text-primary hover:bg-accent/10 transition duration-300 font-medium"
+                  // onClick={() =>
+                  //   document
+                  //     .getElementById(item.id)
+                  //     ?.scrollIntoView({ behavior: "smooth" })
+                  // }
+                  className="block w-full px-4 py-2 text-sm sm:text-base text-foreground hover:text-primary hover:bg-accent/10 font-medium text-left"
                 >
                   {item.name}
                 </button>
@@ -132,12 +200,7 @@ const Navigation = () => {
             <div className="px-4 pt-2">
               <Button
                 variant="gradient"
-                onClick={() =>
-                  document
-                    .getElementById("cta")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="font-roboto  w-full text-sm font-normal"
+                className="w-full text-sm font-normal text-left"
               >
                 Get Involved
               </Button>

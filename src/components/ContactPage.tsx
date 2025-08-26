@@ -12,7 +12,7 @@ const ContactPage = () => {
     <div className="bg-gray-50 min-h-screen flex flex-col">
       {/* Navbar */}
       <header className="sticky top-0 z-50">
-        <nav className="flex justify-between items-center bg-primary p-4 w-full">
+        <nav className="flex justify-between  items-center bg-primary p-4 w-full">
           {/* Logo with margin and link to Home */}
           <div className="flex items-center ml-2 lg:ml-8">
             <Link to="/"> {/* Clicking the logo redirects to the home page */}
@@ -31,15 +31,17 @@ const ContactPage = () => {
             } flex-col sm:flex sm:flex-row sm:gap-6 gap-4 absolute sm:relative top-16 left-0 sm:top-auto sm:left-auto w-full sm:w-auto bg-primary sm:bg-transparent p-5 sm:p-0 sm:items-center`}
           >
             <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Home</a></li>
-            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Mission</a></li>
+            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Purpose</a></li>
             <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Objectives</a></li>
             <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Projects</a></li>
             <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Impact</a></li>
+            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Dubai Humanitarian</a></li>
+            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Events & Activities</a></li>
             <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Contact Us</a></li>
           </ul>
 
           {/* Get Involved Button */}
-          <button className="font-roboto font-medium hidden sm:block bg-white text-primary lg:mr-36 px-5 py-2 rounded-lg hover:bg-gray-100">
+          <button className="font-roboto font-medium hidden sm:block bg-white text-primary md:mr-8 lg:mr-36 px-5 py-2 rounded-lg hover:bg-gray-100">
             Get Involved
           </button>
 
@@ -56,7 +58,7 @@ const ContactPage = () => {
       </header>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 md:px-16 pt-22">
+      <section className="py-20 px-4 md:px-40 pt-22">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row lg:gap-12 items-stretch">
           {/* Left: Contact Form + Cards */}
           <div className="flex-1 flex flex-col justify-between space-y-12">
