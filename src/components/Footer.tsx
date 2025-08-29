@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import aimsLogo from "@/assets/Footer-Logo.png";
+import { Link } from "react-router-dom"; // Import Link for routing
 
 const Footer = () => {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -72,9 +73,7 @@ const Footer = () => {
 
   return (
     <footer id="footer" ref={footerRef} className="bg-muted/50 pt-10 pb-8">
-      {/* Added max-width and consistent responsive paddings */}
       <div className="max-w-7xl mx-auto px-4 sm:px-2 lg:px-8 lg:ml-[120px]">
-        {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
           {/* Logo & Description */}
           <div className="lg:col-span-2 animate-on-scroll opacity-0">
@@ -96,7 +95,7 @@ const Footer = () => {
             <div className="bg-card p-6 rounded-xl border border-border/50 shadow-card">
               <div className="flex items-center space-x-3 mb-3">
                 <Heart className="w-5 h-5 text-primary" />
-                <span className="font-roboto font-medium  gradient-text">
+                <span className="font-roboto font-medium gradient-text">
                   Our Promise
                 </span>
               </div>
@@ -163,7 +162,7 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="mt-8">
-              <h4 className="font-roboto font-medium  text-foreground mb-4">
+              <h4 className="font-roboto font-medium text-foreground mb-4">
                 Follow Us
               </h4>
               <div className="flex space-x-4">
@@ -196,18 +195,19 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center space-x-6 animate-on-scroll opacity-0">
-              <a
-                href="#"
+              <Link
+                to="/privacy-policy"
+               // Use Link for client-side routing
                 className="font-roboto font-medium text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 Privacy Policy
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/terms-of-service" // Use Link for client-side routing
                 className="font-roboto font-medium text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 Terms of Service
-              </a>
+              </Link>
               <button
                 onClick={scrollToTop}
                 className="p-2 bg-card rounded-lg border border-border/50 text-muted-foreground hover:text-white hover:bg-gradient-primary transition-all duration-300 hover:scale-110 group"

@@ -13,7 +13,7 @@ const HeroSlider = () => {
       title: "AIMS Middle East",
       subtitle: "Strength in Care",
       description:
-        "Leading comprehensive diabetes healthcare across the Middle East",
+        "Leading social welfare diabetes helatcare organzation serving globally",
     },
     {
       image: heroCommunity,

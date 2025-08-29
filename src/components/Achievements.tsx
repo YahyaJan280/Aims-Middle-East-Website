@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import MembershipSection from '@/components/DubaiHumanitarian'
 import {
   Users,
   GraduationCap,
@@ -165,6 +166,7 @@ const Achievements = () => {
   ];
 
   return (
+    <>
     <section
       id="achievements"
       ref={sectionRef}
@@ -294,6 +296,8 @@ const Achievements = () => {
         </div>
       </div>
     </section>
+    <MembershipSection />
+    </>
   );
 };
 

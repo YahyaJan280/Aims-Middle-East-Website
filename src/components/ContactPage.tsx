@@ -28,22 +28,17 @@ const ContactPage = () => {
           <ul
             className={`${
               isOpen ? 'flex' : 'hidden'
-            } flex-col sm:flex sm:flex-row sm:gap-6 gap-4 absolute sm:relative top-16 left-0 sm:top-auto sm:left-auto w-full sm:w-auto bg-primary sm:bg-transparent p-5 sm:p-0 sm:items-center`}
+            } flex-col sm:flex sm:flex-row mr-96  sm:gap-6 gap-4 absolute sm:relative top-16 left-0 sm:top-auto sm:left-auto w-full sm:w-auto bg-primary sm:bg-transparent p-5 sm:p-0 sm:items-center`}
           >
             <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Home</a></li>
             <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Purpose</a></li>
             <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Objectives</a></li>
             <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Projects</a></li>
             <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Impact</a></li>
-            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Dubai Humanitarian</a></li>
-            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Events & Activities</a></li>
             <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Contact Us</a></li>
           </ul>
 
           {/* Get Involved Button */}
-          <button className="font-roboto font-medium hidden sm:block bg-white text-primary md:mr-8 lg:mr-36 px-5 py-2 rounded-lg hover:bg-gray-100">
-            Get Involved
-          </button>
 
           {/* Mobile Menu Toggle */}
           <div

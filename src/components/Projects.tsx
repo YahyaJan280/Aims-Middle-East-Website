@@ -34,10 +34,18 @@ const Projects = () => {
       id: 1,
       name: "Sugar Hospital",
       location: "Peshawar, Pakistan",
-      longDescription: "Sugar Hospital represents...",
-      stats: { patients: "3,500+", staff: "85", established: "2022" },
-      features: ["24/7 Emergency...", "Specialized endocrinology..."],
-      impact: ["Reduced diabetes complications...", "Trained 200+..."],
+      longDescription:
+        "Sugar Hospital represents the forefront of healthcare innovation, focusing on diabetes and NCD treatment.",
+      stats: { patients: "3,500+", staff: "52", established: "1985" },
+      features: [
+        "24/7 Emergency services",
+        "Specialized endocrinology departments",
+        "Advanced diagnostic tools",
+      ],
+      impact: [
+        "Reduced diabetes complications by 40%",
+        "Trained 200+ healthcare professionals",
+      ],
     },
   ];
 
@@ -45,28 +53,28 @@ const Projects = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className=" bg-background  mt-10 lg:mt-0"
+      className="bg-background mt-10 lg:mt-0 py-16"
     >
-      <div className="container font-roboto font-bold mx-auto px-4 sm:px-6 lg:px-8 mt-8 ">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <div className="text-center font-roboto font-bold mb-10 sm:mb-16 ">
-          <h2 className="font-roboto text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 animate-on-scroll opacity-0">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="font-roboto font-bold text-3xl sm:text-4xl lg:text-6xl mb-4 animate-on-scroll opacity-0">
             <span className="gradient-text">Our Projects</span>
           </h2>
-          <p className="font-roboto font-normal text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto animate-on-scroll opacity-0">
-            Transforming healthcare delivery...
+          <p className="font-roboto font-medium text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto animate-on-scroll opacity-0">
+            Transforming healthcare delivery and improving lives across regions.
           </p>
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8 animate-on-scroll opacity-0">
+        <div className="flex flex-wrap justify-center gap-4 mb-8 animate-on-scroll opacity-0">
           {projects.map((project, index) => (
             <button
               key={project.id}
               onClick={() => setActiveProject(index)}
-              className={` px-4 sm:px-6 py-2  sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-all duration-300 ${
+              className={`px-6 py-3 rounded-xl text-sm sm:text-base font-roboto font-medium transition-all duration-300 ${
                 activeProject === index
-                  ? "bg-gradient-primary text-white"
+                  ? "bg-gradient-primary text-white shadow-lg"
                   : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
               }`}
             >
@@ -81,22 +89,22 @@ const Projects = () => {
             <div className="grid gap-8 lg:grid-cols-2">
               {/* Left Column */}
               <div>
-                <div className="flex items-center gap-4 mb-4 sm:mb-6 ">
+                <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-gradient-primary rounded-xl">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-roboto  text-2xl sm:text-2xl font-bold gradient-text">
+                    <h3 className="font-roboto font-bold text-2xl sm:text-2xl gradient-text">
                       {projects[activeProject].name}
                     </h3>
-                    <p className="font-roboto font-normal text-sm text-muted-foreground mt-1 flex items-center">
+                    <p className="font-roboto font-medium text-sm text-muted-foreground mt-1 flex items-center">
                       <MapPin className="w-4 h-4 mr-1" />
                       {projects[activeProject].location}
                     </p>
                   </div>
                 </div>
 
-                <p className="font-roboto font-normal text-sm sm:text-base lg:text-lg text-muted-foreground mb-6">
+                <p className="font-roboto  font-medium text-sm sm:text-base lg:text-lg text-muted-foreground mb-6">
                   {projects[activeProject].longDescription}
                 </p>
 
@@ -106,17 +114,14 @@ const Projects = () => {
                     ([label, value]) => (
                       <div
                         key={label}
-                        className={`text-center p-3 sm:p-4 bg-accent/10 rounded-xl border border-border/30 
-                      ${
-                        label.toLowerCase() === "established"
-                          ? "col-span-2"
-                          : ""
-                      }`}
+                        className={`text-center p-3 sm:p-4 bg-accent/10 rounded-xl border border-border/30 ${
+                          label.toLowerCase() === "established" ? "col-span-2" : ""
+                        }`}
                       >
-                        <div className="text-lg sm:text-xl font-bold gradient-text">
+                        <div className="text-lg sm:text-xl font-roboto font-bold gradient-text">
                           {value}
                         </div>
-                        <div className="text-xs sm:text-sm text-muted-foreground">
+                        <div className="text-xs  sm:text-sm font-roboto font-medium text-muted-foreground">
                           {label.charAt(0).toUpperCase() + label.slice(1)}
                         </div>
                       </div>
@@ -126,56 +131,67 @@ const Projects = () => {
 
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button
-                    variant="gradient"
-                    className="font-roboto font-normal w-full sm:w-auto text-sm sm:text-base"
+                  <a
+                    href="https://sugarhospital.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="font-roboto font-normal  w-full sm:w-auto text-sm sm:text-base"
+                    <Button
+                      variant="gradient"
+                      className="font-roboto font-medium w-full sm:w-auto text-sm sm:text-base"
+                    >
+                      Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </a>
+
+                  <a
+                    href="https://sugarhospital.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <ExternalLink className="mr-2 w-4 h-4" /> Visit Project
-                  </Button>
+                    <Button
+                      variant="outline"
+                      className="font-roboto font-medium w-full sm:w-auto text-sm sm:text-base"
+                    >
+                      <ExternalLink className="mr-2 w-4 h-4" /> Visit Project
+                    </Button>
+                  </a>
                 </div>
               </div>
 
               {/* Right Column */}
               <div className="space-y-8">
+                {/* Key Features */}
                 <div>
-                  <h3 className="font-roboto text-3xl sm:text-xl font-bold gradient-text mb-2">
+                  <h3 className="font-roboto font-bold text-2xl sm:text-xl gradient-text mb-2">
                     Key Features
                   </h3>
                   <ul className="space-y-2">
                     {projects[activeProject].features.map((feature, i) => (
                       <li
                         key={i}
-                        className="font-roboto font-normal flex items-start gap-2"
+                        className="font-roboto font-medium flex items-start gap-2"
                       >
-                        <div className="mt-1 lg:mt-1 w-3 h-3 bg-gradient-primary rounded-full"></div>
-                        <span className="text-sm lg:mt-[-2px] mt-[-2px] sm:text-base">
-                          {feature}
-                        </span>
+                        <div className="mt-1 w-3 h-3 bg-gradient-primary rounded-full"></div>
+                        <span className="text-sm sm:text-base">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
+                {/* Measurable Impact */}
                 <div>
-                  <h3 className="font-roboto text-2xl sm:text-xl font-bold gradient-text mb-2">
+                  <h3 className="font-roboto font-bold text-2xl sm:text-xl gradient-text mb-2">
                     Measurable Impact
                   </h3>
                   <ul className="space-y-2">
                     {projects[activeProject].impact.map((impact, i) => (
                       <li
                         key={i}
-                        className="font-roboto font-normal flex items-start gap-2 p-2 bg-accent/10 border-l-4 border-secondary"
+                        className="font-roboto font-medium flex items-start gap-2 p-2 bg-accent/10 border-l-4 border-secondary"
                       >
-                        <div className="mt-1 lg:mt-2 w-3 h-3 bg-gradient-secondary rounded-full"></div>
-                        <span className="font-roboto font-normal text-sm lg:mt-0 mt-[-2px] sm:text-base">
-                          {impact}
-                        </span>
+                        <div className="mt-1 w-3 h-3 bg-gradient-secondary rounded-full"></div>
+                        <span className="text-sm sm:text-base">{impact}</span>
                       </li>
                     ))}
                   </ul>
@@ -190,14 +206,14 @@ const Projects = () => {
           <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-br-full opacity-20 mix-blend-lighten z-10"></div>
           <div className="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-tl-full opacity-20 mix-blend-lighten z-10"></div>
           <div className="relative z-10 p-6 sm:p-8 lg:p-12">
-            <h3 className="font-roboto text-lg sm:text-xl lg:text-4xl font-bold text-white mb-3">
+            <h3 className="font-roboto font-bold text-lg sm:text-xl lg:text-4xl text-white mb-3">
               Join Our Mission
             </h3>
-            <p className="font-roboto font-normal text-white text-sm sm:text-base lg:text-lg mb-4 max-w-2xl mx-auto">
+            <p className="font-roboto font-medium text-white text-sm sm:text-base lg:text-lg mb-4 max-w-2xl mx-auto">
               Every project represents hope, healing, and transformation...
             </p>
             <Button
-              className="font-roboto font-normal animate-pulse-glow bg-white text-primary hover:text-white"
+              className="font-roboto font-medium animate-pulse-glow bg-white text-primary hover:text-white"
               size="lg"
             >
               Partner With Us
