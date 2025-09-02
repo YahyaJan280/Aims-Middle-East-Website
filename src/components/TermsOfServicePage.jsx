@@ -1,17 +1,55 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Aims from '@/assets/Navbar-Logo-White.png'
+ 
+ import { useState } from "react";
 
 export default function TermsOfService() {
+const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-primary sticky top-0  shadow border-b border-border">
-        <div className="max-w-4xl font-roboto mx-auto px-6 py-4 text-center">
-          <h1 className="text-4xl font-roboto font-bold text-white mb-2">
-            AIMS Middle East
-          </h1>
-          <p className="text-xl font-roboto text-white font-medium">Terms of Service</p>
-        </div>
-      </header>
+    <header className="sticky top-0 z-50">
+            <nav className="flex justify-between  items-center bg-primary p-4 w-full">
+              {/* Logo with margin and link to Home */}
+              <div className="flex items-center ml-2 lg:ml-8">
+                <Link to="/"> {/* Clicking the logo redirects to the home page */}
+                  <img
+                    src={Aims}
+                    alt="AIMS Logo"
+                    className="h-10 lg:ml-28 ml-[-8px] sm:h-12 w-auto max-w-[120px] hover:scale-105 transition-transform duration-300"
+                  />
+                </Link>
+              </div>
+    
+              {/* Navigation Links */}
+              <ul
+                className={`${
+                  isOpen ? 'flex' : 'hidden'
+                } flex-col sm:flex sm:flex-row mr-96  sm:gap-6 gap-4 absolute sm:relative top-16 left-0 sm:top-auto sm:left-auto w-full sm:w-auto bg-primary sm:bg-transparent p-5 sm:p-0 sm:items-center`}
+              >
+                <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Home</a></li>
+                <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Purpose</a></li>
+                <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Objectives</a></li>
+                <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Projects</a></li>
+                <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Impact</a></li>
+                <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Contact Us</a></li>
+              </ul>
+    
+              {/* Get Involved Button */}
+    
+              {/* Mobile Menu Toggle */}
+              <div
+                className="sm:hidden flex flex-col cursor-pointer"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+                <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+                <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+              </div>
+            </nav>
+          </header>
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">

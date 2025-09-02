@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import contactImage from "@/assets/contactImage.jpg";
 import { useState } from "react";
 import { Link } from "react-router-dom"; // To use Link for navigation
-import Aims from '@/assets/Navbar-Logo-White.png'
+import Aims from "@/assets/Navbar-Logo-White.png";
 
 const ContactPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,9 @@ const ContactPage = () => {
         <nav className="flex justify-between  items-center bg-primary p-4 w-full">
           {/* Logo with margin and link to Home */}
           <div className="flex items-center ml-2 lg:ml-8">
-            <Link to="/"> {/* Clicking the logo redirects to the home page */}
+            <Link to="/">
+              {" "}
+              {/* Clicking the logo redirects to the home page */}
               <img
                 src={Aims}
                 alt="AIMS Logo"
@@ -27,15 +29,57 @@ const ContactPage = () => {
           {/* Navigation Links */}
           <ul
             className={`${
-              isOpen ? 'flex' : 'hidden'
+              isOpen ? "flex" : "hidden"
             } flex-col sm:flex sm:flex-row mr-96  sm:gap-6 gap-4 absolute sm:relative top-16 left-0 sm:top-auto sm:left-auto w-full sm:w-auto bg-primary sm:bg-transparent p-5 sm:p-0 sm:items-center`}
           >
-            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Home</a></li>
-            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Purpose</a></li>
-            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Objectives</a></li>
-            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Projects</a></li>
-            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Impact</a></li>
-            <li><a href="#" className="font-roboto font-medium text-white hover:text-gray-300">Contact Us</a></li>
+            <li>
+              <a
+                href="#"
+                className="font-roboto font-medium text-white hover:text-gray-300"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="font-roboto font-medium text-white hover:text-gray-300"
+              >
+                Purpose
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="font-roboto font-medium text-white hover:text-gray-300"
+              >
+                Objectives
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="font-roboto font-medium text-white hover:text-gray-300"
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="font-roboto font-medium text-white hover:text-gray-300"
+              >
+                Impact
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="font-roboto font-medium text-white hover:text-gray-300"
+              >
+                Contact Us
+              </a>
+            </li>
           </ul>
 
           {/* Get Involved Button */}
@@ -189,7 +233,9 @@ const ContactPage = () => {
             <img
               src={contactImage}
               alt="Contact Office"
-              className="rounded-lg shadow-lg w-full h-full max-h-[700px] object-cover"
+              loading="lazy"
+              decoding="async"
+              className="rounded-lg shadow-lg w-full h-full max-h-[700px] object-cover object-center"
             />
           </div>
         </div>

@@ -46,7 +46,7 @@ const MissionVision = () => {
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 animate-on-scroll opacity-0">
-            <span className="gradient-text font-roboto">Our Purpose</span>
+            <span className="gradient-textgradient-text font-roboto">Our Purpose</span>
           </h2>
           <p className="font-roboto  text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto animate-on-scroll opacity-0">
             Like the flowing waters of the Abaseen river, we bring life, hope,

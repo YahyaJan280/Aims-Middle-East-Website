@@ -147,7 +147,25 @@ const Footer = () => {
               >
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span className="font-roboto font-medium text-sm">
-                  info@aimsmiddleeast.org
+                  hziah@hotmail.com
+                </span>
+              </a>
+  <a
+                href="mailto:info@aimsmiddleeast.org"
+                className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
+              >
+                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span className="font-roboto font-medium text-sm">
+                  asdkhn@gmail.com
+                </span>
+              </a>
+              <a
+                href="mailto:info@aimsmiddleeast.org"
+                className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
+              >
+                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span className="font-roboto font-medium text-sm">
+                  faisalinam@gmail.com
                 </span>
               </a>
 
@@ -156,7 +174,21 @@ const Footer = () => {
                 className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
               >
                 <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">+92 (000) 000-0000</span>
+                <span className="text-sm">+971 50 769 8076 </span>
+              </a>
+               <a
+                href="tel:+92000000000"
+                className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
+              >
+                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span className="text-sm">+971 50 950 2616 </span>
+              </a>
+               <a
+                href="tel:+92000000000"
+                className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
+              >
+                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span className="text-sm">+971 56 170 0567</span>
               </a>
             </div>
 
