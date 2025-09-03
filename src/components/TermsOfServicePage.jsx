@@ -11,79 +11,87 @@ export default function TermsOfService() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-50">
-            <nav className="flex items-center justify-between bg-primary p-4 w-full">
-              {/* Logo */}
-              <div className="flex items-center ml-2 lg:ml-8">
-                <Link to="/">
-                  <img
-                    src={Aims}
-                    alt="AIMS Logo"
-                    className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-28 transition-transform duration-300"
-                  />
-                </Link>
-              </div>
-    
-              {/* Navigation Links (centered) */}
-              <ul
-                className={`${
-                  isOpen ? "flex" : "hidden"
-                } flex-col sm:flex sm:flex-row justify-center items-center sm:gap-8 gap-4
+        <nav className="flex items-center justify-between bg-primary p-4 w-full">
+          {/* Logo */}
+          <div className="flex items-center ml-2 lg:ml-8">
+            <Link to="/">
+              <img
+                src={Aims}
+                alt="AIMS Logo"
+                className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-28 transition-transform duration-300"
+              />
+            </Link>
+          </div>
+
+          {/* Navigation Links (centered) */}
+          <ul
+            className={`${
+              isOpen ? "flex" : "hidden"
+            } flex-col sm:flex sm:flex-row justify-center items-center sm:gap-8 gap-4
          absolute sm:absolute sm:top-1/2 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2
          w-full sm:w-auto bg-primary sm:bg-transparent sm:p-0`}
+          >
+            <li>
+              <a
+                href="#"
+                className="font-roboto font-medium text-white hover:text-gray-300"
               >
-                <li>
-                  <a
-                    href="#"
-                    className="font-roboto font-medium text-white hover:text-gray-300"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="font-roboto font-medium text-white hover:text-gray-300"
-                  >
-                    Purpose
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="font-roboto font-medium text-white hover:text-gray-300"
-                  >
-                    Objectives
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="font-roboto font-medium text-white hover:text-gray-300"
-                  >
-                    Projects
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="font-roboto font-medium text-white hover:text-gray-300"
-                  >
-                    Impact
-                  </a>
-                </li>
-              </ul>
-    
-              {/* Mobile Menu Toggle */}
-              <div
-                className="sm:hidden flex flex-col cursor-pointer"
-                onClick={() => setIsOpen(!isOpen)}
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="font-roboto font-medium text-white hover:text-gray-300"
               >
-                <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
-                <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
-                <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
-              </div>
-            </nav>
-          </header>
+                Purpose
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="font-roboto font-medium text-white hover:text-gray-300"
+              >
+                Objectives
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="font-roboto font-medium text-white hover:text-gray-300"
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="font-roboto font-medium text-white hover:text-gray-300"
+              >
+                Impact
+              </a>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className="font-roboto font-medium text-white hover:text-gray-300"
+              >
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+
+          {/* Mobile Menu Toggle */}
+          <div
+            className="sm:hidden flex flex-col cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+            <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+            <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+          </div>
+        </nav>
+      </header>
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
@@ -253,13 +261,7 @@ export default function TermsOfService() {
 
           {/* Footer Notice */}
           <div className="mt-12 pt-8 border-t border-border">
-            <div className="bg-accent rounded-lg p-6">
-              <p className="text-sm text-accent-foreground font-roboto text-center">
-                <strong>Important Notice:</strong> These terms are effective as
-                of the date specified above. For questions regarding these
-                terms, please contact AIMS Middle East directly.
-              </p>
-            </div>
+            
           </div>
         </div>
       </main>

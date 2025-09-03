@@ -178,8 +178,6 @@ const ContactPage = () => {
                   </h3>
                   <p className="font-roboto font-medium text-gray-600 text-sm leading-relaxed">
                     +971 50 950 2616
-                    <br />
-                    Emergency
                   </p>
                 </div>
 

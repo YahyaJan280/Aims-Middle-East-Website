@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-        <header className="sticky top-0 z-50">
+      <header className="sticky top-0 z-50">
         <nav className="flex items-center justify-between bg-primary p-4 w-full">
           {/* Logo */}
           <div className="flex items-center ml-2 lg:ml-8">
@@ -26,20 +26,20 @@ export default function PrivacyPolicy() {
             className={`${
               isOpen ? "flex" : "hidden"
             } flex-col sm:flex sm:flex-row justify-center items-center sm:gap-8 gap-4
-     absolute sm:absolute sm:top-1/2 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2
-     w-full sm:w-auto bg-primary sm:bg-transparent sm:p-0`}
+   absolute sm:absolute sm:top-1/2 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2
+   w-full sm:w-auto bg-primary sm:bg-transparent sm:p-0`}
           >
             <li>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="font-roboto font-medium text-white hover:text-gray-300"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
               <a
-                href="#"
+                href="#purpose"
                 className="font-roboto font-medium text-white hover:text-gray-300"
               >
                 Purpose
@@ -47,7 +47,7 @@ export default function PrivacyPolicy() {
             </li>
             <li>
               <a
-                href="#"
+                href="#objectives"
                 className="font-roboto font-medium text-white hover:text-gray-300"
               >
                 Objectives
@@ -55,7 +55,7 @@ export default function PrivacyPolicy() {
             </li>
             <li>
               <a
-                href="#"
+                href="#projects"
                 className="font-roboto font-medium text-white hover:text-gray-300"
               >
                 Projects
@@ -63,13 +63,21 @@ export default function PrivacyPolicy() {
             </li>
             <li>
               <a
-                href="#"
+                href="#impact"
                 className="font-roboto font-medium text-white hover:text-gray-300"
               >
                 Impact
               </a>
             </li>
-           
+            {/* Contact Us link */}
+            <li>
+              <Link
+                to="/contact"
+                className="font-roboto font-medium text-white hover:text-gray-300"
+              >
+                Contact Us
+              </Link>
+            </li>
           </ul>
 
           {/* Mobile Menu Toggle */}
@@ -235,15 +243,7 @@ export default function PrivacyPolicy() {
           </div>
 
           {/* Footer Notice */}
-          <div className="mt-12 pt-8 border-t border-border">
-            <div className="bg-accent rounded-lg p-6">
-              <p className="text-sm text-accent-foreground font-roboto font-medium text-center">
-                <strong>Important Notice:</strong> This Privacy Policy is
-                effective as of the date specified above. For questions, please
-                contact AIMS Middle East directly.
-              </p>
-            </div>
-          </div>
+          <div className="mt-12 pt-8 border-t border-border"></div>
         </div>
       </main>
     </div>
