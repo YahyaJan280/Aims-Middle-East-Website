@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ContactPage from "./components/ContactPage";
 import TermsOfServicePage from"./components/TermsOfServicePage"
-
+import ScrollToTop from "./components/ScrollToTop";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -18,6 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <HashRouter>
+         <ScrollToTop />
         <Routes>
           <Route path="/contact" element={<ContactPage />} />
          <Route path="/privacy-policy" element={<PrivacyPolicyPage/>} />

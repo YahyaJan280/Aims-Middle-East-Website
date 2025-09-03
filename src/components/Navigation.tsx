@@ -9,7 +9,7 @@ const navItems = [
   { name: "Objectives", id: "objectives" },
   { name: "Projects", id: "projects" },
   { name: "Impact", id: "achievements" },
-  { name: "Contact Us", path: "/contact" }, // ✅ replaced Get Involved dropdown
+  { name: "Contact Us", path: "/contact" },
 ];
 
 const Navigation = () => {
@@ -30,19 +30,19 @@ const Navigation = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-full mx-auto px-4 md:px-8">
+      <div className="max-w-full mx-auto px-4  md:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-           <Link to="/"> {/* Clicking the logo redirects to the home page */}
-              <img
-                src={aimsLogo}
-                alt="AIMS Logo"
-                className="h-10 lg:ml-28 px-2 sm:h-12 w-auto max-w-[120px] hover:scale-105 transition-transform duration-300"
-              />
-            </Link>
+          {/* Logo (left) */}
+          <Link to="/">
+            <img
+              src={aimsLogo}
+              alt="AIMS Logo"
+              className="h-10 px-2 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-28 transition-transform duration-300"
+            />
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center  lg:mr-96 space-x-6">
+          {/* Desktop Navigation (center) */}
+          <div className="hidden lg:flex flex-1 justify-center space-x-8 mt-6 lg:mr-48">
             {navItems.map((item) =>
               item.path ? (
                 <Link
@@ -68,7 +68,7 @@ const Navigation = () => {
             )}
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle (right) */}
           <button
             className="lg:hidden px-2 text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -77,7 +77,7 @@ const Navigation = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu (centered in small screens) */}
         <div
           className={`lg:hidden transition-all duration-300 overflow-hidden ${
             isMobileMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
@@ -89,19 +89,14 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="block w-full px-4 py-2 text-base text-white hover:text-gray-300 text-left"
+                  className="block w-full px-4 py-2 text-base text-white hover:text-gray-300 text-center"
                 >
                   {item.name}
                 </Link>
               ) : (
                 <button
                   key={item.id}
-                  // onClick={() =>
-                  //   document
-                  //     .getElementById(item.id)
-                  //     ?.scrollIntoView({ behavior: "smooth" })
-                  // }
-                  className="block w-full px-4 py-2 text-base text-white hover:text-gray-300 text-left"
+                  className="block w-full px-4 py-2 text-base text-white hover:text-gray-300 text-center"
                 >
                   {item.name}
                 </button>
