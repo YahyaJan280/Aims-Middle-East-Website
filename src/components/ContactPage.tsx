@@ -1,216 +1,326 @@
-import { Button } from "@/components/ui/button";
-import Footer from "@/components/Footer";
-import contactImage from "@/assets/contactImage.jpg";
-import { useState } from "react";
-import { Link } from "react-router-dom"; // To use Link for navigation
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Aims from "@/assets/Navbar-Logo-White.png";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Send,
+  User,
+  MessageSquare,
+  Building,
+  Headphones,
+  PhoneCall,
+} from "lucide-react";
+import Footer from "./Footer";
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.MouseEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    // Handle form submission here
+    alert("Message sent successfully!");
+    setFormData({ fullName: "", email: "", phone: "", message: "" });
+  };
+
+  const contactCards = [
+    {
+      icon: <MapPin className="w-8 h-8" />,
+      title: "Office Address",
+      content: "Peshawar, Khyber Pakhtunkhwa, Pakistan",
+      color: "text-blue-600",
+    },
+    {
+      icon: <Mail className="w-8 h-8" />,
+      title: "Work Email",
+      content: "faisalinam1972@gmail.com",
+      color: "text-indigo-600",
+    },
+    {
+      icon: <Mail className="w-8 h-8" />,
+      title: "Support Email",
+      content: "hZiah@hotmail.com",
+      color: "text-indigo-600",
+    },
+    {
+      icon: <Building className="w-8 h-8" />,
+      title: "Office Phone",
+      content: "+971 50 950 2616",
+      color: "text-emerald-600",
+    },
+    {
+      icon: <PhoneCall className="w-8 h-8" />,
+      title: "Mobile Support",
+      content: "+971 50 769 8076",
+      color: "text-emerald-600",
+    },
+    {
+      icon: <Headphones className="w-8 h-8" />,
+      title: "Customer Service",
+      content: "+971 56 170 0567",
+      color: "text-emerald-600",
+    },
+  ];
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-gray-50 min-h-screen flex flex-col">
-      {/* Navbar */}
-      <header className="sticky top-0 z-50">
-        <nav className="flex items-center justify-between bg-primary p-4 w-full">
-          {/* Logo */}
-          <div className="flex items-center ml-2 lg:ml-8">
-            <Link to="/">
-              <img
-                src={Aims}
-                alt="AIMS Logo"
-                className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-28 transition-transform duration-300"
-              />
-            </Link>
-          </div>
-
-          {/* Navigation Links (centered) */}
-          <ul
-            className={`${
-              isOpen ? "flex" : "hidden"
-            } flex-col sm:flex sm:flex-row justify-center items-center sm:gap-8 gap-4
-     absolute sm:absolute sm:top-1/2 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2
-     w-full sm:w-auto bg-primary sm:bg-transparent sm:p-0`}
-          >
-            <li>
-              <a
-                href="#"
-                className="font-roboto font-medium text-white hover:text-gray-300"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="font-roboto font-medium text-white hover:text-gray-300"
-              >
-                Purpose
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="font-roboto font-medium text-white hover:text-gray-300"
-              >
-                Objectives
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="font-roboto font-medium text-white hover:text-gray-300"
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="font-roboto font-medium text-white hover:text-gray-300"
-              >
-                Impact
-              </a>
-            </li>
-          </ul>
-
-          {/* Mobile Menu Toggle */}
-          <div
-            className="sm:hidden flex flex-col cursor-pointer"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
-            <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
-            <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
-          </div>
-        </nav>
-      </header>
-
-      {/* Contact Section */}
-      <section className="py-20 px-4 md:px-40 pt-12">
-        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row lg:gap-12 items-stretch">
-          {/* Left: Contact Form + Cards */}
-          <div className="flex-1 flex flex-col justify-between space-y-12">
-            {/* Contact Form */}
-            <div>
-              <h2 className="font-roboto font-bold text-3xl text-center gradient-text mb-2">
-                Talk to Us
-              </h2>
-              <form action="#" method="POST" className="space-y-6 mt-6">
-                <div className="font-roboto font-medium grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Full Name"
-                    className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    required
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    required
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols gap-4">
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone number"
-                    className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    required
-                  />
-                </div>
-
-                <textarea
-                  name="message"
-                  placeholder="How can we help?"
-                  className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  required
-                ></textarea>
-
-                <Button
-                  type="submit"
-                  className="w-full py-3 bg-primary text-white rounded-md shadow-md hover:bg-blue-700 transition duration-300"
-                >
-                  Send your message
-                </Button>
-              </form>
-
-              <p className="font-roboto font-medium text-xs text-gray-500 mt-4">
-                By clicking, you agree to our{" "}
-                <a href="#" className="underline">
-                  Terms & Conditions
-                </a>
-                ,{" "}
-                <a href="#" className="font-roboto font-medium underline">
-                  Privacy
-                </a>{" "}
-                and{" "}
-                <a href="#" className="font-roboto font-medium underline">
-                  Data Protection Policy
-                </a>
-                .
-              </p>
+    <>
+      <div className="min-h-screen bg-gray-50">
+        <header className="sticky top-0 z-50">
+          <nav className="flex items-center justify-between bg-primary p-4 w-full">
+            {/* Logo */}
+            <div className="flex items-center ml-2 lg:ml-8">
+              <Link to="/">
+                <img
+                  src={Aims}
+                  alt="AIMS Logo"
+                  className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-28 transition-transform duration-300"
+                />
+              </Link>
             </div>
 
-            {/* Contact Info Cards */}
-            <div className="py-10">
-              <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-center items-start gap-6">
-                {/* Office Location Card */}
-                <div className="bg-white p-6 rounded-xl rounded-br-[3rem] shadow-lg w-full sm:w-1/3 text-center">
-                  <div className="text-red-600 text-5xl mb-4">📍</div>
-                  <h3 className="font-roboto text-lg font-bold text-gray-800 mb-2"></h3>
-                  <p className="font-roboto font-medium text-gray-600 text-sm leading-relaxed">
-                    Peshawar, Khyber Pakhtunkhwa Pakistan
-                  </p>
-                </div>
+            {/* Navigation Links (centered) */}
+            <ul
+              className={`${
+                isOpen ? "flex" : "hidden"
+              } flex-col sm:flex sm:flex-row justify-center items-center sm:gap-8 gap-4
+               absolute sm:absolute sm:top-1/2 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2
+               w-full sm:w-auto bg-primary sm:bg-transparent sm:p-0`}
+            >
+              <li>
+                <a
+                  href="#"
+                  className="font-roboto font-medium text-white hover:text-gray-300"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="font-roboto font-medium text-white hover:text-gray-300"
+                >
+                  Purpose
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="font-roboto font-medium text-white hover:text-gray-300"
+                >
+                  Objectives
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="font-roboto font-medium text-white hover:text-gray-300"
+                >
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="font-roboto font-medium text-white hover:text-gray-300"
+                >
+                  Impact
+                </a>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="font-roboto font-medium text-white hover:text-gray-300"
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
 
-                {/* Phone Number Card */}
-                <div className="bg-white p-6 rounded-xl rounded-br-[2rem] shadow-lg w-full sm:w-1/3 text-center">
-                  <div className="font-roboto text-blue-600 text-5xl mb-4">
-                    📞
+            {/* Mobile Menu Toggle */}
+            <div
+              className="sm:hidden flex flex-col cursor-pointer"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+              <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+              <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+            </div>
+          </nav>
+        </header>
+        {/* Main Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          {/* Page Header */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-roboto font-bold gradient-text  mb-4">
+              Get In Touch
+            </h1>
+            <p className="text-xl font-roboto font-medium text-gray-600 max-w-2xl mx-auto">
+              Have questions or need support? We're here to help. Reach out to
+              us through any of the channels below.
+            </p>
+          </div>
+
+          {/* Two Column Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start font-roboto">
+            {/* Left Column - Form and Contact Cards */}
+            <div className="space-y-8">
+              {/* Contact Form */}
+              <div className="bg-white  rounded-2xl  shadow-lg p-8">
+                <h2 className="text-4xl flex justify-center items-center gradient-text font-bold  mb-6">
+                 Talk To Us
+                </h2>
+                <div className="space-y-6">
+                  <div>
+                    <label
+                      htmlFor="fullName"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Full Name
+                    </label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                      <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                        placeholder="Enter your full name"
+                      />
+                    </div>
                   </div>
-                  <h3 className="font-roboto text-lg font-bold text-gray-800 mb-2">
-                    Feel Free to Call Us
-                  </h3>
-                  <p className="font-roboto font-medium text-gray-600 text-sm leading-relaxed">
-                    +971 50 950 2616
-                  </p>
-                </div>
 
-                {/* Email Card */}
-                <div className="bg-white p-6 rounded-xl rounded-br-[2rem] shadow-lg w-full sm:w-1/3 text-center">
-                  <div className="text-red-600 text-5xl mb-4">✉️</div>
-                  <h3 className="font-roboto text-lg font-bold text-gray-800 mb-2">
-                    Send E-Mail
-                  </h3>
-                  <p className="font-roboto pr-48 text-gray-600 text-sm leading-relaxed">
-                    faisalinam1972@gmail.com
-                  </p>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Email Address
+                    </label>
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                        placeholder="Enter your email address"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Phone Number
+                    </label>
+                    <div className="relative">
+                      <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                        placeholder="Enter your phone number"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium  mb-2"
+                    >
+                      Message
+                    </label>
+                    <div className="relative">
+                      <MessageSquare className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
+                        rows={4}
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
+                        placeholder="Tell us how we can help you..."
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    className="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer"
+                    onClick={handleSubmit}
+                  >
+                    <Send className="w-5 h-5" />
+                    <span>Send Message</span>
+                  </div>
                 </div>
+              </div>
+
+              {/* Contact Information Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {contactCards.map((card, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                  >
+                    <div className={`${card.color} mb-4`}>{card.icon}</div>
+                    <h3 className="font-bold text-gray-900 mb-2">
+                      {card.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {card.content}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column - Image */}
+            <div className="lg:sticky lg:top-24">
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                  alt="Professional office environment"
+                  className="w-full h-full object-cover min-h-[600px] lg:min-h-[800px]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
               </div>
             </div>
           </div>
-
-          {/* Right: Image */}
-          <div className="flex-1 flex justify-center items-center">
-            <img
-              src={contactImage}
-              alt="Contact Office"
-              loading="lazy"
-              decoding="async"
-              className="rounded-lg shadow-lg w-full h-full max-h-[600px] object-cover object-center"
-            />
-          </div>
         </div>
-      </section>
-
-      {/* Footer */}
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
