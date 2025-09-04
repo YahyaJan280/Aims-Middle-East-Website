@@ -2,10 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom"; // To use Link for navigation
 import Aims from "@/assets/Navbar-Logo-White.png";
+import Footer from "./Footer";
 
 export default function PrivacyPolicy() {
   const [isOpen, setIsOpen] = useState(false);
   return (
+    <>
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-50">
@@ -26,8 +28,8 @@ export default function PrivacyPolicy() {
             className={`${
               isOpen ? "flex" : "hidden"
             } flex-col sm:flex sm:flex-row justify-center items-center sm:gap-8 gap-4
-   absolute sm:absolute sm:top-1/2 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2
-   w-full sm:w-auto bg-primary sm:bg-transparent sm:p-0`}
+              absolute sm:absolute sm:top-1/2 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2
+              w-full sm:w-auto bg-primary sm:bg-transparent sm:p-0`}
           >
             <li>
               <Link
@@ -247,5 +249,7 @@ export default function PrivacyPolicy() {
         </div>
       </main>
     </div>
+    <Footer />
+    </>
   );
 }

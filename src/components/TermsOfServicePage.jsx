@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Aims from "@/assets/Navbar-Logo-White.png";
-
+import Footer from './Footer'
 import { useState } from "react";
 
 export default function TermsOfService() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+    <>
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-50">
@@ -266,5 +267,7 @@ export default function TermsOfService() {
         </div>
       </main>
     </div>
+    <Footer />
+    </>
   );
 }

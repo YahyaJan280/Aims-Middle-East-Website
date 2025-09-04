@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Aims from "@/assets/Navbar-Logo-White.png";
+import Contactimage from "@/assets/contactImg.png";
 import {
   MapPin,
   Phone,
@@ -35,7 +36,6 @@ const ContactPage = () => {
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Handle form submission here
     alert("Message sent successfully!");
     setFormData({ fullName: "", email: "", phone: "", message: "" });
   };
@@ -84,6 +84,7 @@ const ContactPage = () => {
   return (
     <>
       <div className="min-h-screen bg-gray-50">
+        {/* Navbar */}
         <header className="sticky top-0 z-50">
           <nav className="flex items-center justify-between bg-primary p-4 w-full">
             {/* Logo */}
@@ -93,11 +94,12 @@ const ContactPage = () => {
                   src={Aims}
                   alt="AIMS Logo"
                   className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-28 transition-transform duration-300"
+                  loading="lazy"
                 />
               </Link>
             </div>
 
-            {/* Navigation Links (centered) */}
+            {/* Nav Links */}
             <ul
               className={`${
                 isOpen ? "flex" : "hidden"
@@ -166,11 +168,12 @@ const ContactPage = () => {
             </div>
           </nav>
         </header>
+
         {/* Main Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          {/* Page Header */}
+          {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-roboto font-bold gradient-text  mb-4">
+            <h1 className="text-4xl font-roboto font-bold gradient-text mb-4">
               Get In Touch
             </h1>
             <p className="text-xl font-roboto font-medium text-gray-600 max-w-2xl mx-auto">
@@ -181,14 +184,14 @@ const ContactPage = () => {
 
           {/* Two Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start font-roboto">
-            {/* Left Column - Form and Contact Cards */}
+            {/* Left - Form */}
             <div className="space-y-8">
-              {/* Contact Form */}
-              <div className="bg-white  rounded-2xl  shadow-lg p-8">
-                <h2 className="text-4xl flex justify-center items-center gradient-text font-bold  mb-6">
-                 Talk To Us
+              <div className="bg-white rounded-2xl shadow-lg p-8">
+                <h2 className="text-4xl flex justify-center items-center gradient-text font-bold mb-6">
+                  Talk To Us
                 </h2>
                 <div className="space-y-6">
+                  {/* Full Name */}
                   <div>
                     <label
                       htmlFor="fullName"
@@ -211,6 +214,7 @@ const ContactPage = () => {
                     </div>
                   </div>
 
+                  {/* Email */}
                   <div>
                     <label
                       htmlFor="email"
@@ -233,6 +237,7 @@ const ContactPage = () => {
                     </div>
                   </div>
 
+                  {/* Phone */}
                   <div>
                     <label
                       htmlFor="phone"
@@ -254,10 +259,11 @@ const ContactPage = () => {
                     </div>
                   </div>
 
+                  {/* Message */}
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium  mb-2"
+                      className="block text-sm font-medium mb-2"
                     >
                       Message
                     </label>
@@ -276,6 +282,7 @@ const ContactPage = () => {
                     </div>
                   </div>
 
+                  {/* Submit */}
                   <div
                     className="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer"
                     onClick={handleSubmit}
@@ -286,7 +293,7 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              {/* Contact Information Cards */}
+              {/* Contact Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {contactCards.map((card, index) => (
                   <div
@@ -305,13 +312,16 @@ const ContactPage = () => {
               </div>
             </div>
 
-            {/* Right Column - Image */}
+            {/* Right - Optimized Image */}
             <div className="lg:sticky lg:top-24">
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                  alt="Professional office environment"
-                  className="w-full h-full object-cover min-h-[600px] lg:min-h-[800px]"
+                  src={Contactimage}
+                  alt="Contact illustration"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-center min-h-[400px] lg:min-h-[700px] max-h-[800px]"
+                  srcSet={`${Contactimage} 600w, ${Contactimage} 1200w`}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
               </div>
