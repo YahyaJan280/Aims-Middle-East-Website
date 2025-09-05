@@ -97,6 +97,9 @@ export default function TermsOfService() {
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
         <div className="bg-card rounded-lg shadow-card p-8 border border-border">
+          <h1 className="text-4xl  items-center text-primary flex justify-center font-roboto font-bold  mb-6">
+             Terms of Service
+            </h1>
           {/* Introduction */}
           <div className="">
             <p className="text-lg text-muted-foreground font-roboto leading-relaxed">

@@ -9,9 +9,6 @@ import {
   Send,
   User,
   MessageSquare,
-  Building,
-  Headphones,
-  PhoneCall,
 } from "lucide-react";
 import Footer from "./Footer";
 
@@ -39,45 +36,6 @@ const ContactPage = () => {
     alert("Message sent successfully!");
     setFormData({ fullName: "", email: "", phone: "", message: "" });
   };
-
-  const contactCards = [
-    {
-      icon: <MapPin className="w-8 h-8" />,
-      title: "Office Address",
-      content: "Peshawar, Khyber Pakhtunkhwa, Pakistan",
-      color: "text-blue-600",
-    },
-    {
-      icon: <Mail className="w-8 h-8" />,
-      title: "Work Email",
-      content: "faisalinam1972@gmail.com",
-      color: "text-indigo-600",
-    },
-    {
-      icon: <Mail className="w-8 h-8" />,
-      title: "Support Email",
-      content: "hZiah@hotmail.com",
-      color: "text-indigo-600",
-    },
-    {
-      icon: <Building className="w-8 h-8" />,
-      title: "Office Phone",
-      content: "+971 50 950 2616",
-      color: "text-emerald-600",
-    },
-    {
-      icon: <PhoneCall className="w-8 h-8" />,
-      title: "Mobile Support",
-      content: "+971 50 769 8076",
-      color: "text-emerald-600",
-    },
-    {
-      icon: <Headphones className="w-8 h-8" />,
-      title: "Customer Service",
-      content: "+971 56 170 0567",
-      color: "text-emerald-600",
-    },
-  ];
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -295,20 +253,30 @@ const ContactPage = () => {
 
               {/* Contact Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {contactCards.map((card, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                  >
-                    <div className={`${card.color} mb-4`}>{card.icon}</div>
-                    <h3 className="font-bold text-gray-900 mb-2">
-                      {card.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {card.content}
-                    </p>
+                {/* Email Card */}
+                <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <div className="text-indigo-600 mb-4">
+                    <Mail className="w-8 h-8" />
                   </div>
-                ))}
+                  <h3 className="font-bold text-gray-900 mb-4">Emails</h3>
+                  <ul className="space-y-2 text-gray-600 text-sm leading-relaxed">
+                    <li>faisalinam1972@gmail.com</li>
+                    <li>hZiah@hotmail.com</li>
+                  </ul>
+                </div>
+
+                {/* Phone Numbers Card */}
+                <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <div className="text-emerald-600 mb-4">
+                    <Phone className="w-8 h-8" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-4">Phone Numbers</h3>
+                  <ul className="space-y-2 text-gray-600 text-sm leading-relaxed">
+                    <li> +971 50 950 2616</li>
+                    <li> +971 50 769 8076</li>
+                    <li> +971 56 170 0567</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
