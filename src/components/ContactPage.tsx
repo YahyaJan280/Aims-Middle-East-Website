@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Aims from "@/assets/Navbar-Logo-White.png";
 import Contactimage from "@/assets/contactImg.png";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Send,
-  User,
-  MessageSquare,
-} from "lucide-react";
+import { MapPin, Phone, Mail, Send, User, MessageSquare } from "lucide-react";
 import Footer from "./Footer";
 
 const ContactPage = () => {
@@ -51,7 +44,7 @@ const ContactPage = () => {
                 <img
                   src={Aims}
                   alt="AIMS Logo"
-                  className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-28 transition-transform duration-300"
+                  className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-24 transition-transform duration-300"
                   loading="lazy"
                 />
               </Link>
@@ -260,8 +253,36 @@ const ContactPage = () => {
                   </div>
                   <h3 className="font-bold text-gray-900 mb-4">Emails</h3>
                   <ul className="space-y-2 text-gray-600 text-sm leading-relaxed">
-                    <li>faisalinam1972@gmail.com</li>
-                    <li>hZiah@hotmail.com</li>
+                    <li>
+                      <a
+                        href="mailto:faisalinam1972@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline"
+                      >
+                        faisalinam1972@gmail.com
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="mailto:hZiah@hotmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline"
+                      >
+                        hZiah@hotmail.com
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="mailto:asdkhn@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline"
+                      >
+                        asdkhn@gmail.com
+                      </a>
+                    </li>
                   </ul>
                 </div>
 
@@ -270,7 +291,9 @@ const ContactPage = () => {
                   <div className="text-emerald-600 mb-4">
                     <Phone className="w-8 h-8" />
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-4">Phone Numbers</h3>
+                  <h3 className="font-bold gradient-text mb-4">
+                    Phone Numbers
+                  </h3>
                   <ul className="space-y-2 text-gray-600 text-sm leading-relaxed">
                     <li> +971 50 950 2616</li>
                     <li> +971 50 769 8076</li>

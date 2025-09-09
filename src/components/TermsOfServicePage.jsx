@@ -19,7 +19,7 @@ export default function TermsOfService() {
               <img
                 src={Aims}
                 alt="AIMS Logo"
-                className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-28 transition-transform duration-300"
+                className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-24 transition-transform duration-300"
               />
             </Link>
           </div>
