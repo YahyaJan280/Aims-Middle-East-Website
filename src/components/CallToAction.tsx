@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Handshake, ArrowRight, Mail, Phone } from "lucide-react";
-
+import { Link } from "react-router-dom"; // 👈 add this import at the top
 const CallToAction = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -169,8 +169,10 @@ const CallToAction = () => {
                 href="mailto:info@aimsmiddleeast.org"
                 className="font-roboto font-medium flex items-center space-x-3 text-white hover:text-white transition-colors duration-300 group"
               >
-                <Mail className="font-roboto w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span>info@aimsmiddleeast.org</span>
+               <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span className="font-roboto font-medium text-sm">
+                  asdkhn@gmail.com
+                </span>
               </a>
               <div className="font-roboto hidden sm:block w-px h-6 bg-white/30"></div>
               <a
@@ -178,28 +180,31 @@ const CallToAction = () => {
                 className="flex items-center space-x-3 text-white hover:text-white transition-colors duration-300 group"
               >
                 <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span>+92 (000) 000-0000</span>
+                <span className="text-sm">+971 50 769 8076 </span>
               </a>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="outline"
-                size="lg"
-                className="font-roboto font-medium bg-white text-primary hover:bg-primary/90 border-white group"
-              >
-                Contact Us Today
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="font-roboto font-medium border-white/30 text-primary hover:bg-white hover:bg-primary/90 group"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
+         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+  <Link to="/contact">
+    <Button
+      variant="outline"
+      size="lg"
+      className="font-roboto font-medium bg-white text-primary hover:bg-primary/90 border-white group"
+    >
+      Contact Us Today
+      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+    </Button>
+  </Link>
+
+  <Button
+    variant="outline"
+    size="lg"
+    className="font-roboto font-medium border-white/30 text-primary hover:bg-white hover:bg-primary/90 group"
+  >
+    Learn More
+    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+  </Button>
+</div>
           </div>
         </div>
       </div>

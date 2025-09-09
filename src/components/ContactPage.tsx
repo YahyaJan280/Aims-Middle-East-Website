@@ -25,8 +25,16 @@ const ContactPage = () => {
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Message sent successfully!");
+
+    const subject = `New message from ${formData.fullName}`;
+    const body = `Name: ${formData.fullName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AMessage: ${formData.message}`;
+
+    // Opens default mail app (Gmail, Outlook, etc.)
+    window.location.href = `mailto:asdkhn@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${body}`;
+
+    // Reset form
     setFormData({ fullName: "", email: "", phone: "", message: "" });
   };
 
@@ -159,7 +167,7 @@ const ContactPage = () => {
                         value={formData.fullName}
                         onChange={handleInputChange}
                         required
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent transition-all duration-200"
                         placeholder="Enter your full name"
                       />
                     </div>
@@ -182,7 +190,7 @@ const ContactPage = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent transition-all duration-200"
                         placeholder="Enter your email address"
                       />
                     </div>
@@ -204,7 +212,7 @@ const ContactPage = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg   focus:border-transparent transition-all duration-200"
                         placeholder="Enter your phone number"
                       />
                     </div>
@@ -227,7 +235,7 @@ const ContactPage = () => {
                         onChange={handleInputChange}
                         required
                         rows={4}
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent transition-all duration-200 resize-none"
                         placeholder="Tell us how we can help you..."
                       />
                     </div>
@@ -256,8 +264,6 @@ const ContactPage = () => {
                     <li>
                       <a
                         href="mailto:faisalinam1972@gmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="text-blue-600 hover:underline"
                       >
                         faisalinam1972@gmail.com
@@ -266,8 +272,6 @@ const ContactPage = () => {
                     <li>
                       <a
                         href="mailto:hZiah@hotmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="text-blue-600 hover:underline"
                       >
                         hZiah@hotmail.com
@@ -276,8 +280,6 @@ const ContactPage = () => {
                     <li>
                       <a
                         href="mailto:asdkhn@gmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="text-blue-600 hover:underline"
                       >
                         asdkhn@gmail.com

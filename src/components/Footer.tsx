@@ -175,6 +175,12 @@ const Footer = () => {
               >
                 <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span className="text-sm">+971 50 769 8076 </span>
+              </a>   <a
+                href="tel:+92000000000"
+                className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
+              >
+                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span className="text-sm">+971 50 769 8076 </span>
               </a>
                <a
                 href="tel:+92000000000"
