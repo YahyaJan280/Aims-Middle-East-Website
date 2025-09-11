@@ -130,19 +130,8 @@ const Projects = () => {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href="https://sugarhospital.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      variant="gradient"
-                      className="font-roboto font-medium w-full sm:w-auto text-sm sm:text-base"
-                    >
-                      Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                  </a>
+                <div className="flex flex-col justify-center sm:flex-row gap-3">
+                 
 
                   <a
                     href="https://sugarhospital.com/"

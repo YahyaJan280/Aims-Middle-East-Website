@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 import Aims from "@/assets/Navbar-Logo-White.png";
-import Contactimage from "@/assets/contactImg.png";
+import Contactimage from "@/assets/Aims Middle `East Transparent.png";
 import { MapPin, Phone, Mail, Send, User, MessageSquare } from "lucide-react";
 import Footer from "./Footer";
 
@@ -13,32 +14,39 @@ const ContactPage = () => {
     message: "",
   });
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const subject = `New message from ${formData.fullName}`;
-    const body = `Name: ${formData.fullName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AMessage: ${formData.message}`;
+    const templateParams = {
+      fullName: formData.fullName, // Mapping form data to template variable
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      subject: `New message from ${formData.fullName}`, // Dynamic subject
+    };
 
-    // Opens default mail app (Gmail, Outlook, etc.)
-    window.location.href = `mailto:asdkhn@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${body}`;
+    try {
+      await emailjs.send(
+        "service_wd9gooh", // Your EmailJS Service ID
+        "template_5vklpmj", // Your EmailJS Template ID
+        templateParams, // The data that matches your template variables
+        "FfvG5phgHdo5IX-K_" // Your EmailJS Public Key
+      );
 
-    // Reset form
-    setFormData({ fullName: "", email: "", phone: "", message: "" });
+      alert("Message sent successfully!"); // Success message
+      setFormData({ fullName: "", email: "", phone: "", message: "" }); // Reset form
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message. Please try again."); // Error message
+    }
   };
-
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -66,46 +74,18 @@ const ContactPage = () => {
                absolute sm:absolute sm:top-1/2 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2
                w-full sm:w-auto bg-primary sm:bg-transparent sm:p-0`}
             >
-              <li>
-                <a
-                  href="#"
-                  className="font-roboto font-medium text-white hover:text-gray-300"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="font-roboto font-medium text-white hover:text-gray-300"
-                >
-                  Purpose
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="font-roboto font-medium text-white hover:text-gray-300"
-                >
-                  Objectives
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="font-roboto font-medium text-white hover:text-gray-300"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="font-roboto font-medium text-white hover:text-gray-300"
-                >
-                  Impact
-                </a>
-              </li>
+              {["Home", "Purpose", "Objectives", "Projects", "Impact"].map(
+                (item) => (
+                  <li key={item}>
+                    <a
+                      href="#"
+                      className="font-roboto font-medium text-white hover:text-gray-300"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                )
+              )}
               <li>
                 <Link
                   to="/contact"
@@ -152,22 +132,18 @@ const ContactPage = () => {
                 <div className="space-y-6">
                   {/* Full Name */}
                   <div>
-                    <label
-                      htmlFor="fullName"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name
                     </label>
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                       <input
                         type="text"
-                        id="fullName"
                         name="fullName"
                         value={formData.fullName}
                         onChange={handleInputChange}
                         required
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent transition-all duration-200"
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:border-transparent transition-all duration-200"
                         placeholder="Enter your full name"
                       />
                     </div>
@@ -175,22 +151,18 @@ const ContactPage = () => {
 
                   {/* Email */}
                   <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Email Address
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                       <input
                         type="email"
-                        id="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent transition-all duration-200"
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:border-transparent transition-all duration-200"
                         placeholder="Enter your email address"
                       />
                     </div>
@@ -198,21 +170,17 @@ const ContactPage = () => {
 
                   {/* Phone */}
                   <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Phone Number
                     </label>
                     <div className="relative">
                       <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                       <input
                         type="tel"
-                        id="phone"
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg   focus:border-transparent transition-all duration-200"
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:border-transparent transition-all duration-200"
                         placeholder="Enter your phone number"
                       />
                     </div>
@@ -220,22 +188,18 @@ const ContactPage = () => {
 
                   {/* Message */}
                   <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium mb-2"
-                    >
+                    <label className="block text-sm font-medium mb-2">
                       Message
                     </label>
                     <div className="relative">
                       <MessageSquare className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
                       <textarea
-                        id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
                         required
                         rows={4}
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent transition-all duration-200 resize-none"
+                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:border-transparent transition-all duration-200 resize-none"
                         placeholder="Tell us how we can help you..."
                       />
                     </div>
@@ -243,7 +207,7 @@ const ContactPage = () => {
 
                   {/* Submit */}
                   <div
-                    className="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer"
+                    className="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer transform active:scale-95 active:bg-blue-800"
                     onClick={handleSubmit}
                   >
                     <Send className="w-5 h-5" />
@@ -251,72 +215,18 @@ const ContactPage = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Contact Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {/* Email Card */}
-                <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <div className="text-indigo-600 mb-4">
-                    <Mail className="w-8 h-8" />
-                  </div>
-                  <h3 className="font-bold text-gray-900 mb-4">Emails</h3>
-                  <ul className="space-y-2 text-gray-600 text-sm leading-relaxed">
-                    <li>
-                      <a
-                        href="mailto:faisalinam1972@gmail.com"
-                        className="text-blue-600 hover:underline"
-                      >
-                        faisalinam1972@gmail.com
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="mailto:hZiah@hotmail.com"
-                        className="text-blue-600 hover:underline"
-                      >
-                        hZiah@hotmail.com
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="mailto:asdkhn@gmail.com"
-                        className="text-blue-600 hover:underline"
-                      >
-                        asdkhn@gmail.com
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Phone Numbers Card */}
-                <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <div className="text-emerald-600 mb-4">
-                    <Phone className="w-8 h-8" />
-                  </div>
-                  <h3 className="font-bold gradient-text mb-4">
-                    Phone Numbers
-                  </h3>
-                  <ul className="space-y-2 text-gray-600 text-sm leading-relaxed">
-                    <li> +971 50 950 2616</li>
-                    <li> +971 50 769 8076</li>
-                    <li> +971 56 170 0567</li>
-                  </ul>
-                </div>
-              </div>
             </div>
 
-            {/* Right - Optimized Image */}
+            {/* Right - Image */}
             <div className="lg:sticky lg:top-24">
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden relative">
+              <div className="rounded-2xl shadow-lg overflow-hidden relative h-[600px]">
                 <img
                   src={Contactimage}
-                  alt="Contact illustration"
+                  alt="Contact"
                   loading="lazy"
-                  className="w-full h-full object-cover object-center min-h-[400px] lg:min-h-[700px] max-h-[800px]"
-                  srcSet={`${Contactimage} 600w, ${Contactimage} 1200w`}
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
             </div>
           </div>
