@@ -48,7 +48,7 @@ const ContactPage = () => {
     try {
       await emailjs.send(
         "service_wd9gooh", // ✅ Your EmailJS Service ID
-        "template_5vklpmj", // ✅ Your EmailJS Template ID
+        "template_2xlqfxa", // ✅ Your EmailJS Template ID
         templateParams,
         "FfvG5phgHdo5IX-K_" // ✅ Your EmailJS Public Key
       );
