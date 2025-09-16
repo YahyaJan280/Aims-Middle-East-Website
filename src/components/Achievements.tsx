@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import MembershipSection from '@/components/DubaiHumanitarian'
+import Logo1 from '@/assets/Logo 1.png'
+import logo2 from '@/assets/logo2.jpg'
+import logo3 from '@/assets/logo3.jpg'
 import {
   Users,
   GraduationCap,
@@ -260,34 +263,26 @@ const Achievements = () => {
           <div className="animate-on-scroll opacity-0 lg:mr-2">
             <div className="bg-gradient-primary/5 p-6 lg:p-10 rounded-2xl border border-primary/10 ">
               <h4 className="font-roboto text-2xl md:text-2xl font-bold gradient-text mb-4 text-center">
-                Recognition & Awards
+                Aims Certifications from Refutable Organizations
               </h4>
               <div className="space-y-6">
                 <div className="text-center p-4 bg-card rounded-xl shadow-card">
-                  <Award className="w-12 h-12 text-primary mx-auto mb-3" />
-                  <h5 className="font-roboto font-bold text-foreground mb-2">
-                    Excellence in Healthcare Delivery
-                  </h5>
+                  <img src={Logo1} alt=""  className="mx-auto w-12 h-auto mb-4 object-contain"/>
+                 
                   <p className="font-roboto font-medium text-sm text-muted-foreground">
-                    Regional Healthcare Innovation Award 2023
+                    Diabetes General Hospital & Research Center, Peshawar, is officially licensed as a 30-bed In-Patient Facility (2025–2028).
                   </p>
                 </div>
                 <div className="text-center p-4 bg-card rounded-xl shadow-card">
-                  <Globe className="w-12 h-12 text-secondary mx-auto mb-3" />
-                  <h5 className="font-roboto font-bold text-foreground mb-2">
-                    International Research Recognition
-                  </h5>
+                 <img src={logo2} alt=""  className="mx-auto w-12 h-auto mb-4 object-contain"/>
                   <p className="font-roboto font-medium text-sm text-muted-foreground">
-                    WHO Diabetes Research Excellence 2023
+                    Alhamd Shariah Advisory Services certifies the Zakat process of AIMS Pakistan for the year ended June 30, 2025.
                   </p>
                 </div>
                 <div className="text-center p-4 bg-card rounded-xl shadow-card">
-                  <Users className="w-12 h-12 text-primary mx-auto mb-3" />
-                  <h5 className="font-roboto font-bold text-foreground mb-2">
-                    Community Impact Award
-                  </h5>
+                  <img src={logo3} alt="" className="mx-auto w-12 h-auto mb-4 object-contain"/>
                   <p className="font-roboto font-medium text-sm text-muted-foreground">
-                    Pakistan Health Ministry Recognition 2022
+                   AIMS Pakistan is certified by PCP for excellence and leadership under FBR’s NPO evaluation standards.
                   </p>
                 </div>
               </div>
