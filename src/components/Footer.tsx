@@ -140,17 +140,7 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-
               <a
-                href="mailto:info@aimsmiddleeast.org"
-                className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
-              >
-                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="font-roboto font-medium text-sm">
-                  hziah@hotmail.com
-                </span>
-              </a>
-  <a
                 href="mailto:info@aimsmiddleeast.org"
                 className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
               >
@@ -160,42 +150,16 @@ const Footer = () => {
                 </span>
               </a>
               <a
-                href="mailto:info@aimsmiddleeast.org"
+                href="tel:+92000000000"
                 className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
               >
-                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="font-roboto font-medium text-sm">
-                  faisalinam@gmail.com
-                </span>
-              </a>
-
+                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span className="text-sm">+971 50 769 8076 </span>
+              </a>{" "}
               <a
                 href="tel:+92000000000"
                 className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
-              >
-                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">+971 50 769 8076 </span>
-              </a>   <a
-                href="tel:+92000000000"
-                className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
-              >
-                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">+971 50 769 8076 </span>
-              </a>
-               <a
-                href="tel:+92000000000"
-                className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
-              >
-                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">+971 50 950 2616 </span>
-              </a>
-               <a
-                href="tel:+92000000000"
-                className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
-              >
-                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">+971 56 170 0567</span>
-              </a>
+              ></a>
             </div>
 
             {/* Social Links */}
@@ -235,7 +199,7 @@ const Footer = () => {
             <div className="flex items-center space-x-6 animate-on-scroll opacity-0">
               <Link
                 to="/privacy-policy"
-               // Use Link for client-side routing
+                // Use Link for client-side routing
                 className="font-roboto font-medium text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 Privacy Policy
