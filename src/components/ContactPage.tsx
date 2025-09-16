@@ -29,7 +29,8 @@ const ContactPage = () => {
       email: formData.email,
       phone: formData.phone,
       message: formData.message,
-      subject: `New message from ${formData.fullName}`, // Dynamic subject
+      subject: `New message from ${formData.fullName}`,
+      to_email: "asdkhn@gmail.com", // Dynamic subject
     };
 
     try {
