@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
 import Aims from "@/assets/Navbar-Logo-White.png";
 import Contactimage from "@/assets/Aims Middle `East Transparent.png";
 import { MapPin, Phone, Mail, Send, User, MessageSquare } from "lucide-react";
 import Footer from "./Footer";
+
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -15,39 +17,51 @@ const ContactPage = () => {
   });
 
   const [isOpen, setIsOpen] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleCaptchaChange = (value) => {
+    setCaptchaValue(value); // store captcha response token
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!captchaValue) {
+      alert("⚠️ Please verify the reCAPTCHA before submitting.");
+      return;
+    }
+
     const templateParams = {
-      fullName: formData.fullName, // Mapping form data to template variable
+      fullName: formData.fullName,
       email: formData.email,
       phone: formData.phone,
       message: formData.message,
       subject: `New message from ${formData.fullName}`,
-      to_email: "asdkhn@gmail.com", // Dynamic subject
+      to_email: "asdkhn@gmail.com", // always send here
     };
 
     try {
       await emailjs.send(
-        "service_wd9gooh", // Your EmailJS Service ID
-        "template_5vklpmj", // Your EmailJS Template ID
-        templateParams, // The data that matches your template variables
-        "FfvG5phgHdo5IX-K_" // Your EmailJS Public Key
+        "service_wd9gooh", // ✅ Your EmailJS Service ID
+        "template_5vklpmj", // ✅ Your EmailJS Template ID
+        templateParams,
+        "FfvG5phgHdo5IX-K_" // ✅ Your EmailJS Public Key
       );
 
-      alert("Message sent successfully!"); // Success message
-      setFormData({ fullName: "", email: "", phone: "", message: "" }); // Reset form
+      alert("✅ Message sent successfully!");
+      setFormData({ fullName: "", email: "", phone: "", message: "" });
+      setCaptchaValue(null); // reset captcha after sending
     } catch (error) {
       console.error(error);
-      alert("Failed to send message. Please try again."); // Error message
+      alert("❌ Failed to send message. Please try again.");
     }
   };
+
 
   return (
     <>
@@ -205,7 +219,11 @@ const ContactPage = () => {
                       />
                     </div>
                   </div>
-
+                    {/* reCAPTCHA */}
+                  <ReCAPTCHA
+                    sitekey="6Le2LssrAAAAAH8_CeaSQZJVtA3DA6fmbOzI-fLo"
+                    onChange={(value) => setCaptchaValue(value)}
+                  />
                   {/* Submit */}
                   <div
                     className="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer transform active:scale-95 active:bg-blue-800"
