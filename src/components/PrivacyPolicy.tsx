@@ -14,50 +14,45 @@ export default function PrivacyPolicy() {
   <nav className="flex items-center justify-between bg-primary p-4 w-full relative">
     {/* Logo (no Link) */}
     <div className="flex items-center">
+      <Link to='/'>
       <img
         src={Aims}
         alt="AIMS Logo"
-        className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 transition-transform duration-300"
+        className="h-10 sm:h-12 w-auto max-w-[120px] lg:ml-32 hover:scale-105 transition-transform duration-300"
         loading="lazy"
       />
+      </Link>
     </div>
 
-  <ul
-   className={`${
-     isOpen ? "flex" : "hidden"
-   } flex-col sm:flex sm:flex-row sm:items-center sm:gap-8 gap-4 
-      absolute sm:static top-full left-0 w-full sm:w-auto 
-      bg-primary sm:bg-transparent p-6 sm:p-0 
-      sm:mx-auto sm:justify-center`}
- >
-   {["Home", "Purpose", "Objectives", "Projects", "Impact"].map((item) => (
-     <li key={item}>
-       {/* Mobile: just a span (no redirect) */}
-       <span className="block sm:hidden font-roboto font-medium text-white hover:text-gray-300 cursor-pointer"
-             onClick={() => setIsOpen(false)}>
-         {item}
-       </span>
- 
-       {/* Desktop: real link */}
-       <a
-         href="#"
-         className="hidden sm:block font-roboto font-medium text-white hover:text-gray-300"
-       >
-         {item}
-       </a>
-     </li>
-   ))}
-   <li>
-     <Link
-       to="/contact"
-       className="font-roboto font-medium text-white hover:text-gray-300 block"
-       onClick={() => setIsOpen(false)}
-     >
-       Contact Us
-     </Link>
-   </li>
- </ul>
-
+    {/* Nav Links */}
+   <ul
+  className={`${
+    isOpen ? "flex" : "hidden"
+  } flex-col sm:flex sm:flex-row sm:items-center sm:gap-8 gap-4 
+     absolute sm:static top-full lg:pr-40 left-0 w-full sm:w-auto 
+     bg-primary sm:bg-transparent p-6 sm:p-0 
+     sm:mx-auto sm:justify-center`}
+>
+  {["Home", "Purpose", "Objectives", "Projects", "Impact"].map((item) => (
+    <li key={item}>
+      <span
+        className="font-roboto font-medium text-white hover:text-gray-300 block cursor-pointer"
+        onClick={() => setIsOpen(false)} // ✅ closes mobile menu when clicked
+      >
+        {item}
+      </span>
+    </li>
+  ))}
+  <li>
+    <Link
+      to="/contact"
+      className="font-roboto font-medium text-white hover:text-gray-300 block"
+      onClick={() => setIsOpen(false)} // ✅ also closes menu
+    >
+      Contact Us
+    </Link>
+  </li>
+</ul>
 
     {/* Mobile Menu Toggle */}
     <div

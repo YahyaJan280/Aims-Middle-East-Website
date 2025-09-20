@@ -15,12 +15,14 @@ export default function TermsOfService() {
         <nav className="flex items-center justify-between bg-primary p-4 w-full relative">
           {/* Logo (no Link) */}
           <div className="flex items-center">
+            <Link to='/'>
             <img
               src={Aims}
               alt="AIMS Logo"
-              className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 transition-transform duration-300"
+              className="h-10 sm:h-12 w-auto max-w-[120px] lg:ml-32 hover:scale-105 transition-transform duration-300"
               loading="lazy"
             />
+            </Link>
           </div>
       
           {/* Nav Links */}
@@ -28,7 +30,7 @@ export default function TermsOfService() {
          className={`${
            isOpen ? "flex" : "hidden"
          } flex-col sm:flex sm:flex-row sm:items-center sm:gap-8 gap-4 
-            absolute sm:static top-full left-0 w-full sm:w-auto 
+            absolute sm:static top-full lg:pr-40 left-0 w-full sm:w-auto 
             bg-primary sm:bg-transparent p-6 sm:p-0 
             sm:mx-auto sm:justify-center`}
        >
