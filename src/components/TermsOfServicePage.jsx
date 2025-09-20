@@ -11,77 +11,54 @@ export default function TermsOfService() {
     <>
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50">
-        <nav className="flex items-center justify-between bg-primary p-4 w-full">
-          {/* Logo */}
-          <div className="flex items-center ml-2 lg:ml-8">
-            <Link to="/">
-              <img
-                src={Aims}
-                alt="AIMS Logo"
-                className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-24 transition-transform duration-300"
-              />
-            </Link>
+         <header className="sticky top-0 z-50">
+        <nav className="flex items-center justify-between bg-primary p-4 w-full relative">
+          {/* Logo (no Link) */}
+          <div className="flex items-center">
+            <img
+              src={Aims}
+              alt="AIMS Logo"
+              className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
           </div>
-
-          {/* Navigation Links (centered) */}
-          <ul
-            className={`${
-              isOpen ? "flex" : "hidden"
-            } flex-col sm:flex sm:flex-row justify-center items-center sm:gap-8 gap-4
-         absolute sm:absolute sm:top-1/2 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2
-         w-full sm:w-auto bg-primary sm:bg-transparent sm:p-0`}
-          >
-            <li>
-              <a
-                href="#"
-                className="font-roboto font-medium text-white hover:text-gray-300"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="font-roboto font-medium text-white hover:text-gray-300"
-              >
-                Purpose
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="font-roboto font-medium text-white hover:text-gray-300"
-              >
-                Objectives
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="font-roboto font-medium text-white hover:text-gray-300"
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="font-roboto font-medium text-white hover:text-gray-300"
-              >
-                Impact
-              </a>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className="font-roboto font-medium text-white hover:text-gray-300"
-              >
-                Contact Us
-              </Link>
-            </li>
-          </ul>
-
+      
+          {/* Nav Links */}
+        <ul
+         className={`${
+           isOpen ? "flex" : "hidden"
+         } flex-col sm:flex sm:flex-row sm:items-center sm:gap-8 gap-4 
+            absolute sm:static top-full left-0 w-full sm:w-auto 
+            bg-primary sm:bg-transparent p-6 sm:p-0 
+            sm:mx-auto sm:justify-center`}
+       >
+         {["Home", "Purpose", "Objectives", "Projects", "Impact"].map((item) => (
+           <li key={item}>
+             {/* Mobile: just a span (no redirect) */}
+             <span className="block sm:hidden font-roboto font-medium text-white hover:text-gray-300 cursor-pointer"
+                   onClick={() => setIsOpen(false)}>
+               {item}
+             </span>
+       
+             {/* Desktop: real link */}
+             <a
+               href="#"
+               className="hidden sm:block font-roboto font-medium text-white hover:text-gray-300"
+             >
+               {item}
+             </a>
+           </li>
+         ))}
+         <li>
+           <Link
+             to="/contact"
+             className="font-roboto font-medium text-white hover:text-gray-300 block"
+             onClick={() => setIsOpen(false)}
+           >
+             Contact Us
+           </Link>
+         </li>
+       </ul>
           {/* Mobile Menu Toggle */}
           <div
             className="sm:hidden flex flex-col cursor-pointer"

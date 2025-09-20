@@ -7,7 +7,6 @@ import Contactimage from "@/assets/Aims Middle `East Transparent.png";
 import { MapPin, Phone, Mail, Send, User, MessageSquare } from "lucide-react";
 import Footer from "./Footer";
 
-
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -42,7 +41,6 @@ const ContactPage = () => {
       phone: formData.phone,
       message: formData.message,
       subject: `New message from ${formData.fullName}`,
-      to_email: "asdkhn@gmail.com", // always send here
     };
 
     try {
@@ -62,66 +60,72 @@ const ContactPage = () => {
     }
   };
 
-
   return (
     <>
       <div className="min-h-screen bg-gray-50">
         {/* Navbar */}
-        <header className="sticky top-0 z-50">
-          <nav className="flex items-center justify-between bg-primary p-4 w-full">
-            {/* Logo */}
-            <div className="flex items-center ml-2 lg:ml-8">
-              <Link to="/">
-                <img
-                  src={Aims}
-                  alt="AIMS Logo"
-                  className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-24 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </Link>
-            </div>
+       <header className="sticky top-0 z-50">
+  <nav className="flex items-center justify-between bg-primary p-4 w-full relative">
+    {/* Logo (no Link) */}
+    <div className="flex items-center">
+      <img
+        src={Aims}
+        alt="AIMS Logo"
+        className="h-10 sm:h-12 w-auto max-w-[120px] hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+      />
+    </div>
 
-            {/* Nav Links */}
-            <ul
-              className={`${
-                isOpen ? "flex" : "hidden"
-              } flex-col sm:flex sm:flex-row justify-center items-center sm:gap-8 gap-4
-               absolute sm:absolute sm:top-1/2 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2
-               w-full sm:w-auto bg-primary sm:bg-transparent sm:p-0`}
-            >
-              {["Home", "Purpose", "Objectives", "Projects", "Impact"].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      className="font-roboto font-medium text-white hover:text-gray-300"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
-              <li>
-                <Link
-                  to="/contact"
-                  className="font-roboto font-medium text-white hover:text-gray-300"
-                >
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
+    {/* Nav Links */}
+    <ul
+  className={`${
+    isOpen ? "flex" : "hidden"
+  } flex-col sm:flex sm:flex-row sm:items-center sm:gap-8 gap-4 
+     absolute sm:static top-full left-0 w-full sm:w-auto 
+     bg-primary sm:bg-transparent p-6 sm:p-0 
+     sm:mx-auto sm:justify-center`}
+>
+  {["Home", "Purpose", "Objectives", "Projects", "Impact"].map((item) => (
+    <li key={item}>
+      {/* Mobile: just a span (no redirect) */}
+      <span className="block sm:hidden font-roboto font-medium text-white hover:text-gray-300 cursor-pointer"
+            onClick={() => setIsOpen(false)}>
+        {item}
+      </span>
 
-            {/* Mobile Menu Toggle */}
-            <div
-              className="sm:hidden flex flex-col cursor-pointer"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
-              <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
-              <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
-            </div>
-          </nav>
-        </header>
+      {/* Desktop: real link */}
+      <a
+        href="#"
+        className="hidden sm:block font-roboto font-medium text-white hover:text-gray-300"
+      >
+        {item}
+      </a>
+    </li>
+  ))}
+  <li>
+    <Link
+      to="/contact"
+      className="font-roboto font-medium text-white hover:text-gray-300 block"
+      onClick={() => setIsOpen(false)}
+    >
+      Contact Us
+    </Link>
+  </li>
+</ul>
+
+
+    {/* Mobile Menu Toggle */}
+    <div
+      className="sm:hidden flex flex-col cursor-pointer"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+      <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+      <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
+    </div>
+  </nav>
+</header>
+
 
         {/* Main Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -219,7 +223,7 @@ const ContactPage = () => {
                       />
                     </div>
                   </div>
-                    {/* reCAPTCHA */}
+                  {/* reCAPTCHA */}
                   <ReCAPTCHA
                     sitekey="6LfmNMsrAAAAAOmQq4YYkJ7zJrlQpJ_YbQgOX02m"
                     onChange={(value) => setCaptchaValue(value)}

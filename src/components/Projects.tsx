@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MapPin, ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import { Link } from "react-router-dom"
 const Projects = () => {
   const sectionRef = useRef(null);
   const [activeProject, setActiveProject] = useState(0);
@@ -53,7 +53,7 @@ const Projects = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className="bg-background mt-10 lg:mt-0 py-16"
+      className="bg-background mt-10 lg:mt-0 lg:py-2 py-16"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
@@ -67,26 +67,12 @@ const Projects = () => {
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8 animate-on-scroll opacity-0">
-          {projects.map((project, index) => (
-            <button
-              key={project.id}
-              onClick={() => setActiveProject(index)}
-              className={`px-6 py-3 rounded-xl text-sm sm:text-base font-roboto font-medium transition-all duration-300 ${
-                activeProject === index
-                  ? "bg-gradient-primary text-white shadow-lg"
-                  : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
-              }`}
-            >
-              {project.name}
-            </button>
-          ))}
-        </div>
+     
 
         {/* Card */}
         <div className="animate-on-scroll opacity-0 lg:max-w-[1210px] lg:ml-[60px]">
-          <div className="bg-card rounded-2xl p-6 sm:p-8 lg:p-12 shadow-card">
-            <div className="grid gap-8 lg:grid-cols-2">
+          <div className="bg-card rounded-2xl lg:mt-[-50px] p-6 sm:p-8 lg:p-12 shadow-card">
+            <div className="grid gap-8 lg:grid-cols-2 ">
               {/* Left Column */}
               <div>
                 <div className="flex items-center gap-4 mb-6">
@@ -201,12 +187,14 @@ const Projects = () => {
             <p className="font-roboto font-medium text-white text-sm sm:text-base lg:text-lg mb-4 max-w-2xl mx-auto">
               Every project represents hope, healing, and transformation...
             </p>
+            <Link to="/contact">
             <Button
               className="font-roboto font-medium animate-pulse-glow bg-white text-primary hover:text-white"
               size="lg"
             >
               Partner With Us
             </Button>
+            </Link>
           </div>
         </div>
       </div>

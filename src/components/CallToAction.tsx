@@ -139,14 +139,16 @@ const CallToAction = () => {
                     </div>
                   ))}
                 </div>
-
+              <Link to="/contact">
                 <Button
+                
                   variant="outline"
                   className="font-roboto font-medium w-full bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary group-hover:scale-105 transition-all duration-300"
                 >
                   {card.buttonText}
                   <ArrowRight className="w-4 h-4 lg:ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
+                </Link>
               </div>
             </div>
           ))}
@@ -169,7 +171,7 @@ const CallToAction = () => {
                 href="mailto:info@aimsmiddleeast.org"
                 className="font-roboto font-medium flex items-center space-x-3 text-white hover:text-white transition-colors duration-300 group"
               >
-               <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span className="font-roboto font-medium text-sm">
                   asdkhn@gmail.com
                 </span>
@@ -184,27 +186,19 @@ const CallToAction = () => {
               </a>
             </div>
 
-         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-  <Link to="/contact">
-    <Button
-      variant="outline"
-      size="lg"
-      className="font-roboto font-medium bg-white text-primary hover:bg-primary/90 border-white group"
-    >
-      Contact Us Today
-      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-    </Button>
-  </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="font-roboto font-medium bg-white text-primary hover:bg-primary/90 border-white group"
+                >
+                  Contact Us Today
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
 
-  <Button
-    variant="outline"
-    size="lg"
-    className="font-roboto font-medium border-white/30 text-primary hover:bg-white hover:bg-primary/90 group"
-  >
-    Learn More
-    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-  </Button>
-</div>
+            </div>
           </div>
         </div>
       </div>

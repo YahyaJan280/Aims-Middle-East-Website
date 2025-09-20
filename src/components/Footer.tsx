@@ -162,24 +162,6 @@ const Footer = () => {
               ></a>
             </div>
 
-            {/* Social Links */}
-            <div className="mt-8">
-              <h4 className="font-roboto font-medium text-foreground mb-4">
-                Follow Us
-              </h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    className="font-roboto font-medium p-3 bg-card rounded-xl border border-border/50 text-muted-foreground hover:text-white hover:bg-gradient-primary transition-all duration-300 hover:scale-110 hover:shadow-glow group"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
