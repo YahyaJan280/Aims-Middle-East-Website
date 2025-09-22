@@ -227,7 +227,7 @@ const ContactPage = () => {
                   </div>
                   {/* reCAPTCHA */}
                   <ReCAPTCHA
-                    sitekey="6LfmNMsrAAAAAOmQq4YYkJ7zJrlQpJ_YbQgOX02m"
+                    sitekey="6Le2LssrAAAAAH8_CeaSQZJVtA3DA6fmbOzI-fLo"
                     onChange={(value) => setCaptchaValue(value)}
                   />
                   {/* Submit */}
