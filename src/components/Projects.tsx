@@ -117,8 +117,6 @@ const Projects = () => {
 
                 {/* Buttons */}
                 <div className="flex flex-col justify-center sm:flex-row gap-3">
-                 
-
                   <a
                     href="https://sugarhospital.com/"
                     target="_blank"

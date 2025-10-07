@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import MembershipSection from '@/components/DubaiHumanitarian'
-import Logo1 from '@/assets/Logo 1.png'
+import Logo1 from '@/assets/logo1.png'
 import logo2 from '@/assets/logo2.jpg'
 import logo3 from '@/assets/logo3.jpg'
 import {

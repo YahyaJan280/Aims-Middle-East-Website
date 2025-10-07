@@ -1,88 +1,217 @@
-import React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom"; // To use Link for navigation
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Eye,
+  Users,
+  FileCheck,
+  Building,
+  Hospital,
+  BarChart3,
+  Heart,
+  FileText,
+  Briefcase,
+  Handshake,
+  UserPlus,
+  UserCheck,
+  BadgeDollarSign,
+  Building2,
+  Bell,
+  BookOpen,
+} from "lucide-react";
 import Aims from "@/assets/Navbar-Logo-White.png";
 import Footer from "./Footer";
 
-export default function PrivacyPolicy() {
+export default function TermsOfService() {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+
+  const menuItems = [
+    {
+      name: "About",
+      submenu: [
+        { name: "Overview ", path: "/about/overview", icon: Eye },
+       { name: "Impact ", path: "/impact/glance", icon: BarChart3 },
+      ],
+    },
+    {
+      name: "Projects",
+      submenu: [
+        { name: "Sugar Hospital", path: "/projects/sugar-hospital", icon: Hospital },
+        { name: "Community Outreach Camps", path: "/projects/community-outreach", icon: Users },
+      ],
+    },
+    {
+      name: "Partners",
+      submenu: [
+        { name: "Strategic Partners", path: "/partners/strategic", icon: Briefcase },
+        { name: "MoUs & Collaborations", path: "/partners/mous", icon: Handshake },
+        { name: "Become a Partner", path: "/partners/become", icon: UserPlus },
+      ],
+    },
+    {
+      name: "Get Involved",
+      submenu: [
+        { name: "Donate", path: "/get-involved/donate", icon: Heart },
+        { name: "Volunteer", path: "/get-involved/volunteer", icon: UserCheck },
+        { name: "Membership", path: "/get-involved/membership", icon: BadgeDollarSign },
+        { name: "Corporate Giving & CSR", path: "/get-involved/csr", icon: Building2 },
+      ],
+    },
+    {
+      name: "News",
+      submenu: [
+        { name: "Updates & Events", path: "/news/updates", icon: Bell },
+        { name: "Research & Education", path: "/news/research", icon: BookOpen },
+      ],
+    },
+    { name: "Contact", path: "/contact" },
+  ];
+
   return (
     <>
       <div className="min-h-screen bg-background">
         {/* Header */}
-       <header className="sticky top-0 z-50">
-  <nav className="flex items-center justify-between bg-primary p-4 w-full relative">
-    {/* Logo (no Link) */}
-    <div className="flex items-center">
-      <Link to='/'>
-      <img
-        src={Aims}
-        alt="AIMS Logo"
-        className="h-10 sm:h-12 w-auto max-w-[120px] lg:ml-32 hover:scale-105 transition-transform duration-300"
-        loading="lazy"
-      />
-      </Link>
-    </div>
+        <header className="sticky top-0 z-50 bg-primary shadow-md">
+          <nav className="flex items-center justify-between px-6 lg:px-20 py-4">
+            {/* Logo */}
+            <Link to="/">
+              <img
+                src={Aims}
+                alt="AIMS Logo"
+                className="h-10 sm:h-12 lg:ml-20 w-auto max-w-[120px] hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </Link>
 
-    {/* Nav Links */}
-   <ul
-  className={`${
-    isOpen ? "flex" : "hidden"
-  } flex-col sm:flex sm:flex-row sm:items-center sm:gap-8 gap-4 
-     absolute sm:static top-full lg:pr-40 left-0 w-full sm:w-auto 
-     bg-primary sm:bg-transparent p-6 sm:p-0 
-     sm:mx-auto sm:justify-center`}
->
-  {["Home", "Purpose", "Objectives", "Projects", "Impact"].map((item) => (
-    <li key={item}>
-      <span
-        className="font-roboto font-medium text-white hover:text-gray-300 block cursor-pointer"
-        onClick={() => setIsOpen(false)} // ✅ closes mobile menu when clicked
-      >
-        {item}
-      </span>
-    </li>
-  ))}
-  <li>
-    <Link
-      to="/contact"
-      className="font-roboto font-medium text-white hover:text-gray-300 block"
-      onClick={() => setIsOpen(false)} // ✅ also closes menu
-    >
-      Contact Us
-    </Link>
-  </li>
-</ul>
+            {/* Desktop Nav */}
+            <ul className="hidden lg:flex flex-1 justify-center  lg:mr-48 items-center gap-8 text-white font-medium">
+              {menuItems.map((item, idx) => (
+                <li key={idx} className="relative">
+                  {item.submenu ? (
+                    <>
+                      <button
+                        onClick={() =>
+                          setOpenDropdown(openDropdown === idx ? null : idx)
+                        }
+                        className="flex items-center gap-1 hover:text-gray-200"
+                      >
+                        {item.name}
+                        <ChevronDown
+                          size={16}
+                          className={`ml-1 transition-transform ${
+                            openDropdown === idx ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      {openDropdown === idx && (
+                        <ul className="absolute left-0 mt-2 bg-white rounded-md shadow-lg min-w-[250px] z-50">
+                          {item.submenu.map((sub, subIdx) => (
+                            <li key={subIdx}>
+                              <Link
+                                to={sub.path}
+                                className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                onClick={() => setOpenDropdown(null)}
+                              >
+                                <sub.icon size={16} className="text-indigo-600" />
+                                {sub.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      to={item.path}
+                      className="hover:text-gray-300"
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
 
-    {/* Mobile Menu Toggle */}
-    <div
-      className="sm:hidden flex flex-col cursor-pointer"
-      onClick={() => setIsOpen(!isOpen)}
-    >
-      <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
-      <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
-      <span className="block w-6 h-1 bg-white my-1 rounded-md"></span>
-    </div>
-  </nav>
-</header>
+            {/* Mobile Toggle */}
+            <button
+              className="lg:hidden text-white"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </nav>
+
+          {/* Mobile Menu */}
+          {isOpen && (
+            <div className="lg:hidden bg-primary text-white p-4">
+              <ul className="flex flex-col gap-4">
+                {menuItems.map((item, idx) => (
+                  <li key={idx}>
+                    {item.submenu ? (
+                      <>
+                        <button
+                          onClick={() =>
+                            setOpenDropdown(openDropdown === idx ? null : idx)
+                          }
+                          className="w-full flex items-center justify-between"
+                        >
+                          <div className="flex items-center gap-2">
+                            {item.name}
+                          </div>
+                          <ChevronDown
+                            size={16}
+                            className={`transition-transform ${
+                              openDropdown === idx ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                        {openDropdown === idx && (
+                          <ul className="ml-6 mt-2 space-y-2">
+                            {item.submenu.map((sub, subIdx) => (
+                              <li key={subIdx}>
+                                <Link
+                                  to={sub.path}
+                                  className="flex items-center gap-2 hover:text-gray-300"
+                                  onClick={() => {
+                                    setIsOpen(false);
+                                    setOpenDropdown(null);
+                                  }}
+                                >
+                                  <sub.icon size={16} className="text-cyan-400" />
+                                  {sub.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </>
+                    ) : (
+                      <Link
+                        to={item.path}
+                        className="hover:text-gray-300"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </header>
 
         {/* Main Content */}
         <main className="max-w-4xl mx-auto px-6 py-12">
           <div className="bg-card rounded-lg shadow-card p-8 border border-border">
-            <h1 className="text-4xl  items-center text-primary flex justify-center font-roboto font-bold  mb-6">
+            <h1 className="text-4xl text-primary flex justify-center font-roboto font-bold mb-6">
               Privacy Policy
             </h1>
-            {/* Introduction */}
-            <div className="">
-              <p className="text-lg text-muted-foreground font-roboto font-medium leading-relaxed">
-                At AIMS Middle East, safeguarding your privacy is a priority. As
-                a proud member of Dubai Humanitarian, we are committed to
-                maintaining the highest standards of confidentiality,
-                transparency, and trust in all our healthcare and community
-                initiatives.
-              </p>
-            </div>
-            <div className="mb-8 pb-6 border-b border-border"></div>
 
             {/* Sections */}
             <div className="space-y-8">
@@ -108,8 +237,7 @@ export default function PrivacyPolicy() {
                   </li>
                   <li className="text-muted-foreground font-roboto font-medium text-base">
                     <strong>Technical Data:</strong> Device details, IP address,
-                    browser type, and cookies for website functionality and
-                    analytics.
+                    browser type, and cookies.
                   </li>
                 </ul>
               </section>
@@ -126,19 +254,13 @@ export default function PrivacyPolicy() {
                 </div>
                 <ul className="list-disc ml-14 space-y-2">
                   <li className="text-muted-foreground font-roboto font-medium text-base">
-                    Delivering comprehensive diabetes and NCD healthcare
-                    services.
+                    Delivering diabetes and NCD healthcare services.
                   </li>
                   <li className="text-muted-foreground font-roboto font-medium text-base">
-                    Facilitating community-centered programs and awareness
-                    campaigns.
+                    Facilitating community-centered programs and campaigns.
                   </li>
                   <li className="text-muted-foreground font-roboto font-medium text-base">
-                    Advancing medical research, training, and professional
-                    development.
-                  </li>
-                  <li className="text-muted-foreground font-roboto font-medium text-base">
-                    Ensuring compliance with applicable laws and regulations.
+                    Advancing medical research, training, and development.
                   </li>
                 </ul>
               </section>
@@ -155,66 +277,10 @@ export default function PrivacyPolicy() {
                 </div>
                 <ul className="list-disc ml-14 space-y-2">
                   <li className="text-muted-foreground font-roboto font-medium text-base">
-                    All information is handled with strict confidentiality.
+                    Information handled with strict confidentiality.
                   </li>
                   <li className="text-muted-foreground font-roboto font-medium text-base">
-                    Data is stored on secure servers with industry-standard
-                    encryption.
-                  </li>
-                  <li className="text-muted-foreground font-roboto font-medium text-base">
-                    Access is restricted to authorized medical and
-                    administrative professionals.
-                  </li>
-                </ul>
-              </section>
-
-              {/* Section 4 */}
-              <section className="border-l-4 border-primary pl-6">
-                <div className="flex items-start space-x-3 mb-4">
-                  <div className="bg-primary text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0">
-                    4
-                  </div>
-                  <h2 className="text-2xl font-roboto font-bold text-foreground mt-1">
-                    Data Sharing
-                  </h2>
-                </div>
-                <p className="text-muted-foreground font-roboto font-medium text-base ml-14">
-                  We do not sell or trade personal data. Information may be
-                  shared only with:
-                </p>
-                <ul className="list-disc ml-14 space-y-2 mt-2">
-                  <li className="text-muted-foreground font-roboto font-medium text-base">
-                    Healthcare providers directly involved in your care.
-                  </li>
-                  <li className="text-muted-foreground font-roboto font-medium text-base">
-                    Authorized partners and institutions (including Dubai
-                    Humanitarian) where collaboration enhances service delivery.
-                  </li>
-                  <li className="text-muted-foreground font-roboto font-medium text-base">
-                    Regulatory authorities when required by law.
-                  </li>
-                </ul>
-              </section>
-
-              {/* Section 5 */}
-              <section className="border-l-4 border-primary pl-6">
-                <div className="flex items-start space-x-3 mb-4">
-                  <div className="bg-primary text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0">
-                    5
-                  </div>
-                  <h2 className="text-2xl font-roboto font-bold text-foreground mt-1">
-                    Your Rights
-                  </h2>
-                </div>
-                <ul className="list-disc ml-14 space-y-2">
-                  <li className="text-muted-foreground font-roboto font-medium text-base">
-                    Request access, correction, or deletion of your data.
-                  </li>
-                  <li className="text-muted-foreground font-roboto font-medium text-base">
-                    Withdraw consent for non-essential communications.
-                  </li>
-                  <li className="text-muted-foreground font-roboto font-medium text-base">
-                    Raise concerns by contacting us directly.
+                    Data stored on secure servers with encryption.
                   </li>
                 </ul>
               </section>
