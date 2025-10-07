@@ -1,11 +1,17 @@
-import React from 'react'
+
+import Footer from "@/components/Footer";
+import Navigation from "@/components/Navigation";
+
 
 const Updates = () => {
-  return (
-    <div>
-      <h1>Updates</h1>
-    </div>
-  )
-}
 
-export default Updates
+
+  return (
+    <>
+     <Navigation />
+      <Footer />
+    </>
+  );
+};
+
+export default Updates;

@@ -1,20 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Aims from "@/assets/Navbar-Logo-White.png";
+import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import {
-  Menu,
-  X,
-  ChevronDown,
-  Eye,
   Users,
   Hospital,
   Heart,
   Briefcase,
   Handshake,
-  UserPlus,
-  UserCheck,
-  BadgeDollarSign,
+
   Building2,
   Bell,
   BookOpen,
@@ -60,79 +54,10 @@ export default function CSRPartnership() {
   const [submitMessage, setSubmitMessage] = useState("");
   const [touched, setTouched] = useState({});
   const [fileName, setFileName] = useState("");
- const [isOpen, setIsOpen] = useState(false);
-    const [openDropdown, setOpenDropdown] = useState(null);
 
 
-  const menuItems = [
-  {
-    name: "About",
-    submenu: [
-      { name: "Overview", path: "/about/overview", icon: Eye },
-      { name: "Impact", path: "/about/impact", icon: TrendingUp },
-    ],
-  },
-  {
-    name: "Projects",
-    submenu: [
-      {
-        name: "Sugar Hospital",
-        path: "/projects/sugar-hospital",
-        icon: Hospital,
-      },
-      {
-        name: "Community  Camps",
-        path: "/projects/community-outreach",
-        icon: Users,
-      },
-    ],
-  },
-  {
-    name: "Partners",
-    submenu: [
-      {
-        name: "Strategic Partners",
-        path: "/partners/strategic",
-        icon: Briefcase,
-      },
-      {
-        name: "MoUs & Collaborations",
-        path: "/partners/mous",
-        icon: Handshake,
-      },
-      { name: "Become a Partner", path: "/partners/become", icon: UserPlus },
-    ],
-  },
-  {
-    name: "Get Involved",
-    submenu: [
-      { name: "Donate", path: "/get-involved/donate", icon: Heart },
-      { name: "Volunteer", path: "/get-involved/volunteer", icon: UserCheck },
-      {
-        name: "Membership",
-        path: "/get-involved/membership",
-        icon: BadgeDollarSign,
-      },
-      {
-        name: "Corporate Giving & CSR",
-        path: "/get-involved/csr",
-        icon: Building2,
-      },
-    ],
-  },
-  {
-    name: "News",
-    submenu: [
-      { name: "Updates & Events", path: "/news/updates", icon: Bell },
-      {
-        name: "Research & Education",
-        path: "/news/research",
-        icon: BookOpen,
-      },
-    ],
-  },
-  { name: "Contact", path: "/contact" },
-];
+
+ 
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -302,141 +227,16 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
 
   return (
      <>
-      <header className="sticky top-0 z-50 bg-primary shadow-md">
-        <nav className="flex items-center justify-between px-6 lg:px-20 py-4">
-          <Link to="/">
-            <img
-              src={Aims}
-              alt="AIMS Logo"
-              className="h-10 sm:h-12 lg:ml-20 w-auto max-w-[120px] hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
-          </Link>
-
-          <ul className="hidden lg:flex flex-1 justify-center lg:mr-48 font-roboto items-center gap-8 text-white font-medium">
-            {menuItems.map((item, idx) => (
-              <li key={idx} className="relative">
-                {item.submenu ? (
-                  <>
-                    <button
-                      onClick={() =>
-                        setOpenDropdown(openDropdown === idx ? null : idx)
-                      }
-                      className="flex items-center gap-1 hover:text-gray-200"
-                    >
-                      {item.name}
-                      <ChevronDown
-                        size={16}
-                        className={`ml-1 transition-transform ${
-                          openDropdown === idx ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                    {openDropdown === idx && (
-                      <ul className="absolute left-0 mt-2 bg-white rounded-md shadow-lg min-w-[100px] z-50">
-                        {item.submenu.map((sub, subIdx) => (
-                          <li key={subIdx}>
-                            <Link
-                              to={sub.path}
-                              className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100"
-                              onClick={() => setOpenDropdown(null)}
-                            >
-                              <sub.icon size={16} className="text-indigo-600" />
-                              {sub.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className="hover:text-gray-500"
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-
-          <button
-            className="lg:hidden text-white"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </nav>
-
-        {isOpen && (
-          <div className="lg:hidden bg-primary text-white p-4">
-            <ul className="flex flex-col gap-4">
-              {menuItems.map((item, idx) => (
-                <li key={idx}>
-                  {item.submenu ? (
-                    <>
-                      <button
-                        onClick={() =>
-                          setOpenDropdown(openDropdown === idx ? null : idx)
-                        }
-                        className="w-full flex items-center justify-between"
-                      >
-                        <div className="flex items-center gap-2">
-                          {item.name}
-                        </div>
-                        <ChevronDown
-                          size={16}
-                          className={`transition-transform ${
-                            openDropdown === idx ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                      {openDropdown === idx && (
-                        <ul className="ml-6 mt-2 space-y-2">
-                          {item.submenu.map((sub, subIdx) => (
-                            <li key={subIdx}>
-                              <Link
-                                to={sub.path}
-                                className="flex items-center gap-2 hover:text-gray-300"
-                                onClick={() => {
-                                  setIsOpen(false);
-                                  setOpenDropdown(null);
-                                }}
-                              >
-                                <sub.icon size={16} className="text-cyan-400" />
-                                {sub.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </>
-                  ) : (
-                    <Link
-                      to={item.path}
-                      className="hover:text-gray-300"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </header>
+     <Navigation />
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-12">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 px-5 py-2 rounded-full text-sm font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-primary/90 px-5 py-2 rounded-full text-sm font-semibold mb-6">
             <Handshake className="w-4 h-4" />
             Corporate Partnership
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary/95 mb-6">
             Partner with AIMS Middle East
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -450,7 +250,7 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
         {/* Form Card */}
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           {/* Form Header */}
-          <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 px-6 md:px-8 py-6">
+          <div className="bg-primary/95 px-6 md:px-8 py-6">
             <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
               <Building2 className="w-8 h-8" />
               Corporate Giving & CSR Partnership Form
@@ -465,8 +265,8 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
             <div className="space-y-10">
               {/* 1. Organization Information */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-blue-200 flex items-center gap-2">
-                  <Building2 className="w-6 h-6 text-blue-600" />
+                <h3 className="text-xl font-bold text-primary/95 mb-6 pb-3 border-b-2 border-blue-200 flex items-center gap-2">
+                  <Building2 className="w-6 h-6 text-primary/95" />
                   Organization Information
                 </h3>
 
@@ -559,8 +359,8 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
 
               {/* 2. Contact Person */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-blue-200 flex items-center gap-2">
-                  <User className="w-6 h-6 text-blue-600" />
+                <h3 className="text-xl font-bold text-primary/95 mb-6 pb-3 border-b-2 border-blue-200 flex items-center gap-2">
+                  <User className="w-6 h-6 text-primary/95" />
                   Contact Person
                 </h3>
 
@@ -690,8 +490,8 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
 
               {/* 3. Type of Partnership */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-blue-200 flex items-center gap-2">
-                  <Handshake className="w-6 h-6 text-blue-600" />
+                <h3 className="text-xl font-bold text-primary/95 mb-6 pb-3 border-b-2 border-blue-200 flex items-center gap-2">
+                  <Handshake className="w-6 h-6 text-primary/95" />
                   Type of Partnership / Support
                 </h3>
 
@@ -754,13 +554,13 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
 
               {/* 4. Area of Interest */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-blue-200 flex items-center gap-2">
-                  <Target className="w-6 h-6 text-blue-600" />
+                <h3 className="text-xl font-bold text-primary/95 mb-6 pb-3 border-b-2 border-blue-200 flex items-center gap-2">
+                  <Target className="w-6 h-6 text-primary/95" />
                   Area of Interest
                 </h3>
 
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6">
-                  <p className="text-sm text-gray-700 mb-4 font-medium">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6">
+                  <p className="text-sm text-primary/95 mb-4 font-medium">
                     Which cause would you like to support?
                   </p>
 
@@ -789,7 +589,7 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                           name={name}
                           checked={formData[name]}
                           onChange={handleInputChange}
-                          className="w-5 h-5 text-green-600 border-gray-300 rounded focus:ring-2 focus:ring-green-500"
+                          className="w-5 h-5 text-green-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
                         />
                         <span className="ml-3 text-base font-medium text-gray-900">
                           {label}
@@ -942,7 +742,7 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                 <button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:via-blue-800 hover:to-indigo-800 disabled:from-gray-400 disabled:to-gray-500 text-white text-lg font-semibold py-5 px-6 rounded-xl transition-all duration-200 shadow-xl hover:shadow-2xl disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                  className="w-full bg-primary/90 hover:from-blue-700 hover:via-blue-800 hover:to-indigo-800 disabled:from-gray-400 disabled:to-gray-500 text-white text-lg font-semibold py-5 px-6 rounded-xl transition-all duration-200 shadow-xl hover:shadow-2xl disabled:cursor-not-allowed flex items-center justify-center gap-3"
                 >
                   {isSubmitting ? (
                     <>

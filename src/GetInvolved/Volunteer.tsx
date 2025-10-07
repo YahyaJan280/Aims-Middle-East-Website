@@ -1,252 +1,29 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Aims from "@/assets/Navbar-Logo-White.png";
+import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import emailjs from "@emailjs/browser";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  Eye,
-  Users,
-  Hospital,
-  Globe,
-  Heart,
-  Briefcase,
-  Handshake,
-  UserPlus,
-  UserCheck,
-  BadgeDollarSign,
-  Building2,
-  Bell,
-  BookOpen,
-  TrendingUp,
-} from "lucide-react";
+import { Users, Globe, Heart } from "lucide-react";
 
 export default function Volunteer() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
-
-  const menuItems = [
-    {
-      name: "About",
-      submenu: [
-        { name: "Overview", path: "/about/overview", icon: Eye },
-        { name: "Impact", path: "/about/impact", icon: TrendingUp },
-      ],
-    },
-    {
-      name: "Projects",
-      submenu: [
-        {
-          name: "Sugar Hospital",
-          path: "/projects/sugar-hospital",
-          icon: Hospital,
-        },
-        {
-          name: "Community Camps",
-          path: "/projects/community-outreach",
-          icon: Users,
-        },
-      ],
-    },
-    {
-      name: "Partners",
-      submenu: [
-        {
-          name: "Strategic Partners",
-          path: "/partners/strategic",
-          icon: Briefcase,
-        },
-        {
-          name: "MoUs & Collaborations",
-          path: "/partners/mous",
-          icon: Handshake,
-        },
-        { name: "Become a Partner", path: "/partners/become", icon: UserPlus },
-      ],
-    },
-    {
-      name: "Get Involved",
-      submenu: [
-        { name: "Donate", path: "/get-involved/donate", icon: Heart },
-        { name: "Volunteer", path: "/get-involved/volunteer", icon: UserCheck },
-        {
-          name: "Membership",
-          path: "/get-involved/membership",
-          icon: BadgeDollarSign,
-        },
-        {
-          name: "Corporate Giving & CSR",
-          path: "/get-involved/csr",
-          icon: Building2,
-        },
-      ],
-    },
-    {
-      name: "News",
-      submenu: [
-        { name: "Updates & Events", path: "/news/updates", icon: Bell },
-        {
-          name: "Research & Education",
-          path: "/news/research",
-          icon: BookOpen,
-        },
-      ],
-    },
-    { name: "Contact", path: "/contact" },
-  ];
-
   return (
     <>
-      <header className="sticky top-0 z-50 bg-primary shadow-md">
-        <nav className="flex items-center justify-between px-6 lg:px-20 py-4">
-          <Link to="/">
-            <img
-              src={Aims}
-              alt="AIMS Logo"
-              className="h-10 sm:h-12 lg:ml-20 w-auto max-w-[120px] hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
-          </Link>
-
-          <ul className="hidden lg:flex flex-1 justify-center lg:mr-48 font-roboto items-center gap-8 text-white font-medium">
-            {menuItems.map((item, idx) => (
-              <li key={idx} className="relative">
-                {item.submenu ? (
-                  <>
-                    <button
-                      onClick={() =>
-                        setOpenDropdown(openDropdown === idx ? null : idx)
-                      }
-                      className="flex items-center gap-1 hover:text-gray-200"
-                    >
-                      {item.name}
-                      <ChevronDown
-                        size={16}
-                        className={`ml-1 transition-transform ${
-                          openDropdown === idx ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                    {openDropdown === idx && (
-                      <ul className="absolute left-0 mt-2 bg-white rounded-md shadow-lg min-w-[200px] z-50">
-                        {item.submenu.map((sub, subIdx) => (
-                          <li key={subIdx}>
-                            <Link
-                              to={sub.path}
-                              className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100"
-                              onClick={() => setOpenDropdown(null)}
-                            >
-                              <sub.icon size={16} className="text-indigo-600" />
-                              {sub.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className="hover:text-gray-200"
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-
-          <button
-            className="lg:hidden text-white"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </nav>
-
-        {isOpen && (
-          <div className="lg:hidden bg-primary text-white p-4">
-            <ul className="flex flex-col gap-4">
-              {menuItems.map((item, idx) => (
-                <li key={idx}>
-                  {item.submenu ? (
-                    <>
-                      <button
-                        onClick={() =>
-                          setOpenDropdown(openDropdown === idx ? null : idx)
-                        }
-                        className="w-full flex items-center justify-between"
-                      >
-                        <div className="flex items-center gap-2">
-                          {item.name}
-                        </div>
-                        <ChevronDown
-                          size={16}
-                          className={`transition-transform ${
-                            openDropdown === idx ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                      {openDropdown === idx && (
-                        <ul className="ml-6 mt-2 space-y-2">
-                          {item.submenu.map((sub, subIdx) => (
-                            <li key={subIdx}>
-                              <Link
-                                to={sub.path}
-                                className="flex items-center gap-2 hover:text-gray-300"
-                                onClick={() => {
-                                  setIsOpen(false);
-                                  setOpenDropdown(null);
-                                }}
-                              >
-                                <sub.icon size={16} className="text-cyan-400" />
-                                {sub.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </>
-                  ) : (
-                    <Link
-                      to={item.path}
-                      className="hover:text-gray-300"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </header>
-
-      <div className="min-h-screen bg-gray-50">
+      <Navigation />
+      <div className="min-h-screen lg:py-12 bg-gray-50">
         {/* Hero Section */}
         <div className="bg-white">
           <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary/95 mb-6 leading-tight">
                   Serve Your Community.
                   <br />
                   Make a Difference.
                 </h1>
                 <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
-                  Join us in our mission to improve health and well-being
-                  across Pakistan and the Middle East
+                  Join us in our mission to improve health and well-being across
+                  Pakistan and the Middle East
                 </p>
-                <a>
-                  href="#volunteer-form"
-                  className="inline-block bg-teal-700 hover:bg-teal-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-md hover:shadow-lg"
-                
-                  Become a Volunteer
-                </a>
+             
               </div>
               <div className="relative">
                 <img
@@ -261,7 +38,7 @@ export default function Volunteer() {
 
         {/* Why Volunteer Section */}
         <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary/95 text-center mb-12">
             Why Volunteer?
           </h2>
 
@@ -269,8 +46,8 @@ export default function Volunteer() {
             {/* Make a Difference */}
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0">
-                <div className="bg-teal-100 p-4 rounded-lg">
-                  <Heart className="w-10 h-10 text-teal-700" />
+                <div className="bg-primary/95 p-4 rounded-lg">
+                  <Heart className="w-10 h-10 text-white" />
                 </div>
               </div>
               <div>
@@ -286,8 +63,8 @@ export default function Volunteer() {
             {/* Meet New People */}
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0">
-                <div className="bg-teal-100 p-4 rounded-lg">
-                  <Users className="w-10 h-10 text-teal-700" />
+                <div className="bg-primary/95 p-4 rounded-lg">
+                  <Users className="w-10 h-10 text-white" />
                 </div>
               </div>
               <div>
@@ -303,9 +80,9 @@ export default function Volunteer() {
             {/* Build Your Skills */}
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0">
-                <div className="bg-teal-100 p-4 rounded-lg">
+                <div className="bg-primary/95 p-4 rounded-lg">
                   <svg
-                    className="w-10 h-10 text-teal-700"
+                    className="w-10 h-10 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -333,8 +110,8 @@ export default function Volunteer() {
             {/* Contribute to the Community */}
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0">
-                <div className="bg-teal-100 p-4 rounded-lg">
-                  <Globe className="w-10 h-10 text-teal-700" />
+                <div className="bg-primary/95 p-4 rounded-lg">
+                  <Globe className="w-10 h-10 text-white" />
                 </div>
               </div>
               <div>
@@ -350,7 +127,7 @@ export default function Volunteer() {
 
           {/* Volunteer Opportunities Section */}
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary/95 mb-8">
               Volunteer Opportunities
             </h2>
 
@@ -378,9 +155,7 @@ export default function Volunteer() {
 
               <div className="flex items-center space-x-4">
                 <div className="w-3 h-3 bg-gray-900 rounded-full flex-shrink-0"></div>
-                <p className="text-xl text-gray-900 font-medium">
-                  Fundraising
-                </p>
+                <p className="text-xl text-gray-900 font-medium">Fundraising</p>
               </div>
             </div>
           </div>
@@ -390,7 +165,7 @@ export default function Volunteer() {
             id="volunteer-form"
             className="mt-16 bg-white rounded-2xl shadow-lg p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary/95 text-center mb-8">
               Volunteer Registration
             </h2>
 
@@ -469,7 +244,9 @@ ${formData.experience || "No previous experience mentioned"}`,
 
     try {
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
-      alert("Thank you for registering as a volunteer! We will contact you soon.");
+      alert(
+        "Thank you for registering as a volunteer! We will contact you soon."
+      );
       setFormData({
         fullName: "",
         email: "",
@@ -481,7 +258,9 @@ ${formData.experience || "No previous experience mentioned"}`,
       });
     } catch (error) {
       console.error("EmailJS Error:", error);
-      alert("Sorry, there was an error submitting your form. Please try again.");
+      alert(
+        "Sorry, there was an error submitting your form. Please try again."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -626,7 +405,7 @@ ${formData.experience || "No previous experience mentioned"}`,
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full md:w-auto px-12 py-4 bg-teal-700 hover:bg-teal-800 text-white font-semibold text-lg rounded-lg transition-colors shadow-md hover:shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed"
+          className="w-full md:w-auto px-12 py-4 bg-primary/95 hover:bg-primary/85 text-white font-semibold text-lg rounded-lg transition-colors shadow-md hover:shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed"
         >
           {isSubmitting ? "Submitting..." : "Register as Volunteer"}
         </button>

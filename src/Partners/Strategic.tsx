@@ -1,289 +1,110 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Aims from "@/assets/Navbar-Logo-White.png";
+import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import logo1 from "@/assets/logo1.png"
-import logo2 from "@/assets/logo2.jpg"
-import logo3 from "@/assets/logo3.jpg"
-import {
-  Menu,
-  X,
-  ChevronDown,
-  Eye,
-  Users,
-  Hospital,
-  Heart,
-  Briefcase,
-  Handshake,
-  UserPlus,
-  UserCheck,
-  BadgeDollarSign,
-  Building2,
-  Bell,
-  BookOpen,
-  TrendingUp,
-} from "lucide-react";
 
-const menuItems = [
-  {
-    name: "About",
-    submenu: [
-      { name: "Overview", path: "/about/overview", icon: Eye },
-      { name: "Impact", path: "/about/impact", icon: TrendingUp },
-    ],
-  },
-  {
-    name: "Projects",
-    submenu: [
-      {
-        name: "Sugar Hospital",
-        path: "/projects/sugar-hospital",
-        icon: Hospital,
-      },
-      {
-        name: "Community  Camps",
-        path: "/projects/community-outreach",
-        icon: Users,
-      },
-    ],
-  },
-  {
-    name: "Partners",
-    submenu: [
-      {
-        name: "Strategic Partners",
-        path: "/partners/strategic",
-        icon: Briefcase,
-      },
-      {
-        name: "MoUs & Collaborations",
-        path: "/partners/mous",
-        icon: Handshake,
-      },
-      { name: "Become a Partner", path: "/partners/become", icon: UserPlus },
-    ],
-  },
-  {
-    name: "Get Involved",
-    submenu: [
-      { name: "Donate", path: "/get-involved/donate", icon: Heart },
-      { name: "Volunteer", path: "/get-involved/volunteer", icon: UserCheck },
-      {
-        name: "Membership",
-        path: "/get-involved/membership",
-        icon: BadgeDollarSign,
-      },
-      {
-        name: "Corporate Giving & CSR",
-        path: "/get-involved/csr",
-        icon: Building2,
-      },
-    ],
-  },
-  {
-    name: "News",
-    submenu: [
-      { name: "Updates & Events", path: "/news/updates", icon: Bell },
-      {
-        name: "Research & Education",
-        path: "/news/research",
-        icon: BookOpen,
-      },
-    ],
-  },
-  { name: "Contact", path: "/contact" },
-];
+import logo1 from "@/assets/logo1.png";
+import logo2 from "@/assets/logo2.jpg";
+import logo3 from "@/assets/logo3.jpg";
+import { Handshake } from "lucide-react";
 
 const StrategicPartnersPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
-
   const partners = [
-    { logo: logo1, alt: "Seal of Good Practice" },
-    { logo: logo2, alt: "Academic Development Office" },
-    { logo: logo3, alt: "Alhumd Shariah Advisory Services" },
+    {
+      logo: logo1,
+      name: "Islamic Centre for Urbanisation",
+      description:
+        "Excellence in healthcare practices and ethical community standards.",
+    },
+    {
+      logo: logo2,
+      name: "Academic Development Office",
+      description:
+        "Promoting academic excellence and advancing healthcare research and education.",
+    },
+    {
+      logo: logo3,
+      name: "Alhamd Shariah Advisory Services",
+      description:
+        "Certified by PCP for excellence and leadership under FBR’s NPO evaluation standards.",
+    },
   ];
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-primary shadow-md">
-        <nav className="flex items-center justify-between px-6 lg:px-20 py-4">
-          <Link to="/">
-            <img
-              src={Aims}
-              alt="AIMS Logo"
-              className="h-10 sm:h-12 lg:ml-20 w-auto max-w-[120px] hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
-          </Link>
+      <Navigation />
 
-          <ul className="hidden lg:flex flex-1 justify-center lg:mr-48 font-roboto items-center gap-8 text-white font-medium">
-            {menuItems.map((item, idx) => (
-              <li key={idx} className="relative">
-                {item.submenu ? (
-                  <>
-                    <button
-                      onClick={() =>
-                        setOpenDropdown(openDropdown === idx ? null : idx)
-                      }
-                      className="flex items-center gap-1 hover:text-gray-200"
-                    >
-                      {item.name}
-                      <ChevronDown
-                        size={16}
-                        className={`ml-1 transition-transform ${
-                          openDropdown === idx ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                    {openDropdown === idx && (
-                      <ul className="absolute left-0 mt-2 bg-white rounded-md shadow-lg min-w-[100px] z-50">
-                        {item.submenu.map((sub, subIdx) => (
-                          <li key={subIdx}>
-                            <Link
-                              to={sub.path}
-                              className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100"
-                              onClick={() => setOpenDropdown(null)}
-                            >
-                              <sub.icon size={16} className="text-indigo-600" />
-                              {sub.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className="hover:text-gray-500"
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-
-          <button
-            className="lg:hidden text-white"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </nav>
-
-        {isOpen && (
-          <div className="lg:hidden bg-primary text-white p-4">
-            <ul className="flex flex-col gap-4">
-              {menuItems.map((item, idx) => (
-                <li key={idx}>
-                  {item.submenu ? (
-                    <>
-                      <button
-                        onClick={() =>
-                          setOpenDropdown(openDropdown === idx ? null : idx)
-                        }
-                        className="w-full flex items-center justify-between"
-                      >
-                        <div className="flex items-center gap-2">
-                          {item.name}
-                        </div>
-                        <ChevronDown
-                          size={16}
-                          className={`transition-transform ${
-                            openDropdown === idx ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                      {openDropdown === idx && (
-                        <ul className="ml-6 mt-2 space-y-2">
-                          {item.submenu.map((sub, subIdx) => (
-                            <li key={subIdx}>
-                              <Link
-                                to={sub.path}
-                                className="flex items-center gap-2 hover:text-gray-300"
-                                onClick={() => {
-                                  setIsOpen(false);
-                                  setOpenDropdown(null);
-                                }}
-                              >
-                                <sub.icon size={16} className="text-cyan-400" />
-                                {sub.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </>
-                  ) : (
-                    <Link
-                      to={item.path}
-                      className="hover:text-gray-300"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
+      <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen py-28 px-4">
+        {/* Hero Section */}
+        <div className="max-w-6xl mx-auto text-center mb-20">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full shadow-lg mb-6 border border-primary/30">
+            <Handshake className="w-10 h-10 text-primary/95" />
           </div>
-        )}
-      </header>
 
-      <div className="bg-white min-h-screen py-16 px-4">
-        {/* Title Section */}
-        <div className="max-w-6xl mx-auto text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary/95 mb-4">
             Strategic Partners
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            We are proud to partner with other industry leaders and organizations to achieve our goals. 
-            Our strategic partners share our commitment to excellence and innovation, and together, 
-            we are stronger.
+            We are proud to collaborate with visionary organizations that share
+            our commitment to excellence, innovation, and community well-being.
+            Together, we advance sustainable healthcare and impactful social
+            initiatives across the region.
           </p>
         </div>
 
-        {/* Partners Logo Section */}
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">
-            Our Partners
+        {/* Partners Section */}
+        <div className="max-w-6xl mx-auto mb-24">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary/95 text-center mb-4">
+            Our Trusted Partners
           </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-              <img 
-                src={logo1} 
-                alt="Seal of Good Practice" 
-                className="mx-auto w-24 h-auto mb-4 object-contain"
-              />
-              <p className="font-roboto font-medium text-sm text-gray-600">
-                Islamic Centre for Vrbanisation - Excellence in healthcare practices and ethical standards.
-              </p>
-            </div>
+          <div className="w-24 h-1 bg-primary/95 mx-auto mb-12 rounded-full"></div>
 
-            <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-              <img 
-                src={logo2} 
-                alt="Academic Development Office" 
-                className="mx-auto w-24 h-auto mb-4 object-contain"
-              />
-              <p className="font-roboto font-medium text-sm text-gray-600">
-                Promoting academic excellence and research in healthcare education.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {partners.map((partner, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="flex flex-col items-center mb-4">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="w-28 h-28 object-contain mb-4 rounded-lg bg-white p-2 shadow-md"
+                  />
+                  <h3 className="text-xl font-bold text-primary/95 mb-2">
+                    {partner.name}
+                  </h3>
+                </div>
+                <p className="text-gray-700 leading-relaxed text-base">
+                  {partner.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
 
-            <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-              <img 
-                src={logo3} 
-                alt="Alhumd Shariah Advisory Services" 
-                className="mx-auto w-24 h-auto mb-4 object-contain"
-              />
-              <p className="font-roboto font-medium text-sm text-gray-600">
-                AIMS Pakistan is certified by PCP for excellence and leadership under FBR's NPO evaluation standards.
-              </p>
+        {/* Call to Action */}
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-primary/95 rounded-3xl shadow-2xl p-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Partner with AIMS Middle East
+            </h3>
+            <p className="text-indigo-100 text-lg mb-8 max-w-2xl mx-auto">
+              Join hands with us to create sustainable impact through
+              partnerships that redefine excellence and integrity in healthcare
+              and social development.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/partners/become">
+                <button className="bg-white text-primary font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg">
+                  Become a Partner
+                </button>
+              </Link>
+              <Link to="/contact">
+                <button className="border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-all duration-300">
+                  Contact Us
+                </button>
+              </Link>
             </div>
           </div>
         </div>

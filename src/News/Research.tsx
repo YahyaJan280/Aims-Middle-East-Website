@@ -1,11 +1,19 @@
-import React from 'react'
+import { useState, useEffect } from "react";
+import Footer from "@/components/Footer";
+import Navigation from "@/components/Navigation";
+
+
+
 
 const Research = () => {
+ 
   return (
-    <div>
-      <h1>Research</h1>
-    </div>
-  )
-}
+    <>
+  <Navigation />
+  
+    <Footer />
+    </>
+  );
+};
 
-export default Research
+export default Research;
