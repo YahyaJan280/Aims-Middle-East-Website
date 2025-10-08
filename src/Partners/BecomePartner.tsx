@@ -30,10 +30,10 @@ const BecomePartnerPage = () => {
     <>
       <Navigation />
 
-      <section className="bg-white min-h-screen py-24 px-6">
+      <section className="bg-white min-h-screen py-24 font-roboto px-6">
         {/* Title Section */}
         <div className="max-w-6xl mx-auto text-center mb-20">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary/95 mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary/95 mb-6 py-8 tracking-tight">
             Become a Partner
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -63,7 +63,7 @@ const BecomePartnerPage = () => {
 
           {/* Call to Action */}
 
-          <div className="text-center mt-20">
+          <div className="text-center mt-20 font-roboto">
             <p className="text-lg text-gray-700 mb-6">
               Ready to make an impact together?
             </p>

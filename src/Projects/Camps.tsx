@@ -1,271 +1,61 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Aims from "@/assets/Navbar-Logo-White.png";
+import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SugerHospital from '@/assets/Suger-Hospital.jpg'
-import {
-  Menu,
-  X,
-  ChevronDown,
-  Eye,
-  Users,
-  Hospital,
-  BarChart3,
-  Heart,
-  Briefcase,
-  Handshake,
-  UserPlus,
-  UserCheck,
-  BadgeDollarSign,
-  Building2,
-  Bell,
-  BookOpen,
-  TrendingUp,
-} from "lucide-react";
-
-import { Stethoscope, GraduationCap, Lightbulb, Globe } from "lucide-react";
-
-const menuItems = [
-  {
-    name: "About",
-    submenu: [
-      { name: "Overview", path: "/about/overview", icon: Eye },
-      { name: "Impact", path: "/about/impact", icon: TrendingUp },
-    ],
-  },
-  {
-    name: "Projects",
-    submenu: [
-      {
-        name: "Sugar Hospital",
-        path: "/projects/sugar-hospital",
-        icon: Hospital,
-      },
-      {
-        name: "community capms",
-        path: "/projects/community capms",
-        icon: Users,
-      },
-    ],
-  },
-  {
-    name: "Partners",
-    submenu: [
-      {
-        name: "Strategic Partners",
-        path: "/partners/strategic",
-        icon: Briefcase,
-      },
-      {
-        name: "MoUs & Collaborations",
-        path: "/partners/mous",
-        icon: Handshake,
-      },
-      { name: "Become a Partner", path: "/partners/become", icon: UserPlus },
-    ],
-  },
-  {
-    name: "Get Involved",
-    submenu: [
-      { name: "Donate", path: "/get-involved/donate", icon: Heart },
-      { name: "Volunteer", path: "/get-involved/volunteer", icon: UserCheck },
-      {
-        name: "Membership",
-        path: "/get-involved/membership",
-        icon: BadgeDollarSign,
-      },
-      {
-        name: "Corporate Giving & CSR",
-        path: "/get-involved/csr",
-        icon: Building2,
-      },
-    ],
-  },
-  {
-    name: "News",
-    submenu: [
-      { name: "Updates & Events", path: "/news/updates", icon: Bell },
-      {
-        name: "Research & Education",
-        path: "/news/research",
-        icon: BookOpen,
-      },
-    ],
-  },
-  { name: "Contact", path: "/contact" },
-];
 
 const CommunityOutreach = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
-
   return (
     <>
-      <header className="sticky top-0 z-50 bg-primary shadow-md">
-        <nav className="flex items-center justify-between px-6 lg:px-20 py-4">
-          {/* Logo */}
-          <Link to="/">
-            <img
-              src={Aims}
-              alt="AIMS Logo"
-              className="h-10 sm:h-12 lg:ml-20 w-auto max-w-[120px] hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
-          </Link>
-
-          {/* Desktop Nav */}
-          <ul className="hidden lg:flex flex-1 justify-center lg:mr-48 font-roboto items-center gap-8 text-white font-medium">
-            {menuItems.map((item, idx) => (
-              <li key={idx} className="relative">
-                {item.submenu ? (
-                  <>
-                    <button
-                      onClick={() =>
-                        setOpenDropdown(openDropdown === idx ? null : idx)
-                      }
-                      className="flex items-center gap-1 hover:text-gray-200"
-                    >
-                      {item.name}
-                      <ChevronDown
-                        size={16}
-                        className={`ml-1 transition-transform ${
-                          openDropdown === idx ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                    {openDropdown === idx && (
-                      <ul className="absolute left-0 mt-2 bg-white rounded-md shadow-lg min-w-[100px] z-50">
-                        {item.submenu.map((sub, subIdx) => (
-                          <li key={subIdx}>
-                            <Link
-                              to={sub.path}
-                              className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100"
-                              onClick={() => setOpenDropdown(null)}
-                            >
-                              <sub.icon size={16} className="text-indigo-600" />
-                              {sub.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className="hover:text-gray-500"
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile Toggle */}
-          <button
-            className="lg:hidden text-white"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </nav>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="lg:hidden bg-primary text-white p-4">
-            <ul className="flex flex-col gap-4">
-              {menuItems.map((item, idx) => (
-                <li key={idx}>
-                  {item.submenu ? (
-                    <>
-                      <button
-                        onClick={() =>
-                          setOpenDropdown(openDropdown === idx ? null : idx)
-                        }
-                        className="w-full flex items-center justify-between"
-                      >
-                        <div className="flex items-center gap-2">
-                          {item.name}
-                        </div>
-                        <ChevronDown
-                          size={16}
-                          className={`transition-transform ${
-                            openDropdown === idx ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                      {openDropdown === idx && (
-                        <ul className="ml-6 mt-2 space-y-2">
-                          {item.submenu.map((sub, subIdx) => (
-                            <li key={subIdx}>
-                              <Link
-                                to={sub.path}
-                                className="flex items-center gap-2 hover:text-gray-300"
-                                onClick={() => {
-                                  setIsOpen(false);
-                                  setOpenDropdown(null);
-                                }}
-                              >
-                                <sub.icon size={16} className="text-cyan-400" />
-                                {sub.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </>
-                  ) : (
-                    <Link
-                      to={item.path}
-                      className="hover:text-gray-300"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </header>
-
+      <Navigation />
       <div className="bg-white">
         {/* Hero Section */}
-        <section className="bg-primary/95 text-white py-16">
+        <section className="bg-primary/95 text-white py-28">
           <div className="container mx-auto px-6 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-roboto font-bold mb-6">
               Community Health Camps
             </h1>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed">
-              At AIMS Middle East, our community health camps are designed to provide essential healthcare services to underserved areas. Through these camps, we ensure that quality medical care reaches even the most remote communities.
+            <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-roboto">
+              At AIMS Middle East, our community health camps are designed to
+              provide essential healthcare services to underserved areas.
+              Through these camps, we ensure that quality medical care reaches
+              even the most remote communities.
             </p>
           </div>
         </section>
 
         {/* Accessible Care Section */}
-        <section className="container mx-auto px-6 py-10">
+        <section className="container mx-auto px-6 py-10 font-roboto">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="md:text-4xl text-2xl font-bold text-primary/95 mb-6">
               Accessible Care for Everyone
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              We organize mobile and stationary camps that deliver free medical check-ups, consultations, and treatments, targeting communities with limited access to healthcare.
+              We organize mobile and stationary camps that deliver free medical
+              check-ups, consultations, and treatments, targeting communities
+              with limited access to healthcare.
             </p>
           </div>
 
           {/* Services Provided */}
-          <div className="mb-20">
-            <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <div className="mb-20 font-roboto">
+            <h3 className="text-3xl font-bold text-primary/95 text-center mb-12">
               Services Provided
             </h3>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="flex gap-4 items-start p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  <svg
+                    className="w-8 h-8 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    />
                   </svg>
                 </div>
                 <div>
@@ -280,8 +70,18 @@ const CommunityOutreach = () => {
 
               <div className="flex gap-4 items-start p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <svg
+                    className="w-8 h-8 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
                   </svg>
                 </div>
                 <div>
@@ -296,8 +96,18 @@ const CommunityOutreach = () => {
 
               <div className="flex gap-4 items-start p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  <svg
+                    className="w-8 h-8 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    />
                   </svg>
                 </div>
                 <div>
@@ -312,8 +122,18 @@ const CommunityOutreach = () => {
 
               <div className="flex gap-4 items-start p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  <svg
+                    className="w-8 h-8 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
                   </svg>
                 </div>
                 <div>
@@ -330,7 +150,7 @@ const CommunityOutreach = () => {
         </section>
 
         {/* 2,500+ Patients Served Section */}
-        <section className="bg-gray-50 py-3">
+        <section className="bg-gray-50 py-3 font-roboto">
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
@@ -341,14 +161,19 @@ const CommunityOutreach = () => {
                 />
               </div>
               <div>
-                <h2 className="text-5xl font-bold text-gray-900 mb-6">
+                <h2 className="md:text-5xl text-2xl font-bold text-primary/95 mb-6">
                   2,500+ Patients Served
                 </h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Since our inception, we have successfully screened and provided medical care to over 2,500 individuals across Khyber Pakhtunkhwa. Each camp brings hope and healing to families who otherwise lack access to essential healthcare services.
+                  Since our inception, we have successfully screened and
+                  provided medical care to over 2,500 individuals across Khyber
+                  Pakhtunkhwa. Each camp brings hope and healing to families who
+                  otherwise lack access to essential healthcare services.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Our dedicated medical teams work tirelessly to ensure every patient receives proper diagnosis, treatment, and follow-up care, making a tangible difference in their lives.
+                  Our dedicated medical teams work tirelessly to ensure every
+                  patient receives proper diagnosis, treatment, and follow-up
+                  care, making a tangible difference in their lives.
                 </p>
               </div>
             </div>
@@ -356,17 +181,22 @@ const CommunityOutreach = () => {
         </section>
 
         {/* 40+ Camps Annually Section */}
-        <section className="container mx-auto px-6 py-16">
+        <section className="container mx-auto px-6 py-16 font-roboto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
-              <h2 className="text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="md:text-5xl text-2xl font-bold text-primary/95 mb-6">
                 40+ Camps Annually
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Every year, we organize more than 40 free medical camps across remote and underserved areas of KPK. These camps are strategically planned to reach communities where healthcare infrastructure is minimal or non-existent.
+                Every year, we organize more than 40 free medical camps across
+                remote and underserved areas of KPK. These camps are
+                strategically planned to reach communities where healthcare
+                infrastructure is minimal or non-existent.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                From mountainous villages to rural settlements, our mobile health units bring comprehensive medical services directly to those who need them most, ensuring no one is left behind.
+                From mountainous villages to rural settlements, our mobile
+                health units bring comprehensive medical services directly to
+                those who need them most, ensuring no one is left behind.
               </p>
             </div>
             <div className="order-1 md:order-2">
@@ -380,14 +210,14 @@ const CommunityOutreach = () => {
         </section>
 
         {/* Impact in Numbers */}
-        <section className="bg-primary/95 py-16">
+        <section className="bg-primary/95 py-16 font-roboto">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold text-white text-center mb-12">
+            <h2 className="md:text-4xl text-3xl font-bold text-white text-center mb-12">
               Impact in Numbers
             </h2>
             <div className="grid md:grid-cols-3 gap-12 text-center">
               <div>
-                <div className="text-6xl md:text-7xl font-bold text-white mb-4">
+                <div className="text-5xl md:text-7xl font-bold text-white mb-4">
                   2,500+
                 </div>
                 <p className="text-xl text-gray-100 font-semibold">
@@ -395,7 +225,7 @@ const CommunityOutreach = () => {
                 </p>
               </div>
               <div>
-                <div className="text-6xl md:text-7xl font-bold text-white mb-4">
+                <div className="text-5xl md:text-7xl font-bold text-white mb-4">
                   30+
                 </div>
                 <p className="text-xl text-gray-100 font-semibold">
@@ -403,7 +233,7 @@ const CommunityOutreach = () => {
                 </p>
               </div>
               <div>
-                <div className="text-6xl md:text-7xl font-bold text-white mb-4">
+                <div className="text-5xl md:text-7xl font-bold text-white mb-4">
                   15+
                 </div>
                 <p className="text-xl text-gray-100 font-semibold">
@@ -415,16 +245,20 @@ const CommunityOutreach = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="container mx-auto px-6 py-16 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+        <section className="container mx-auto px-6 py-16 text-center font-roboto">
+          <h2 className="md:text-4xl text-3xl font-bold text-primary/95 mb-6">
             Join Us in Making a Difference
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
-            Your support enables us to extend our reach and bring quality healthcare to more communities across Khyber Pakhtunkhwa. Together, we can build healthier futures.
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8 font-roboto">
+            Your support enables us to extend our reach and bring quality
+            healthcare to more communities across Khyber Pakhtunkhwa. Together,
+            we can build healthier futures.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-4 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl">
+          <Link to='/get-involved/Donate'>
+          <button className="bg-primary/95 text-white font-semibold px-10 py-4 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl">
             Support Our Camps
           </button>
+          </Link>
         </section>
       </div>
       <Footer />

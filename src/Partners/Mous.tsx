@@ -40,19 +40,15 @@ const MoUPage = () => {
     <>
       <Navigation />
 
-      <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen py-28 px-4">
+      <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen py-28 font-roboto px-4">
         {/* Hero Section */}
         <div className="max-w-6xl mx-auto text-center mb-20">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full shadow-lg mb-6 border border-primary/30">
-            <FileText className="w-10 h-10 text-primary/95" />
-          </div>
+          
 
-          <h1 className="text-4xl md:text-5xl font-bold text-primary/95 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary/95 mb-4 py-8">
             Memorandum of Understanding
           </h1>
-          <p className="text-2xl md:text-3xl font-semibold text-primary/95 mb-6">
-            Building Trust through Certified Excellence
-          </p>
+         
           <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
             At AIMS Middle East, we believe that meaningful partnerships,
             official recognitions, and transparent practices are the foundation
@@ -63,8 +59,8 @@ const MoUPage = () => {
         </div>
 
         {/* Certifications Section */}
-        <div className="max-w-6xl mx-auto mb-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary/95 text-center mb-4">
+        <div className="max-w-6xl mx-auto mb-24 font-roboto">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary/95 text-center font-roboto mb-4">
             Official Recognitions & Certifications
           </h2>
           <div className="w-24 h-1 bg-primary/95 mx-auto mb-12 rounded-full"></div>
@@ -109,7 +105,7 @@ const MoUPage = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center font-roboto">
           <div className="bg-primary/95 rounded-3xl shadow-2xl p-12">
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Join Our Network of Excellence
@@ -119,16 +115,12 @@ const MoUPage = () => {
               certified, ethical, and transparent healthcare initiatives.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/partners/become">
+              <Link to="/get-involved/membership">
                 <button className="bg-white text-primary font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg">
                   Become a Partner
                 </button>
               </Link>
-              <Link to="/contact">
-                <button className="border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-all duration-300">
-                  Contact Us
-                </button>
-              </Link>
+              
             </div>
           </div>
         </div>

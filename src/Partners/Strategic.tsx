@@ -12,21 +12,22 @@ const StrategicPartnersPage = () => {
   const partners = [
     {
       logo: logo1,
-      name: "Islamic Centre for Urbanisation",
+      name: "Government of KPK",
       description:
         "Excellence in healthcare practices and ethical community standards.",
     },
     {
-      logo: logo2,
-      name: "Academic Development Office",
+      logo: logo3,
+      name: "Pakistan Center for Philantrophy",
       description:
-        "Promoting academic excellence and advancing healthcare research and education.",
+        "Certified by PCP for excellence and leadership under FBR’s NPO evaluation standards."
+        ,
     },
     {
-      logo: logo3,
+      logo: logo2,
       name: "Alhamd Shariah Advisory Services",
       description:
-        "Certified by PCP for excellence and leadership under FBR’s NPO evaluation standards.",
+        "Promoting academic excellence and advancing healthcare research and education.",
     },
   ];
 
@@ -34,12 +35,10 @@ const StrategicPartnersPage = () => {
     <>
       <Navigation />
 
-      <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen py-28 px-4">
+      <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen py-28 px-4 font-roboto">
         {/* Hero Section */}
         <div className="max-w-6xl mx-auto text-center mb-20">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full shadow-lg mb-6 border border-primary/30">
-            <Handshake className="w-10 h-10 text-primary/95" />
-          </div>
+          
 
           <h1 className="text-4xl md:text-5xl font-bold text-primary/95 mb-4">
             Strategic Partners
@@ -53,7 +52,7 @@ const StrategicPartnersPage = () => {
         </div>
 
         {/* Partners Section */}
-        <div className="max-w-6xl mx-auto mb-24">
+        <div className="max-w-6xl mx-auto mb-24 font-roboto">
           <h2 className="text-3xl md:text-4xl font-bold text-primary/95 text-center mb-4">
             Our Trusted Partners
           </h2>
@@ -84,9 +83,9 @@ const StrategicPartnersPage = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center font-roboto">
           <div className="bg-primary/95 rounded-3xl shadow-2xl p-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
               Partner with AIMS Middle East
             </h3>
             <p className="text-indigo-100 text-lg mb-8 max-w-2xl mx-auto">
@@ -95,16 +94,12 @@ const StrategicPartnersPage = () => {
               and social development.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/partners/become">
+              <Link to="/get-involved/membership">
                 <button className="bg-white text-primary font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg">
                   Become a Partner
                 </button>
               </Link>
-              <Link to="/contact">
-                <button className="border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-all duration-300">
-                  Contact Us
-                </button>
-              </Link>
+              
             </div>
           </div>
         </div>
