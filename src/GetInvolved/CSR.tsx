@@ -258,7 +258,7 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                         <span className="text-red-500">*</span>
                       </label>
                       <div className="relative">
-                        <Building2 className="absolute left-3 top-1/3 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <Building2 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                         <input
                           type="text"
                           id="orgName"
@@ -352,7 +352,7 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                           Full Name <span className="text-red-500">*</span>
                         </label>
                         <div className="relative">
-                          <User className="absolute left-3 top-1/3 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                          <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                           <input
                             type="text"
                             id="contactName"
@@ -407,7 +407,7 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                           Email Address <span className="text-red-500">*</span>
                         </label>
                         <div className="relative">
-                          <Mail className="absolute left-3 top-1/3 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                           <input
                             type="email"
                             id="email"
@@ -439,7 +439,7 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                           Phone Number <span className="text-red-500">*</span>
                         </label>
                         <div className="relative">
-                          <Phone className="absolute left-3 top-1/3 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                          <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                           <input
                             type="tel"
                             id="phone"

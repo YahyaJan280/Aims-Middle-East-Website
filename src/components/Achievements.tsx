@@ -263,7 +263,7 @@ const Achievements = () => {
           <div className="animate-on-scroll opacity-0 lg:mr-2">
             <div className="bg-gradient-primary/5 p-6 lg:p-10 rounded-2xl border border-primary/10 ">
               <h4 className="font-roboto text-2xl md:text-2xl font-bold gradient-text mb-4 text-center">
-                Aims Certifications from Refutable Organizations
+                AIMS Certifications from Refutable Organizations
               </h4>
               <div className="space-y-6">
                 <div className="text-center p-4 bg-card rounded-xl shadow-card">

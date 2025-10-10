@@ -8,10 +8,53 @@ import {
   MapPin,
   Heart,
   ArrowUp,
+  ChevronDown,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import aimsLogo from "@/assets/Footer-Logo.png";
-import { Link } from "react-router-dom"; // Import Link for routing
+
+// ✅ same structure as Navigation navItems
+const navItems = [
+  {
+    name: "About",
+    submenu: [
+      { name: "Overview", path: "/about/overview" },
+      { name: "Impact", path: "/about/impact" },
+    ],
+  },
+  {
+    name: "Projects",
+    submenu: [
+      { name: "Sugar Hospital", path: "/projects/sugar-hospital" },
+      { name: "Community Camps", path: "/projects/community camps" },
+    ],
+  },
+  {
+    name: "Partners",
+    submenu: [
+      { name: "Strategic Partners", path: "/partners/strategic" },
+      { name: "MoUs & Collaborations", path: "/partners/mous" },
+      { name: "Become a Partner", path: "/partners/become" },
+    ],
+  },
+  {
+    name: "Get Involved",
+    submenu: [
+      { name: "Donate", path: "/get-involved/donate" },
+      { name: "Volunteer", path: "/get-involved/volunteer" },
+      { name: "Membership", path: "/get-involved/membership" },
+      { name: "Corporate Giving & CSR", path: "/get-involved/csr" },
+    ],
+  },
+  {
+    name: "News",
+    submenu: [
+      { name: "Updates & Events", path: "/news/updates" },
+      { name: "Research & Education", path: "/news/research" },
+    ],
+  },
+  { name: "Contact", path: "/contact" },
+];
 
 const Footer = () => {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -21,8 +64,7 @@ const Footer = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const elements =
-              entry.target.querySelectorAll(".animate-on-scroll");
+            const elements = entry.target.querySelectorAll(".animate-on-scroll");
             elements.forEach((el, index) => {
               setTimeout(() => {
                 el.classList.remove("opacity-0");
@@ -32,29 +74,14 @@ const Footer = () => {
           }
         });
       },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -20px 0px",
-      }
+      { threshold: 0.1, rootMargin: "0px 0px -20px 0px" }
     );
 
-    if (footerRef.current) {
-      observer.observe(footerRef.current);
-    }
-
+    if (footerRef.current) observer.observe(footerRef.current);
     return () => observer.disconnect();
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
@@ -62,20 +89,11 @@ const Footer = () => {
     { icon: Linkedin, href: "#", label: "LinkedIn" },
   ];
 
-  const quickLinks = [
-    { name: "Home", action: () => scrollToSection("hero") },
-    { name: "Mission & Vision", action: () => scrollToSection("mission") },
-    { name: "Our Objectives", action: () => scrollToSection("objectives") },
-    { name: "Projects", action: () => scrollToSection("projects") },
-    { name: "Our Impact", action: () => scrollToSection("achievements") },
-    { name: "Get Involved", action: () => scrollToSection("cta") },
-  ];
-
   return (
     <footer id="footer" ref={footerRef} className="bg-muted/50 pt-10 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-2 lg:px-8 lg:ml-[120px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:ml-[120px]">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
-          {/* Logo & Description */}
+          {/* Logo + Description */}
           <div className="lg:col-span-2 animate-on-scroll opacity-0">
             <div className="font-roboto font-medium flex items-center space-x-3 mb-6">
               <img
@@ -91,7 +109,6 @@ const Footer = () => {
               and excellence.
             </p>
 
-            {/* Mission Statement */}
             <div className="bg-card p-6 rounded-xl border border-border/50 shadow-card">
               <div className="flex items-center space-x-3 mb-3">
                 <Heart className="w-5 h-5 text-primary" />
@@ -106,25 +123,50 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links with Dropdowns */}
           <div className="animate-on-scroll opacity-0">
             <h3 className="font-roboto text-lg font-bold gradient-text mb-6">
               Quick Links
             </h3>
-            <div className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <button
-                  key={index}
-                  onClick={link.action}
-                  className="font-roboto font-bolf block text-muted-foreground hover:text-primary transition-colors duration-300 hover:translate-x-2 transform"
-                >
-                  {link.name}
-                </button>
+            <ul className="space-y-3">
+              {navItems.map((item, i) => (
+                <li key={i}>
+                  {item.submenu ? (
+                    <details className="group">
+                      <summary className="flex items-center justify-between cursor-pointer font-semibold text-muted-foreground hover:text-primary transition-colors duration-300">
+                        {item.name}
+                        <ChevronDown
+                          size={16}
+                          className="ml-1 group-open:rotate-180 transition-transform duration-300"
+                        />
+                      </summary>
+                      <ul className="ml-4 mt-2 space-y-1">
+                        {item.submenu.map((sub, j) => (
+                          <li key={j}>
+                            <Link
+                              to={sub.path}
+                              className="block text-sm text-gray-600 hover:text-primary transition-colors duration-300 hover:translate-x-2 transform font-roboto"
+                            >
+                              {sub.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  ) : (
+                    <Link
+                      to={item.path}
+                      className="block font-roboto text-muted-foreground hover:text-primary transition-colors duration-300 hover:translate-x-2 transform"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* Contact Information */}
+          {/* Contact Info */}
           <div className="animate-on-scroll opacity-0">
             <h3 className="font-roboto text-lg font-bold gradient-text mb-6">
               Contact Us
@@ -132,66 +174,51 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-start space-x-3 group">
                 <MapPin className="w-5 h-5 text-primary mt-1 group-hover:scale-110 transition-transform" />
-                <div>
-                  <p className="font-roboto font-medium text-sm text-muted-foreground">
-                    Peshawar, Khyber Pakhtunkhwa
-                    <br />
-                    Pakistan
-                  </p>
-                </div>
+                <p className="font-roboto text-sm text-muted-foreground">
+                  Peshawar, Khyber Pakhtunkhwa <br /> Pakistan
+                </p>
               </div>
               <a
-                href="mailto:info@aimsmiddleeast.org"
+                href="mailto:asdkhn@gmail.com"
                 className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
               >
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="font-roboto font-medium text-sm">
-                  asdkhn@gmail.com
-                </span>
+                <span className="text-sm font-roboto">asdkhn@gmail.com</span>
               </a>
               <a
-                href="tel:+92000000000"
+                href="tel:+971507698076"
                 className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
               >
                 <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">+971 50 769 8076 </span>
-              </a>{" "}
-              <a
-                href="tel:+92000000000"
-                className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
-              ></a>
+                <span className="text-sm font-roboto">+971 50 769 8076</span>
+              </a>
             </div>
-
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Footer Bottom Bar */}
         <div className="border-t border-border/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="animate-on-scroll opacity-0 text-center md:text-left">
-              <p className="font-roboto font-medium text-sm text-muted-foreground">
-                © {new Date().getFullYear()} AIMS Middle East. All Rights
-                Reserved.
+              <p className="text-sm font-roboto text-muted-foreground">
+                © {new Date().getFullYear()} AIMS Middle East. All Rights Reserved.
               </p>
-              <p className="font-roboto font-medium text-xs text-muted-foreground mt-1">
+              <p className="text-xs text-muted-foreground font-roboto mt-1">
                 Flowing care to those in need, like the eternal Abaseen river.
               </p>
             </div>
 
             <div className="flex items-center space-x-6 animate-on-scroll opacity-0">
-              <Link
-                to="/privacy-policy"
-                // Use Link for client-side routing
-                className="font-roboto font-medium text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                to="/terms-of-service" // Use Link for client-side routing
-                className="font-roboto font-medium text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                Terms of Service
-              </Link>
+              {socialLinks.map((social, i) => (
+                <a
+                  key={i}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
               <button
                 onClick={scrollToTop}
                 className="p-2 bg-card rounded-lg border border-border/50 text-muted-foreground hover:text-white hover:bg-gradient-primary transition-all duration-300 hover:scale-110 group"

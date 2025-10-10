@@ -178,16 +178,16 @@ const Projects = () => {
         <div className="mt-12 sm:mt-16 text-center animate-on-scroll lg:max-w-[1210px] lg:ml-[60px] opacity-0 relative bg-gradient-to-br from-[#4B61D1] to-[#4B61D1]/90 rounded-2xl overflow-hidden">
           <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-br-full opacity-20 mix-blend-lighten z-10"></div>
           <div className="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-tl-full opacity-20 mix-blend-lighten z-10"></div>
-          <div className="relative z-10 p-6 sm:p-8 lg:p-12">
+          <div className="relative z-10 p-6 sm:p-8 lg:p-12 lg:py-8">
             <h3 className="font-roboto font-bold text-lg sm:text-xl lg:text-4xl text-white mb-3">
               Join Our Mission
             </h3>
             <p className="font-roboto font-medium text-white text-sm sm:text-base lg:text-lg mb-4 max-w-2xl mx-auto">
               Every project represents hope, healing, and transformation...
             </p>
-            <Link to="/contact">
+            <Link to="/partners/become">
             <Button
-              className="font-roboto font-medium animate-pulse-glow bg-white text-primary hover:text-white"
+              className="font-roboto font-medium animate-pulse-glow  bg-white text-primary hover:text-white"
               size="lg"
             >
               Partner With Us

@@ -510,7 +510,7 @@ export default function Donation() {
                   <button
                     onClick={handleManualPaymentSubmit}
                     disabled={isSubmitting}
-                    className="w-full mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors disabled:bg-gray-400"
+                    className="w-full mt-6 px-6 py-3 bg-primary/95 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors disabled:bg-gray-400"
                   >
                     {isSubmitting ? "Submitting..." : "Submit Donation"}
                   </button>

@@ -34,50 +34,54 @@ const CallToAction = () => {
     return () => observer.disconnect();
   }, []);
 
-  const actionCards = [
-    {
-      icon: Heart,
-      title: "Donate",
-      description:
-        "Support our mission with a contribution that directly impacts patient care and community health",
-      buttonText: "Make a Donation",
-      gradient: "bg-gradient-primary",
-      features: [
-        "Direct patient support",
-        "Medical equipment funding",
-        "Research advancement",
-        "Community programs",
-      ],
-    },
-    {
-      icon: Users,
-      title: "Volunteer",
-      description:
-        "Join our team of dedicated volunteers and make a hands-on difference in healthcare delivery",
-      buttonText: "Become a Volunteer",
-      gradient: "bg-gradient-secondary",
-      features: [
-        "Patient care assistance",
-        "Community outreach",
-        "Educational programs",
-        "Administrative support",
-      ],
-    },
-    {
-      icon: Handshake,
-      title: "Partner",
-      description:
-        "Collaborate with us as an organizational partner to expand our reach and amplify our impact",
-      buttonText: "Partner With Us",
-      gradient: "bg-gradient-primary",
-      features: [
-        "Strategic partnerships",
-        "Resource sharing",
-        "Joint initiatives",
-        "Knowledge exchange",
-      ],
-    },
-  ];
+ const actionCards = [
+  {
+    icon: Heart,
+    title: "Donate",
+    description:
+      "Support our mission with a contribution that directly impacts patient care and community health",
+    buttonText: "Make a Donation",
+    gradient: "bg-gradient-primary",
+    path: "/get-involved/donate", // 👈 Added path
+    features: [
+      "Direct patient support",
+      "Medical equipment funding",
+      "Research advancement",
+      "Community programs",
+    ],
+  },
+  {
+    icon: Users,
+    title: "Volunteer",
+    description:
+      "Join our team of dedicated volunteers and make a hands-on difference in healthcare delivery",
+    buttonText: "Become a Volunteer",
+    gradient: "bg-gradient-secondary",
+    path: "/get-involved/volunteer", // 👈 Added path
+    features: [
+      "Patient care assistance",
+      "Community outreach",
+      "Educational programs",
+      "Administrative support",
+    ],
+  },
+  {
+    icon: Handshake,
+    title: "Partner",
+    description:
+      "Collaborate with us as an organizational partner to expand our reach and amplify our impact",
+    buttonText: "Partner With Us",
+    gradient: "bg-gradient-primary",
+    path: "/partners/become", // 👈 Added path
+    features: [
+      "Strategic partnerships",
+      "Resource sharing",
+      "Joint initiatives",
+      "Knowledge exchange",
+    ],
+  },
+];
+
 
   return (
     <section
@@ -139,15 +143,14 @@ const CallToAction = () => {
                     </div>
                   ))}
                 </div>
-              <Link to="/contact">
-                <Button
-                
-                  variant="outline"
-                  className="font-roboto font-medium w-full bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary group-hover:scale-105 transition-all duration-300"
-                >
-                  {card.buttonText}
-                  <ArrowRight className="w-4 h-4 lg:ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <Link to={card.path}>
+                  <Button
+                    variant="outline"
+                    className="font-roboto font-medium w-full bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary group-hover:scale-105 transition-all duration-300"
+                  >
+                    {card.buttonText}
+                    <ArrowRight className="w-4 h-4 lg:ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
                 </Link>
               </div>
             </div>
@@ -197,7 +200,6 @@ const CallToAction = () => {
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-
             </div>
           </div>
         </div>
