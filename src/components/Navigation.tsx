@@ -145,7 +145,7 @@ const Navigation = () => {
                     />
                   </button>
                   {openDropdown === idx && (
-                    <div className="absolute left-0 top-full mt-2 w-32 bg-white rounded-lg shadow-lg py-2 z-50">
+                    <div className="absolute left-0 top-full mt-2 w-52 bg-white rounded-lg shadow-lg py-2 z-50">
                       {item.submenu.map((sub, i) => (
                         <Link
                           key={i}
@@ -155,7 +155,7 @@ const Navigation = () => {
                         >
                           <sub.icon
                             size={16}
-                            className="mr-2 text-indigo-600"
+                            className="mr-2 text-primary/95"
                           />
                           {sub.name}
                         </Link>

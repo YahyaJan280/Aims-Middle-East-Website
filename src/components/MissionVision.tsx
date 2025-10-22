@@ -128,7 +128,7 @@ const MissionVision = () => {
         </div>
 
         {/* River Metaphor Section */}
-        <div className="mt-14 lg:mr-2 text-center animate-on-scroll opacity-0 relative overflow-hidden bg-gradient-to-br from-[#4B61D1] to-[#4B61D1]/90 rounded-2xl">
+        <div className="mt-14 lg:mr-2 text-center animate-on-scroll opacity-0 relative overflow-hidden bg-primary/95 rounded-2xl">
           {/* Decorative Overlays */}
           <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-br-full opacity-20 mix-blend-lighten z-10"></div>
           <div className="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-tl-full opacity-20 mix-blend-lighten z-10"></div>

@@ -100,7 +100,7 @@ const SugarHospital = () => {
                       />
                     </button>
                     {openDropdown === idx && (
-                      <ul className="absolute left-0 mt-2 bg-white rounded-md shadow-lg min-w-[150px] z-50">
+                      <ul className="absolute left-0 mt-2 bg-white rounded-md shadow-lg w-60 z-50">
                         {item.submenu.map((sub, subIdx) => (
                           <li key={subIdx}>
                             <Link

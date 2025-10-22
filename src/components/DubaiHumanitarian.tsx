@@ -7,7 +7,7 @@ const DubaiHumanitarianSection = () => {
   return (
     <section className="bg-gray-50 px-4 sm:px-6 lg:px-20 py-16">
       <div className="text-center mb-10 ">
-        <h2 className="text-4xl gradient-text font-roboto text-bold lg:text-5xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+        <h2 className="text-4xl gradient-text font-roboto text-bold lg:text-5xl sm:text-3xl md:text-4xl font-bold text-primary/95 mb-3">
           Proud Member of Dubai Humanitarian
         </h2>
         <p className="text-lg font-roboto font-medium  sm:text-xl text-gray-700">
@@ -15,9 +15,9 @@ const DubaiHumanitarianSection = () => {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-start space-y-6">
+      <div className="max-w-7xl mx-auto  grid lg:grid-cols-2 gap-12 items-start space-y-6">
         {/* Left Column - Text */}
-        <div className="text-gray-700 text-base sm:text-lg leading-relaxed mt-14 ">
+        <div className="text-gray-700 text-base sm:text-lg leading-relaxed mt-24 ">
           <p>
             At{" "}
             <span className="font-semibold text-primary">AIMS Middle East</span>
@@ -38,7 +38,7 @@ const DubaiHumanitarianSection = () => {
         {/* Right Column - Images */}
         <div className="flex justify-center items-center w-full h-full">
           {/* Frame with two logos side-by-side or stacked */}
-          <div className="bg-white p-4 rounded-xl  w-full sm:w-10/12 lg:w-full flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="shadow-lg p-4 rounded-xl  w-full sm:w-10/12 lg:w-full lg:h-80 flex flex-col sm:flex-row items-center justify-center gap-6">
             <img
               src={DubaiHumanitarian}
               alt="Dubai Humanitarian Logo"
@@ -47,11 +47,6 @@ const DubaiHumanitarianSection = () => {
               className="w-full sm:w-1/2 max-w-sm h-auto object-contain aspect-[3/2]"
             />
 
-            {/* <img
-              src={HumanitarianLogo3}
-              alt="Dubai Humanitarian Logo 2"
-              className="w-full sm:w-1/2 object-contain h-auto"
-            /> */}
           </div>
         </div>
       </div>

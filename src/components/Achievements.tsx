@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import MembershipSection from '@/components/DubaiHumanitarian'
-import Logo1 from '@/assets/logo1.png'
-import logo2 from '@/assets/logo2.jpg'
-import logo3 from '@/assets/logo3.jpg'
+import Diabestes from '@/assets/diabetes.png'
+import KMU from '@/assets/KMU-Logo.png'
+import MetiZindagi from '@/assets/Meethi-Zindagi.png'
 import {
   Users,
   GraduationCap,
@@ -263,26 +263,26 @@ const Achievements = () => {
           <div className="animate-on-scroll opacity-0 lg:mr-2">
             <div className="bg-gradient-primary/5 p-6 lg:p-10 rounded-2xl border border-primary/10 ">
               <h4 className="font-roboto text-2xl md:text-2xl font-bold gradient-text mb-4 text-center">
-                AIMS Certifications from Refutable Organizations
+                AIMS’ Reputable and Trusted Partners
               </h4>
               <div className="space-y-6">
                 <div className="text-center p-4 bg-card rounded-xl shadow-card">
-                  <img src={Logo1} alt=""  className="mx-auto w-12 h-auto mb-4 object-contain"/>
-                 
+                  <img src={Diabestes} alt=""  className="mx-auto w-16 h-auto mb-4 object-contain"/>
+                
                   <p className="font-roboto font-medium text-sm text-muted-foreground">
-                    Diabetes General Hospital & Research Center, Peshawar, is officially licensed as a 30-bed In-Patient Facility (2025–2028).
+                   Established in 1985, Diabetes Association KP is a charitable organization and owner of the Sugar Hospital land and building. AIMS and the Association collaborate under a long-term MOU to support diabetes care in KP.
                   </p>
                 </div>
                 <div className="text-center p-4 bg-card rounded-xl shadow-card">
-                 <img src={logo2} alt=""  className="mx-auto w-12 h-auto mb-4 object-contain"/>
+                 <img src={KMU} alt=""  className="mx-auto w-20 h-auto mb-4 object-contain"/>
                   <p className="font-roboto font-medium text-sm text-muted-foreground">
-                    Alhamd Shariah Advisory Services certifies the Zakat process of AIMS Pakistan for the year ended June 30, 2025.
+                    KMU and AIMS jointly promote Family Medicine in KP. The Department of Family Medicine supports Sugar Hospital as a training and research center for diabetes and related diseases and organizes monthly outreach camps
                   </p>
                 </div>
                 <div className="text-center p-4 bg-card rounded-xl shadow-card">
-                  <img src={logo3} alt="" className="mx-auto w-12 h-auto mb-4 object-contain"/>
+                  <img src={MetiZindagi} alt="" className="mx-auto w-28 h-auto mb-4 object-contain"/>
                   <p className="font-roboto font-medium text-sm text-muted-foreground">
-                   AIMS Pakistan is certified by PCP for excellence and leadership under FBR’s NPO evaluation standards.
+                  Meethi Zindagi works for the diabetes community across Pakistan through awareness, education, and support. It provides free insulin and glucometers to children with diabetes.
                   </p>
                 </div>
               </div>
