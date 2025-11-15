@@ -93,7 +93,7 @@ const ContactPage = () => {
             <h1 className="text-4xl font-roboto font-bold gradient-text mb-4">
               Get In Touch
             </h1>
-            <p className="text-xl font-roboto font-medium text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl font-roboto font-medium text-muted-foreground text-gray-600 max-w-2xl mx-auto">
               Have questions or need support? We're here to help. Reach out to us
               through any of the channels below.
             </p>
@@ -110,7 +110,7 @@ const ContactPage = () => {
                 <div className="space-y-6">
                   {/* Full Name */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="text-sm font-medium flex items-left  text-gray-700 mb-2">
                       Full Name
                     </label>
                     <div className="relative">
@@ -129,7 +129,7 @@ const ContactPage = () => {
 
                   {/* Email */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className=" text-sm font-medium flex items-left  text-gray-700 mb-2">
                       Email Address
                     </label>
                     <div className="relative">
@@ -148,7 +148,7 @@ const ContactPage = () => {
 
                   {/* Phone */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className=" text-sm flex items-left  font-medium text-gray-700 mb-2">
                       Phone Number
                     </label>
                     <div className="relative">
@@ -166,7 +166,7 @@ const ContactPage = () => {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm font-medium mb-2">Message</label>
+                    <label className=" flex items-left  text-sm font-medium mb-2">Message</label>
                     <div className="relative">
                       <MessageSquare className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
                       <textarea

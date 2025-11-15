@@ -120,7 +120,7 @@ export default function Donation() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Thank You for Your Generosity!
             </h2>
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-muted-foreground leading-relaxed text-gray-600 mb-6">
               Your donation of <span className="font-bold text-primary/95">${formData.donationAmount}</span> for{" "}
               <span className="font-semibold">{formData.donationFor}</span> has been received.
             </p>
@@ -190,7 +190,7 @@ export default function Donation() {
                 <h3 className="text-xl font-bold text-primary/95 mb-2">
                   Healthcare Access
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-muted-foreground leading-relaxed ">
                   Support free medical camps and patient treatments
                 </p>
               </div>
@@ -208,7 +208,7 @@ export default function Donation() {
                 <h3 className="text-xl font-bold text-primary/95 mb-2">
                   Research & Innovation
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-muted-foreground leading-relaxed">
                   Fund research in diabetes and community health
                 </p>
               </div>
@@ -224,7 +224,7 @@ export default function Donation() {
                 <h3 className="text-xl font-bold text-primary/95 mb-2">
                   Community Programs
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-muted-foreground leading-relaxed">
                   Provide education and awareness for better living
                 </p>
               </div>
@@ -242,7 +242,7 @@ export default function Donation() {
                 <h3 className="text-xl font-bold text-primary/95 mb-2">
                   Zakat & Sadaqah
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-muted-foreground leading-relaxed">
                   Certified by Alhamd Shariah Advisory Services
                 </p>
               </div>

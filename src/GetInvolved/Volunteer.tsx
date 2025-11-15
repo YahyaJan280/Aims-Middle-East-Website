@@ -19,7 +19,7 @@ export default function Volunteer() {
                   <br />
                   Make a Difference.
                 </h1>
-                <p className="text-lg md:text-xl text-center text-gray-700 mb-8 leading-relaxed">
+                <p className="text-lg md:text-xl text-center text-gray-700 mb-8 text-muted-foreground leading-relaxed">
                   Join us in our mission to improve health and well-being across
                   Pakistan and the Middle East.
                 </p>
@@ -51,7 +51,7 @@ export default function Volunteer() {
                 <h1 className="text-2xl font-bold text-primary/95 mb-3">
                   Make a Difference
                 </h1>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-gray-600 text-muted-foreground leading-relaxed">
                   Support free medical camps and patient treatments.
                 </p>
               </div>
@@ -66,7 +66,7 @@ export default function Volunteer() {
                 <h1 className="text-2xl font-bold text-primary/95 mb-3">
                   Meet New People
                 </h1>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-gray-600 text-muted-foreground leading-relaxed">
                   Build your network, skills, and community.
                 </p>
               </div>
@@ -93,7 +93,7 @@ export default function Volunteer() {
                 <h1 className="text-2xl font-bold text-primary/95 mb-3">
                   Build Your Skills
                 </h1>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-gray-600 text-muted-foreground leading-relaxed">
                   Gain valuable opportunities for personal and professional growth.
                 </p>
               </div>
@@ -108,7 +108,7 @@ export default function Volunteer() {
                 <h1 className="text-2xl font-bold text-primary/95 mb-3">
                   Contribute to the Community
                 </h1>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-gray-600 text-muted-foreground leading-relaxed">
                   Be part of meaningful change in your community.
                 </p>
               </div>
@@ -129,8 +129,8 @@ export default function Volunteer() {
                 "Fundraising",
               ].map((item, index) => (
                 <div key={index} className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-gray-900 rounded-full flex-shrink-0"></div>
-                  <p className="text-xl text-gray-900 font-medium">{item}</p>
+                  <div className="w-3 h-3 bg-gray-700 rounded-full flex-shrink-0"></div>
+                  <p className="text-xl text-gray-700 font-medium text-muted-foreground leading-relaxed">{item}</p>
                 </div>
               ))}
             </div>

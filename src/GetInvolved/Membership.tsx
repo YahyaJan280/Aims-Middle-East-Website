@@ -124,7 +124,7 @@ Documents to Upload:
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary/95 mb-4">
               Become a Member
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto text-muted-foreground leading-relaxed">
               Join our community of passionate individuals dedicated to making a
               positive impact across Pakistan and the Middle East.
             </p>

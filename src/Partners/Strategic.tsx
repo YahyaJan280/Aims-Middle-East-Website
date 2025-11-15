@@ -60,7 +60,7 @@ const StrategicPartnersPage = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-primary/95 mb-4">
             Strategic Partners
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto text-muted-foreground leading-relaxed">
             We are proud to collaborate with visionary organizations that share
             our commitment to excellence, innovation, and community well-being.
             Together, we advance sustainable healthcare and impactful social
@@ -93,7 +93,7 @@ const StrategicPartnersPage = () => {
                     {partner.name}
                   </h3>
                 </div>
-                <p className="text-gray-700 leading-relaxed text-sm">
+                <p className="text-gray-700 text-muted-foreground leading-relaxed text-sm">
                   {partner.description}
                 </p>
               </div>

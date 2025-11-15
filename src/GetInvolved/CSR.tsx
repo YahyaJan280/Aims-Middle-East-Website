@@ -219,7 +219,7 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary/95 mb-6">
               Partner with AIMS Middle East
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto text-muted-foreground leading-relaxed">
               Join hands with AIMS Middle East to create a lasting impact in
               healthcare, education, and community development. Fill out the
               form below to explore partnership opportunities under your

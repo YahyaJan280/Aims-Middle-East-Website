@@ -92,9 +92,9 @@ const Footer = () => {
     <footer
       id="footer"
       ref={footerRef}
-      className="bg-muted/50 pt-10 pb-6 sm:pb-10 text-gray-700"
+      className="bg-muted/50 pt-10 relative w-screen -ml-[50vw]  mt-12 -mr-[50vw] left-1/2 right-1/2 overflow-hidden py-16 lg:py-24 pb-6 sm:pb-10 text-gray-700"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* ✅ Grid adjusts perfectly for xs → xl */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           {/* ✅ Logo + Description */}

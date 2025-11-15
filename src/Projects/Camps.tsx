@@ -9,7 +9,7 @@ const CommunityOutreach = () => {
       <Navigation />
       <div className="bg-white">
         {/* Hero Section */}
-        <section className="bg-primary/95 text-white py-28">
+        <section className="bg-primary/95 mt-20 text-white py-28">
           <div className="container mx-auto px-6 text-center">
             <h1 className="text-5xl md:text-6xl font-roboto font-bold mb-6">
               Community Health Camps
@@ -29,7 +29,7 @@ const CommunityOutreach = () => {
             <h2 className="md:text-4xl text-2xl font-bold text-primary/95 mb-6">
               Accessible Care for Everyone
             </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 text-muted-foreground leading-relaxed">
               We organize mobile and stationary camps that deliver free medical
               check-ups, consultations, and treatments, targeting communities
               with limited access to healthcare.
@@ -62,7 +62,7 @@ const CommunityOutreach = () => {
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
                     General Health Check-ups
                   </h4>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 text-muted-foreground">
                     Blood pressure, sugar levels, BMI, etc.
                   </p>
                 </div>
@@ -88,7 +88,7 @@ const CommunityOutreach = () => {
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
                     Medical Treatment & Prescriptions
                   </h4>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 text-muted-foreground">
                     Immediate care for common ailments
                   </p>
                 </div>
@@ -114,7 +114,7 @@ const CommunityOutreach = () => {
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
                     Health Awareness & Education
                   </h4>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 text-muted-foreground">
                     Guidance on nutrition, hygiene, and disease prevention
                   </p>
                 </div>
@@ -140,7 +140,7 @@ const CommunityOutreach = () => {
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
                     Specialist Consultations
                   </h4>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 text-muted-foreground">
                     Doctors and specialists visit for specific health concerns
                   </p>
                 </div>
@@ -164,13 +164,13 @@ const CommunityOutreach = () => {
                 <h2 className="md:text-5xl text-2xl font-bold text-primary/95 mb-6">
                   2,500+ Patients Served
                 </h2>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                <p className="text-lg text-gray-700 text-muted-foreground leading-relaxed mb-6">
                   Since our inception, we have successfully screened and
                   provided medical care to over 2,500 individuals across Khyber
                   Pakhtunkhwa. Each camp brings hope and healing to families who
                   otherwise lack access to essential healthcare services.
                 </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-lg text-gray-700 text-muted-foreground leading-relaxed">
                   Our dedicated medical teams work tirelessly to ensure every
                   patient receives proper diagnosis, treatment, and follow-up
                   care, making a tangible difference in their lives.
@@ -187,13 +187,13 @@ const CommunityOutreach = () => {
               <h2 className="md:text-5xl text-2xl font-bold text-primary/95 mb-6">
                 40+ Camps Annually
               </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              <p className="text-lg text-gray-700 text-muted-foreground  leading-relaxed mb-6">
                 Every year, we organize more than 40 free medical camps across
                 remote and underserved areas of KPK. These camps are
                 strategically planned to reach communities where healthcare
                 infrastructure is minimal or non-existent.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-700 text-muted-foreground leading-relaxed">
                 From mountainous villages to rural settlements, our mobile
                 health units bring comprehensive medical services directly to
                 those who need them most, ensuring no one is left behind.
@@ -220,7 +220,7 @@ const CommunityOutreach = () => {
                 <div className="text-5xl md:text-7xl font-bold text-white mb-4">
                   2,500+
                 </div>
-                <p className="text-xl text-gray-100 font-semibold">
+                <p className="text-xl text-gray-100 text-muted-foreground font-semibold">
                   Patients Served Every Year
                 </p>
               </div>
@@ -228,7 +228,7 @@ const CommunityOutreach = () => {
                 <div className="text-5xl md:text-7xl font-bold text-white mb-4">
                   30+
                 </div>
-                <p className="text-xl text-gray-100 font-semibold">
+                <p className="text-xl text-gray-100 text-muted-foreground font-semibold">
                   Camps Conducted Every Year
                 </p>
               </div>
@@ -236,7 +236,7 @@ const CommunityOutreach = () => {
                 <div className="text-5xl md:text-7xl font-bold text-white mb-4">
                   15+
                 </div>
-                <p className="text-xl text-gray-100 font-semibold">
+                <p className="text-xl text-gray-100 text-muted-foreground font-semibold">
                   Remote Locations Reached
                 </p>
               </div>
@@ -249,7 +249,7 @@ const CommunityOutreach = () => {
           <h2 className="md:text-4xl text-3xl font-bold text-primary/95 mb-6">
             Join Us in Making a Difference
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8 font-roboto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto text-muted-foreground leading-relaxed mb-8 font-roboto">
             Your support enables us to extend our reach and bring quality
             healthcare to more communities across Khyber Pakhtunkhwa. Together,
             we can build healthier futures.

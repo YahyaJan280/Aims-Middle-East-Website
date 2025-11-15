@@ -49,7 +49,7 @@ const MoUPage = () => {
             Memorandum of Understanding
           </h1>
          
-          <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto text-muted-foreground leading-relaxed">
             At AIMS Middle East, we believe that meaningful partnerships,
             official recognitions, and transparent practices are the foundation
             of sustainable impact. Our collaborations and certifications reflect
@@ -94,7 +94,7 @@ const MoUPage = () => {
                         {cert.period}
                       </span>
                     </div>
-                    <p className="text-gray-700 leading-relaxed text-lg">
+                    <p className="text-gray-700 leading-relaxed text-muted-foreground text-lg">
                       {cert.description}
                     </p>
                   </div>

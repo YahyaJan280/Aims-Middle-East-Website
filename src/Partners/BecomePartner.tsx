@@ -36,7 +36,7 @@ const BecomePartnerPage = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-primary/95 mb-6 py-8 tracking-tight">
             Become a Partner
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl text-muted-foreground mx-auto leading-relaxed">
             Partnering with AIMS Middle East means aligning with our vision to
             create sustainable healthcare and community development. Together,
             we can transform ideas into impact.
@@ -54,7 +54,7 @@ const BecomePartnerPage = () => {
                 <h3 className="text-2xl font-semibold text-primary/95 mb-3">
                   {point.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed text-base">
+                <p className="text-gray-700 text-muted-foreground leading-relaxed text-base">
                   {point.description}
                 </p>
               </div>

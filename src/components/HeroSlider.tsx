@@ -13,7 +13,7 @@ const HeroSlider = () => {
       title: "AIMS Middle East",
       subtitle: "Strength in Care",
       description:
-        "Leading social welfare diabetes healthcare organization serving globally",
+        "Leading social welfare diabetes healthcare organization serving globally",
     },
     {
       image: heroCommunity,
@@ -49,7 +49,10 @@ const HeroSlider = () => {
   };
 
   return (
-    <section id="hero" className="relative h-screen overflow-hidden">
+    <section
+      id="hero"
+      className="relative w-screen -ml-[50vw]  mt-12 -mr-[50vw] left-1/2 right-1/2 bg-primary/95 overflow-hidden py-16 lg:py-24"
+    >
       {/* Background Images */}
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
@@ -62,7 +65,7 @@ const HeroSlider = () => {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover font-roboto font-bold text-3xl"
+              className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-hero"></div>
           </div>
@@ -88,7 +91,7 @@ const HeroSlider = () => {
               variant="gradient-outline"
               size="lg"
               onClick={() => scrollToSection("mission")}
-              className=" font-roboto font-normal text-xl bg-transparent border-white text-white hover:bg-white hover:text-primary transition-colors duration-300"
+              className="font-roboto font-normal text-xl bg-transparent border-white text-white hover:bg-white hover:text-primary transition-colors duration-300"
             >
               Our Mission
             </Button>
@@ -118,6 +121,23 @@ const HeroSlider = () => {
           />
         ))}
       </div>
+
+      <style>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 };
