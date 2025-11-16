@@ -123,7 +123,7 @@ const Navigation = () => {
             <img
               src={aimsLogo}
               alt="AIMS Logo"
-              className="h-10 px-2 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-28 transition-transform duration-300"
+              className="h-10 px-2 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-28hge xl:ml-40  transition-transform duration-300"
             />
           </Link>
 

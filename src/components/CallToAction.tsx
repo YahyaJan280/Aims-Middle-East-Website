@@ -87,7 +87,7 @@ const CallToAction = () => {
     <section
       id="cta"
       ref={sectionRef}
-      className="py-8 mt-10 lg:mt-6 lg:py-10  bg-gradient-hero relative overflow-hidden"
+      className="py-8 mt-10 lg:mt-6 lg:py-10  bg-primary/95 relative overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 ">

@@ -204,92 +204,93 @@ const Achievements = () => {
             />
           ))}
         </div>
-        {/* Transforming Lives & Recognition Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:ml-10 lg:gap-12 items-center">
-          {/* Left: Transforming Lives */}
-          <div className="animate-on-scroll opacity-0 ">
-            <h3 className="font-roboto  text-2xl md:text-3xl font-bold gradient-text mb-4">
-              Transforming Lives, One Patient at a Time
-            </h3>
-            <p className="font-roboto font-medium text-md md:text-lg text-muted-foreground mb-4 leading-relaxed">
-              Behind every statistic is a human story of hope, resilience, and
-              transformation. Our impact extends far beyond numbers—we're
-              building healthier communities, stronger families, and a more
-              sustainable healthcare future.
-            </p>
-            <div className="space-y-4 ">
-              <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
-                <Heart className="lg:w-6 lg:h-6 w-14 h-14 text-primary mt-1" />
-                <div>
-                  <h4 className="font-roboto font-bold text-foreground">
-                    Patient-Centered Care
-                  </h4>
-                  <p className="font-roboto font-medium text-sm text-muted-foreground">
-                    Every treatment plan is personalized to meet individual
-                    needs and circumstances
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-4 ">
-                <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
-                  <Users className="lg:w-6 lg:h-6 w-14 h-14 text-secondary mt-1" />
-                  <div>
-                    <h4 className="font-roboto font-bold text-foreground">
-                      community Empowerment
-                    </h4>
-                    <p className="font-roboto font-medium text-sm text-muted-foreground">
-                      Building local capacity and knowledge for sustainable
-                      health outcomes
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
-                <TrendingUp className="lg:w-6 lg:h-6 w-14 h-14 text-primary mt-1" />
-                <div>
-                  <h4 className="font-roboto font-bold text-foreground">
-                    Continuous Improvement
-                  </h4>
-                  <p className="font-roboto font-medium text-sm text-muted-foreground">
-                    Data-driven approaches ensure our programs evolve and
-                    improve
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* Transforming Lives & Recognition Section */}
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:max-w-7xl mx-auto">
+  {/* Left: Transforming Lives */}
+  <div className="animate-on-scroll opacity-0 flex flex-col bg-card/20 rounded-2xl p-5 lg:p-6 border border-border/30">
+    <h3 className="font-roboto text-2xl md:text-3xl font-bold gradient-text mb-3">
+      Transforming Lives, One Patient at a Time
+    </h3>
+    <p className="font-roboto font-medium text-base text-muted-foreground mb-5 leading-relaxed">
+      Behind every statistic is a human story of hope, resilience, and
+      transformation. Our impact extends far beyond numbers—we're
+      building healthier communities, stronger families, and a more
+      sustainable healthcare future.
+    </p>
 
-          {/* Right: Recognition & Awards */}
-          <div className="animate-on-scroll opacity-0 lg:mr-2">
-            <div className="bg-gradient-primary/5 p-6 lg:p-10 rounded-2xl border border-primary/10 ">
-              <h4 className="font-roboto text-2xl md:text-2xl font-bold gradient-text mb-4 text-center">
-                AIMS’ Reputable and Trusted Partners
-              </h4>
-              <div className="space-y-6">
-                <div className="text-center p-4 bg-card rounded-xl shadow-card">
-                  <img src={Diabestes} alt=""  className="mx-auto w-16 h-auto mb-4 object-contain"/>
-                
-                  <p className="font-roboto font-medium text-sm text-muted-foreground">
-                   Established in 1985, Diabetes Association KP is a charitable organization and owner of the Sugar Hospital land and building. AIMS and the Association collaborate under a long-term MOU to support diabetes care in KP.
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-card rounded-xl shadow-card">
-                 <img src={KMU} alt=""  className="mx-auto w-20 h-auto mb-4 object-contain"/>
-                  <p className="font-roboto font-medium text-sm text-muted-foreground">
-                    KMU and AIMS jointly promote Family Medicine in KP. The Department of Family Medicine supports Sugar Hospital as a training and research center for diabetes and related diseases and organizes monthly outreach camps
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-card rounded-xl shadow-card">
-                  <img src={MetiZindagi} alt="" className="mx-auto w-28 h-auto mb-4 object-contain"/>
-                  <p className="font-roboto font-medium text-sm text-muted-foreground">
-                  Meethi Zindagi works for the diabetes community across Pakistan through awareness, education, and support. It provides free insulin and glucometers to children with diabetes.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="space-y-3">
+      <div className="flex items-start space-x-3 p-3 bg-card rounded-lg border-l-4 border-primary">
+        <Heart className="w-5 h-5 text-primary mt-1" />
+        <div>
+          <h4 className="font-roboto font-semibold text-foreground">
+            Patient-Centered Care
+          </h4>
+          <p className="font-roboto text-sm text-muted-foreground">
+            Every treatment plan is personalized to meet individual needs.
+          </p>
         </div>
       </div>
+
+      <div className="flex items-start space-x-3 p-3 bg-card rounded-lg border-l-4 border-secondary">
+        <Users className="w-5 h-5 text-secondary mt-1" />
+        <div>
+          <h4 className="font-roboto font-semibold text-foreground">
+            Community Empowerment
+          </h4>
+          <p className="font-roboto text-sm text-muted-foreground">
+            Building local capacity and knowledge for sustainable outcomes.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex items-start space-x-3 p-3 bg-card rounded-lg border-l-4 border-primary">
+        <TrendingUp className="w-5 h-5 text-primary mt-1" />
+        <div>
+          <h4 className="font-roboto font-semibold text-foreground">
+            Continuous Improvement
+          </h4>
+          <p className="font-roboto text-sm text-muted-foreground">
+            Data-driven approaches ensure our programs evolve and improve.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Right: Recognition & Awards */}
+  <div className="animate-on-scroll opacity-0 bg-gradient-primary/5 p-5 lg:p-6 rounded-2xl border border-primary/10">
+    <h4 className="font-roboto text-2xl md:text-2xl font-bold gradient-text mb-4 text-center">
+      AIMS’ Reputable and Trusted Partners
+    </h4>
+
+    <div className="space-y-5">
+      <div className="text-center p-4 bg-card rounded-xl shadow-card">
+        <img src={Diabestes} alt="" className="mx-auto w-14 h-auto mb-3 object-contain" />
+        <p className="font-roboto text-sm text-muted-foreground">
+          Established in 1985, Diabetes Association KP is a charitable
+          organization and owner of the Sugar Hospital land and building.
+        </p>
+      </div>
+
+      <div className="text-center p-4 bg-card rounded-xl shadow-card">
+        <img src={KMU} alt="" className="mx-auto w-16 h-auto mb-3 object-contain" />
+        <p className="font-roboto text-sm text-muted-foreground">
+          KMU and AIMS jointly promote Family Medicine in KP and support
+          Sugar Hospital as a training and research center.
+        </p>
+      </div>
+
+      <div className="text-center p-4 bg-card rounded-xl shadow-card">
+        <img src={MetiZindagi} alt="" className="mx-auto w-24 h-auto mb-3 object-contain" />
+        <p className="font-roboto text-sm text-muted-foreground">
+          Meethi Zindagi provides free insulin and glucometers to children
+          while raising awareness and education on diabetes.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
     </section>
     <MembershipSection />
     </>

@@ -69,119 +69,121 @@ const Projects = () => {
         {/* Card */}
         <div className="animate-on-scroll opacity-0 lg:max-w-[1210px] lg:ml-[60px]">
           <div className="bg-card rounded-2xl lg:mt-[-30px] p-6 sm:p-8 lg:p-12 shadow-card">
-            <div className="grid gap-8 lg:grid-cols-2">
-              {/* Left Column (Sugar Hospital) */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-gradient-primary rounded-xl">
-                    <MapPin className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-roboto font-bold text-2xl gradient-text">
-                      {projects[activeProject].name}
-                    </h3>
-                    <p className="font-roboto text-sm text-muted-foreground mt-1 flex items-center">
-                      <MapPin className="w-4 h-4 mr-1" />
-                      {projects[activeProject].location}
-                    </p>
-                  </div>
-                </div>
+            <div className="grid gap-8 lg:grid-cols-2 items-stretch">
+  {/* Left Column (Sugar Hospital) */}
+  <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm flex flex-col justify-between h-full">
+    <div>
+      <div className="flex items-center gap-4 mb-6">
+        <div className="p-3 bg-gradient-primary rounded-xl">
+          <MapPin className="w-6 h-6 text-white" />
+        </div>
+        <div>
+          <h3 className="font-roboto font-bold text-2xl gradient-text">
+            {projects[activeProject].name}
+          </h3>
+          <p className="font-roboto text-sm text-muted-foreground mt-1 flex items-center">
+            <MapPin className="w-4 h-4 mr-1" />
+            {projects[activeProject].location}
+          </p>
+        </div>
+      </div>
 
-                <p className="font-roboto text-base text-muted-foreground mb-6">
-                  {projects[activeProject].longDescription}
-                </p>
+      <p className="font-roboto text-base text-muted-foreground mb-6">
+        {projects[activeProject].longDescription}
+      </p>
 
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  {Object.entries(projects[activeProject].stats).map(
-                    ([label, value]) => (
-                      <div
-                        key={label}
-                        className={`text-center p-4 bg-accent/10 rounded-xl border border-border/30 ${
-                          label.toLowerCase() === "established"
-                            ? "col-span-2"
-                            : ""
-                        }`}
-                      >
-                        <div className="text-xl font-roboto font-bold gradient-text">
-                          {value}
-                        </div>
-                        <div className="text-xs font-medium text-muted-foreground">
-                          {label.charAt(0).toUpperCase() + label.slice(1)}
-                        </div>
-                      </div>
-                    )
-                  )}
-                </div>
-
-                <div className="flex justify-center">
-                  <a
-                    href="https://sugarhospital.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      variant="outline"
-                      className="font-roboto font-medium text-sm sm:text-base"
-                    >
-                      <ExternalLink className="mr-2 w-4 h-4" /> Visit Project
-                    </Button>
-                  </a>
-                </div>
-              </div>
-
-              {/* Right Column (Public Health) */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-primary/95 rounded-xl shadow-sm">
-                    <Activity className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-roboto font-bold text-2xl gradient-text">
-                      Public Health
-                    </h3>
-                    <p className="font-roboto font-medium text-sm text-muted-foreground mt-1 flex items-center">
-                      <MapPin className="w-4 h-4 mr-1" /> Khyber Pakhtunkhwa,
-                      Pakistan
-                    </p>
-                  </div>
-                </div>
-
-                <p className="font-roboto text-base text-muted-foreground mb-6">
-                  Since its inception, AIMS community program has regularly held
-                  awareness, chronic diseases screening & treatment camps across
-                  KP — conducting{" "}
-                  <span className="font-semibold text-primary">40+ camps</span>{" "}
-                  and serving over{" "}
-                  <span className="font-semibold text-primary">3,000+</span>{" "}
-                  patients to date.
-                </p>
-
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="text-center p-4 bg-accent/10 rounded-xl border border-border/30">
-                    <div className="text-xl font-bold gradient-text">40+</div>
-                    <div className="text-xs font-medium text-muted-foreground uppercase">
-                      Camps Held
-                    </div>
-                  </div>
-                  <div className="text-center p-4 bg-accent/10 rounded-xl border border-border/30">
-                    <div className="text-xl font-bold gradient-text">3,000+</div>
-                    <div className="text-xs font-medium text-muted-foreground uppercase">
-                      Patients Served
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex justify-center">
-                  <Link to='/projects/community camps'>
-                  <Button className="bg-primary text-white font-medium hover:bg-primary/95 lg:py-6 transition-all duration-300">
-                    Visit Community Camp
-                  </Button>
-                  </Link>
-                </div>
-              </div>
+      {/* Stats */}
+      <div className="grid grid-cols-2 gap-4 mb-6">
+        {Object.entries(projects[activeProject].stats).map(([label, value]) => (
+          <div
+            key={label}
+            className={`text-center p-4 bg-accent/10 rounded-xl border border-border/30 ${
+              label.toLowerCase() === "established" ? "col-span-2" : ""
+            }`}
+          >
+            <div className="text-xl font-roboto font-bold gradient-text">
+              {value}
             </div>
+            <div className="text-xs font-medium text-muted-foreground">
+              {label.charAt(0).toUpperCase() + label.slice(1)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Button pinned at bottom */}
+    <div className="flex justify-center mt-auto">
+      <a
+        href="https://sugarhospital.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button
+          variant="outline"
+          className="font-roboto font-medium text-sm sm:text-base"
+        >
+          <ExternalLink className="mr-2 w-4 h-4" /> Visit Project
+        </Button>
+      </a>
+    </div>
+  </div>
+
+  {/* Right Column (Public Health) */}
+  <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm flex flex-col justify-between h-full">
+    <div>
+      <div className="flex items-center gap-4 mb-6">
+        <div className="p-3 bg-primary/95 rounded-xl shadow-sm">
+          <Activity className="w-6 h-6 text-white" />
+        </div>
+        <div>
+          <h3 className="font-roboto font-bold text-2xl gradient-text">
+            Public Health
+          </h3>
+          <p className="font-roboto font-medium text-sm text-muted-foreground mt-1 flex items-center">
+            <MapPin className="w-4 h-4 mr-1" /> Khyber Pakhtunkhwa, Pakistan
+          </p>
+        </div>
+      </div>
+
+      <p className="font-roboto text-base text-muted-foreground mb-6">
+        Since its inception, AIMS community program has regularly held
+        awareness, chronic diseases screening & treatment camps across KP —
+        conducting{" "}
+        <span className="font-semibold text-primary">40+ camps</span> and
+        serving over{" "}
+        <span className="font-semibold text-primary">3,000+</span> patients to
+        date.
+      </p>
+
+      {/* Stats */}
+      <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="text-center p-4 bg-accent/10 rounded-xl border border-border/30">
+          <div className="text-xl font-bold gradient-text">40+</div>
+          <div className="text-xs font-medium text-muted-foreground uppercase">
+            Camps Held
+          </div>
+        </div>
+        <div className="text-center p-4 bg-accent/10 rounded-xl border border-border/30">
+          <div className="text-xl font-bold gradient-text">3,000+</div>
+          <div className="text-xs font-medium text-muted-foreground uppercase">
+            Patients Served
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Button pinned at bottom */}
+    <div className="flex justify-center mt-auto">
+      <Link to="/projects/community camps">
+        <Button className="bg-primary text-white font-medium hover:bg-primary/95 transition-all duration-300">
+          Visit Community Camp
+        </Button>
+      </Link>
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
 
