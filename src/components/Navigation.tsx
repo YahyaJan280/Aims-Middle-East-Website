@@ -27,14 +27,14 @@ import { Link } from "react-router-dom";
 import aimsLogo from "@/assets/Navbar-Logo-White.png";
 
 const navItems = [
- {
-  name: "About",
-  icon: Info,
-  submenu: [
-    { name: "Overview", path: "/about/overview", icon: Eye },
-    { name: "Impact", path: "/about/impact", icon: TrendingUp }, // <-- fixed path
-  ],
-},
+  {
+    name: "About",
+    icon: Info,
+    submenu: [
+      { name: "Overview", path: "/about/overview", icon: Eye },
+      { name: "Impact", path: "/about/impact", icon: TrendingUp },
+    ],
+  },
   {
     name: "Projects",
     icon: FolderKanban,
@@ -96,7 +96,9 @@ const navItems = [
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const [desktopDropdown, setDesktopDropdown] = useState(null);
+  const [mobileDropdown, setMobileDropdown] = useState({}); // separate for mobile
+  const [dropdownTimeout, setDropdownTimeout] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -104,60 +106,72 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleDropdown = (idx: number) => {
-    setOpenDropdown(openDropdown === idx ? null : idx);
+  const toggleMobileDropdown = (idx) => {
+    setMobileDropdown((prev) => ({
+      ...prev,
+      [idx]: !prev[idx],
+    }));
+  };
+
+  // Desktop dropdown hover with small delay to prevent quick hiding
+  const openDesktopDropdown = (idx) => {
+    if (dropdownTimeout) clearTimeout(dropdownTimeout);
+    setDesktopDropdown(idx);
+  };
+
+  const closeDesktopDropdown = () => {
+    setDropdownTimeout(setTimeout(() => setDesktopDropdown(null), 200));
   };
 
   return (
     <nav
-      className={`fixed top-0 left-0 bg-primary/95 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? " backdrop-blur-md shadow-md"
-          : ""
+      className={`fixed top-0 left-0 right-0 z-50 bg-primary transition-all duration-300 ${
+        isScrolled ? "backdrop-blur-md shadow-lg" : "shadow-md"
       }`}
     >
-      <div className="max-w-full mx-auto px-4 md:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <div className="flex items-center justify-between h-16 sm:h-18 md:h-20 lg:h-20">
           {/* Logo */}
-          <Link to="/">
+          <Link to="/" className="flex items-center flex-shrink-0 z-50">
             <img
               src={aimsLogo}
               alt="AIMS Logo"
-              className="h-10 px-2 sm:h-12 w-auto max-w-[120px] hover:scale-105 lg:ml-28hge xl:ml-40  transition-transform duration-300"
+              className="h-8 sm:h-10 md:h-12 lg:h-12 w-auto max-w-[180px] xl:ml-24 hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex flex-1 justify-center space-x-8  lg:mr-48">
+          <div className="hidden lg:flex flex-1 justify-end items-center  gap-4 xl:gap-6 xl:mr-24 ">
             {navItems.map((item, idx) =>
               item.submenu ? (
-                <div key={idx} className="relative">
-                  <button
-                    onClick={() => toggleDropdown(idx)}
-                    className="flex items-center text-white text-base font-medium"
-                  >
+                <div
+                  key={idx}
+                  className="relative dropdown-container"
+                  onMouseEnter={() => openDesktopDropdown(idx)}
+                  onMouseLeave={closeDesktopDropdown}
+                >
+                  <button className="flex items-center text-white  text-sm xl:text-base font-medium hover:text-blue-200 transition-colors py-2 whitespace-nowrap">
                     {item.name}
                     <ChevronDown
                       size={16}
-                      className={`ml-1 transition-transform ${
-                        openDropdown === idx ? "rotate-180" : ""
+                      className={`ml-1 transition-transform duration-200 ${
+                        desktopDropdown === idx ? "rotate-180" : ""
                       }`}
                     />
                   </button>
-                  {openDropdown === idx && (
-                    <div className="absolute left-0 top-full mt-2 w-52 bg-white rounded-lg shadow-lg py-2 z-50">
+                  {desktopDropdown === idx && (
+                    <div className="absolute top-full left-0 mt-2 w-56 xl:w-64 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100 animate-in fade-in slide-in-from-top-2 duration-200">
                       {item.submenu.map((sub, i) => (
                         <Link
                           key={i}
                           to={sub.path}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center"
-                          onClick={() => setOpenDropdown(null)}
+                          className="flex items-center px-4 py-2.5 xl:py-3 text-sm xl:text-base text-gray-700 hover:bg-blue-50 hover:text-primary/95 transition-colors"
                         >
                           <sub.icon
-                            size={16}
-                            className="mr-2 text-primary/95"
+                            size={18}
+                            className="mr-3 text-primary/95"
                           />
-                          {sub.name}
+                          <span className="font-medium">{sub.name}</span>
                         </Link>
                       ))}
                     </div>
@@ -167,7 +181,7 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="flex items-center text-white text-base font-medium"
+                  className="text-white text-sm xl:text-base font-medium hover:text-blue-200 transition-colors py-2 whitespace-nowrap"
                 >
                   {item.name}
                 </Link>
@@ -177,71 +191,78 @@ const Navigation = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden px-2 text-white"
+            className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`lg:hidden transition-all duration-300 overflow-hidden ${
-            isMobileMenuOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          <div className="py-4 space-y-1 bg-primary/95 backdrop-blur-md rounded-lg mt-2">
+        {isMobileMenuOpen && (
+          <div className="lg:hidden transition-all duration-300 ease-in-out max-h-[90vh] overflow-y-auto mt-2 bg-primary/95 backdrop-blur-md rounded-b-xl shadow-lg">
             {navItems.map((item, idx) =>
               item.submenu ? (
                 <div key={idx}>
                   <button
-                    className="w-full flex justify-between items-center px-4 py-2 text-base text-white"
-                    onClick={() => toggleDropdown(idx)}
+                    className="w-full flex justify-between items-center px-4 py-3 text-base text-white hover:bg-white/10 rounded-lg transition-colors"
+                    onClick={() => toggleMobileDropdown(idx)}
                   >
-                    <div className="flex items-center">{item.name}</div>
+                    <div className="flex items-center gap-3">
+                      <item.icon size={20} className="text-blue-200" />
+                      <span className="font-medium">{item.name}</span>
+                    </div>
                     <ChevronDown
-                      size={16}
-                      className={`transform transition-transform ${
-                        openDropdown === idx ? "rotate-180" : ""
+                      size={18}
+                      className={`transform transition-transform duration-200 ${
+                        mobileDropdown[idx] ? "rotate-180" : ""
                       }`}
                     />
                   </button>
-                  {openDropdown === idx && (
-                    <div className="pl-6">
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      mobileDropdown[idx] ? "max-h-[1000px]" : "max-h-0"
+                    }`}
+                  >
+                    <div className="pl-4 pr-2 py-2 space-y-1">
                       {item.submenu.map((sub, i) => (
                         <Link
                           key={i}
                           to={sub.path}
-                          className="block px-4 py-2 text-sm text-white flex items-center"
-                          onClick={() => {
-                            setIsMobileMenuOpen(false);
-                            setOpenDropdown(null);
-                          }}
+                          className="flex items-center gap-3 px-4 py-2.5 text-sm text-white hover:bg-white/10 rounded-lg transition-colors"
+                          onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          <sub.icon
-                            size={16}
-                            className="mr-2 text-indigo-600"
-                          />
-                          {sub.name}
+                          <sub.icon size={18} className="text-blue-300" />
+                          <span>{sub.name}</span>
                         </Link>
                       ))}
                     </div>
-                  )}
+                  </div>
                 </div>
               ) : (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className=" w-full px-4 py-2 text-base text-white flex items-center"
+                  className="flex items-center gap-3 px-4 py-3 text-base text-white hover:bg-white/10 rounded-lg transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item.name}
+                  <item.icon size={20} className="text-blue-200" />
+                  <span className="font-medium">{item.name}</span>
                 </Link>
               )
             )}
           </div>
-        </div>
+        )}
       </div>
+
+      {/* Mobile overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm -z-10"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
     </nav>
   );
 };
