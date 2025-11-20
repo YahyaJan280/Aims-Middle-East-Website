@@ -7,7 +7,7 @@ const DubaiHumanitarianSection = () => {
   return (
     <section className="bg-gray-50 px-4 sm:px-6 lg:px-4 rounded-xl relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] py-16">
       <div className="text-center mb-10 ">
-        <h2 className="text-3xl text-primary font-roboto text-bold lg:text-5xl sm:text-3xl md:text-4xl font-bold  mb-3">
+        <h2 className="text-2xl text-primary font-roboto text-bold lg:text-5xl sm:text-3xl md:text-4xl md:text-center  font-bold xl:text-center  text-center mb-3">
           Proud Member of Dubai Humanitarian
         </h2>
         <p className="text-lg font-roboto font-medium  sm:text-xl text-gray-700">
@@ -17,7 +17,7 @@ const DubaiHumanitarianSection = () => {
 
       <div className="max-w-[1210px] mx-auto  grid lg:grid-cols-2 gap-12 items-start space-y-6">
         {/* Left Column - Text */}
-        <div className="text-gray-700 text-base sm:text-lg leading-relaxed lg:mt-24 ">
+        <div className="text-gray-700 text-base sm:text-lg leading-relaxed lg:mt-24 text-left">
           <p>
             At{" "}
             <span className="font-semibold text-primary">AIMS Middle East</span>

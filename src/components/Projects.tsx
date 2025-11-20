@@ -97,14 +97,14 @@ const Projects = () => {
                         <h3 className="font-roboto font-bold text-xl sm:text-2xl  lg:text-2xl xl:text-3xl text-primary/95 transition-colors duration-300">
                           {projects[activeProject].name}
                         </h3>
-                        <p className="font-roboto text-xs font-medium sm:text-sm lg:text-sm xl:text-base text-gray-600 mt-1 flex items-center">
+                        <p className="font-roboto text-xs font-medium sm:text-sm lg:text-sm xl:text-base text-gray-600 mt-1 flex items-center ">
                           <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0" />
                           {projects[activeProject].location}
                         </p>
                       </div>
                     </div>
 
-                    <p className="font-roboto text-sm sm:text-base lg:text-base xl:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed text-muted-foreground">
+                    <p className="font-roboto text-sm sm:text-base lg:text-base xl:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed text-muted-foreground text-left">
                       {projects[activeProject].longDescription}
                     </p>
 
@@ -186,7 +186,7 @@ const Projects = () => {
                       </div>
                     </div>
 
-                    <p className="font-roboto text-sm sm:text-base lg:text-base xl:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed text-muted-foreground">
+                    <p className="font-roboto text-sm sm:text-base lg:text-base xl:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed text-muted-foreground text-left">
                       Since its inception, AIMS community program has regularly
                       held awareness, chronic diseases screening & treatment
                       camps across KP — conducting{" "}

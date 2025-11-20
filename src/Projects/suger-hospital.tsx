@@ -46,10 +46,10 @@ const SugarHospital = () => {
                     />
                   </div>
                   <div>
-                    <h2 className="font-roboto text-2xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-bold text-primary mb-3 sm:mb-4 lg:mb-6 text-center md:text-left">
+                    <h2 className="font-roboto text-2xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-bold text-primary mb-3 sm:mb-4 lg:mb-6 lg:text-center text-left md:text-left">
                       About the Project
                     </h2>
-                    <p className="font-roboto text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-xl text-gray-700 text-muted-foreground leading-relaxed mb-4 sm:mb-6 lg:mb-8">
+                    <p className="font-roboto text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-xl text-gray-700 text-muted-foreground leading-relaxed mb-4 sm:mb-6 lg:mb-8 text-left">
                       Sugar Hospital & Research Center, a flagship project of
                       AIMS Middle East, is dedicated to providing specialized
                       healthcare for diabetes and related conditions. Our
@@ -101,10 +101,10 @@ const SugarHospital = () => {
               <div className="max-w-[1200px] mx-auto">
                 <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 items-center">
                   <div className="order-2 md:order-1">
-                    <h2 className="font-roboto text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-bold text-primary mb-3 sm:mb-4 lg:mb-6 text-center md:text-left">
+                    <h2 className="font-roboto text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-bold text-primary mb-3 sm:mb-4 lg:mb-6 lg:text-center text-left md:text-left">
                       Research & Innovation
                     </h2>
-                    <p className="font-roboto text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-xl text-gray-700 text-muted-foreground leading-relaxed mb-4 sm:mb-6 lg:mb-8">
+                    <p className="font-roboto text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-xl text-gray-700 text-muted-foreground leading-relaxed mb-4 sm:mb-6 lg:mb-8 text-left">
                       At Sugar Hospital, research and innovation are at the
                       heart of our mission. Our team works tirelessly to advance
                       the understanding, treatment, and prevention of diabetes.
