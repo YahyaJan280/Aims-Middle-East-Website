@@ -1,129 +1,113 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import heroHealthcare from "@/assets/hero-healthcare.jpg";
-import heroCommunity from "@/assets/hero-community.jpg";
-import heroCompassion from "@/assets/hero-compassion.jpg";
+import React from "react";
+import HeroImage from "@/assets/Flowing-Care-Image.png";
 
-const HeroSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+// ICONS
+import HeartIcon from "@/assets/E1.png";
+import EqualIcon from "@/assets/E2.png";
+import SmileIcon from "@/assets/E3.png";
+import DiamondIcon from "@/assets/E4.png";
 
-  const slides = [
-    {
-      image: heroHealthcare,
-      title: "AIMS Middle East",
-      subtitle: "Strength in Care",
-      description:
-        "Leading social welfare diabetes healthcare organization serving globally",
-    },
-    {
-      image: heroCommunity,
-      title: "Flowing Care",
-      subtitle: "To Those in Need",
-      description:
-        "Like the Abaseen river, bringing life and hope to communities",
-    },
-    {
-      image: heroCompassion,
-      title: "Building a Future",
-      subtitle: "of Accessible Care",
-      description: "Empowering healthcare professionals and transforming lives",
-    },
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const goToSlide = (index: number) => setCurrentSlide(index);
-
-  const scrollToSection = (sectionId: string) => {
-    const el = document.getElementById(sectionId);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
+const HeroSection = () => {
   return (
-    <section
-      id="hero"
-      className="
-        relative 
-        w-screen left-1/2 right-1/2 -ml-[50vw] xl:mt-12 mt-8 md:mt-12 -mr-[50vw] 
-        h-[calc(100vh-80px)]
-        overflow-hidden flex items-center
-        bg-black
-      "
-    >
-      {/* Background Slider */}
-      <div className="absolute inset-0 ">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 
-              ${index === currentSlide ? "opacity-100" : "opacity-0"}`}
-          >
-            <img
-              src={slide.image}
-              alt={slide.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-hero"></div>
-          </div>
-        ))}
-      </div>
+    <section className="w-screen h-[527px] relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-20 bg-[#055baa] overflow-hidden">
 
-      {/* Content */}
-      <div className="relative z-10 w-full px-4 sm:px-8 lg:px-16 text-center max-w-6xl mx-auto">
-        <h1 className="font-roboto font-bold text-3xl sm:text-4xl md:text-4xl lg:text-6xl text-white leading-tight">
-          {slides[currentSlide].title}
-        </h1>
+      {/* MAIN WRAPPER */}
+      <div className="max-w-[1250px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
-        <h2 className="font-roboto font-bold text-3xl sm:text-4xl md:text-4xl lg:text-6xl text-white leading-tight mt-2">
-          {slides[currentSlide].subtitle}
-        </h2>
+        {/* LEFT CONTENT */}
+        <div className="z-10 text-white">
+          <h1 className="text-left font-roboto text-4xl lg:text-5xl font-bold leading-tight mb-4">
+            Flowing Care 
+            <br />To Those In Need
+          </h1>
 
-        <p className="font-roboto text-base sm:text-lg md:text-2xl text-white mt-6 max-w-3xl mx-auto">
-          {slides[currentSlide].description}
-        </p>
+          <p className="text-lg font-roboto  text-left text-white/90 mb-6">
+            Empowering healthcare professionals <br /> and transforming lives.
+          </p>
 
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-          <Button
-            variant="gradient-outline"
-            size="lg"
-            onClick={() => scrollToSection("mission")}
-            className="text-white border-white hover:bg-white hover:text-white transition"
-          >
-            Our Mission
-          </Button>
-
-          <Button
-            size="lg"
-            onClick={() => scrollToSection("projects")}
-            className="bg-[#ea1e26] text-white hover:bg-white hover:text-secondary transition"
-          >
-            View Projects
-          </Button>
+          <button className="bg-white text-primary flex items-left justify-left font-semibold px-6 py-3 rounded-xl transition-all">
+            Learn More
+          </button>
         </div>
-      </div>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-4">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide
-                ? "bg-white scale-125"
-                : "bg-white/50 hover:bg-white/80"
-            }`}
-          />
-        ))}
+        {/* RIGHT IMAGE + ICONS */}
+        <div className="relative flex justify-center lg:justify-end">
+
+          {/* MAIN IMAGE */}
+         {/* MAIN IMAGE */}
+<img
+  src={HeroImage}
+  className="w-full max-w-[320px] sm:max-w-md lg:max-w-lg rounded-xl object-cover"
+  alt="Hero"
+/>
+
+{/* ---- ICONS WITH INDIVIDUAL ANIMATIONS ---- */}
+
+{/* Floating Heart */}
+<img
+  src={HeartIcon}
+  className="
+    absolute 
+    w-8 top-[38%] left-[5%]      /* mobile */
+
+    sm:w-12 sm:top-[34%] sm:left-[12%]  /* tablet */
+
+    lg:w-20 lg:top-[41%] lg:left-[17%]  /* desktop */
+    animate-beat
+  "
+  alt=""
+/>
+
+{/* Gently Spinning Diamond */}
+<img
+  src={DiamondIcon}
+  className="
+    absolute
+    w-10 top-[72%] left-[60%]      /* mobile */
+
+    sm:w-16 sm:top-[68%] sm:left-[66%]  /* tablet */
+
+    lg:w-32 lg:top-[70%] lg:left-[70%]  /* desktop */
+    animate-beat
+  "
+  alt=""
+/>
+
+{/* Equal Icon */}
+<img
+  src={EqualIcon}
+  className="
+    absolute
+    w-6 top-[43%] left-[58%]      /* mobile */
+
+    sm:w-10 sm:top-[41%] sm:left-[63%]  /* tablet */
+
+    lg:w-16 lg:top-[40%] lg:left-[68%]  /* desktop */
+    animate-beat
+  "
+  alt=""
+/>
+
+{/* Smile Icon */}
+<img
+  src={SmileIcon}
+  className="
+    absolute
+    w-3 top-[74%] left-[16%]      /* mobile */
+
+    sm:w-4 sm:top-[72%] sm:left-[23%]  /* tablet */
+
+    lg:w-7 lg:top-[70%] lg:left-[31%]  /* desktop */
+    animate-beat
+  "
+  alt=""
+/>
+
+
+        </div>
       </div>
     </section>
   );
 };
 
-export default HeroSlider;
+export default HeroSection;
