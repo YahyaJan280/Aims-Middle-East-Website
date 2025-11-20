@@ -79,7 +79,7 @@ const HeroSlider = () => {
           {slides[currentSlide].title}
         </h1>
 
-        <h2 className="font-roboto text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl text-white mt-2">
+        <h2 className="font-roboto font-bold text-3xl sm:text-4xl md:text-4xl lg:text-6xl text-white leading-tight mt-2">
           {slides[currentSlide].subtitle}
         </h2>
 

@@ -230,10 +230,10 @@ const CommunityOutreach = () => {
           <section className="py-12 md:py-16 lg:py-20 text-center">
             <div className="container mx-auto px-4 md:px-6 lg:px-8">
               <div className="max-w-4xl mx-auto">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary mb-4 md:mb-6">
+                <h2 className="font-roboto font-bold text-3xl sm:text-4xl md:text-4xl lg:text-6xl text-primary mb-4 md:mb-6">
                   Join Us in Making a Difference
                 </h2>
-                <p className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-700 leading-relaxed mb-6 text-muted-foreground md:mb-8">
+                <p className="tefont-roboto text-base sm:text-lg md:text-2xl lg:text-lg xl:text-xl text-gray-700 leading-relaxed mb-6 text-muted-foreground md:mb-8">
                   Your support enables us to extend our reach and bring quality
                   healthcare to more communities across Khyber Pakhtunkhwa.
                   Together, we can build healthier futures.

@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { Heart, Users, Copy, Check, CreditCard, Building2, Smartphone } from "lucide-react";
+import {
+  Heart,
+  Users,
+  Copy,
+  Check,
+  CreditCard,
+  Building2,
+  Smartphone,
+} from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -49,18 +57,24 @@ export default function Donation() {
   };
 
   const handleProceedToPayment = () => {
-    if (!formData.fullName || !formData.email || !formData.donationCategory || !formData.paymentMethod || !formData.donationAmount) {
+    if (
+      !formData.fullName ||
+      !formData.email ||
+      !formData.donationCategory ||
+      !formData.paymentMethod ||
+      !formData.donationAmount
+    ) {
       alert("Please fill in all required fields including donation amount.");
       return;
     }
-    
+
     if (formData.paymentMethod === "Credit/Debit Card") {
       if (!formData.cardNumber || !formData.expiryDate || !formData.cvv) {
         alert("Please fill in all card details.");
         return;
       }
     }
-    
+
     setShowPaymentSection(true);
   };
 
@@ -69,7 +83,9 @@ export default function Donation() {
     setTimeout(() => {
       setIsSubmitting(false);
       setPaymentSuccess(true);
-      alert(`Payment of $${formData.donationAmount} processed successfully via Credit/Debit Card`);
+      alert(
+        `Payment of $${formData.donationAmount} processed successfully via Credit/Debit Card`
+      );
     }, 2000);
   };
 
@@ -80,11 +96,13 @@ export default function Donation() {
     }
 
     setIsSubmitting(true);
-    
+
     setTimeout(() => {
       setIsSubmitting(false);
       setPaymentSuccess(true);
-      alert("Thank you! Your donation and payment proof have been submitted successfully. We will verify and confirm shortly.");
+      alert(
+        "Thank you! Your donation and payment proof have been submitted successfully. We will verify and confirm shortly."
+      );
     }, 1500);
   };
 
@@ -124,20 +142,42 @@ export default function Donation() {
                       Thank You for Your Generosity!
                     </h2>
                     <p className="font-roboto text-base sm:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6">
-                      Your donation of <span className="font-bold text-primary/95">${formData.donationAmount}</span> for{" "}
-                      <span className="font-semibold">{formData.donationFor}</span> has been received.
+                      Your donation of{" "}
+                      <span className="font-bold text-primary/95">
+                        ${formData.donationAmount}
+                      </span>{" "}
+                      for{" "}
+                      <span className="font-semibold">
+                        {formData.donationFor}
+                      </span>{" "}
+                      has been received.
                     </p>
                     <div className="bg-gray-50 rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 text-left">
-                      <h3 className="font-roboto font-semibold text-gray-900 mb-3 text-sm sm:text-base">Donation Details:</h3>
+                      <h3 className="font-roboto font-semibold text-gray-900 mb-3 text-sm sm:text-base">
+                        Donation Details:
+                      </h3>
                       <div className=" space-y-2 text-sm text-gray-600 ">
-                        <p><span className="font-medium">Name:</span> {formData.fullName}</p>
-                        <p><span className="font-medium">Email:</span> {formData.email}</p>
-                        <p><span className="font-medium">Category:</span> {formData.donationCategory}</p>
-                        <p><span className="font-medium">Payment Method:</span> {formData.paymentMethod}</p>
+                        <p>
+                          <span className="font-medium">Name:</span>{" "}
+                          {formData.fullName}
+                        </p>
+                        <p>
+                          <span className="font-medium">Email:</span>{" "}
+                          {formData.email}
+                        </p>
+                        <p>
+                          <span className="font-medium">Category:</span>{" "}
+                          {formData.donationCategory}
+                        </p>
+                        <p>
+                          <span className="font-medium">Payment Method:</span>{" "}
+                          {formData.paymentMethod}
+                        </p>
                       </div>
                     </div>
                     <p className="font-roboto text-sm sm:text-base text-gray-600 mb-6 sm:mb-8">
-                      A confirmation email has been sent to <span className="font-medium">{formData.email}</span>
+                      A confirmation email has been sent to{" "}
+                      <span className="font-medium">{formData.email}</span>
                     </p>
                     <button
                       onClick={resetForm}
@@ -160,7 +200,6 @@ export default function Donation() {
     <>
       <Navigation />
       <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen font-roboto">
-        
         {/* Hero Section - Edge-to-Edge */}
         <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-white mt-16 sm:mt-18 md:mt-20 lg:mt-12">
           <section className="py-12 sm:py-16 lg:py-20">
@@ -168,11 +207,15 @@ export default function Donation() {
               <div className="max-w-[1200px] mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div>
-                    <h1 className="font-roboto text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 sm:mb-8">
+                    <h1 className="font-roboto  md:text-4xl lg:text-6xl font-bold text-primary mb-6 sm:mb-8   text-3xl sm:text-4xl  ">
                       Where Your Donation Makes a Difference
                     </h1>
                     <button
-                      onClick={() => document.getElementById('donation-form').scrollIntoView({ behavior: 'smooth' })}
+                      onClick={() =>
+                        document
+                          .getElementById("donation-form")
+                          .scrollIntoView({ behavior: "smooth" })
+                      }
                       className="bg-primary text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-base sm:text-lg font-semibold transition-colors  shadow-md hover:shadow-lg"
                     >
                       Donate Now
@@ -216,8 +259,18 @@ export default function Donation() {
                   <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                     <div className="flex items-start space-x-4">
                       <div className="bg-primary/95 p-3 rounded-lg flex-shrink-0">
-                        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        <svg
+                          className="w-6 h-6 sm:w-8 sm:h-8 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                          />
                         </svg>
                       </div>
                       <div>
@@ -250,8 +303,18 @@ export default function Donation() {
                   <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                     <div className="flex items-start space-x-4">
                       <div className="bg-primary/95 p-3 rounded-lg flex-shrink-0">
-                        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                        <svg
+                          className="w-6 h-6 sm:w-8 sm:h-8 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+                          />
                         </svg>
                       </div>
                       <div>
@@ -314,7 +377,8 @@ export default function Donation() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2 text-left">
-                          Phone Number <span className="text-gray-500">(optional)</span>
+                          Phone Number{" "}
+                          <span className="text-gray-500">(optional)</span>
                         </label>
                         <input
                           type="tel"
@@ -326,7 +390,8 @@ export default function Donation() {
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2 text-left">
-                          Donation Amount <span className="text-red-500">*</span>
+                          Donation Amount{" "}
+                          <span className="text-red-500">*</span>
                         </label>
                         <input
                           type="number"
@@ -344,11 +409,21 @@ export default function Donation() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                       <div>
                         <label className="block text-xl font-medium text-gray-900 mb-4 text-left">
-                          Donation Category <span className="text-red-500">*</span>
+                          Donation Category{" "}
+                          <span className="text-red-500">*</span>
                         </label>
                         <div className="space-y-3">
-                          {["General Donation", "Zakat", "Sadaqah", "Hospital Fund", "Community Health"].map((type) => (
-                            <label key={type} className="flex items-center space-x-3 cursor-pointer">
+                          {[
+                            "General Donation",
+                            "Zakat",
+                            "Sadaqah",
+                            "Hospital Fund",
+                            "Community Health",
+                          ].map((type) => (
+                            <label
+                              key={type}
+                              className="flex items-center space-x-3 cursor-pointer"
+                            >
                               <input
                                 type="radio"
                                 name="donationCategory"
@@ -357,7 +432,9 @@ export default function Donation() {
                                 onChange={handleInputChange}
                                 className="w-4 h-4 sm:w-5 sm:h-5 text-primary/95 border-gray-300 focus:ring-blue-600"
                               />
-                              <span className="text-sm sm:text-base text-gray-700">{type}</span>
+                              <span className="text-sm sm:text-base text-gray-700">
+                                {type}
+                              </span>
                             </label>
                           ))}
                         </div>
@@ -368,8 +445,15 @@ export default function Donation() {
                           Payment Method <span className="text-red-500">*</span>
                         </label>
                         <div className="space-y-3">
-                          {["Credit/Debit Card", "Bank Transfer", "Mobile Wallet / QR Payment"].map((method) => (
-                            <label key={method} className="flex items-center space-x-3 cursor-pointer text-left">
+                          {[
+                            "Credit/Debit Card",
+                            "Bank Transfer",
+                            "Mobile Wallet / QR Payment",
+                          ].map((method) => (
+                            <label
+                              key={method}
+                              className="flex items-center space-x-3 cursor-pointer text-left"
+                            >
                               <input
                                 type="radio"
                                 name="paymentMethod"
@@ -378,7 +462,9 @@ export default function Donation() {
                                 onChange={handleInputChange}
                                 className="w-4 h-4 sm:w-5 sm:h-5 text-primary/95 border-gray-300 focus:ring-blue-600"
                               />
-                              <span className="text-sm sm:text-base text-gray-700">{method}</span>
+                              <span className="text-sm sm:text-base text-gray-700">
+                                {method}
+                              </span>
                             </label>
                           ))}
                         </div>
@@ -388,13 +474,16 @@ export default function Donation() {
                           <div className="mt-6 p-4 bg-white rounded-lg border border-gray-200">
                             <div className="flex items-center mb-4">
                               <CreditCard className="w-5 h-5 text-primary/95 mr-2" />
-                              <h4 className="text-sm font-semibold text-gray-900">Card Details</h4>
+                              <h4 className="text-sm font-semibold text-gray-900">
+                                Card Details
+                              </h4>
                             </div>
-                            
+
                             <div className="space-y-4">
                               <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2 text-left">
-                                  Card Number <span className="text-red-500">*</span>
+                                  Card Number{" "}
+                                  <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                   type="text"
@@ -406,11 +495,12 @@ export default function Donation() {
                                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm"
                                 />
                               </div>
-                              
+
                               <div className="grid grid-cols-2 gap-4">
                                 <div>
                                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Expiry Date <span className="text-red-500">*</span>
+                                    Expiry Date{" "}
+                                    <span className="text-red-500">*</span>
                                   </label>
                                   <input
                                     type="text"
@@ -442,16 +532,24 @@ export default function Donation() {
                         )}
 
                         {/* Payment Proof Upload */}
-                        {(formData.paymentMethod === "Bank Transfer" || formData.paymentMethod === "Mobile Wallet / QR Payment") && (
+                        {(formData.paymentMethod === "Bank Transfer" ||
+                          formData.paymentMethod ===
+                            "Mobile Wallet / QR Payment") && (
                           <div className="mt-6">
                             <label className="block text-sm font-medium text-primary/95 mb-2">
-                              Upload Payment Proof <span className="text-gray-500">(Optional)</span>
+                              Upload Payment Proof{" "}
+                              <span className="text-gray-500">(Optional)</span>
                             </label>
                             <input
                               type="file"
                               id="paymentProof"
                               accept="image/*,application/pdf"
-                              onChange={(e) => setFormData((prev) => ({ ...prev, paymentProof: e.target.files[0] }))}
+                              onChange={(e) =>
+                                setFormData((prev) => ({
+                                  ...prev,
+                                  paymentProof: e.target.files[0],
+                                }))
+                              }
                               className="hidden"
                             />
                             <label
@@ -461,7 +559,9 @@ export default function Donation() {
                               Choose File
                             </label>
                             <span className="ml-3 text-sm text-gray-500">
-                              {formData.paymentProof ? formData.paymentProof.name : "No file chosen"}
+                              {formData.paymentProof
+                                ? formData.paymentProof.name
+                                : "No file chosen"}
                             </span>
                           </div>
                         )}
@@ -508,14 +608,23 @@ export default function Donation() {
                             <div className="bg-blue-600 p-3 rounded-lg mr-3">
                               <Building2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
-                            <h2 className="font-roboto text-xl sm:text-2xl font-bold text-primary/95">Bank Transfer Details</h2>
+                            <h2 className="font-roboto text-xl sm:text-2xl font-bold text-primary/95">
+                              Bank Transfer Details
+                            </h2>
                           </div>
                           <div className="space-y-3">
                             {Object.entries(bankDetails).map(([key, value]) => (
-                              <div key={key} className="flex justify-between items-center bg-gray-50 rounded-lg p-3 shadow-sm">
+                              <div
+                                key={key}
+                                className="flex justify-between items-center bg-gray-50 rounded-lg p-3 shadow-sm"
+                              >
                                 <div>
-                                  <p className="text-xs text-gray-500 uppercase">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
-                                  <p className="font-mono font-semibold text-gray-900 text-sm sm:text-base">{value}</p>
+                                  <p className="text-xs text-gray-500 uppercase">
+                                    {key.replace(/([A-Z])/g, " $1").trim()}
+                                  </p>
+                                  <p className="font-mono font-semibold text-gray-900 text-sm sm:text-base">
+                                    {value}
+                                  </p>
                                 </div>
                                 <button
                                   onClick={() => handleCopy(value, key)}
@@ -542,13 +651,16 @@ export default function Donation() {
                       )}
 
                       {/* QR Payment */}
-                      {formData.paymentMethod === "Mobile Wallet / QR Payment" && (
+                      {formData.paymentMethod ===
+                        "Mobile Wallet / QR Payment" && (
                         <div className="bg-white rounded-xl p-5 sm:p-6 md:p-8 mb-6 border border-gray-200 shadow-sm">
                           <div className="flex items-center mb-6">
                             <div className="bg-blue-600 p-3 rounded-lg mr-3">
                               <Smartphone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
-                            <h2 className="font-roboto text-xl sm:text-2xl font-bold text-blue-600">Scan QR Code to Pay</h2>
+                            <h2 className="font-roboto text-xl sm:text-2xl font-bold text-blue-600">
+                              Scan QR Code to Pay
+                            </h2>
                           </div>
                           <div className="flex flex-col items-center">
                             <div className="bg-gray-50 p-6 rounded-xl shadow-lg mb-4">
@@ -580,28 +692,43 @@ export default function Donation() {
                             <div className="bg-blue-600 p-3 rounded-lg mr-3">
                               <CreditCard className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
-                            <h2 className="font-roboto text-xl sm:text-2xl font-bold text-blue-600">Complete Card Payment</h2>
+                            <h2 className="font-roboto text-xl sm:text-2xl font-bold text-blue-600">
+                              Complete Card Payment
+                            </h2>
                           </div>
 
                           <div className="bg-gray-50 rounded-lg p-4 sm:p-6 shadow-sm mb-4">
                             <div className="space-y-4">
                               <div className="flex justify-between items-center py-3 border-b">
-                                <span className="text-sm sm:text-base text-gray-600">Donation Amount:</span>
-                                <span className="text-xl sm:text-2xl font-bold text-blue-600">${formData.donationAmount}</span>
+                                <span className="text-sm sm:text-base text-gray-600">
+                                  Donation Amount:
+                                </span>
+                                <span className="text-xl sm:text-2xl font-bold text-blue-600">
+                                  ${formData.donationAmount}
+                                </span>
                               </div>
                               <div className="flex justify-between items-center py-2">
-                                <span className="text-sm sm:text-base text-gray-600">Card Number:</span>
-                                <span className="font-mono text-sm sm:text-base">•••• •••• •••• {formData.cardNumber.slice(-4)}</span>
+                                <span className="text-sm sm:text-base text-gray-600">
+                                  Card Number:
+                                </span>
+                                <span className="font-mono text-sm sm:text-base">
+                                  •••• •••• •••• {formData.cardNumber.slice(-4)}
+                                </span>
                               </div>
                               <div className="flex justify-between items-center py-2">
-                                <span className="text-sm sm:text-base text-gray-600">Name:</span>
-                                <span className="font-medium text-sm sm:text-base">{formData.fullName}</span>
+                                <span className="text-sm sm:text-base text-gray-600">
+                                  Name:
+                                </span>
+                                <span className="font-medium text-sm sm:text-base">
+                                  {formData.fullName}
+                                </span>
                               </div>
                             </div>
 
                             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
                               <p className="text-xs sm:text-sm text-blue-800">
-                                <strong>Mock Payment:</strong> This is a demo form. No actual transaction will be processed.
+                                <strong>Mock Payment:</strong> This is a demo
+                                form. No actual transaction will be processed.
                               </p>
                             </div>
                           </div>
@@ -613,9 +740,25 @@ export default function Donation() {
                           >
                             {isSubmitting ? (
                               <>
-                                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                <svg
+                                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <circle
+                                    className="opacity-25"
+                                    cx="12"
+                                    cy="12"
+                                    r="10"
+                                    stroke="currentColor"
+                                    strokeWidth="4"
+                                  ></circle>
+                                  <path
+                                    className="opacity-75"
+                                    fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                  ></path>
                                 </svg>
                                 Processing...
                               </>

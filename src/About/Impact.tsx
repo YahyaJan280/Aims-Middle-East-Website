@@ -14,10 +14,10 @@ const Impact = () => {
             <div className="absolute inset-0 bg-black opacity-20"></div>
             <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
               <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl  font-bold mb-4 md:mb-6 leading-tight">
+                <h1 className="font-roboto font-bold text-3xl sm:text-4xl md:text-4xl lg:text-6xl mb-4 md:mb-6 leading-tight">
                   Our Impact
                 </h1>
-                <p className="text-base md:text-lg lg:text-xl  max-w-3xl mx-auto leading-relaxed font-medium">
+                <p className="font-roboto text-base sm:text-lg md:text-2xl mx-auto leading-relaxed font-medium">
                   At AIMS Middle East, we are committed to making healthcare
                   accessible in underdeveloped areas of Khyber Pakhtunkhwa.
                   Since 2022, our initiatives have focused on screenings,

@@ -97,18 +97,26 @@ export default function CSRPartnership() {
 
     try {
       const partnershipTypes = [];
-      if (formData.financialDonation) partnershipTypes.push("Financial Donation");
-      if (formData.sponsorship) partnershipTypes.push("Sponsorship (Events/Programs)");
+      if (formData.financialDonation)
+        partnershipTypes.push("Financial Donation");
+      if (formData.sponsorship)
+        partnershipTypes.push("Sponsorship (Events/Programs)");
       if (formData.inKind) partnershipTypes.push("In-kind Contribution");
-      if (formData.volunteering) partnershipTypes.push("Employee Volunteering Program");
-      if (formData.csrCollaboration) partnershipTypes.push("CSR Collaboration/Long-term Partnership");
+      if (formData.volunteering)
+        partnershipTypes.push("Employee Volunteering Program");
+      if (formData.csrCollaboration)
+        partnershipTypes.push("CSR Collaboration/Long-term Partnership");
 
       const areasOfInterest = [];
       if (formData.healthcare) areasOfInterest.push("Healthcare Projects");
-      if (formData.diabetesHospital) areasOfInterest.push("Diabetes Hospital & Research Center");
-      if (formData.medicalCamps) areasOfInterest.push("Community Medical Camps");
-      if (formData.education) areasOfInterest.push("Education & Awareness Programs");
-      if (formData.otherArea) areasOfInterest.push(`Other: ${formData.otherArea}`);
+      if (formData.diabetesHospital)
+        areasOfInterest.push("Diabetes Hospital & Research Center");
+      if (formData.medicalCamps)
+        areasOfInterest.push("Community Medical Camps");
+      if (formData.education)
+        areasOfInterest.push("Education & Awareness Programs");
+      if (formData.otherArea)
+        areasOfInterest.push(`Other: ${formData.otherArea}`);
 
       const message = `
 New Corporate Partnership Inquiry
@@ -136,24 +144,29 @@ ${formData.message}
 ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
       `;
 
-      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          service_id: "service_wd9gooh",
-          template_id: "template_2xlqfxa",
-          user_id: "FfvG5phgHdo5IX-K_",
-          template_params: {
-            fullName: formData.contactName,
-            email: formData.email,
-            phone: formData.phone,
-            message: message,
-          },
-        }),
-      });
+      const response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            service_id: "service_wd9gooh",
+            template_id: "template_2xlqfxa",
+            user_id: "FfvG5phgHdo5IX-K_",
+            template_params: {
+              fullName: formData.contactName,
+              email: formData.email,
+              phone: formData.phone,
+              message: message,
+            },
+          }),
+        }
+      );
 
       if (response.ok) {
-        setSubmitMessage("Partnership inquiry submitted successfully! We will contact you soon to discuss opportunities.");
+        setSubmitMessage(
+          "Partnership inquiry submitted successfully! We will contact you soon to discuss opportunities."
+        );
         setFormData({
           orgName: "",
           website: "",
@@ -182,7 +195,9 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      setSubmitMessage("There was an error submitting your inquiry. Please try again or contact us directly at asdkhn@gmail.com");
+      setSubmitMessage(
+        "There was an error submitting your inquiry. Please try again or contact us directly at asdkhn@gmail.com"
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -192,16 +207,15 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
     <>
       <Navigation />
       <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen font-roboto">
-        
         {/* Hero Section - Edge-to-Edge */}
         <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-gradient-to-b from-blue-50 to-white mt-16 sm:mt-18 md:mt-20 lg:mt-12">
           <section className="py-12 sm:py-16 lg:py-20">
             <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
               <div className="max-w-[1200px] mx-auto text-center">
-                <h1 className="font-roboto text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold text-primary mb-4 sm:mb-6">
+                <h1 className="font-roboto  sm:text-4xl  lg:text-6xl xl:text-5xl font-bold text-primary mb-4 sm:mb-6   text-3xl  md:text-4xl ">
                   Partner with AIMS Middle East
                 </h1>
-                <p className="font-roboto text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto text-muted-foreground leading-relaxed">
+                <p className="font-roboto text-base sm:text-lg md:text-2xl text-gray-700 max-w-3xl mx-auto text-muted-foreground leading-relaxed">
                   Join hands with AIMS Middle East to create a lasting impact in
                   healthcare, education, and community development. Fill out the
                   form below to explore partnership opportunities under your
@@ -217,7 +231,6 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
           <section className="py-12 sm:py-16 lg:py-20">
             <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
               <div className="max-w-[1200px] mx-auto">
-                
                 {/* Form Card */}
                 <div className="bg-gray-50 rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                   {/* Form Header */}
@@ -233,7 +246,6 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                   {/* Form Body */}
                   <div className="bg-white p-5 sm:p-6 md:p-8 lg:p-10">
                     <div className="space-y-8 sm:space-y-10 font-roboto">
-                      
                       {/* 1. Organization Information */}
                       <div>
                         <h3 className="font-roboto text-lg sm:text-xl font-bold text-primary/95 mb-4 sm:mb-6 pb-3 border-b-2 border-blue-200 ">
@@ -242,8 +254,12 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
 
                         <div className="space-y-5 sm:space-y-6">
                           <div>
-                            <label htmlFor="orgName" className="block text-sm font-semibold text-gray-700 mb-2 text-left">
-                              Organization Name <span className="text-red-500">*</span>
+                            <label
+                              htmlFor="orgName"
+                              className="block text-sm font-semibold text-gray-700 mb-2 text-left"
+                            >
+                              Organization Name{" "}
+                              <span className="text-red-500">*</span>
                             </label>
                             <input
                               type="text"
@@ -269,7 +285,10 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
 
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                             <div>
-                              <label htmlFor="website" className="block text-sm font-semibold text-gray-700 mb-2 text-left">
+                              <label
+                                htmlFor="website"
+                                className="block text-sm font-semibold text-gray-700 mb-2 text-left"
+                              >
                                 Website (if any)
                               </label>
                               <input
@@ -284,7 +303,10 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                             </div>
 
                             <div>
-                              <label htmlFor="industry" className="block text-sm font-semibold text-gray-700 mb-2 text-left">
+                              <label
+                                htmlFor="industry"
+                                className="block text-sm font-semibold text-gray-700 mb-2 text-left"
+                              >
                                 Industry / Sector
                               </label>
                               <select
@@ -298,8 +320,12 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                                 <option value="Healthcare">Healthcare</option>
                                 <option value="Education">Education</option>
                                 <option value="Finance">Finance</option>
-                                <option value="Manufacturing">Manufacturing</option>
-                                <option value="IT / Technology">IT / Technology</option>
+                                <option value="Manufacturing">
+                                  Manufacturing
+                                </option>
+                                <option value="IT / Technology">
+                                  IT / Technology
+                                </option>
                                 <option value="Other">Other</option>
                               </select>
                             </div>
@@ -316,8 +342,12 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                         <div className="space-y-5 sm:space-y-6">
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                             <div>
-                              <label htmlFor="contactName" className="block text-sm font-semibold text-gray-700 mb-2 text-left">
-                                Full Name <span className="text-red-500">*</span>
+                              <label
+                                htmlFor="contactName"
+                                className="block text-sm font-semibold text-gray-700 mb-2 text-left"
+                              >
+                                Full Name{" "}
+                                <span className="text-red-500">*</span>
                               </label>
                               <input
                                 type="text"
@@ -342,7 +372,10 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                             </div>
 
                             <div>
-                              <label htmlFor="designation" className="block text-sm font-semibold text-gray-700 mb-2 text-left">
+                              <label
+                                htmlFor="designation"
+                                className="block text-sm font-semibold text-gray-700 mb-2 text-left"
+                              >
                                 Designation / Role
                               </label>
                               <input
@@ -359,8 +392,12 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
 
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                             <div>
-                              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2 text-left">
-                                Email Address <span className="text-red-500">*</span>
+                              <label
+                                htmlFor="email"
+                                className="block text-sm font-semibold text-gray-700 mb-2 text-left"
+                              >
+                                Email Address{" "}
+                                <span className="text-red-500">*</span>
                               </label>
                               <input
                                 type="email"
@@ -385,8 +422,12 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                             </div>
 
                             <div>
-                              <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2 text-left">
-                                Phone Number <span className="text-red-500">*</span>
+                              <label
+                                htmlFor="phone"
+                                className="block text-sm font-semibold text-gray-700 mb-2 text-left"
+                              >
+                                Phone Number{" "}
+                                <span className="text-red-500">*</span>
                               </label>
                               <input
                                 type="tel"
@@ -426,11 +467,33 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
 
                           <div className="space-y-3">
                             {[
-                              { name: "financialDonation", label: "Financial Donation", icon: Heart },
-                              { name: "sponsorship", label: "Sponsorship (Events / Programs)", icon: Target },
-                              { name: "inKind", label: "In-kind Contribution (Equipment, Supplies, etc.)", icon: Building2 },
-                              { name: "volunteering", label: "Employee Volunteering Program", icon: Users },
-                              { name: "csrCollaboration", label: "CSR Collaboration / Long-term Partnership", icon: Handshake },
+                              {
+                                name: "financialDonation",
+                                label: "Financial Donation",
+                                icon: Heart,
+                              },
+                              {
+                                name: "sponsorship",
+                                label: "Sponsorship (Events / Programs)",
+                                icon: Target,
+                              },
+                              {
+                                name: "inKind",
+                                label:
+                                  "In-kind Contribution (Equipment, Supplies, etc.)",
+                                icon: Building2,
+                              },
+                              {
+                                name: "volunteering",
+                                label: "Employee Volunteering Program",
+                                icon: Users,
+                              },
+                              {
+                                name: "csrCollaboration",
+                                label:
+                                  "CSR Collaboration / Long-term Partnership",
+                                icon: Handshake,
+                              },
                             ].map(({ name, label, icon: Icon }) => (
                               <label
                                 key={name}
@@ -468,10 +531,22 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
 
                           <div className="space-y-3">
                             {[
-                              { name: "healthcare", label: "Healthcare Projects" },
-                              { name: "diabetesHospital", label: "Diabetes Hospital & Research Center" },
-                              { name: "medicalCamps", label: "Community Medical Camps" },
-                              { name: "education", label: "Education & Awareness Programs" },
+                              {
+                                name: "healthcare",
+                                label: "Healthcare Projects",
+                              },
+                              {
+                                name: "diabetesHospital",
+                                label: "Diabetes Hospital & Research Center",
+                              },
+                              {
+                                name: "medicalCamps",
+                                label: "Community Medical Camps",
+                              },
+                              {
+                                name: "education",
+                                label: "Education & Awareness Programs",
+                              },
                             ].map(({ name, label }) => (
                               <label
                                 key={name}
@@ -491,7 +566,10 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                             ))}
 
                             <div className="p-3 sm:p-4 bg-white rounded-lg border-2 border-gray-200">
-                              <label htmlFor="otherArea" className="block text-sm font-semibold text-gray-700 mb-2">
+                              <label
+                                htmlFor="otherArea"
+                                className="block text-sm font-semibold text-gray-700 mb-2"
+                              >
                                 Other (Please specify):
                               </label>
                               <input
@@ -511,11 +589,15 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                       {/* 5. Message / Proposal */}
                       <div>
                         <h3 className="font-roboto text-lg sm:text-xl font-bold text-primary mb-4 sm:mb-6 pb-3 border-b-2 border-blue-200">
-                          Message / Proposal <span className="text-red-500">*</span>
+                          Message / Proposal{" "}
+                          <span className="text-red-500">*</span>
                         </h3>
 
                         <div>
-                          <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                          <label
+                            htmlFor="message"
+                            className="block text-sm font-semibold text-gray-700 mb-2"
+                          >
                             Briefly describe your interest or proposal:
                           </label>
                           <textarea
@@ -545,18 +627,27 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                       <div>
                         <h3 className="font-roboto text-lg sm:text-xl font-bold text-primary/95 mb-4 sm:mb-6 pb-3 border-b-2 border-blue-200">
                           Upload File{" "}
-                          <span className="text-xs sm:text-sm font-normal text-gray-500">(Optional)</span>
+                          <span className="text-xs sm:text-sm font-normal text-gray-500">
+                            (Optional)
+                          </span>
                         </h3>
 
                         <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 sm:p-8 text-center hover:border-blue-400 transition-colors bg-gray-50">
                           <Upload className="w-10 h-10 sm:w-12 sm:h-12 text-gray-400 mx-auto mb-4" />
-                          <label htmlFor="fileUpload" className="cursor-pointer">
+                          <label
+                            htmlFor="fileUpload"
+                            className="cursor-pointer"
+                          >
                             <span className="text-blue-600 hover:text-blue-800 font-semibold text-sm sm:text-base">
                               Click to upload
                             </span>
-                            <span className="text-gray-600 text-sm sm:text-base"> or drag and drop</span>
+                            <span className="text-gray-600 text-sm sm:text-base">
+                              {" "}
+                              or drag and drop
+                            </span>
                             <p className="text-xs sm:text-sm text-gray-500 mt-2">
-                              CSR proposal, brochure, or document (PDF, DOC, DOCX - Max 10MB)
+                              CSR proposal, brochure, or document (PDF, DOC,
+                              DOCX - Max 10MB)
                             </p>
                           </label>
                           <input
@@ -569,7 +660,9 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                           {fileName && (
                             <div className="mt-4 flex items-center justify-center gap-2 text-green-700 bg-green-50 px-4 py-2 rounded-lg">
                               <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
-                              <span className="font-medium text-sm sm:text-base">{fileName}</span>
+                              <span className="font-medium text-sm sm:text-base">
+                                {fileName}
+                              </span>
                             </div>
                           )}
                         </div>
@@ -586,7 +679,8 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                             className="mt-1 w-4 h-4 sm:w-5 sm:h-5 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 flex-shrink-0"
                           />
                           <span className="ml-3 text-sm sm:text-base text-gray-800">
-                            I agree to allow AIMS Middle East to contact me regarding partnership opportunities.{" "}
+                            I agree to allow AIMS Middle East to contact me
+                            regarding partnership opportunities.{" "}
                             <span className="text-red-500">*</span>
                           </span>
                         </label>

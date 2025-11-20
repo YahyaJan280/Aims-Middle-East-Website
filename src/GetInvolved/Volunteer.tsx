@@ -17,10 +17,8 @@ export default function Volunteer() {
               <div className="max-w-[1200px] mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="text-center lg:text-left">
-                    <h1 className="font-roboto text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4 sm:mb-6 leading-tight">
-                      Serve Your Community.
-                      <br />
-                      Make a Difference.
+                    <h1 className="font-roboto text-3xl sm:text-4xl md:text-4xl lg:text-6xl font-bold text-primary mb-4 sm:mb-6 leading-tight">
+                      Serve Your Community  Make a Difference.
                     </h1>
                     <p className="font-roboto text-base sm:text-lg md:text-xl text-gray-700 text-muted-foreground leading-relaxed">
                       Join us in our mission to improve health and well-being across

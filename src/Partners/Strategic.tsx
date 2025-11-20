@@ -60,10 +60,10 @@ const StrategicPartnersPage = () => {
           <section className="py-12 sm:py-16 lg:py-20 xl:py-24">
             <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
               <div className="max-w-[1200px] mx-auto text-center">
-                <h1 className="font-roboto text-3xl sm:text-4xl lg:text-5xl xl:text-5xl 2xl:text-5xl font-bold text-primary/95 mb-4 sm:mb-6">
+                <h1 className="font-roboto sm:text-4xl md:text-4xl lg:text-6xl text-3xl   font-bold text-primary/95 mb-4 sm:mb-6">
                   Strategic Partners
                 </h1>
-                <p className="font-roboto text-sm sm:text-base lg:text-lg xl:text-xl 2xl:text-xl text-gray-700 max-w-4xl mx-auto text-muted-foreground leading-relaxed px-4">
+                <p className="font-roboto text-base sm:text-lg md:text-2xl  lg:text-lg xl:text-xl 2xl:text-xl text-gray-700 max-w-4xl mx-auto text-muted-foreground leading-relaxed px-4">
                   We are proud to collaborate with visionary organizations that
                   share our commitment to excellence, innovation, and community
                   well-being. Together, we advance sustainable healthcare and

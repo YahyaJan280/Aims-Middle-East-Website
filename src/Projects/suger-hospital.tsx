@@ -19,10 +19,10 @@ const SugarHospital = () => {
             <div className="relative z-10 h-full w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex items-center">
               <div className="max-w-[1200px] mx-auto w-full">
                 <div className="text-white max-w-3xl">
-                  <h1 className="font-roboto text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-3 sm:mb-4 lg:mb-6 leading-tight text-center md:text-left">
+                  <h1 className="font-roboto text-3xl sm:text-4xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-4 lg:mb-6 leading-tight text-center md:text-left">
                     Transforming Diabetes Care in Khyber Pakhtunkhwa
                   </h1>
-                  <p className="font-roboto text-sm sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-white leading-relaxed text-center md:text-left">
+                  <p className="font-roboto  text-base sm:text-lg md:text-2xl text-white leading-relaxed text-center md:text-left">
                     Advanced treatment, compassionate care, and innovative
                     research for a healthier community.
                   </p>
@@ -46,7 +46,7 @@ const SugarHospital = () => {
                     />
                   </div>
                   <div>
-                    <h2 className="font-roboto text-2xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-bold text-primary mb-3 sm:mb-4 lg:mb-6 lg:text-center text-left md:text-left">
+                    <h2 className="font-roboto text-2xl sm:text-4xl lg:text-5xl  font-bold text-primary mb-3 sm:mb-4 lg:mb-6 lg:text-left text-left md:text-left">
                       About the Project
                     </h2>
                     <p className="font-roboto text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-xl text-gray-700 text-muted-foreground leading-relaxed mb-4 sm:mb-6 lg:mb-8 text-left">
@@ -58,7 +58,7 @@ const SugarHospital = () => {
                       receives effective treatment.
                     </p>
 
-                    <div className="space-y-3 sm:space-y-4">
+                    <div className="space-y-3 sm:space-y-4 font-roboto">
                       {[
                         "24/7 Emergency & Outpatient Care",
                         "Advanced Diagnostic Facilities",
@@ -101,7 +101,7 @@ const SugarHospital = () => {
               <div className="max-w-[1200px] mx-auto">
                 <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 items-center">
                   <div className="order-2 md:order-1">
-                    <h2 className="font-roboto text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-bold text-primary mb-3 sm:mb-4 lg:mb-6 lg:text-center text-left md:text-left">
+                    <h2 className="font-roboto text-2xl sm:text-3xl lg:text-5xl font-bold text-primary mb-3 sm:mb-4 lg:mb-6 lg:text-left text-left md:text-left">
                       Research & Innovation
                     </h2>
                     <p className="font-roboto text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-xl text-gray-700 text-muted-foreground leading-relaxed mb-4 sm:mb-6 lg:mb-8 text-left">
@@ -110,7 +110,7 @@ const SugarHospital = () => {
                       the understanding, treatment, and prevention of diabetes.
                     </p>
 
-                    <div className="space-y-3 sm:space-y-4">
+                    <div className="space-y-3 sm:space-y-4 font-roboto">
                       {[
                         "Early Detection & Prevention",
                         "Treatment Protocol Development",

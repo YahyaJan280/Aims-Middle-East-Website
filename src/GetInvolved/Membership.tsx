@@ -45,7 +45,12 @@ export default function Membership() {
   };
 
   const handleSubmit = async () => {
-    if (!formData.fullName || !formData.email || !formData.phone || !formData.dob) {
+    if (
+      !formData.fullName ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.dob
+    ) {
       setSubmitMessage("Please fill in all required fields.");
       setTouched({
         fullName: true,
@@ -72,24 +77,29 @@ Documents to Upload:
 - Additional Docs: ${formData.uploadProfCertApplicable ? "Yes" : "No"}
       `;
 
-      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          service_id: "service_wd9gooh",
-          template_id: "template_2xlqfxa",
-          user_id: "FfvG5phgHdo5IX-K_",
-          template_params: {
-            fullName: formData.fullName,
-            email: formData.email,
-            phone: formData.phone,
-            message,
-          },
-        }),
-      });
+      const response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            service_id: "service_wd9gooh",
+            template_id: "template_2xlqfxa",
+            user_id: "FfvG5phgHdo5IX-K_",
+            template_params: {
+              fullName: formData.fullName,
+              email: formData.email,
+              phone: formData.phone,
+              message,
+            },
+          }),
+        }
+      );
 
       if (response.ok) {
-        setSubmitMessage("Application submitted successfully! We will contact you soon.");
+        setSubmitMessage(
+          "Application submitted successfully! We will contact you soon."
+        );
         setFormData({
           fullName: "",
           email: "",
@@ -118,18 +128,17 @@ Documents to Upload:
     <>
       <Navigation />
       <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen font-roboto">
-        
         {/* Hero Section - Edge-to-Edge */}
         <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-gradient-to-b from-gray-50 to-white mt-16 sm:mt-18 md:mt-20 lg:mt-12">
           <section className="py-12 sm:py-16 lg:py-20">
             <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
               <div className="max-w-[1200px] mx-auto text-center">
-                <h1 className="font-roboto text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-primary mb-4 sm:mb-6">
+                <h1 className="font-roboto text-3xl sm:text-4xl md:text-4xl lg:text-6xl  font-bold text-primary mb-4 sm:mb-6     ">
                   Become a Member
                 </h1>
-                <p className="font-roboto text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-                  Join our community of passionate individuals dedicated to making a
-                  positive impact across Pakistan and the Middle East.
+                <p className="font-roboto text-base sm:text-lg md:text-2xl text-gray-700 max-w-3xl mx-auto text-muted-foreground leading-relaxed">
+                  Join our community of passionate individuals dedicated to
+                  making a positive impact across Pakistan and the Middle East.
                 </p>
               </div>
             </div>
@@ -141,7 +150,6 @@ Documents to Upload:
           <section className="py-12 sm:py-16 lg:py-20">
             <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
               <div className="max-w-[1200px] mx-auto">
-                
                 {/* Form Card */}
                 <div className="bg-gray-50 rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                   {/* Header */}
@@ -185,7 +193,8 @@ Documents to Upload:
                             />
                             {!validateField("fullName") && (
                               <p className="mt-1 text-xs sm:text-sm text-red-600 flex items-center gap-1 font-roboto">
-                                <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4" /> This field is required
+                                <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4" />{" "}
+                                This field is required
                               </p>
                             )}
                           </div>
@@ -211,7 +220,8 @@ Documents to Upload:
                           ].map((field) => (
                             <div key={field.name}>
                               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                {field.label} <span className="text-red-500">*</span>
+                                {field.label}{" "}
+                                <span className="text-red-500">*</span>
                               </label>
                               <div className="relative">
                                 <field.icon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5" />
@@ -230,7 +240,8 @@ Documents to Upload:
                                 />
                                 {!validateField(field.name) && (
                                   <p className="mt-1 text-xs sm:text-sm text-red-600 flex items-center gap-1 font-roboto">
-                                    <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4" /> This field is required
+                                    <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4" />{" "}
+                                    This field is required
                                   </p>
                                 )}
                               </div>
@@ -244,12 +255,15 @@ Documents to Upload:
                     <div>
                       <h3 className="font-roboto text-lg sm:text-xl font-bold text-primary/95 mb-4 sm:mb-6 pb-2 border-b-2 border-blue-200 flex items-center gap-2 flex-wrap">
                         Document Upload
-                        <span className="text-xs sm:text-sm font-normal text-gray-500">(Optional)</span>
+                        <span className="text-xs sm:text-sm font-normal text-gray-500">
+                          (Optional)
+                        </span>
                       </h3>
 
                       <div className="bg-gray-50 rounded-xl p-4 sm:p-6 space-y-4 font-roboto">
                         <p className="text-xs sm:text-sm text-gray-600 mb-4">
-                          Please indicate which documents you will be submitting with your application
+                          Please indicate which documents you will be submitting
+                          with your application
                         </p>
 
                         {[
@@ -281,8 +295,12 @@ Documents to Upload:
                               className="mt-1 w-4 h-4 sm:w-5 sm:h-5 text-primary/95 border-gray-300 rounded focus:ring-2 focus:ring-primary/70 flex-shrink-0"
                             />
                             <div className="ml-3">
-                              <span className="text-sm sm:text-base font-semibold text-gray-900">{item.title}</span>
-                              <p className="text-xs sm:text-sm text-gray-500 mt-1">{item.desc}</p>
+                              <span className="text-sm sm:text-base font-semibold text-gray-900">
+                                {item.title}
+                              </span>
+                              <p className="text-xs sm:text-sm text-gray-500 mt-1">
+                                {item.desc}
+                              </p>
                             </div>
                           </label>
                         ))}
@@ -335,7 +353,8 @@ Documents to Upload:
                         )}
                       </button>
                       <p className="text-center text-xs sm:text-sm text-gray-500 mt-4 font-roboto">
-                        By submitting this form, you agree to our terms and conditions
+                        By submitting this form, you agree to our terms and
+                        conditions
                       </p>
                     </div>
                   </div>

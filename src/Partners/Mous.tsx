@@ -46,7 +46,7 @@ const MoUPage = () => {
           <section className="py-12 sm:py-16 lg:py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center">
-                <h1 className="font-roboto text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-bold text-primary mb-4 sm:mb-6">
+                <h1 className="font-roboto  sm:text-4xl  xl:text-5xl  text-primary mb-4 sm:mb-6  font-bold text-3xl md:text-4xl lg:text-6xl">
                   Memorandum of Understanding
                 </h1>
                 <p className="font-roboto text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -66,7 +66,7 @@ const MoUPage = () => {
           <section className="py-12 sm:py-16 lg:py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center  mb-12 sm:mb-16">
-                <h2 className="font-roboto text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary mb-4">
+                <h2 className="font-roboto xl:text-5xl font-bold text-primary mb-4   text-3xl sm:text-4xl md:text-4xl lg:text-6xl">
                   Official Recognitions & Certifications
                 </h2>
                 <div className="w-20 sm:w-24 h-1 bg-primary mx-auto rounded-full"></div>

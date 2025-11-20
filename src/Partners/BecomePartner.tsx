@@ -43,10 +43,10 @@ const BecomePartnerPage = () => {
               <div className="max-w-[1200px] mx-auto text-center">
                 {/* Icon Badge */}
 
-                <h1 className="font-roboto text-3xl sm:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-primary mb-4 sm:mb-6">
+                <h1 className="font-roboto text-3xl sm:text-4xl lg:text-6xl xl:text-5xl 2xl:text-6xl font-bold text-primary mb-4 sm:mb-6  md:text-4xl ">
                   Become a Partner
                 </h1>
-                <p className="font-roboto text-sm sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-700 max-w-4xl mx-auto text-muted-foreground leading-relaxed px-4">
+                <p className="font-roboto  sm:text-lg text-gray-700 max-w-4xl mx-auto text-muted-foreground leading-relaxed px-4 text-base md:text-2xl">
                   Partnering with AIMS Middle East means aligning with our
                   vision to create sustainable healthcare and community
                   development. Together, we can transform ideas into impact.
