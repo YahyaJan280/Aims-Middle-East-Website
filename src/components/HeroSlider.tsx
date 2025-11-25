@@ -126,12 +126,12 @@ const HeroSection = () => {
             </div>
 
             {/* RIGHT: Slider Image */}
-            <div className="relative flex justify-center lg:justify-end animate-image-in w-full lg:w-[110%] lg:-mr-20">
+            <div className="relative flex justify-center max-w-xl lg:justify-end animate-image-in w-full lg:w-[120%]">
               <div className="relative w-full h-full">
                 <img
                   key={index}
                   src={slide.image}
-                  className="w-full h-full min-h-[400px] sm:min-h-[500px] lg:min-h-[400px] object-cover transition-all duration-700"
+                  className="w-full h-full min-h-[400px]  sm:min-h-[500px] lg:min-h-[400px] object-cover transition-all duration-700"
                   alt="Hero Slide"
                 />
               </div>
