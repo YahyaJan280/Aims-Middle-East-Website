@@ -231,7 +231,7 @@ const Navigation = () => {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-all duration-200 z-50 active:scale-95"
+              className="lg:hidden p-2  -mr-2 text-white hover:bg-white/10 rounded-lg transition-all duration-200 z-50 active:scale-95"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -257,7 +257,7 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed top-16 sm:top-18 right-0 bottom-0 w-full sm:w-96 bg-gradient-to-b from-blue-900 to-blue-950 z-40 transition-all duration-300 overflow-y-auto shadow-2xl ${
+        className={`lg:hidden fixed top-16 sm:top-18 right-0  bottom-0 w-full sm:w-96 bg-gradient-to-b from-blue-900 to-blue-950 z-40 transition-all duration-300 overflow-y-auto shadow-2xl ${
           isMobileMenuOpen
             ? "translate-x-0 opacity-100"
             : "translate-x-full opacity-0"

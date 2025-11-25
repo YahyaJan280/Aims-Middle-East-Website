@@ -30,7 +30,7 @@ const Impact = () => {
         </div>
 
         {/* Section 1: 2,500+ Patients - Full Width Background */}
-        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-white">
+        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw]  -mr-[50vw] bg-white">
           <section className="py-12 md:py-16 lg:py-20">
             <div className="container mx-auto px-4 md:px-6 lg:px-8">
               <div className="max-w-[1200px] mx-auto">
@@ -66,8 +66,8 @@ const Impact = () => {
         </div>
 
         {/* Section 2: 40+ Camps Annually - Full Width Background */}
-        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-gray-100">
-          <section className="py-12 md:py-16 lg:py-20">
+        <div className="relative w-screen left-[50%] right-[50%] -mt-20 -ml-[50vw] -mr-[50vw] bg-gray-100">
+          <section className="py-12 md:py-16 lg:py-2">
             <div className="container mx-auto px-4 md:px-6 lg:px-8">
               <div className="max-w-[1200px] mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
@@ -99,7 +99,7 @@ const Impact = () => {
         </div>
 
         {/* Sustainable Change Section - Full Width Background */}
-        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-primary">
+        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] mt-20 -mr-[50vw] bg-primary">
           <section className="text-white py-12 md:py-16 lg:py-20 text-center relative overflow-hidden">
             <div className="absolute inset-0 opacity-10 pointer-events-none">
               <div className="absolute top-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
