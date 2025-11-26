@@ -9,7 +9,7 @@ import HeartsBackgroundImage from "@/assets/Heart-element (1).png";
 // ------------ SLIDES DATA ------------------
 const slides = [
   {
-    title: "Flowing Care\nTo Those In Need",
+    title: "Flowing Care\nTo Those\nIn Need",
     text: "Empowering healthcare professionals\nand transforming lives.",
     image: Hero1,
   },
@@ -121,12 +121,12 @@ const HeroSection = () => {
 
         {/* MAIN CONTENT */}
         <div className="relative z-[5] w-full min-h-screen flex items-center justify-center">
-          <div className="container mx-auto   px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-20 sm:py-24  md:py-28 lg:py-16">
-            <div className="grid grid-cols-1 max-w-[1400px] lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-14  xl:gap-16 items-center justify-items-center lg:justify-items-start">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-20 sm:py-24 md:py-28 lg:py-16">
+            <div className="grid grid-cols-1 max-w-[1330px] lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 items-center justify-items-start">
               {/* LEFT: Text Content */}
-              <div className="text-white space-y-3 sm:space-y-3 md:space-y-4 lg:ml-6 lg:space-y-0 animate-slide-in w-full max-w-xl lg:max-w-none text-center lg:text-left order-2 lg:order-1">
+              <div className="text-white space-y-3 sm:space-y-3 ml-2 lg:ml-5 md:space-y-4 lg:space-y-0 animate-slide-in w-full max-w-xl lg:max-w-none text-left order-1">
                 <h1
-                  className="font-bold leading-tight whitespace-pre-wrap"
+                  className="font-bold leading-tight whitespace-pre-line"
                   style={{ fontSize: "40px" }}
                 >
                   {slide.title}
@@ -139,26 +139,26 @@ const HeroSection = () => {
                   {slide.text}
                 </p>
 
-                <div className="pt-2 sm:pt-3 md:pt-4 flex justify-center lg:justify-start">
+                <div className="pt-2 sm:pt-3 md:pt-4 flex justify-left lg:justify-start">
                   <a
-                    href="https://example.com"
+                    href="https://dubaihumanitarian.ae/member/aims-middle-east/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white text-[#055baa] font-semibold 
-                       px-4 sm:px-5 md:px-5 
-                       py-2 sm:py-2.5 
-                       rounded-lg 
-                       transition-all hover:bg-white/95 hover:scale-105 hover:shadow-xl 
-                       shadow-md 
-                       text-xs sm:text-sm md:text-sm"
-                      >
+               px-4 sm:px-5 md:px-5 
+               py-2 sm:py-2.5 
+               rounded-lg 
+               transition-all hover:bg-white/95 hover:scale-105 hover:shadow-xl 
+               shadow-md 
+               text-xs sm:text-sm md:text-sm"
+                  >
                     Learn More
                   </a>
                 </div>
               </div>
 
               {/* RIGHT: Slider Image */}
-              <div className="relative flex justify-center lg:justify-end animate-image-in w-full order-1 lg:order-2">
+              <div className="relative flex justify-center lg:justify-end animate-image-in w-full order-2">
                 <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
                   <img
                     key={index}
