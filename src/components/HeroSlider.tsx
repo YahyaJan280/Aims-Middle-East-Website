@@ -9,18 +9,18 @@ import HeartsBackgroundImage from "@/assets/Heart-element (1).png";
 // ------------ SLIDES DATA ------------------
 const slides = [
   {
-    title: "Flowing Care\nTo Those\n In Need",
-    text: "Empowering healthcare professionals\n and transforming lives.",
+    title: "Flowing Care\nTo Those In Need",
+    text: "Empowering healthcare professionals\nand transforming lives.",
     image: Hero1,
   },
   {
-    title: "AIMS Middle East\n Strength in Care",
-    text: "Leading Social welfare diabetes\n healthcare organization serving globally.",
+    title: "AIMS Middle East\nStrength in Care",
+    text: "Leading Social welfare diabetes\nhealthcare organization serving globally.",
     image: Hero2,
   },
   {
-    title: "Building a Future of Accessible Care",
-    text: "Empowering healthcare professionals\n and transforming lives.",
+    title: "Building a Future of\nAccessible Care",
+    text: "Empowering healthcare professionals\nand transforming lives.",
     image: Hero3,
   },
 ];
@@ -77,26 +77,41 @@ const HeroSection = () => {
           }
         }
 
+        @keyframes moveRightLeft {
+          0%, 100% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(-20px);
+          }
+        }
+
         .animate-slide-in {
           animation: fadeInSlide 0.8s ease-out forwards;
         }
 
         .animate-image-in {
-          animation: fadeInImage 0.8s ease-out forwards;
+          animation: fadeInImage 0.8s ease-out forwards, moveRightLeft 4s ease-in-out infinite 0.8s;
+        }
+
+        /* Ensure proper alignment on all screens */
+        @media (max-width: 1024px) {
+          .hero-content {
+            text-align: center;
+          }
         }
       `}</style>
 
-      <section className="relative w-screen h-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gradient-to-br from-[#0553a0] via-[#055baa] to-[#0d7ed6] overflow-hidden">
-        
+      <section className="relative w-screen min-h-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gradient-to-br from-[#0553a0] via-[#055baa] to-[#0d7ed6] overflow-hidden">
         {/* ANIMATED HEARTS BACKGROUND - Right Side */}
-        <div className="absolute top-0 right-0 bottom-0 w-full md:w-[60%] lg:w-[40%] z-[1] pointer-events-none flex items-center justify-end">
-          <img 
-            src={HeartsBackgroundImage} 
-            alt="" 
-            className="w-full h-full object-cover opacity-90"
+        <div className="absolute top-0 right-0 bottom-0 w-[55%] sm:w-[50%] md:w-[45%] lg:w-[40%] xl:w-[35%] 2xl:w-[30%] z-[1] pointer-events-none flex items-center justify-end">
+          <img
+            src={HeartsBackgroundImage}
+            alt=""
+            className="w-full h-full object-contain opacity-90"
             style={{
-              animation: 'floatHearts 15s ease-in-out infinite',
-              objectPosition: 'right center',
+              animation: "floatHearts 15s ease-in-out infinite",
+              objectPosition: "right center",
             }}
           />
         </div>
@@ -105,41 +120,57 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#055baa]/85 via-[#055baa]/50 to-transparent z-[2]" />
 
         {/* MAIN CONTENT */}
-        <div className="relative z-[5] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
-            
-            {/* LEFT: Text Content */}
-            <div className="text-white space-y-4 sm:space-y-6 animate-slide-in text-left lg:pr-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight whitespace-pre-line text-left">
-                {slide.title}
-              </h1>
+        <div className="relative z-[5] w-full min-h-screen flex items-center justify-center">
+          <div className="container mx-auto   px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-20 sm:py-24  md:py-28 lg:py-16">
+            <div className="grid grid-cols-1 max-w-[1400px] lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-14  xl:gap-16 items-center justify-items-center lg:justify-items-start">
+              {/* LEFT: Text Content */}
+              <div className="text-white space-y-3 sm:space-y-3 md:space-y-4 lg:ml-6 lg:space-y-0 animate-slide-in w-full max-w-xl lg:max-w-none text-center lg:text-left order-2 lg:order-1">
+                <h1
+                  className="font-bold leading-tight whitespace-pre-wrap"
+                  style={{ fontSize: "40px" }}
+                >
+                  {slide.title}
+                </h1>
 
-              <p className="text-base sm:text-lg lg:text-xl text-white/95 max-w-xl leading-relaxed text-left whitespace-pre-line">
-                {slide.text}
-              </p>
+                <p
+                  className="text-white/95 leading-relaxed whitespace-pre-line"
+                  style={{ fontSize: "16px" }}
+                >
+                  {slide.text}
+                </p>
 
-              <div className="pt-2 flex justify-start">
-                <button className="bg-white text-[#055baa] font-semibold px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-all hover:bg-white/95 hover:scale-105 hover:shadow-2xl shadow-xl text-sm sm:text-base">
-                  Learn More
-                </button>
+                <div className="pt-2 sm:pt-3 md:pt-4 flex justify-center lg:justify-start">
+                  <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-[#055baa] font-semibold 
+                       px-4 sm:px-5 md:px-5 
+                       py-2 sm:py-2.5 
+                       rounded-lg 
+                       transition-all hover:bg-white/95 hover:scale-105 hover:shadow-xl 
+                       shadow-md 
+                       text-xs sm:text-sm md:text-sm"
+                      >
+                    Learn More
+                  </a>
+                </div>
               </div>
-            </div>
 
-            {/* RIGHT: Slider Image */}
-            <div className="relative flex justify-center max-w-xl lg:justify-end animate-image-in w-full lg:w-[120%]">
-              <div className="relative w-full h-full">
-                <img
-                  key={index}
-                  src={slide.image}
-                  className="w-full h-full min-h-[400px]  sm:min-h-[500px] lg:min-h-[400px] object-cover transition-all duration-700"
-                  alt="Hero Slide"
-                />
+              {/* RIGHT: Slider Image */}
+              <div className="relative flex justify-center lg:justify-end animate-image-in w-full order-1 lg:order-2">
+                <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+                  <img
+                    key={index}
+                    src={slide.image}
+                    className="w-full h-auto object-cover rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl transition-all duration-700"
+                    alt="Hero Slide"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-  
       </section>
     </>
   );
