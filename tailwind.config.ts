@@ -19,7 +19,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif'], // ✅ Added Roboto
+        roboto: ['Roboto', 'sans-serif'],
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -83,19 +83,31 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'
       },
-      keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' }
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' }
-        }
-      },
+     keyframes: {
+  'accordion-down': {
+    from: { height: '0' },
+    to: { height: 'var(--radix-accordion-content-height)' }
+  },
+  'accordion-up': {
+    from: { height: 'var(--radix-accordion-content-height)' },
+    to: { height: '0' }
+  },
+  // ✅ FIXED: Float animations with proper units
+  floatUp: {
+    '0%, 100%': { transform: 'translateY(0)' },
+    '50%': { transform: 'translateY(-20px)' },
+  },
+  floatDown: {
+    '0%, 100%': { transform: 'translateY(0)' },
+    '50%': { transform: 'translateY(20px)' },
+  },
+},
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        // ✅ NEW: Float animations
+        'float-up': 'floatUp 8s ease-in-out infinite',
+        'float-down': 'floatDown 9s ease-in-out infinite',
       }
     }
   },

@@ -9,7 +9,7 @@ import HeartsBackgroundImage from "@/assets/Heart-element (1).png";
 // ------------ SLIDES DATA ------------------
 const slides = [
   {
-    title: "Flowing Care\nTo Those\nIn Need",
+    title: "Flowing Care\nTo Those In Need",
     text: "Empowering healthcare professionals\nand transforming lives.",
     image: Hero1,
   },

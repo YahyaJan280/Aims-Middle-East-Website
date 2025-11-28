@@ -131,7 +131,7 @@ const Footer = () => {
               />
             </div>
 
-            <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed mb-5 text-left">
+            <p className="text-sm sm:text-base text-muted-foreground lg:text-lg text-gray-600 leading-relaxed mb-5 text-left">
               Like the flowing waters of the Abaseen river, we bring life, hope,
               and healing to communities across the Middle East.
             </p>
@@ -145,7 +145,7 @@ const Footer = () => {
                   Our Promise
                 </span>
               </div>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed text-left">
+              <p className="text-sm sm:text-base text-gray-600 text-muted-foreground leading-relaxed text-left">
                 Comprehensive, affordable, and accessible diabetes healthcare
                 for all.
               </p>
@@ -162,7 +162,7 @@ const Footer = () => {
                 <li key={i}>
                   {item.submenu ? (
                     <details className="group relative z-10">
-                      <summary className="flex justify-between items-center cursor-pointer font-medium text-sm sm:text-base text-gray-600 hover:text-primary transition-colors">
+                      <summary className="flex justify-between items-center cursor-pointer font-medium text-sm sm:text-base text-gray-600 text-muted-foreground hover:text-primary transition-colors">
                         {item.name}
                         <ChevronDown
                           size={16}
