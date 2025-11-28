@@ -90,14 +90,11 @@ const CallToAction = () => {
       {/* Centered Content */}
       <div className="relative z-10 container mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20 max-w-[1360px]">
         {/* Heading */}
-        <div className="text-center mb-12 sm:mb-14 md:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-5 md:mb-6 animate-on-scroll opacity-0 leading-tight">
-            Join Us in Building
-            <span className="block mt-2">
-              Accessible Care
-            </span>
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-3xl mx-auto animate-on-scroll opacity-0 leading-relaxed font-light">
+        <div className="text-center mb-10 sm:mb-12  lg:mb-16">
+                 <h2 className="text-2xl text-white font-roboto  sm:text-3xl md:text-5xl md:text-center  font-bold xl:text-center  text-center mb-3">
+          Join Us in<br/>Building Accessible Care
+        </h2>
+          <p className="text-sm sm:text-base md:text-lg text-white text-muted-foreground max-w-3xl mx-auto animate-on-scroll opacity-0 translate-y-2 transition-all duration-700 leading-relaxed font-light">
             Together, we can flow like the Abaseen river—bringing life, hope,
             and healing to every corner of our region. Your support creates
             ripples of positive change that transform entire communities.
@@ -118,11 +115,11 @@ const CallToAction = () => {
                       >
                         <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-white" strokeWidth={2} />
                       </div>
-                      <h3 className="text-2xl sm:text-2xl md:text-3xl font-bold text-white group-hover:scale-105 transition-transform duration-300">
+                       <h3 className="text-xl sm:text-3xl md:text-2xl font-bold bg-clip-text text-white leading-tight truncate">
                         {card.title}
                       </h3>
                     </div>
-                    <p className="text-sm sm:text-base text-white/90 mb-5 sm:mb-6 leading-relaxed text-left">
+                    <p className="text-sm sm:text-base  text-left  text-muted-foreground text-white mb-6 leading-relaxed">
                       {card.description}
                     </p>
                     <div className="space-y-2 sm:space-y-2.5 mb-6 sm:mb-7">
@@ -133,7 +130,7 @@ const CallToAction = () => {
                           style={{ transitionDelay: `${featureIndex * 100}ms` }}
                         >
                           <div className="w-2 h-2 bg-white/70 rounded-full flex-shrink-0"></div>
-                          <span className="text-sm sm:text-base text-white/90">
+                          <span className="text-sm  text-white text-muted-foreground leading-snug">
                             {feature}
                           </span>
                         </div>
@@ -155,12 +152,12 @@ const CallToAction = () => {
         {/* Contact Section */}
         <div className="animate-on-scroll opacity-0">
           <div className="bg-white/10 backdrop-blur-md p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl border border-white/20 text-center max-w-4xl mx-auto">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-5 md:mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-2xl font-bold text-white mb-4 sm:mb-5 md:mb-6">
               Ready to Make a Difference?
             </h3>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-7 md:mb-8 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base  text-center  text-muted-foreground text-white mb-6 leading-relaxed">
               Connect with us today and become part of a movement that's
-              transforming healthcare across the Middle East. Every action, no
+              transforming healthcare<br/>  across the Middle East. Every action, no
               matter how small, creates waves of positive change.
             </p>
 

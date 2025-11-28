@@ -207,7 +207,7 @@ export default function Donation() {
               <div className="max-w-[1200px] mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div>
-                    <h1 className="font-roboto  md:text-4xl lg:text-6xl font-bold text-primary mb-6 sm:mb-8   text-3xl sm:text-4xl  ">
+                    <h1 className="font-roboto text-left md:text-4xl lg:text-6xl font-bold text-primary mb-6 sm:mb-8   text-3xl sm:text-4xl  ">
                       Where Your Donation Makes a Difference
                     </h1>
                     <button
@@ -216,7 +216,7 @@ export default function Donation() {
                           .getElementById("donation-form")
                           .scrollIntoView({ behavior: "smooth" })
                       }
-                      className="bg-primary text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-base sm:text-lg font-semibold transition-colors  shadow-md hover:shadow-lg"
+                      className="bg-primary text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-base sm:text-lg font-semibold transition-colors text-left flex shadow-md hover:shadow-lg"
                     >
                       Donate Now
                     </button>

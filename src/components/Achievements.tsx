@@ -187,11 +187,11 @@ const Achievements = () => {
             <div className="max-w-[1200px] mx-auto">
               {/* Header */}
               <div className="text-center mb-10 sm:mb-12 lg:mb-16">
-                <h2 className="font-roboto font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl mb-4 sm:mb-6 animate-on-scroll opacity-0">
+                <h2 className="font-roboto font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6 animate-on-scroll opacity-0">
                   <span className="text-primary">Our Impact</span>
                 </h2>
-                <p className="font-roboto font-medium text-base sm:text-lg lg:text-xl xl:text-2xl text-muted-foreground max-w-3xl mx-auto animate-on-scroll opacity-0 leading-relaxed px-4 ">
-                  Measurable results that demonstrate our commitment to
+                <p className="text-sm sm:text-base md:text-lg text-center text-gray-600 text-muted-foreground max-w-3xl -mt-3 mx-auto animate-on-scroll opacity-0 transition-all duration-700 leading-relaxed font-light">
+                  Measurable results that demonstrate our commitment to <br/>
                   transforming healthcare and improving lives across the Middle
                   East
                 </p>
@@ -216,7 +216,7 @@ const Achievements = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 items-start">
                 {/* Left: Transforming Lives */}
                 <div className="animate-on-scroll opacity-0 flex flex-col bg-card/20 rounded-2xl p-5 sm:p-6 lg:p-7 border border-border/30 hover:border-border/50 transition-all duration-300">
-                  <h3 className="font-roboto text-xl sm:text-2xl lg:text-3xl font-bold text-primary md:text-center mb-3 sm:mb-4 text-left">
+                  <h3 className="font-roboto text-xl flex sm:text-2xl lg:text-3xl font-bold text-primary md:text-center mb-3 sm:mb-4 text-left">
                     Transforming Lives Togather
                   </h3>
                   <p className="font-roboto font-medium text-sm sm:text-base lg:text-base text-muted-foreground mb-5 sm:mb-6 leading-relaxed text-left">

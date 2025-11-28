@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import bgElement from "@/assets/Abaseen-Spirit-BG.png";
 import {
   Eye,
   Target,
@@ -86,7 +87,7 @@ const MissionVision = () => {
           <p className="text-sm sm:text-base md:text-lg text-gray-600 text-muted-foreground max-w-3xl mx-auto animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 leading-relaxed font-light">
             Like the flowing waters of the{" "}
             <span className="font-semibold text-primary">Abaseen river</span>,
-            we bring life, hope, and healing to communities across the Middle
+            we bring life, <br/> hope, and healing to communities across the Middle
             East
           </p>
         </div>
@@ -109,7 +110,7 @@ const MissionVision = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-gray-600 text-muted-foreground text-left leading-relaxed mb-4">
+                <p className="text-sm sm:text-base text-left text-muted-foreground text-gray-600 mb-6 leading-relaxed">
                   To be the{" "}
                   <span className="font-semibold text-primary">
                     leading institution
@@ -136,7 +137,7 @@ const MissionVision = () => {
                             strokeWidth={2}
                           />
                         </div>
-                        <span className="text-sm sm:text-base text-gray-600  text-muted-foreground font-medium">
+                        <span className="text-sm  text-gray-700 text-muted-foreground leading-snug">
                           {item.text}
                         </span>
                       </div>
@@ -162,7 +163,7 @@ const MissionVision = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-gray-600 text-left text-muted-foreground leading-relaxed mb-4">
+                <p className="text-sm sm:text-base text-left text-muted-foreground text-gray-600 mb-6 leading-relaxed">
                   To pool public and private sector resources to enhance
                   accessibility to{" "}
                   <span className="font-semibold text-primary">
@@ -189,7 +190,7 @@ const MissionVision = () => {
                             strokeWidth={2}
                           />
                         </div>
-                        <span className="text-sm sm:text-base text-gray-600 text-muted-foreground font-medium">
+                        <span className="text-sm  text-gray-700 text-muted-foreground leading-snug">
                           {item.text}
                         </span>
                       </div>
@@ -202,31 +203,33 @@ const MissionVision = () => {
         </div>
 
         {/* Abaseen Spirit Section */}
-        <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
-          <div className="relative bg-primary rounded-2xl shadow-xl overflow-hidden">
-            <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 bg-white rounded-full opacity-10 -mr-24 sm:-mr-32 -mt-24 sm:-mt-32"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-white rounded-full opacity-10 -ml-24 sm:-ml-32 -mb-24 sm:-mb-32"></div>
 
-            <div className="relative z-10 p-6 sm:p-8 md:p-10">
-              <div className="max-w-4xl mx-auto text-center">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-                  The Abaseen Spirit
-                </h3>
+        <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 relative rounded-3xl overflow-hidden">
+          <div
+            className="absolute inset-0 rounded-3xl bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url(${bgElement})`,
+              backgroundSize: "100% 100%",
+            }}
+          />
+          {/* Content */}
+          <div className="relative z-10 max-w-[1200px] mx-auto text-center px-6 sm:px-8 md:px-10 lg:px-12  sm:py-20 md:py-10">
+            <h3 className="text-2xl sm:text-3xl font-bold text-[#00adee] mb-4 sm:mb-6">
+              The Abaseen Spirit
+            </h3>
 
-                <div className="h-1 w-16 bg-white/50 rounded-full mx-auto mb-4"></div>
+            <div className="h-1 w-16 bg-[#00adee] rounded-full mx-auto mb-3 -mt-3"></div>
 
-                <p className="text-sm sm:text-base md:text-lg text-white/95 leading-relaxed">
-                  Just as the Abaseen river flows through the landscapes of our
-                  region, bringing life and sustenance to all it touches,{" "}
-                  <span className="font-semibold">
-                    AIMS Middle East flows through communities
-                  </span>
-                  , bringing hope, healing, and transformation. Our mission is
-                  as constant and nurturing as these ancient waters, reaching
-                  every corner where care is needed most.
-                </p>
-              </div>
-            </div>
+            <p className="text-sm sm:text-base text-left  text-muted-foreground text-white mb-6 leading-relaxed max-w-3xl mx-auto">
+              Just as the Abaseen river flows through the landscapes of our
+              region, bringing life and sustenance to all it touches,{" "}
+              <span className="font-bold text-white">
+                AIMS Middle East flows through communities
+              </span>
+              , bringing hope, healing, and transformation. Our mission is as
+              constant and nurturing as these ancient waters, reaching every
+              corner where care is needed most.
+            </p>
           </div>
         </div>
       </div>

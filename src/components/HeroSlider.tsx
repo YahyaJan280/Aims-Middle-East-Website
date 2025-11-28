@@ -145,13 +145,13 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white text-[#055baa] font-semibold 
-               px-4 sm:px-5 md:px-5 
-               py-2 sm:py-2.5 
-               rounded-lg 
-               transition-all hover:bg-white/95 hover:scale-105 hover:shadow-xl 
-               shadow-md 
-               text-xs sm:text-sm md:text-sm"
-                  >
+                       px-4 sm:px-5 md:px-5 
+                       py-2 sm:py-2.5 
+                       rounded-lg 
+                       transition-all hover:bg-[#00adee] hover:text-white hover:scale-105 hover:shadow-xl 
+                       shadow-md 
+                       text-xs sm:text-sm md:text-sm"
+                      >
                     Learn More
                   </a>
                 </div>

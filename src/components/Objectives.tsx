@@ -92,11 +92,11 @@ const Objectives = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Heading */}
         <div className="text-center mb-12 sm:mb-14 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold mb-4 animate-on-scroll opacity-0 text-primary/95">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl  font-bold mb-4 animate-on-scroll opacity-0 text-primary/95">
             Our Objectives
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll opacity-0 text-muted-foreground leading-relaxed">
-            Three pillars of excellence that guide our mission to transform
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 text-muted-foreground max-w-3xl mx-auto animate-on-scroll opacity-0 translate-y-2 transition-all duration-700 leading-relaxed font-light">
+            Three pillars of excellence that guide our mission to <br/> transform
             healthcare delivery across the region
           </p>
         </div>
@@ -136,7 +136,7 @@ const Objectives = () => {
                   </div>
 
                   {/* Description */}
-                  <p className="text-sm sm:text-base text-left text-muted-foreground text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-sm sm:text-base  text-left  text-muted-foreground text-gray-600 mb-6 leading-relaxed">
                     {objective.description}
                   </p>
 
@@ -155,7 +155,7 @@ const Objectives = () => {
                           className={`w-5 h-5 flex-shrink-0 text-red-500 mt-0.5 ${objective.iconColor}`}
                           strokeWidth={2}
                         />
-                        <span className="text-sm text-gray-700 text-muted-foreground leading-snug">
+                        <span className="text-sm  text-gray-700 text-muted-foreground leading-snug">
                           {feature}
                         </span>
                       </div>
@@ -176,19 +176,19 @@ const Objectives = () => {
         <div className="mt-12 sm:mt-16 md:mt-20">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
             <div className="animate-on-scroll opacity-0">
-              <div className="relative p-6 sm:p-8 bg-white rounded-xl shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 group overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="relative p-6 sm:p-8 bg-[#0084c7] rounded-xl shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 group overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
                 <div className="relative z-10">
                   <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg mb-4">
                     <Stethoscope
-                      className="w-7 h-7 sm:w-7 sm:h-7 text-primary/95"
+                      className="w-7 h-7 sm:w-7 sm:h-7 text-white"
                       strokeWidth={2}
                     />
                   </div>
-                  <h4 className="text-lg sm:text-xl font-bold text-primary mb-2">
+                  <h4 className="text-2xl sm:text-3xl lg:text-3xl  font-bold text-white mb-2">
                     Medical Excellence
                   </h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground text-gray-600">
+                  <p className="text-sm text-muted-foreground leading-snug text-white">
                     World-class healthcare standards
                   </p>
                 </div>
@@ -196,19 +196,19 @@ const Objectives = () => {
             </div>
 
             <div className="animate-on-scroll opacity-0">
-              <div className="relative p-6 sm:p-8 bg-white rounded-xl shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 group overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="relative p-6 sm:p-8 bg-[#2b3990] rounded-xl shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 group overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
                 <div className="relative z-10">
                   <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg mb-4">
                     <BookOpen
-                      className="w-6 h-6 sm:w-7 sm:h-7 text-primary"
+                      className="w-6 h-6 sm:w-7 sm:h-7 text-white"
                       strokeWidth={2}
                     />
                   </div>
-                  <h4 className="text-lg sm:text-xl font-bold text-primary mb-2">
+                  <h4 className="text-2xl sm:text-3xl lg:text-3xl  font-bold text-white mb-2">
                     Research Innovation
                   </h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground text-gray-600">
+                  <p className="text-sm text-muted-foreground leading-snug text-white">
                     Advancing medical knowledge
                   </p>
                 </div>
@@ -216,19 +216,19 @@ const Objectives = () => {
             </div>
 
             <div className="animate-on-scroll opacity-0">
-              <div className="relative p-6 sm:p-8 bg-white rounded-xl shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 group overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="relative p-6 sm:p-8 bg-[#0084c7] rounded-xl shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 group overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
                 <div className="relative z-10">
                   <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg mb-4">
                     <Users
-                      className="w-6 h-6 sm:w-7 sm:h-7 text-primary"
+                      className="w-6 h-6 sm:w-7 sm:h-7 text-white"
                       strokeWidth={2}
                     />
                   </div>
-                  <h4 className="text-lg sm:text-xl font-bold text-primary mb-2">
+                  <h4 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-white mb-2">
                     Community Impact
                   </h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground text-gray-600">
+                  <p className="text-sm text-muted-foreground leading-snug text-white">
                     Transforming lives together
                   </p>
                 </div>

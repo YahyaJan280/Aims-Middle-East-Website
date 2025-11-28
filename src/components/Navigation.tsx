@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Aims from "../assets/Navbar-Logo-White.png";
+import Aims from "../assets/Navbar-Logo.png";
 import {
   Menu,
   X,
@@ -146,10 +146,10 @@ const Navigation = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed bg-white top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-primary backdrop-blur-lg shadow-2xl"
-            : "bg-primary shadow-lg"
+            ? "bg-primary backdrop-blur-lg shadow-lg"
+            : "bg-primary "
         }`}
       >
         <div className="w-full max-w-[1230px] mx-auto px-4 sm:px-6 lg:px-0">
@@ -159,7 +159,7 @@ const Navigation = () => {
               <img
                 src={Aims}
                 alt="Aims Logo"
-                className="h-12 sm:h-11 lg:h-14 w-36 sm:w-40 lg:w-44 rounded-lg lg:-ml-3 font-bold text-white text-lg sm:text-xl lg:text-2xl -ml-3 transition-all duration-300 group-hover:scale-105 object-contain"
+                className="h-12 sm:h-11 lg:h-14 w-36 sm:w-40 lg:w-44 rounded-lg lg:-ml-4 font-bold text-white text-lg sm:text-xl lg:text-2xl -ml-3 transition-all duration-300 group-hover:scale-105 object-contain"
               />
             </Link>
 
@@ -173,7 +173,7 @@ const Navigation = () => {
                     onMouseEnter={() => openDesktopDropdown(idx)}
                     onMouseLeave={closeDesktopDropdown}
                   >
-                    <button className="group flex items-center gap-1.5 px-3 xl:px-4 py-2 text-white text-sm xl:text-[15px] font-medium rounded-lg transition-all duration-200 hover:bg-white/10 whitespace-nowrap">
+                    <button className="group flex items-center gap-1.5 px-3 xl:px-4 py-2 text-[#055baa] text-sm xl:text-[15px] font-medium rounded-lg transition-all duration-200 hover:bg-[#00adee] whitespace-nowrap">
                       <span className="group-hover:text-blue-100 transition-colors">
                         {item.name}
                       </span>
@@ -195,7 +195,7 @@ const Navigation = () => {
                           : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                       }`}
                     >
-                      <div className="bg-white rounded-xl shadow-2xl py-2 border border-gray-100 overflow-hidden">
+                      <div className="bg-white rounded-xl  shadow-2xl py-2 border border-gray-100 overflow-hidden">
                         {item.submenu.map((sub, i) => (
                           <Link
                             key={i}
@@ -221,7 +221,7 @@ const Navigation = () => {
                   <Link
                     key={item.name}
                     to={item.path}
-                    className="flex items-center gap-2 px-3 xl:px-4 py-2 text-white text-sm xl:text-[15px] font-medium rounded-lg transition-all duration-200 hover:bg-white/10 hover:text-blue-100 whitespace-nowrap"
+                    className="flex items-center gap-2 px-3 xl:px-4 py-2 text-[#055baa]  text-sm xl:text-[15px] font-medium rounded-lg transition-all duration-200 hover:bg-[#00adee] hover:text-blue-100 whitespace-nowrap"
                   >
                     {item.name}
                   </Link>

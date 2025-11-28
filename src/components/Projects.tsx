@@ -68,11 +68,11 @@ const Projects = () => {
           <div className="max-w-[1700px] mx-auto">
             {/* Heading */}
             <div className="text-center mb-10 sm:mb-14 lg:mb-16 xl:mb-20">
-              <h2 className="font-roboto font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl mb-4 sm:mb-6 animate-on-scroll opacity-0 text-primary">
+              <h2 className="font-roboto font-bold text-3xl sm:text-4xl md:text-5xl lg:text-5xl  mb-4 sm:mb-6 animate-on-scroll opacity-0 text-primary">
                 Our Projects
               </h2>
-              <p className="font-roboto font-normal text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-600 max-w-4xl mx-auto px-4 animate-on-scroll opacity-0 text-muted-foreground leading-relaxed">
-                Transforming healthcare delivery and improving lives across
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 text-muted-foreground max-w-3xl -mt-3 mx-auto animate-on-scroll opacity-0 transition-all duration-700 leading-relaxed font-light">
+                Transforming healthcare delivery <br/> and improving lives across
                 regions.
               </p>
             </div>
@@ -94,7 +94,7 @@ const Projects = () => {
                         />
                       </div>
                       <div className="min-w-0">
-                        <h3 className="font-roboto font-bold text-xl sm:text-2xl  lg:text-2xl xl:text-3xl text-primary/95 transition-colors duration-300">
+                        <h3 className="text-xl sm:text-3xl md:text-3xl  font-bold bg-primary bg-clip-text text-transparent leading-tight truncate">
                           {projects[activeProject].name}
                         </h3>
                         <p className="font-roboto text-xs font-medium sm:text-sm lg:text-sm xl:text-base text-gray-600 mt-1 flex items-center ">
@@ -104,7 +104,7 @@ const Projects = () => {
                       </div>
                     </div>
 
-                    <p className="font-roboto text-sm sm:text-base lg:text-base xl:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed text-muted-foreground text-left">
+                    <p className="text-sm sm:text-base font-roboto text-left  text-muted-foreground text-gray-600 mb-6 leading-relaxed">
                       {projects[activeProject].longDescription}
                     </p>
 
@@ -176,9 +176,9 @@ const Projects = () => {
                         />
                       </div>
                       <div className="min-w-0">
-                        <h2 className="font-roboto font-bold mr-14 text-xl sm:text-2xl lg:text-2xl xl:text-3xl text-primary/95  transition-colors duration-300">
+                        <h3 className="text-xl sm:text-3xl md:text-3xl text-left font-bold bg-primary bg-clip-text text-transparent leading-tight truncate">
                           Public Health
-                        </h2>
+                        </h3>
                         <p className="font-roboto font-medium text-xs sm:text-sm lg:text-sm xl:text-base text-gray-600 mt-1 flex items-center">
                           <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0" />{" "}
                           Khyber Pakhtunkhwa, Pakistan
@@ -186,15 +186,15 @@ const Projects = () => {
                       </div>
                     </div>
 
-                    <p className="font-roboto text-sm sm:text-base lg:text-base xl:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed text-muted-foreground text-left">
+                    <p className="text-sm sm:text-base  text-left  text-muted-foreground text-gray-600 mb-6 leading-relaxed">
                       Since its inception, AIMS community program has regularly
                       held awareness, chronic diseases screening & treatment
                       camps across KP — conducting{" "}
-                      <span className="font-semibold text-primary">
+                      <span className="text-sm sm:text-base  text-left  text-muted-foreground text-gray-600 mb-6 leading-relaxed">
                         40+ camps
                       </span>{" "}
                       and serving over{" "}
-                      <span className="font-semibold text-primary">3,000+</span>{" "}
+                      <span className="text-sm sm:text-base  text-left  text-muted-foreground text-gray-600 mb-6 leading-relaxed">3,000+</span>{" "}
                       patients to date.
                     </p>
 
@@ -224,14 +224,12 @@ const Projects = () => {
 
                   {/* Button */}
                   <div className="flex justify-center mt-4">
-                    <Button
-                      className="bg-primary text-white p-6 font-medium hover:bg-primary/90 transition-all duration-300 text-sm sm:text-base lg:text-base xl:text-lg w-full shadow-lg hover:shadow-xl"
-                      onClick={() =>
-                        (window.location.href = "/projects/community-camps")
-                      }
+                    <Link
+                      to="/projects/community camps"
+                      className="bg-primary text-white p-3 font-medium rounded-xl hover:bg-primary/90 transition-all duration-300 text-sm sm:text-base lg:text-base xl:text-lg w-full shadow-lg hover:shadow-xl"
                     >
                       Visit Community Camp
-                    </Button>
+                    </Link>
                   </div>
 
                   {/* Hover gradient overlay */}
@@ -246,11 +244,11 @@ const Projects = () => {
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full opacity-20 -ml-32 -mb-32 group-hover/cta:scale-150 transition-transform duration-700"></div>
 
               <div className="relative z-20 p-6 sm:p-8 lg:p-12 xl:p-16 text-center ">
-                <h3 className="font-roboto font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-white mb-3 sm:mb-4 lg:mb-6">
+               <h3 className="text-xl sm:text-3xl md:text-3xl  font-bold  bg-clip-text text-white leading-tight truncate">
                   Join Our Mission
                 </h3>
-                <p className="font-roboto font-normal text-white/95 text-sm sm:text-base lg:text-lg xl:text-xl mb-5 sm:mb-6 lg:mb-8 max-w-3xl mx-auto px-4 leading-relaxed">
-                  Every project represents hope, healing, and transformation.
+                <p className="text-sm sm:text-base  text-center  text-muted-foreground text-white mb-6 leading-relaxed">
+                  Every project represents hope, healing, and transformation. <br />
                   Partner with us to make a lasting impact on communities.
                 </p>
                 <Link to="/partners/become">

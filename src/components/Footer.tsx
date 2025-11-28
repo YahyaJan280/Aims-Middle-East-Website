@@ -94,11 +94,11 @@ const Footer = () => {
     { name: "Contact", path: "/contact", icon: Mail },
   ];
 
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-  ];
+const socialLinks = [
+  { icon: Facebook, href: "https://www.facebook.com", label: "Facebook" },
+  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+  { icon: Linkedin, href: "https://www.linkedin.com", label: "LinkedIn" },
+];
 
   return (
     <footer
@@ -279,7 +279,7 @@ const Footer = () => {
                   key={i}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:text-white hover:bg-gradient-to-br hover:from-primary hover:to-blue-800 hover:border-transparent transition-all hover:scale-110 shadow-sm hover:shadow-md"
+                  className="w-10 h-10 bg-white  rounded-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:text-white hover:bg-gradient-to-br hover:from-primary hover:to-blue-800 hover:border-transparent transition-all hover:scale-110 shadow-sm hover:shadow-md"
                 >
                   <Icon className="w-5 h-5" />
                 </a>
@@ -288,7 +288,7 @@ const Footer = () => {
 
             <button
               onClick={scrollToTop}
-              className="w-10 h-10 bg-white rounded-lg border border-gray-200 text-gray-600 hover:text-white hover:bg-gradient-to-br hover:from-primary hover:to-blue-800 hover:border-transparent transition-all hover:scale-110 shadow-sm hover:shadow-md flex items-center justify-center"
+              className="w-10 h-10 bg-white  rounded-lg border border-gray-200 text-gray-600 hover:text-white hover:bg-gradient-to-br hover:from-primary hover:to-blue-800 hover:border-transparent transition-all hover:scale-110 shadow-sm hover:shadow-md flex items-center justify-center"
             >
               <ArrowUp className="w-5 h-5" />
             </button>
