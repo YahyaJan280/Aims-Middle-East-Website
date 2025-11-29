@@ -1,19 +1,18 @@
 {
-  "homepage": "https://YahyaJan280.github.io/Aims-Middle-East-website",
+  "homepage": "https://YahyaJan280.github.io/Aims-Middle-East-Website",
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
   "type": "module",
- "scripts": {
-  "dev": "vite",
-  "build": "vite build && npx copyfiles dist/index.html dist/404.html",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
-  "build:dev": "vite build --mode development",
-  "lint": "eslint .",
-  "preview": "vite preview"
-}
-,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npx copyfiles dist/index.html dist/404.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "build:dev": "vite build --mode development",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^3.9.0",

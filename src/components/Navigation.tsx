@@ -46,7 +46,7 @@ const navItems = [
       },
       {
         name: "Community Camps",
-        path: "/projects/community camps",
+        path: "/projects/community-camps",
         icon: Users,
       },
     ],
