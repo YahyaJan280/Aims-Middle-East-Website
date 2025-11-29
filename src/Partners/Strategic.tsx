@@ -34,13 +34,13 @@ const StrategicPartnersPage = () => {
       logo: NBP,
       name: "National Bank",
       description:
-        "National Bank of Pakistan takes pride in providing services including Shariah-compliant banking products, adhering to your faith and offering a premium choice to meet financial needs free of RIBA. NBP supports NPOs like AIMS Pakistan and community-based objectives through the bank’s Corporate Social Responsibility (CSR) program.",
+        "National Bank of Pakistan takes pride in providing services including Shariah-compliant banking products, adhering to your faith and offering a premium choice to meet financial needs free of RIBA. NBP supports NPOs like AIMS Pakistan and community-based objectives through the bank's Corporate Social Responsibility (CSR) program.",
     },
     {
       logo: Hilton,
       name: "Hilton Pharma",
       description:
-        "Hilton Pharma is among Pakistan’s leading pharmaceutical companies. It markets products under license from world-renowned research-based pharmaceutical companies and its own branded generic specialties. Hilton Pharma regularly supports Sugar Hospital and community outreach programs.",
+        "Hilton Pharma is among Pakistan's leading pharmaceutical companies. It markets products under license from world-renowned research-based pharmaceutical companies and its own branded generic specialties. Hilton Pharma regularly supports Sugar Hospital and community outreach programs.",
     },
     {
       logo: LifeforaChild,
@@ -54,73 +54,96 @@ const StrategicPartnersPage = () => {
     <>
       <Navigation />
 
-      <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen py-28 px-4 font-roboto">
-        {/* Hero Section */}
-        <div className="max-w-7xl mx-auto text-center mb-20">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary/95 mb-4">
-            Strategic Partners
-          </h1>
-          <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            We are proud to collaborate with visionary organizations that share
-            our commitment to excellence, innovation, and community well-being.
-            Together, we advance sustainable healthcare and impactful social
-            initiatives across the region.
-          </p>
-        </div>
-
-        {/* Partners Section */}
-        <div className="max-w-[1215px] mx-auto mb-24 font-roboto">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary/95 text-center mb-4">
-            Our Trusted Partners
-          </h2>
-          <div className="w-24 h-1 bg-primary/95 mx-auto mb-12 rounded-full"></div>
-
-          {/* Grid layout — exactly 3 cards per row on large screens */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {partners.map((partner, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl shadow-xl p-6 text-center hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="flex flex-col items-center mb-4">
-                  {/* ✅ Clean logo without background, padding, or shadow */}
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="w-24 h-24 object-contain mb-4"
-                  />
-                  <h3 className="text-lg font-bold text-primary/95 mb-2">
-                    {partner.name}
-                  </h3>
-                </div>
-                <p className="text-gray-700 leading-relaxed text-sm">
-                  {partner.description}
+      <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen font-roboto">
+        {/* Hero Section - Edge-to-Edge */}
+        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-gradient-to-b from-gray-50 to-white mt-16 sm:mt-18 md:mt-20 lg:mt-12">
+          <section className="py-12 sm:py-16 lg:py-20 xl:py-24">
+            <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+              <div className="max-w-[1200px] mx-auto text-center">
+                <h1 className="font-roboto sm:text-4xl md:text-4xl lg:text-5xl text-3xl   font-bold text-primary/95 mb-4 sm:mb-6">
+                  Strategic Partners
+                </h1>
+                <p className="font-roboto text-base sm:text-lg md:text-xl  lg:text-lg xl:text-xl 2xl:text-xl text-gray-700 max-w-4xl mx-auto text-muted-foreground leading-relaxed px-4">
+                  We are proud to collaborate with visionary organizations that
+                  share our commitment to excellence, innovation, and community
+                  well-being. Together, we advance sustainable healthcare and
+                  impactful social initiatives across the region.
                 </p>
               </div>
-            ))}
-          </div>
+            </div>
+          </section>
         </div>
 
-        {/* Call to Action */}
-        <div className="max-w-4xl mx-auto text-center font-roboto">
-          <div className="bg-primary/95 rounded-3xl shadow-2xl p-12">
-            <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
-              Partner with AIMS Middle East
-            </h3>
-            <p className="text-indigo-100 text-lg mb-8 max-w-2xl mx-auto">
-              Join hands with us to create sustainable impact through
-              partnerships that redefine excellence and integrity in healthcare
-              and social development.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/get-involved/membership">
-                <button className="bg-white text-primary font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg">
-                  Become a Partner
-                </button>
-              </Link>
+        {/* Partners Section - Edge-to-Edge */}
+        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-white">
+          <section className="py-12 sm:py-16 lg:py-20 xl:py-24">
+            <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+              <div className="max-w-[1200px] mx-auto">
+                <h2 className="font-roboto text-3xl sm:text-4xl lg:text-5xl  font-bold text-primary/95 text-center mb-3 sm:mb-4">
+                  Our Trusted Partners
+                </h2>
+                <div className="w-20 sm:w-24 h-1 bg-primary/95 mx-auto mb-8 sm:mb-10 lg:mb-12 rounded-full"></div>
+
+                {/* Grid layout — exactly 3 cards per row on large screens */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+                  {partners.map((partner, index) => (
+                    <div
+                      key={index}
+                      className=" rounded-2xl shadow-lg hover:shadow-2xl p-5 sm:p-6 lg:p-7 text-center hover:-translate-y-1 transition-all duration-300 border border-gray-100"
+                    >
+                      <div className="flex flex-col items-center mb-4">
+                        {/* Logo */}
+                        <img
+                          src={partner.logo}
+                          alt={partner.name}
+                          className="w-20 h-20 sm:w-24 sm:h-24 object-contain mb-4"
+                        />
+                        <h3 className="font-roboto  sm:text-xl lg:text-xl text-2xl font-bold text-primary/95 mb-2">
+                          {partner.name}
+                        </h3>
+                      </div>
+                      <p className="font-roboto text-xs sm:text-sm lg:text-sm text-gray-700 text-muted-foreground leading-relaxed">
+                        {partner.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section className="relative  text-white py-16 sm:py-20 lg:py-24 xl:py-28">
+          <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+            <div className="max-w-4xl mx-auto text-center">
+              {/* BLUE CARD WITH CIRCLES INSIDE */}
+              <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-primary rounded-2xl shadow-2xl p-8 sm:p-10 lg:p-12 xl:p-14 overflow-hidden">
+                {/* Circles inside card */}
+                <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-white opacity-20 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-white opacity-20 rounded-full translate-x-1/2 translate-y-1/2"></div>
+
+                <h3 className="font-roboto text-2xl sm:text-4xl lg:text-4xl  font-bold text-white mb-3 sm:mb-4">
+                  Partner with AIMS Middle East
+                </h3>
+
+                <p className="font-roboto text-sm sm:text-base lg:text-lg x text-indigo-100 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-4">
+                  Join hands with us to create sustainable impact through
+                  partnerships that redefine excellence and integrity in
+                  healthcare and social development.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link to="/get-involved/membership">
+                    <button className="font-roboto bg-white text-primary hover:bg-blue-50 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base lg:text-lg transform hover:scale-105">
+                      Become a Partner
+                    </button>
+                  </Link>
+                </div>
+              </div>
+              {/* END CARD */}
             </div>
           </div>
-        </div>
+        </section>
       </div>
 
       <Footer />

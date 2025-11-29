@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import MembershipSection from '@/components/DubaiHumanitarian'
-import Diabestes from '@/assets/diabetes.png'
-import KMU from '@/assets/KMU-Logo.png'
-import MetiZindagi from '@/assets/Meethi-Zindagi.png'
+import MembershipSection from "@/components/DubaiHumanitarian";
+import Diabestes from "@/assets/diabetes.png";
+import KMU from "@/assets/KMU-Logo.png";
+import MetiZindagi from "@/assets/Meethi-Zindagi.png";
 import {
   Users,
   GraduationCap,
@@ -89,23 +89,27 @@ const Achievements = () => {
 
     return (
       <div className="animate-on-scroll opacity-0">
-        <div className="bg-card p-8 rounded-2xl shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 hover:border-primary/20 group text-center">
+        <div className="bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 hover:border-primary/20 group text-center">
           <div
-            className={`w-16 h-16 ${gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 pulse-glow`}
+            className={`w-14 h-14 sm:w-16 sm:h-16 ${gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 pulse-glow`}
           >
-            <Icon className="w-8 h-8 text-white" />
+            <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
           </div>
 
           <div className="mb-4">
-            <div className="text-4xl lg:text-5xl font-bold gradient-text mb-2">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-2">
               {prefix}
               {count.toLocaleString()}
               {suffix}
             </div>
-            <h3 className="text-xl font-semibold text-foreground">{label}</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-foreground">
+              {label}
+            </h3>
           </div>
 
-          <p className="text-muted-foreground">{description}</p>
+          <p className="text-sm sm:text-base text-muted-foreground">
+            {description}
+          </p>
         </div>
       </div>
     );
@@ -170,128 +174,153 @@ const Achievements = () => {
 
   return (
     <>
-    <section
-      id="achievements"
-      ref={sectionRef}
-      className="py-18 lg:mt-4 mt-10 lg:py-4 bg-muted/30 "
-    >
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 ">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl  md:text-4xl lg:text-5xl font-bold mb-4 animate-on-scroll opacity-0">
-            <span className="font-roboto font-bold gradient-text">
-              Our Impact
-            </span>
-          </h2>
-          <p className="font-roboto font-normal text-lg md:text-xl text-muted-foreground lg:max-w-3xl mx-auto animate-on-scroll opacity-0">
-            Measurable results that demonstrate our commitment to transforming
-            healthcare and improving lives across the Middle East
-          </p>
-        </div>
-
-        <div
-          className="grid  grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center  lg:max-w-7xl mx-auto"
-          style={{ border: "2px solid black", display: "none" }}
+      {/* Full-width background wrapper */}
+      <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-muted/30">
+        <section
+          id="achievements"
+          ref={sectionRef}
+          className="py-12 sm:py-16 lg:py-20 xl:py-2"
         >
-          {achievements.map((achievement, index) => (
-            <CounterCard
-              key={index}
-              icon={achievement.icon}
-              target={achievement.target}
-              label={achievement.label}
-              suffix={achievement.suffix}
-              description={achievement.description}
-              gradient={achievement.gradient}
-            />
-          ))}
-        </div>
-        {/* Transforming Lives & Recognition Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:ml-10 lg:gap-12 items-center">
-          {/* Left: Transforming Lives */}
-          <div className="animate-on-scroll opacity-0 ">
-            <h3 className="font-roboto  text-2xl md:text-3xl font-bold gradient-text mb-4">
-              Transforming Lives, One Patient at a Time
-            </h3>
-            <p className="font-roboto font-medium text-md md:text-lg text-muted-foreground mb-4 leading-relaxed">
-              Behind every statistic is a human story of hope, resilience, and
-              transformation. Our impact extends far beyond numbers—we're
-              building healthier communities, stronger families, and a more
-              sustainable healthcare future.
-            </p>
-            <div className="space-y-4 ">
-              <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
-                <Heart className="lg:w-6 lg:h-6 w-14 h-14 text-primary mt-1" />
-                <div>
-                  <h4 className="font-roboto font-bold text-foreground">
-                    Patient-Centered Care
-                  </h4>
-                  <p className="font-roboto font-medium text-sm text-muted-foreground">
-                    Every treatment plan is personalized to meet individual
-                    needs and circumstances
-                  </p>
-                </div>
+          {/* Main container matching navbar max-width of 1920px */}
+          <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 ">
+            {/* Inner content container with max-width 1200px */}
+            <div className="max-w-[1200px] mx-auto">
+              {/* Header */}
+              <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+                <h2 className="font-roboto font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6 animate-on-scroll opacity-0">
+                  <span className="text-primary">Our Impact</span>
+                </h2>
+                <p className="text-sm sm:text-base md:text-lg text-center text-gray-600 text-muted-foreground max-w-3xl -mt-3 mx-auto animate-on-scroll opacity-0 transition-all duration-700 leading-relaxed font-light">
+                  Measurable results that demonstrate our commitment to <br/>
+                  transforming healthcare and improving lives across the Middle
+                  East
+                </p>
               </div>
-              <div className="space-y-4 ">
-                <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
-                  <Users className="lg:w-6 lg:h-6 w-14 h-14 text-secondary mt-1" />
-                  <div>
-                    <h4 className="font-roboto font-bold text-foreground">
-                      community Empowerment
-                    </h4>
-                    <p className="font-roboto font-medium text-sm text-muted-foreground">
-                      Building local capacity and knowledge for sustainable
-                      health outcomes
-                    </p>
+
+              {/* Hidden Counter Cards (for future use) */}
+              <div className="hidden grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mb-10 sm:mb-12 lg:mb-16">
+                {achievements.map((achievement, index) => (
+                  <CounterCard
+                    key={index}
+                    icon={achievement.icon}
+                    target={achievement.target}
+                    label={achievement.label}
+                    suffix={achievement.suffix}
+                    description={achievement.description}
+                    gradient={achievement.gradient}
+                  />
+                ))}
+              </div>
+
+              {/* Transforming Lives & Recognition Section */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 items-start">
+                {/* Left: Transforming Lives */}
+                <div className="animate-on-scroll opacity-0 flex flex-col bg-card/20 rounded-2xl p-5 sm:p-6 lg:p-7 border border-border/30 hover:border-border/50 transition-all duration-300">
+                  <h3 className="font-roboto text-xl flex sm:text-2xl lg:text-3xl font-bold text-primary md:text-center mb-3 sm:mb-4 text-left">
+                    Transforming Lives Togather
+                  </h3>
+                  <p className="font-roboto font-medium text-sm sm:text-base lg:text-base text-muted-foreground mb-5 sm:mb-6 leading-relaxed text-left">
+                    Behind every statistic is a human story of hope, resilience,
+                    and transformation. Our impact extends far beyond
+                    numbers—we're building healthier communities, stronger
+                    families, and a more sustainable healthcare future.
+                  </p>
+
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-start space-x-3 p-3 sm:p-4 bg-card rounded-lg border-l-4 border-primary hover:shadow-md transition-all duration-300">
+                      <Heart className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-roboto font-bold text-sm sm:text-base text-primary text-left">
+                          Patient-Centered Care
+                        </h4>
+                        <p className="font-roboto text-xs sm:text-sm text-muted-foreground">
+                          Every treatment plan is personalized to meet
+                          individual needs.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-3 p-3 sm:p-4 bg-card rounded-lg border-l-4 border-secondary hover:shadow-md transition-all duration-300">
+                      <Users className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-roboto font-bold text-sm sm:text-base text-primary text-left">
+                          Community Empowerment
+                        </h4>
+                        <p className="font-roboto text-xs sm:text-sm text-muted-foreground">
+                          Building local capacity and knowledge for sustainable
+                          outcomes.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-3 p-3 sm:p-4 bg-card rounded-lg border-l-4 border-primary hover:shadow-md transition-all duration-300">
+                      <TrendingUp className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-roboto font-bold text-sm sm:text-base text-primary text-left">
+                          Continuous Improvement
+                        </h4>
+                        <p className="font-roboto text-xs sm:text-sm text-muted-foreground">
+                          Data-driven approaches ensure our programs evolve and
+                          improve.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Recognition & Awards */}
+                <div className="animate-on-scroll opacity-0 bg-gradient-primary/5 p-5 sm:p-6 lg:p-7 rounded-2xl border border-primary/10 hover:border-primary/20 transition-all duration-300">
+                  <h4 className="font-roboto text-xl sm:text-2xl lg:text-2xl font-bold text-primary mb-4 sm:mb-5 text-center">
+                    AIMS' Reputable and Trusted Partners
+                  </h4>
+
+                  <div className="space-y-4 sm:space-y-5">
+                    <div className="text-center p-4 sm:p-5 bg-card rounded-xl shadow-card hover:shadow-glow transition-all duration-300">
+                      <img
+                        src={Diabestes}
+                        alt="Diabetes Association KP"
+                        className="mx-auto w-12 sm:w-14 h-auto mb-3 object-contain"
+                      />
+                      <p className="font-roboto text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                        Established in 1985, Diabetes Association KP is a
+                        charitable organization and owner of the Sugar Hospital
+                        land and building.
+                      </p>
+                    </div>
+
+                    <div className="text-center p-4 sm:p-5 bg-card rounded-xl shadow-card hover:shadow-glow transition-all duration-300">
+                      <img
+                        src={KMU}
+                        alt="Khyber Medical University"
+                        className="mx-auto w-14 sm:w-16 h-auto mb-3 object-contain"
+                      />
+                      <p className="font-roboto text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                        KMU and AIMS jointly promote Family Medicine in KP and
+                        support Sugar Hospital as a training and research
+                        center.
+                      </p>
+                    </div>
+
+                    <div className="text-center p-4 sm:p-5 bg-card rounded-xl shadow-card hover:shadow-glow transition-all duration-300">
+                      <img
+                        src={MetiZindagi}
+                        alt="Meethi Zindagi"
+                        className="mx-auto w-20 sm:w-24 h-auto mb-3 object-contain"
+                      />
+                      <p className="font-roboto text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                        Meethi Zindagi provides free insulin and glucometers to
+                        children while raising awareness and education on
+                        diabetes.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="flex items-start space-x-3 p-4 bg-card rounded-lg border-l-4 border-primary">
-                <TrendingUp className="lg:w-6 lg:h-6 w-14 h-14 text-primary mt-1" />
-                <div>
-                  <h4 className="font-roboto font-bold text-foreground">
-                    Continuous Improvement
-                  </h4>
-                  <p className="font-roboto font-medium text-sm text-muted-foreground">
-                    Data-driven approaches ensure our programs evolve and
-                    improve
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
-
-          {/* Right: Recognition & Awards */}
-          <div className="animate-on-scroll opacity-0 lg:mr-2">
-            <div className="bg-gradient-primary/5 p-6 lg:p-10 rounded-2xl border border-primary/10 ">
-              <h4 className="font-roboto text-2xl md:text-2xl font-bold gradient-text mb-4 text-center">
-                AIMS’ Reputable and Trusted Partners
-              </h4>
-              <div className="space-y-6">
-                <div className="text-center p-4 bg-card rounded-xl shadow-card">
-                  <img src={Diabestes} alt=""  className="mx-auto w-16 h-auto mb-4 object-contain"/>
-                
-                  <p className="font-roboto font-medium text-sm text-muted-foreground">
-                   Established in 1985, Diabetes Association KP is a charitable organization and owner of the Sugar Hospital land and building. AIMS and the Association collaborate under a long-term MOU to support diabetes care in KP.
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-card rounded-xl shadow-card">
-                 <img src={KMU} alt=""  className="mx-auto w-20 h-auto mb-4 object-contain"/>
-                  <p className="font-roboto font-medium text-sm text-muted-foreground">
-                    KMU and AIMS jointly promote Family Medicine in KP. The Department of Family Medicine supports Sugar Hospital as a training and research center for diabetes and related diseases and organizes monthly outreach camps
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-card rounded-xl shadow-card">
-                  <img src={MetiZindagi} alt="" className="mx-auto w-28 h-auto mb-4 object-contain"/>
-                  <p className="font-roboto font-medium text-sm text-muted-foreground">
-                  Meethi Zindagi works for the diabetes community across Pakistan through awareness, education, and support. It provides free insulin and glucometers to children with diabetes.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </section>
       </div>
-    </section>
-    <MembershipSection />
+      <MembershipSection />
     </>
   );
 };

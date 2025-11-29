@@ -1,125 +1,179 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import heroHealthcare from "@/assets/hero-healthcare.jpg";
-import heroCommunity from "@/assets/hero-community.jpg";
-import heroCompassion from "@/assets/hero-compassion.jpg";
+import React, { useState, useEffect } from "react";
 
-const HeroSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+// Sample images - replace with your actual imports
+import Hero1 from "@/assets/Flowing-Care-Image (1).png";
+import Hero2 from "@/assets/AIMS-Middle-East.png";
+import Hero3 from "@/assets/Building-a-Future.png";
+import HeartsBackgroundImage from "@/assets/Heart-element (1).png";
 
-  const slides = [
-    {
-      image: heroHealthcare,
-      title: "AIMS Middle East",
-      subtitle: "Strength in Care",
-      description:
-        "Leading social welfare diabetes healthcare organization serving globally",
-    },
-    {
-      image: heroCommunity,
-      title: "Flowing Care",
-      subtitle: "To Those in Need",
-      description:
-        "Like the Abaseen river, bringing life and hope to communities",
-    },
-    {
-      image: heroCompassion,
-      title: "Building a Future",
-      subtitle: "of Accessible Care",
-      description: "Empowering healthcare professionals and transforming lives",
-    },
-  ];
+// ------------ SLIDES DATA ------------------
+const slides = [
+  {
+    title: "Flowing Care\nTo Those In Need",
+    text: "Empowering healthcare professionals\nand transforming lives.",
+    image: Hero1,
+  },
+  {
+    title: "AIMS Middle East\nStrength in Care",
+    text: "Leading Social welfare diabetes\nhealthcare organization serving globally.",
+    image: Hero2,
+  },
+  {
+    title: "Building a Future of\nAccessible Care",
+    text: "Empowering healthcare professionals\nand transforming lives.",
+    image: Hero3,
+  },
+];
+
+const HeroSection = () => {
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
+      setIndex((prev) => (prev + 1) % slides.length);
+    }, 5000);
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, []);
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const slide = slides[index];
 
   return (
-    <section id="hero" className="relative h-screen overflow-hidden">
-      {/* Background Images */}
-      <div className="absolute inset-0">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <img
-              src={slide.image}
-              alt={slide.title}
-              className="w-full h-full object-cover font-roboto font-bold text-3xl"
-            />
-            <div className="absolute inset-0 bg-gradient-hero"></div>
-          </div>
-        ))}
-      </div>
+    <>
+      <style>{`
+        @keyframes floatHearts {
+          0%, 100% {
+            transform: translateY(0) translateX(0) scale(1);
+          }
+          25% {
+            transform: translateY(-20px) translateX(10px) scale(1.05);
+          }
+          50% {
+            transform: translateY(-30px) translateX(-10px) scale(1.1);
+          }
+          75% {
+            transform: translateY(-20px) translateX(10px) scale(1.05);
+          }
+        }
 
-      {/* Content */}
-      <div className="font-roboto font-bold text-3xl relative z-10 h-full flex items-center justify-center text-center px-4 sm:px-8 lg:px-16">
-        <div className="w-full max-w-5xl mx-auto">
-          <h1 className="font-roboto font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 animate-slide-up">
-            <span className="block">{slides[currentSlide].title}</span>
-            <span className="block mt-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
-              {slides[currentSlide].subtitle}
-            </span>
-          </h1>
+        @keyframes fadeInSlide {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
 
-          <p className="font-roboto font-normal text-xl sm:text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto animate-slide-up animate-delay-200">
-            {slides[currentSlide].description}
-          </p>
+        @keyframes fadeInImage {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
 
-          <div className="font-roboto font-bold text-3xl flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animate-delay-400">
-            <Button
-              variant="gradient-outline"
-              size="lg"
-              onClick={() => scrollToSection("mission")}
-              className=" font-roboto font-normal text-xl bg-transparent border-white text-white hover:bg-white hover:text-primary transition-colors duration-300"
-            >
-              Our Mission
-            </Button>
+        @keyframes moveRightLeft {
+          0%, 100% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(-20px);
+          }
+        }
 
-            <Button
-              size="lg"
-              onClick={() => scrollToSection("projects")}
-              className="font-roboto font-normal text-xl text-white bg-[#ea1e26] hover:bg-white hover:text-secondary transition-colors duration-300"
-            >
-              View Projects
-            </Button>
+        .animate-slide-in {
+          animation: fadeInSlide 0.8s ease-out forwards;
+        }
+
+        .animate-image-in {
+          animation: fadeInImage 0.8s ease-out forwards, moveRightLeft 4s ease-in-out infinite 0.8s;
+        }
+
+        /* Ensure proper alignment on all screens */
+        @media (max-width: 1024px) {
+          .hero-content {
+            text-align: center;
+          }
+        }
+      `}</style>
+
+      <section className="relative w-screen min-h-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gradient-to-br from-[#0553a0] via-[#055baa] to-[#0d7ed6] overflow-hidden">
+        {/* ANIMATED HEARTS BACKGROUND - Right Side */}
+        <div className="absolute top-0 right-0 bottom-0 w-[55%] sm:w-[50%] md:w-[45%] lg:w-[40%] xl:w-[35%] 2xl:w-[30%] z-[1] pointer-events-none flex items-center justify-end">
+          <img
+            src={HeartsBackgroundImage}
+            alt=""
+            className="w-full h-full object-contain opacity-90"
+            style={{
+              animation: "floatHearts 15s ease-in-out infinite",
+              objectPosition: "right center",
+            }}
+          />
+        </div>
+
+        {/* Gradient Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#055baa]/85 via-[#055baa]/50 to-transparent z-[2]" />
+
+        {/* MAIN CONTENT */}
+        <div className="relative z-[5] w-full min-h-screen flex items-center justify-center">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-20 sm:py-24 md:py-28 lg:py-16">
+            <div className="grid grid-cols-1 max-w-[1330px] lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 items-center justify-items-start">
+              {/* LEFT: Text Content */}
+              <div className="text-white space-y-3 sm:space-y-3 ml-2 lg:ml-5 md:space-y-4 lg:space-y-0 animate-slide-in w-full max-w-xl lg:max-w-none text-left order-1">
+                <h1
+                  className="font-bold leading-tight whitespace-pre-line"
+                  style={{ fontSize: "40px" }}
+                >
+                  {slide.title}
+                </h1>
+
+                <p
+                  className="text-white/95 leading-relaxed whitespace-pre-line"
+                  style={{ fontSize: "16px" }}
+                >
+                  {slide.text}
+                </p>
+
+                <div className="pt-2 sm:pt-3 md:pt-4 flex justify-left lg:justify-start">
+                  <a
+                    href="https://dubaihumanitarian.ae/member/aims-middle-east/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-[#055baa] font-semibold 
+                       px-4 sm:px-5 md:px-5 
+                       py-2 sm:py-2.5 
+                       rounded-lg 
+                       transition-all hover:bg-[#00adee] hover:text-white hover:scale-105 hover:shadow-xl 
+                       shadow-md 
+                       text-xs sm:text-sm md:text-sm"
+                      >
+                    Learn More
+                  </a>
+                </div>
+              </div>
+
+              {/* RIGHT: Slider Image */}
+              <div className="relative flex justify-center lg:justify-end animate-image-in w-full order-2">
+                <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+                  <img
+                    key={index}
+                    src={slide.image}
+                    className="w-full h-auto object-cover rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl transition-all duration-700"
+                    alt="Hero Slide"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Slide Indicators */}
-      <div className="font-roboto text-3xl absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-4">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? "bg-white scale-125"
-                : "bg-white/50 hover:bg-white/80"
-            }`}
-          />
-        ))}
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
-export default HeroSlider;
+export default HeroSection;

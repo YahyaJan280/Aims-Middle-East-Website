@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
 import Navigation from "./Navigation";
 import Contactimage from "@/assets/Aims Middle `East Transparent.png";
 import Footer from "./Footer";
 
-// Lucide Icons
 import {
   Phone,
   Send,
   User,
   Mail,
   MessageSquare,
+  MapPin,
+  Clock,
+  CheckCircle2,
 } from "lucide-react";
-
-// Navbar Items
-
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -25,35 +24,27 @@ const ContactPage = () => {
     message: "",
   });
 
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
-  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // ⭐ NEW: Captcha Ref
+  const captchaRef = useRef(null);
+  const [captchaValue, setCaptchaValue] = useState(null);
 
-  const toggleDropdown = (idx: number) => {
-    setOpenDropdown(openDropdown === idx ? null : idx);
-  };
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // ⭐ Always required
     if (!captchaValue) {
       alert("⚠️ Please verify the reCAPTCHA before submitting.");
       return;
     }
+
+    setIsSubmitting(true);
 
     const templateParams = {
       fullName: formData.fullName,
@@ -72,145 +63,168 @@ const ContactPage = () => {
       );
 
       alert("✅ Message sent successfully!");
+
+      // Reset form
       setFormData({ fullName: "", email: "", phone: "", message: "" });
+
+      // ⭐ IMPORTANT — Always re-enable captcha (fix)
+      captchaRef.current.reset();
       setCaptchaValue(null);
+
     } catch (error) {
       console.error(error);
       alert("❌ Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <>
-      
-     <Navigation />
+      <Navigation />
 
-      {/* Contact Page Main Content */}
-      <div className="min-h-screen bg-gray-50 pt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="min-h-screen relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-gradient-to-b from-gray-50 to-white pt-24 pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-roboto font-bold gradient-text mb-4">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-roboto font-bold text-primary/95 mb-4 sm:mb-6">
               Get In Touch
             </h1>
-            <p className="text-xl font-roboto font-medium text-gray-600 max-w-2xl mx-auto">
-              Have questions or need support? We're here to help. Reach out to us
-              through any of the channels below.
+            <p className="text-base sm:text-lg lg:text-xl font-roboto font-normal text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
+              Have questions or need support? We're here to help. Reach out to us through the form below.
             </p>
           </div>
 
-          {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start font-roboto">
-            {/* Left - Form */}
-            <div className="space-y-8">
-              <div className="bg-white rounded-2xl shadow-lg p-8">
-                <h2 className="text-4xl flex justify-center items-center gradient-text font-bold mb-6">
-                  Talk To Us
-                </h2>
-                <div className="space-y-6">
-                  {/* Full Name */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name
-                    </label>
-                    <div className="relative">
-                      <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                      <input
-                        type="text"
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:border-transparent transition-all duration-200"
-                        placeholder="Enter your full name"
+          {/* Two-column layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start font-roboto">
+
+            {/* LEFT — FORM */}
+            <div className="space-y-6 lg:space-y-8">
+              <div className="relative bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-8 lg:p-10 overflow-hidden">
+
+                {/* Accent bar */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/80"></div>
+
+                <div className="relative z-10">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl text-center text-primary/95 font-bold mb-2">
+                    Talk To Us
+                  </h2>
+
+                  <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+
+                    {/* Full Name */}
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 text-left mb-2">Full Name *</label>
+                      <div className="relative">
+                        <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <input
+                          type="text"
+                          name="fullName"
+                          value={formData.fullName}
+                          onChange={handleInputChange}
+                          required
+                          placeholder="Enter your full name"
+                          className="w-full pl-12 pr-4 py-3.5 border rounded-xl"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Email */}
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 text-left mb-2">Email *</label>
+                      <div className="relative">
+                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                          placeholder="Enter your email"
+                          className="w-full pl-12 pr-4 py-3.5 border rounded-xl"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Phone */}
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 text-left mb-2">Phone</label>
+                      <div className="relative">
+                        <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          placeholder="Enter your phone"
+                          className="w-full pl-12 pr-4 py-3.5 border rounded-xl"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Message */}
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 text-left mb-2">Message *</label>
+                      <div className="relative">
+                        <MessageSquare className="absolute left-4 top-4 text-gray-400 w-5 h-5" />
+                        <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          required
+                          rows={5}
+                          placeholder="Tell us how we can help you..."
+                          className="w-full pl-12 pr-4 py-3.5 border rounded-xl resize-none"
+                        />
+                      </div>
+                    </div>
+
+                    {/* ⭐ reCAPTCHA ALWAYS ENABLED */}
+                    <div className="flex justify-left">
+                      <ReCAPTCHA
+                        ref={captchaRef}
+                        sitekey="6Le2LssrAAAAAH8_CeaSQZJVtA3DA6fmbOzI-fLo"
+                        onChange={(value) => setCaptchaValue(value)}
                       />
                     </div>
-                  </div>
 
-                  {/* Email */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address
-                    </label>
-                    <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:border-transparent transition-all duration-200"
-                        placeholder="Enter your email address"
-                      />
-                    </div>
-                  </div>
+                    {/* Submit */}
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-primary text-white py-4 px-6 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all disabled:opacity-50"
+                    >
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                    </button>
 
-                  {/* Phone */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number
-                    </label>
-                    <div className="relative">
-                      <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:border-transparent transition-all duration-200"
-                        placeholder="Enter your phone number"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Message</label>
-                    <div className="relative">
-                      <MessageSquare className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                        rows={4}
-                        className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:border-transparent transition-all duration-200 resize-none"
-                        placeholder="Tell us how we can help you..."
-                      />
-                    </div>
-                  </div>
-
-                  {/* reCAPTCHA */}
-                  <ReCAPTCHA
-                    sitekey="6Le2LssrAAAAAH8_CeaSQZJVtA3DA6fmbOzI-fLo"
-                    onChange={(value) => setCaptchaValue(value)}
-                  />
-
-                  {/* Submit */}
-                  <div
-                    className="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer transform active:scale-95 active:bg-blue-800"
-                    onClick={handleSubmit}
-                  >
-                    <Send className="w-5 h-5" />
-                    <span>Send Message</span>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
 
-            {/* Right - Image */}
-            <div className="lg:sticky lg:top-24">
-              <div className="rounded-2xl shadow-lg overflow-hidden relative h-[600px]">
+            {/* RIGHT — IMAGE */}
+            <div className="lg:sticky lg:top-24 order-first lg:order-last">
+              <div className="relative rounded-2xl shadow-xl overflow-hidden border border-gray-100 h-[400px] sm:h-[500px] lg:h-[700px]">
                 <img
                   src={Contactimage}
-                  alt="Contact"
+                  alt="Contact AIMS Middle East"
                   loading="lazy"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30"></div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
+                  <h3 className="font-bold text-2xl sm:text-3xl lg:text-4xl">
+                    We're Here to Help
+                  </h3>
+                  <p className="text-white/90 text-sm sm:text-base lg:text-lg">
+                    Your trusted partner in healthcare excellence
+                  </p>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
