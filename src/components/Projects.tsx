@@ -71,7 +71,7 @@ const Projects = () => {
               <h2 className="font-roboto font-bold text-3xl sm:text-4xl md:text-5xl lg:text-5xl  mb-4 sm:mb-6 animate-on-scroll opacity-0 text-primary">
                 Our Projects
               </h2>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 text-muted-foreground max-w-3xl -mt-3 mx-auto animate-on-scroll opacity-0 transition-all duration-700 leading-relaxed font-light">
+              <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto animate-on-scroll -mt-3 opacity-0  transition-all duration-700 leading-relaxed font-medium text-muted-foreground">
                 Transforming healthcare delivery <br/> and improving lives across
                 regions.
               </p>

@@ -188,9 +188,9 @@ const Achievements = () => {
               {/* Header */}
               <div className="text-center mb-10 sm:mb-12 lg:mb-16">
                 <h2 className="font-roboto font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6 animate-on-scroll opacity-0">
-                  <span className="text-primary">Our Impact</span>
+                  <span className="text-[#00adee]">Our Impact</span>
                 </h2>
-                <p className="text-sm sm:text-base md:text-lg text-center text-gray-600 text-muted-foreground max-w-3xl -mt-3 mx-auto animate-on-scroll opacity-0 transition-all duration-700 leading-relaxed font-light">
+                <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto animate-on-scroll -mt-3 opacity-0  transition-all duration-700 leading-relaxed font-medium text-muted-foreground">
                   Measurable results that demonstrate our commitment to <br/>
                   transforming healthcare and improving lives across the Middle
                   East

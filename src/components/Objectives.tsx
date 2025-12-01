@@ -87,7 +87,7 @@ const Objectives = () => {
     <section
       id="objectives"
       ref={sectionRef}
-      className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 md:py-20"
+      className="relative w-screen left-1/2 right-1/2 -ml-[50vw]  -mr-[50vw] bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 md:py-8"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Heading */}
@@ -95,7 +95,7 @@ const Objectives = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl  font-bold mb-4 animate-on-scroll opacity-0 text-primary/95">
             Our Objectives
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 text-muted-foreground max-w-3xl mx-auto animate-on-scroll opacity-0 translate-y-2 transition-all duration-700 leading-relaxed font-light">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto animate-on-scroll -mt-3 opacity-0  transition-all duration-700 leading-relaxed font-medium text-muted-foreground">
             Three pillars of excellence that guide our mission to <br/> transform
             healthcare delivery across the region
           </p>
@@ -173,7 +173,7 @@ const Objectives = () => {
         </div>
 
         {/* IMPACT SECTION */}
-        <div className="mt-12 sm:mt-16 md:mt-20">
+        <div className="mt-12 sm:mt-16  md:mt-20">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
             <div className="animate-on-scroll opacity-0">
               <div className="relative p-6 sm:p-8 bg-[#0084c7] rounded-xl shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 group overflow-hidden">
@@ -197,7 +197,7 @@ const Objectives = () => {
 
             <div className="animate-on-scroll opacity-0">
               <div className="relative p-6 sm:p-8 bg-[#2b3990] rounded-xl shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 group overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -mr-16  -mt-16 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
                 <div className="relative z-10">
                   <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg mb-4">
                     <BookOpen

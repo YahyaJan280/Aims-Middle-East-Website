@@ -124,9 +124,9 @@ const HeroSection = () => {
           <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-20 sm:py-24 md:py-28 lg:py-16">
             <div className="grid grid-cols-1 max-w-[1330px] lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 items-center justify-items-start">
               {/* LEFT: Text Content */}
-              <div className="text-white space-y-3 sm:space-y-3 ml-2 lg:ml-5 md:space-y-4 lg:space-y-0 animate-slide-in w-full max-w-xl lg:max-w-none text-left order-1">
+              <div className="text-white space-y-1  sm:space-y-3 ml-2 lg:ml-5 md:space-y-4 lg:space-y-0 animate-slide-in w-full max-w-xl lg:max-w-none text-left order-1">
                 <h1
-                  className="font-bold leading-tight whitespace-pre-line"
+                  className="font-bold leading-tight text-xl lg:text-4xl whitespace-pre-line"
                   style={{ fontSize: "40px" }}
                 >
                   {slide.title}
