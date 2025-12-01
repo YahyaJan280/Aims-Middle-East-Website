@@ -84,11 +84,11 @@ const MissionVision = () => {
             <span className="text-primary">Our Purpose</span>
           </h2>
 
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto animate-on-scroll -mt-3 opacity-0  transition-all duration-700 leading-relaxed font-medium text-muted-foreground">
+          <p className="text-sm sm:text-base md:text-lg  lg:text-gray-700 max-w-2xl mx-auto animate-on-scroll -mt-1 opacity-0  transition-all duration-700 leading-relaxed font-medium lg:text-muted-foreground">
             Like the flowing waters of the{" "}
             <span className="font-semibold text-primary">Abaseen river</span>,
-            we bring life, <br/> hope, and healing to communities across the Middle
-            East
+            we bring life, <br /> hope, and healing to communities across the
+            Middle East
           </p>
         </div>
 
@@ -204,7 +204,7 @@ const MissionVision = () => {
 
         {/* Abaseen Spirit Section */}
 
-        <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 relative rounded-3xl overflow-hidden">
+        <div className="animate-on-scroll opacity-0  translate-y-9 transition-all duration-700 relative rounded-3xl overflow-hidden">
           <div
             className="absolute inset-0 rounded-3xl bg-center bg-no-repeat"
             style={{
@@ -213,23 +213,28 @@ const MissionVision = () => {
             }}
           />
           {/* Content */}
-          <div className="relative z-10 max-w-[1200px] mx-auto text-center px-6 sm:px-8 md:px-10 lg:px-12  sm:py-20 md:py-12">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
-              The Abaseen Spirit
-            </h3>
+          <div
+            className="relative bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url(/Abaseen-Spirit-BG.png)" }}
+          >
+            <div className="relative z-10 max-w-[1200px] mx-auto text-center px-2 sm:px-8 md:px-10 lg:px-12 sm:py-20 md:py-12">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+                The Abaseen Spirit
+              </h3>
 
-            <div className="h-1 w-16 bg-white rounded-full mx-auto mb-3 -mt-3"></div>
+              <div className="h-1 w-16 bg-white rounded-full mx-auto mb-3 -mt-3"></div>
 
-            <p className="text-sm sm:text-base text-center   text-white mb-6 leading-relaxed max-w-3xl mx-auto">
-              Just as the Abaseen river flows through the landscapes of our
-              region, bringing life and sustenance to all it touches,{" "}
-              <span className="font-bold text-white">
-                AIMS Middle East flows through communities
-              </span>
-              , bringing hope, healing, and transformation. Our mission is as
-              constant and nurturing as these ancient waters, reaching every
-              corner where care is needed most.
-            </p>
+              <p className="text-sm sm:text-base text-center text-white mb-6 leading-relaxed max-w-3xl mx-auto">
+                Just as the Abaseen river flows through the landscapes of our
+                region, bringing life and sustenance to all it touches,{" "}
+                <span className="font-bold text-white">
+                  AIMS Middle East flows through communities
+                </span>
+                , bringing hope, healing, and transformation. Our mission is as
+                constant and nurturing as these ancient waters, reaching every
+                corner where care is needed most.
+              </p>
+            </div>
           </div>
         </div>
       </div>
