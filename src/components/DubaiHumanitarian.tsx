@@ -54,7 +54,9 @@ const DubaiHumanitarianSection = () => {
       <div className="text-center mt-16">
         <Button
           variant="gradient"
-          className="inline-flex items-center gap-2 px-6 py-3 text-white text-sm sm:text-base"
+          className="bg-[#00adee] text-white font-semibold px-4 sm:px-5 md:px-8 py-6 sm:py-2.5 rounded-lg 
+                       transition-all hover:bg-[#055baa] hover:text-white hover:scale-105 hover:shadow-xl shadow-md 
+                       text-xs sm:text-sm md:text-lg"
           asChild
         >
           <a

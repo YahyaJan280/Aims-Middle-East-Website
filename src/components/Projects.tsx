@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import bgElement from "@/assets/Abaseen-Spirit-BG .png"
 import {
   MapPin,
   Activity,
@@ -239,25 +240,46 @@ const Projects = () => {
             </div>
 
             {/* CTA Section */}
-            <div className="animate-on-scroll opacity-0 relative bg-primary rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group/cta">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full opacity-20 -mr-32 -mt-32 group-hover/cta:scale-150 transition-transform duration-700"></div>
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full opacity-20 -ml-32 -mb-32 group-hover/cta:scale-150 transition-transform duration-700"></div>
+           <div className="animate-on-scroll opacity-0 translate-y-0 transition-all duration-700 relative rounded-3xl overflow-hidden">
+          <div
+            className="absolute inset-0 rounded-3xl bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url(${bgElement})`,
+              backgroundSize: "100% 100%",
+            }}
+          />
+          {/* Content */}
+          <div
+            className="relative bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url(/Abaseen-Spirit-BG.png)" }}
+          >
+            <div className="relative z-10 max-w-[1200px] mx-auto text-center px-2 sm:px-8 md:px-10 lg:px-12 sm:py-20 md:py-12">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+               Join Our Mission
+              </h3>
 
-              <div className="relative z-20 p-6 sm:p-8 lg:p-12 xl:p-16 text-center ">
-               <h3 className="text-xl sm:text-3xl md:text-3xl  font-bold  bg-clip-text text-white leading-tight truncate">
-                  Join Our Mission
-                </h3>
-                <p className="text-sm sm:text-base  text-center  text-muted-foreground text-white mb-6 leading-relaxed">
-                  Every project represents hope, healing, and transformation. <br />
+              <div className="h-1 w-16 bg-white rounded-full mx-auto mb-3 -mt-3"></div>
+
+              <p className="text-sm sm:text-base text-center text-white mb-6 leading-relaxed max-w-3xl mx-auto">
+             Every project represents hope, healing, and transformation. <br />
                   Partner with us to make a lasting impact on communities.
-                </p>
-                <Link to="/partners/become">
-                  <Button className="font-roboto font-medium bg-white text-primary hover:bg-gray-50 hover:text-primary hover:scale-105 transition-all duration-300 text-sm sm:text-base lg:text-lg xl:text-xl px-6 sm:px-8 py-3 shadow-xl hover:shadow-2xl">
-                    Partner With Us
-                  </Button>
-                </Link>
-              </div>
+              </p>
+              
+                  <Link
+                    to="/partners/become"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-[#055baa] font-semibold px-4 sm:px-5 md:px-8 py-6 sm:py-2.5 rounded-lg 
+                       transition-all hover:bg-[#00adee] hover:text-white hover:scale-105 hover:shadow-xl shadow-md 
+                       text-xs sm:text-sm md:text-lg"
+                      >
+                   Partner With Us
+                  </Link>
+                
             </div>
+            
+          </div>
+        </div>
           </div>
         </div>
       </section>

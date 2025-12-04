@@ -2,14 +2,14 @@ import React from "react";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 import { Heart, Users, Stethoscope, TrendingUp } from "lucide-react";
-
+import BgImage from "@/assets/Abaseen-Spirit-BG .png";
 const Impact = () => {
   return (
     <>
       <Navigation />
-      <div className="min-h-screen bg-gray-50 font-roboto">
+      <div className="min-h-screen  font-roboto">
         {/* Hero Section - Full Width Background */}
-        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-primary mt-8 md:mt-8 lg:mt-8">
+        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-gradient-to-br from-[#0553a0] via-[#055baa] to-[#0d7ed6] mt-8 md:mt-8 lg:mt-8">
           <section className="relative text-white py-12 md:py-16 lg:py-20 xl:py-24 overflow-hidden">
             <div className="absolute inset-0 bg-black opacity-20"></div>
             <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
@@ -53,13 +53,14 @@ const Impact = () => {
                       detection and healthier living.
                     </p>
                     <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed text-left text-muted-foreground  font-medium">
-                      Our dedicated teams ensure every patient receives comprehensive care, making a real difference in their health outcomes and quality of life.
+                      Our dedicated teams ensure every patient receives
+                      comprehensive care, making a real difference in their
+                      health outcomes and quality of life.
                     </p>
                   </div>
                 </div>
 
                 {/* Impact Stats Cards */}
-                
               </div>
             </div>
           </section>
@@ -82,7 +83,10 @@ const Impact = () => {
                       formal healthcare services are often unavailable.
                     </p>
                     <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed text-left text-muted-foreground  font-medium">
-                      From mountainous villages to rural settlements, our mobile health units bring comprehensive medical services directly to those who need them most, ensuring no one is left behind.
+                      From mountainous villages to rural settlements, our mobile
+                      health units bring comprehensive medical services directly
+                      to those who need them most, ensuring no one is left
+                      behind.
                     </p>
                   </div>
                   <div>
@@ -99,18 +103,22 @@ const Impact = () => {
         </div>
 
         {/* Sustainable Change Section - Full Width Background */}
-        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] mt-20 -mr-[50vw] bg-primary">
-          <section className="text-white py-12 md:py-16 lg:py-20 text-center relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-              <div className="absolute top-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-              <div className="absolute bottom-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
-            </div>
-            <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+        
+          <section
+            className="text-white py-12  sm:py-16 md:py-20 lg:py-12 mt-12 text-center rounded-lg relative  overflow-hidden  bg-no-repeat"
+            style={{
+              backgroundImage: `url(${BgImage})`,
+            }}
+          >
+           
+           
+
+            <div className="container  mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
               <div className="max-w-4xl mx-auto">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
                   Sustainable Change
                 </h2>
-                <p className="text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed font-medium mb-6 md:mb-8">
+                <p className="text-base sm:text-lg md:text-xl lg:text-xl  leading-relaxed font-medium mb-6 sm:mb-8">
                   Our impact extends beyond immediate care. By building
                   awareness and prioritizing prevention, we aim to create
                   lasting improvements in community health and well-being.
@@ -118,7 +126,7 @@ const Impact = () => {
               </div>
             </div>
           </section>
-        </div>
+       
       </div>
 
       <Footer />

@@ -9,7 +9,7 @@ const CommunityOutreach = () => {
       <Navigation />
       <div className="bg-white font-roboto">
         {/* Hero Section - Full Width Background */}
-        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-primary mt-8 md:mt-8 lg:mt-12">
+        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-gradient-to-br from-[#0553a0] via-[#055baa] to-[#0d7ed6] mt-8 md:mt-8 lg:mt-12">
           <section className="text-white py-12 md:py-16 lg:py-20 xl:py-24 relative overflow-hidden">
             <div className="absolute inset-0 opacity-10 pointer-events-none">
               <div className="absolute top-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>

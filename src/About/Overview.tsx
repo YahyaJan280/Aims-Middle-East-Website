@@ -1,5 +1,6 @@
 import React from "react";
 import Navigation from "@/components/Navigation";
+import BgImage from "@/assets/Abaseen-Spirit-BG .png";
 import Footer from "@/components/Footer";
 import {
   Stethoscope,
@@ -16,13 +17,19 @@ export default function Header() {
   return (
     <>
       <Navigation />
-      <div className="min-h-screen bg-gray-50 font-roboto">
+      <div className="min-h-screen font-roboto">
+        
         {/* Hero Section - Full Width Background */}
-        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-primary mt-6 md:mt-8 lg:mt-12">
+        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-gradient-to-br from-[#0553a0] via-[#055baa] to-[#0d7ed6] mt-6 md:mt-8 lg:mt-12">
+          
           <section className="relative text-white py-12 md:py-16 lg:py-20  overflow-hidden">
-            <div className="absolute inset-0 bg-black opacity-20"></div>
+            
+            <div className="absolute inset-0 "></div>
+            
             <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+              
               <div className="max-w-4xl mx-auto text-center">
+                
                 <h1 className="font-roboto font-bold text-3xl sm:text-4xl md:text-4xl lg:text-5xl mb-4 md:mb-6 leading-tight">
                   About AIMS Middle East
                 </h1>
@@ -156,15 +163,15 @@ export default function Header() {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl  font-bold text-primary mb-4 md:mb-6">
                   Recognitions & Partnerships
                 </h2>
-                <p className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-700 max-w-3xl mx-auto mb-8 md:mb-10 lg:mb-12 font-medium">
-                  Strengthened by donors, partners, and dedicated staff, we
+                <p className="text-sm md:text-base lg:text-lg text-muted-foreground text-gray-700 max-w-3xl mx-auto mb-8 md:mb-10 lg:mb-12 font-medium">
+                  Strengthened by donors, partners, and dedicated staff, we<br/>
                   continue expanding our reach and impact.
                 </p>
 
                 <div className="max-w-2xl mx-auto">
-                  <div className="bg-primary text-white rounded-2xl shadow-xl p-8 md:p-10 lg:p-12 xl:p-14 hover:shadow-2xl transition-shadow duration-300">
+                  <div className="bg-[#00adee] text-white rounded-2xl shadow-xl p-8 md:p-10 lg:p-12 xl:p-14 hover:shadow-2xl transition-shadow duration-300">
                     <Globe className="w-12 h-12 md:w-14 md:h-14 mx-auto mb-4" />
-                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-medium mb-2">
                       Proud Member of
                     </h3>
                     <p className="text-base md:text-lg lg:text-xl font-medium">
@@ -178,27 +185,29 @@ export default function Header() {
         </div>
 
         {/* Closing CTA - Full Width Background */}
-        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-primary">
-          <section className="text-white py-12 md:py-16 lg:py-20 text-center relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-              <div className="absolute top-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-              <div className="absolute bottom-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
-            </div>
-            <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+        <section
+            className="text-white py-12  sm:py-16 md:py-20 lg:py-12 mt-12 text-center rounded-lg relative  overflow-hidden  bg-no-repeat"
+            style={{
+              backgroundImage: `url(${BgImage})`,
+            }}
+          >
+           
+           
+
+            <div className="container  mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
               <div className="max-w-4xl mx-auto">
-                <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 md:mb-6 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-4 sm:mb-6 leading-tight">
                   AIMS Middle East continues its mission to make healthcare
                   accessible, inclusive, and filled with hope.
                 </h2>
-                <Link to="/get-involved/membership">
-                  <button className="inline-block bg-white text-primary px-6 md:px-8 lg:px-10 py-3 md:py-4 mt-4 rounded-xl text-sm md:text-base lg:text-lg xl:text-xl font-bold shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                 <Link to="/get-involved/membership">
+                  <button className="inline-block bg-white text-[#055baa] px-6 md:px-8 lg:px-4 py-2 md:py-3 mt-4 rounded-xl text-sm md:text-base   font-bold hover:bg-[#00adee] hover:text-white hover:scale-105 hover:shadow-xl   transition-all duration-300 transform ">
                     Join Our Mission
                   </button>
                 </Link>
               </div>
             </div>
           </section>
-        </div>
       </div>
       <Footer />
     </>

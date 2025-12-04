@@ -234,3 +234,16 @@ All colors MUST be HSL. Brand colors: #2c388c (primary), #ec1c24 (secondary)
   .animate-delay-400 { animation-delay: 0.4s; }
   .animate-delay-500 { animation-delay: 0.5s; }
 }
+/* Optimize background images */
+section {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Force high-quality image rendering */
+section[style*="backgroundImage"] {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}

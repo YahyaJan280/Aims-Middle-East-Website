@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import bgElement from "@/assets/Abaseen-Spirit-BG.png";
+import bgElement from "@/assets/Abaseen-Spirit-BG .png"
 import {
   Eye,
   Target,
@@ -100,11 +100,11 @@ const MissionVision = () => {
               <div className="p-5 sm:p-6 md:p-7">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#00adee] rounded-xl flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
                     <Eye className="w-6 h-6 text-white" strokeWidth={2} />
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#00adee]">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-primary">
                     Our Vision
                   </h3>
                 </div>
@@ -131,7 +131,7 @@ const MissionVision = () => {
                         key={idx}
                         className="flex items-center gap-3 p-2.5 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors"
                       >
-                        <div className="flex-shrink-0 w-8 h-8 bg-[#00adee] rounded-lg flex items-center justify-center">
+                        <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                           <IconComponent
                             className="w-4 h-4 text-white"
                             strokeWidth={2}
@@ -154,10 +154,10 @@ const MissionVision = () => {
               <div className="p-5 sm:p-6 md:p-7">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#00adee] rounded-xl flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
                     <Target className="w-6 h-6 text-white" strokeWidth={2} />
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#00adee]">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-primary">
                     Our Mission
                   </h3>
                 </div>
@@ -184,7 +184,7 @@ const MissionVision = () => {
                         key={idx}
                         className="flex items-center gap-3 p-2.5 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors"
                       >
-                        <div className="flex-shrink-0 w-8 h-8 bg-[#00adee] rounded-lg flex items-center justify-center">
+                        <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                           <IconComponent
                             className="w-4 h-4 text-white"
                             strokeWidth={2}

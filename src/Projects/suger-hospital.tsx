@@ -2,7 +2,7 @@ import React from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SugerHospital from "@/assets/Suger-Hospital.jpg";
-
+import BgImage from "@/assets/Abaseen-Spirit-BG .png";
 const SugarHospital = () => {
   return (
     <>
@@ -140,35 +140,37 @@ const SugarHospital = () => {
         </div>
 
         {/* CTA Section - Edge-to-Edge */}
-        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] mt-6">
-          <section className="relative py-12 w-full   sm:py-16 lg:py-20 xl:py-24 bg-cover bg-center overflow-hidden">
-            <div className="absolute inset-0 bg-primary"></div>
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-              <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-              <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
-            </div>
-            <div className="relative z-10 w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 mt-">
-              <div className="max-w-[1200px] mx-auto text-center">
-                <h2 className="font-roboto text-xl sm:text-2xl lg:text-4xl md:text-4xl  text-white font-bold mb-3 sm:mb-4 lg:mb-6">
-                  Leading the Way in Diabetes Care
-                </h2>
-                <p className="font-roboto text-sm sm:text-base lg:text-lg xl:text-xl 2xl:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed mb-4 sm:mb-6 lg:mb-8 px-4">
-                  Join us in our mission to provide world-class <br/> diabetes care
-                  and research in Khyber Pakhtunkhwa
-                </p>
-                <a
-                  href="https://sugarhospital.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="font-roboto bg-white hover:bg-red-500 hover:text-white text-primary/95 font-semibold px-6 sm:px-8 lg:px-8 py-3 lg:py-2 sm:py-4 rounded-lg transition-all duration-300 text-sm sm:text-base lg:text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
-                    Learn More
-                  </button>
-                </a>
-              </div>
-            </div>
-          </section>
-        </div>
+       <div className="relative mt-6">
+  <section
+    className="relative py-12 sm:py-16 lg:py-20 xl:py-24 bg-no-repeat bg-center bg-contain overflow-hidden rounded-3xl mx-auto max-w-[1200px]"
+    style={{
+      backgroundImage: `url(${BgImage})`,
+    }}
+  >
+
+
+    <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 text-center">
+      <div className="mx-auto">
+        <h2 className="font-roboto text-xl sm:text-2xl md:text-4xl lg:text-4xl text-white font-bold mb-3 sm:mb-4 lg:mb-6">
+          Leading the Way in Diabetes Care
+        </h2>
+        <p className="font-roboto text-sm sm:text-base lg:text-lg xl:text-xl 2xl:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed mb-4 sm:mb-6 lg:mb-8 px-4">
+          Join us in our mission to provide world-class <br /> diabetes care and research in Khyber Pakhtunkhwa
+        </p>
+        <a
+          href="https://sugarhospital.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="font-roboto bg-white hover:bg-[#00adee] hover:text-white text-[#055baa] font-semibold px-6 sm:px-8 lg:px-8 py-3 lg:py-2 sm:py-4 rounded-lg transition-all duration-300 text-sm sm:text-base lg:text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+            Learn More
+          </button>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
       </div>
 
       <Footer />
