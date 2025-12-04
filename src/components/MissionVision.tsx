@@ -217,7 +217,7 @@ const MissionVision = () => {
             className="relative bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: "url(/Abaseen-Spirit-BG.png)" }}
           >
-            <div className="relative z-10 max-w-[1200px] mx-auto text-center px-2 sm:px-8 md:px-10 lg:px-12 sm:py-20 md:py-12">
+            <div className="relative z-10 max-w-[1200px] mx-auto text-center px-2 sm:px-8 md:px-10 lg:px-12 sm:py-20 py-6 md:py-12">
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
                 The Abaseen Spirit
               </h3>

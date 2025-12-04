@@ -7,10 +7,10 @@ const DubaiHumanitarianSection = () => {
   return (
     <section className="bg-gray-50 px-4 sm:px-6 lg:px-4 rounded-xl relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] py-16">
       <div className="text-center mb-10 ">
-        <h2 className="text-2xl text-primary font-roboto text-bold  lg:text-5xl sm:text-3xl md:text-4xl md:text-center  font-bold xl:text-center  text-center mb-3">
+        <h2 className="text-2xl text-primary font-roboto text-bold  lg:text-5xl sm:text-3xl md:text-4xl md:text-center  font-bold xl:text-center text-left mb-3">
           Proud Member of <br/> Dubai Humanitarian
         </h2>
-        <p className="text-lg font-roboto font-medium  sm:text-xl text-muted-foreground text-gray-700">
+        <p className="text-lg font-roboto font-medium text-left lg:text-center  sm:text-xl text-muted-foreground text-gray-700">
           Together for a Healthier, More Resilient World.
         </p>
       </div>

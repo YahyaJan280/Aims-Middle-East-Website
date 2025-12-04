@@ -240,7 +240,7 @@ const Projects = () => {
             </div>
 
             {/* CTA Section */}
-           <div className="animate-on-scroll opacity-0 translate-y-0 transition-all duration-700 relative rounded-3xl overflow-hidden">
+           <div className="animate-on-scroll opacity-0 translate-y-0 transition-all py-6 lg:py-0 duration-700 relative rounded-3xl overflow-hidden">
           <div
             className="absolute inset-0 rounded-3xl bg-center bg-no-repeat"
             style={{
@@ -254,7 +254,7 @@ const Projects = () => {
             style={{ backgroundImage: "url(/Abaseen-Spirit-BG.png)" }}
           >
             <div className="relative z-10 max-w-[1200px] mx-auto text-center px-2 sm:px-8 md:px-10 lg:px-12 sm:py-20 md:py-12">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white py-4 mb-4 sm:mb-6">
                Join Our Mission
               </h3>
 
@@ -264,12 +264,12 @@ const Projects = () => {
              Every project represents hope, healing, and transformation. <br />
                   Partner with us to make a lasting impact on communities.
               </p>
-              
+                  
                   <Link
                     to="/partners/become"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white text-[#055baa] font-semibold px-4 sm:px-5 md:px-8 py-6 sm:py-2.5 rounded-lg 
+                    className="bg-white text-[#055baa] font-semibold px-3 sm:px-3 md:px-8 py-3  lg:mt-0 sm:py-2 rounded-lg 
                        transition-all hover:bg-[#00adee] hover:text-white hover:scale-105 hover:shadow-xl shadow-md 
                        text-xs sm:text-sm md:text-lg"
                       >
