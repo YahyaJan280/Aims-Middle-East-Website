@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import bgElement from "@/assets/Abaseen-Spirit-BG .png"
+import bgElement from "@/assets/Abaseen-Spirit-BG .png";
 import {
   Eye,
   Target,
@@ -9,7 +9,7 @@ import {
   Users,
   Award,
 } from "lucide-react";
-import DiamondBgImage from "@/assets/our-purpose-bg.png";
+import DiamondBgImage from "@/assets/New-Element (1).png";
 
 const MissionVision = () => {
   const sectionRef = useRef(null);
@@ -65,29 +65,28 @@ const MissionVision = () => {
       <img
         src={DiamondBgImage}
         alt=""
-        className="absolute top-10 -left-8 w-40 h-20  sm:w-48 sm:h-20 md:w-56 md:h-24 lg:w-64 lg:h-72 opacity-90 pointer-events-none z-0 object-contain animate-float-up"
-        style={{ animationDelay: "0s", rotate: "90deg" }}
+        className="absolute top-10 left-4 lg:left-16 w-24 h-20 sm:w-22 sm:left-10 sm:h-20 md:w-32 md:h-24 lg:w-44 lg:h-72 opacity-90 pointer-events-none z-0 object-contain animate-float-up"
+        style={{ animationDelay: "0s" }}
       />
 
-      {/* Bottom-Right Background Image */}
       <img
         src={DiamondBgImage}
         alt=""
-        className="absolute bottom-10 -right-16 lg:-right-4 w-40 h-16 sm:w-48 sm:h-20 md:w-56 md:h-36 md:-right-24 lg:w-64 lg:h-44 opacity-90 pointer-events-none z-0 object-contain animate-float-down"
-        style={{ animationDelay: "1s", rotate: "90deg" }}
+        className="absolute bottom-10 -right-12 lg:right-4 w-24  h-16 sm:w-22 sm:h-20 md:w-32 md:h-36 md:-right-12 lg:w-36 lg:h-44 opacity-90 pointer-events-none z-0 object-contain animate-float-down"
+        style={{ animationDelay: "1s" }}
       />
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
-            <span className="text-primary">Our Purpose</span>
+            <span className="text-[#0084C7]">Our Purpose</span>
           </h2>
 
-          <p className="text-sm sm:text-base md:text-lg  lg:text-gray-700 max-w-2xl mx-auto animate-on-scroll -mt-1 opacity-0  transition-all duration-700 leading-relaxed font-medium lg:text-muted-foreground">
-            Like the flowing waters of the{" "}
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto animate-on-scroll opacity-0  transition-all duration-700 leading-relaxed font-semibold text-muted-foreground">
+            Like the flowing waters of the
             <span className="font-semibold text-primary">Abaseen river</span>,
-            we bring life, <br /> hope, and healing to communities across the
+           we bring life, <br/>  hope,and healing tocommunities across the
             Middle East
           </p>
         </div>
@@ -100,11 +99,11 @@ const MissionVision = () => {
               <div className="p-5 sm:p-6 md:p-7">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                    <Eye className="w-6 h-6 text-white" strokeWidth={2} />
+                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Eye className="w-6 h-6 text-primary" strokeWidth={2} />
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-bold text-primary">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#0084C7]">
                     Our Vision
                   </h3>
                 </div>
@@ -131,9 +130,9 @@ const MissionVision = () => {
                         key={idx}
                         className="flex items-center gap-3 p-2.5 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors"
                       >
-                        <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
                           <IconComponent
-                            className="w-4 h-4 text-white"
+                            className="w-4 h-4 text-primary"
                             strokeWidth={2}
                           />
                         </div>
@@ -154,10 +153,10 @@ const MissionVision = () => {
               <div className="p-5 sm:p-6 md:p-7">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                    <Target className="w-6 h-6 text-white" strokeWidth={2} />
+                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Target className="w-6 h-6 text-primary" strokeWidth={2} />
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-primary">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#0084C7]">
                     Our Mission
                   </h3>
                 </div>
@@ -184,9 +183,9 @@ const MissionVision = () => {
                         key={idx}
                         className="flex items-center gap-3 p-2.5 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors"
                       >
-                        <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
                           <IconComponent
-                            className="w-4 h-4 text-white"
+                            className="w-4 h-4 text-primary"
                             strokeWidth={2}
                           />
                         </div>
@@ -204,27 +203,35 @@ const MissionVision = () => {
 
         {/* Abaseen Spirit Section */}
 
-        <div className="animate-on-scroll opacity-0  translate-y-9 transition-all duration-700 relative rounded-3xl overflow-hidden">
+        <div className="animate-on-scroll opacity-0 lg:translate-y-9 transition-all duration-700 relative rounded-3xl overflow-hidden">
+          {/* DESKTOP BG IMAGE (only visible on md & lg) */}
           <div
-            className="absolute inset-0 rounded-3xl bg-center bg-no-repeat"
+            className="absolute inset-0 rounded-3xl bg-center bg-no-repeat bg-cover hidden md:block"
             style={{
               backgroundImage: `url(${bgElement})`,
               backgroundSize: "100% 100%",
             }}
           />
-          {/* Content */}
-          <div
-            className="relative bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url(/Abaseen-Spirit-BG.png)" }}
-          >
-            <div className="relative z-10 max-w-[1200px] mx-auto text-center px-2 sm:px-8 md:px-10 lg:px-12 sm:py-20 py-6 md:py-12">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+
+          {/* MOBILE BG COLOR (#00ADEE) */}
+          <div className="absolute inset-0 rounded-3xl md:hidden bg-[#055baa]" />
+
+          {/* CONTENT */}
+          <div className="relative">
+            {/* Desktop Overlay BG */}
+            <div
+              className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: "url(/Abaseen-Spirit-BG.png)" }}
+            />
+
+            <div className="relative z-10 max-w-[1200px] mx-auto text-center px-6 sm:px-8 md:px-10 lg:px-12 py-8 sm:py-20 md:py-12">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-6">
                 The Abaseen Spirit
               </h3>
 
-              <div className="h-1 w-16 bg-white rounded-full mx-auto mb-3 -mt-3"></div>
+              <div className="h-1 w-16 bg-white rounded-full mx-auto mb-3 -mt-2"></div>
 
-              <p className="text-sm sm:text-base text-center text-white mb-6 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-sm sm:text-base text-center text-white leading-relaxed max-w-3xl mx-auto">
                 Just as the Abaseen river flows through the landscapes of our
                 region, bringing life and sustenance to all it touches,{" "}
                 <span className="font-bold text-white">

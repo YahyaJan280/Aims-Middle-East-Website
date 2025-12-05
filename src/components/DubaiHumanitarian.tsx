@@ -7,8 +7,8 @@ const DubaiHumanitarianSection = () => {
   return (
     <section className="bg-gray-50 px-4 sm:px-6 lg:px-4 rounded-xl relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] py-16">
       <div className="text-center mb-10 ">
-        <h2 className="text-2xl text-primary font-roboto text-bold  lg:text-5xl sm:text-3xl md:text-4xl md:text-center  font-bold xl:text-center text-left mb-3">
-          Proud Member of <br/> Dubai Humanitarian
+        <h2 className="text-2xl text-[#0084C7] font-roboto text-bold  lg:text-5xl sm:text-3xl md:text-4xl md:text-center  font-bold xl:text-center text-left mb-3">
+          Proud Member of <br /> Dubai Humanitarian
         </h2>
         <p className="text-lg font-roboto font-medium text-left lg:text-center  sm:text-xl text-muted-foreground text-gray-700">
           Together for a Healthier, More Resilient World.
@@ -56,9 +56,7 @@ const DubaiHumanitarianSection = () => {
           variant="gradient"
           className="bg-[#00adee] text-white font-semibold px-4 sm:px-5 md:px-8 py-6 sm:py-2.5 rounded-lg 
                        transition-all hover:bg-[#055baa] hover:text-white hover:scale-105 hover:shadow-xl shadow-md 
-                       text-xs sm:text-sm md:text-lg"
-          asChild
-        >
+                       text-xs sm:text-sm md:text-lg"asChild>
           <a
             href="https://dubaihumanitarian.ae/member/aims-middle-east/"
             target="_blank"

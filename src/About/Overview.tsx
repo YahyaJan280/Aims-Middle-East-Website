@@ -106,7 +106,7 @@ export default function Header() {
                       <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-primary mb-2">
                         {title}
                       </h3>
-                      <p className="text-xs md:text-sm lg:text-base font-medium text-gray-700">
+                      <p className="text-xs md:text-sm lg:text-base font-medium text-muted-foreground text-gray-600">
                         {desc}
                       </p>
                     </div>
@@ -169,7 +169,7 @@ export default function Header() {
                 </p>
 
                 <div className="max-w-2xl mx-auto">
-                  <div className="bg-[#00adee] text-white rounded-2xl shadow-xl p-8 md:p-10 lg:p-12 xl:p-14 hover:shadow-2xl transition-shadow duration-300">
+                  <div className="bg-[#055baa] text-white rounded-2xl shadow-xl p-8 md:p-10 lg:p-12 xl:p-14 hover:shadow-2xl transition-shadow duration-300">
                     <Globe className="w-12 h-12 md:w-14 md:h-14 mx-auto mb-4" />
                     <h3 className="text-xl md:text-2xl lg:text-3xl font-medium mb-2">
                       Proud Member of
@@ -196,7 +196,7 @@ export default function Header() {
 
             <div className="container  mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
               <div className="max-w-4xl mx-auto">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-4 sm:mb-6 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-3xl font-medium mb-4 sm:mb-6 leading-tight">
                   AIMS Middle East continues its mission to make healthcare
                   accessible, inclusive, and filled with hope.
                 </h2>

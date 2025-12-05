@@ -131,9 +131,9 @@ Documents to Upload:
         {/* Hero Section - Edge-to-Edge */}
         <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-gradient-to-b from-gray-50 to-white mt-16 sm:mt-18 md:mt-20 lg:mt-12">
           <section className="py-12 sm:py-16 lg:py-20">
-            <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+            <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 ">
               <div className="max-w-[1200px] mx-auto text-center">
-                <h1 className="font-roboto text-3xl sm:text-4xl md:text-4xl lg:text-6xl  font-bold text-primary mb-4 sm:mb-6     ">
+                <h1 className="font-roboto text-3xl sm:text-4xl md:text-4xl lg:text-5xl  font-bold text-primary mb-4 sm:mb-6     ">
                   Become a Member
                 </h1>
                 <p className="font-roboto text-base sm:text-lg md:text-2xl text-gray-700 max-w-3xl mx-auto text-muted-foreground leading-relaxed">
@@ -153,7 +153,7 @@ Documents to Upload:
                 {/* Form Card */}
                 <div className="bg-gray-50 rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                   {/* Header */}
-                  <div className="bg-primary px-4 sm:px-6 md:px-8 py-5 sm:py-6 text-center text-white">
+                  <div className="bg-gradient-to-br from-[#0553a0] via-[#055baa] to-[#0d7ed6] px-4 sm:px-6 md:px-8 py-5 sm:py-6 text-center text-white">
                     <h2 className="font-roboto text-xl sm:text-2xl md:text-3xl font-bold flex justify-center items-center gap-3">
                       Membership Application Form
                     </h2>
@@ -338,7 +338,7 @@ Documents to Upload:
                       <button
                         onClick={handleSubmit}
                         disabled={isSubmitting}
-                        className="w-full bg-primary text-white text-base sm:text-lg font-semibold py-3 sm:py-4 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:bg-primary disabled:bg-gray-400 flex items-center justify-center gap-2 font-roboto"
+                        className="w-full bg-[#055baa] text-white text-base sm:text-lg font-semibold py-3 sm:py-4 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:bg-primary disabled:bg-gray-400 flex items-center justify-center gap-2 font-roboto"
                       >
                         {isSubmitting ? (
                           <>

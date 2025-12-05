@@ -129,7 +129,7 @@ const MoUPage = () => {
           <section className="py-12 sm:py-16 lg:py-20">
             <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
               <div className="relative max-w-[1200px] mx-auto">
-                <div className="relative bg-primary rounded-2xl shadow-2xl p-8 sm:p-10 lg:p-12 xl:p-14 overflow-hidden group">
+                <div className="relative bg-[#055baa] rounded-2xl shadow-2xl p-8 sm:p-10 lg:p-12 xl:p-14 overflow-hidden group">
                   {/* Decorative elements */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full opacity-10 -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-700"></div>
                   <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full opacity-10 -ml-32 -mb-32 group-hover:scale-150 transition-transform duration-700"></div>
@@ -144,7 +144,7 @@ const MoUPage = () => {
                       initiatives.
                     </p>
                     <Link to="/get-involved/membership">
-                      <button className="font-roboto bg-white text-primary hover:bg-gray-50 font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl text-base sm:text-lg transform hover:scale-105">
+                      <button className="font-roboto bg-white text-[#055baa] hover:bg-[#00adee] hover:text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl text-base sm:text-lg transform hover:scale-105">
                         Become a Partner
                       </button>
                     </Link>

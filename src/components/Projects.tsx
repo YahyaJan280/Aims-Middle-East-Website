@@ -69,7 +69,7 @@ const Projects = () => {
           <div className="max-w-[1700px] mx-auto">
             {/* Heading */}
             <div className="text-center mb-10 sm:mb-14 lg:mb-16 xl:mb-20">
-              <h2 className="font-roboto font-bold text-3xl sm:text-4xl md:text-5xl lg:text-5xl  mb-4 sm:mb-6 animate-on-scroll opacity-0 text-primary">
+              <h2 className="font-roboto font-bold text-3xl sm:text-4xl md:text-5xl lg:text-5xl  mb-4 sm:mb-6 animate-on-scroll opacity-0 text-[#0084C7]">
                 Our Projects
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto animate-on-scroll -mt-3 opacity-0  transition-all duration-700 leading-relaxed font-medium text-muted-foreground">
@@ -88,14 +88,14 @@ const Projects = () => {
 
                   <div className="flex-grow">
                     <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
-                      <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 rounded-xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                         <MapPin
                           className="w-6 h-6 sm:w-7 sm:h-7 text-primary"
                           strokeWidth={2}
                         />
                       </div>
                       <div className="min-w-0">
-                        <h3 className="text-xl sm:text-3xl md:text-3xl  font-bold bg-primary bg-clip-text text-transparent leading-tight truncate">
+                        <h3 className="text-xl sm:text-3xl md:text-3xl  font-bold text-[#0084C7] bg-clip-text leading-tight truncate">
                           {projects[activeProject].name}
                         </h3>
                         <p className="font-roboto text-xs font-medium sm:text-sm lg:text-sm xl:text-base text-gray-600 mt-1 flex items-center ">
@@ -170,14 +170,14 @@ const Projects = () => {
 
                   <div className="flex-grow">
                     <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
-                      <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 rounded-xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                         <Activity
                           className="w-6 h-6 sm:w-7 sm:h-7 text-primary"
                           strokeWidth={2}
                         />
                       </div>
                       <div className="min-w-0">
-                        <h3 className="text-xl sm:text-3xl md:text-3xl text-left font-bold bg-primary bg-clip-text text-transparent leading-tight truncate">
+                        <h3 className="text-xl sm:text-3xl md:text-3xl text-left font-bold text-[#0084C7] bg-clip-text  leading-tight truncate">
                           Public Health
                         </h3>
                         <p className="font-roboto font-medium text-xs sm:text-sm lg:text-sm xl:text-base text-gray-600 mt-1 flex items-center">
@@ -227,7 +227,7 @@ const Projects = () => {
                   <div className="flex justify-center mt-4">
                     <Link
                       to="/projects/community camps"
-                      className="bg-primary text-white p-3 font-medium rounded-xl hover:bg-primary/90 transition-all duration-300 text-sm sm:text-base lg:text-base xl:text-lg w-full shadow-lg hover:shadow-xl"
+                      className="bg-[#055baa] text-white p-3 font-medium rounded-xl hover:bg-[#00adee] transition-all duration-300 text-sm sm:text-base lg:text-base xl:text-lg w-[300px] shadow-lg hover:shadow-xl"
                     >
                       Visit Community Camp
                     </Link>
@@ -258,7 +258,7 @@ const Projects = () => {
                Join Our Mission
               </h3>
 
-              <div className="h-1 w-16 bg-white rounded-full mx-auto mb-3 -mt-3"></div>
+              <div className="h-1 w-16 bg-white rounded-full mx-auto mb-3 -mt-6"></div>
 
               <p className="text-sm sm:text-base text-center text-white mb-6 leading-relaxed max-w-3xl mx-auto">
              Every project represents hope, healing, and transformation. <br />

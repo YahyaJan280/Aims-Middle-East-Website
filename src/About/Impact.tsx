@@ -20,7 +20,7 @@ const Impact = () => {
                 <p className="font-roboto text-base sm:text-lg md:text-xl mx-auto leading-relaxed font-medium">
                   At AIMS Middle East, we are committed to making healthcare
                   accessible in underdeveloped areas of Khyber Pakhtunkhwa.
-                  Since 2022, our initiatives have focused on screenings,
+                  Since 2022, our initiatives have focused  on screenings,
                   medical care, and awareness — bringing vital support to
                   communities that need it most.
                 </p>
@@ -50,13 +50,11 @@ const Impact = () => {
                       Since 2022, over 2,500 individuals have been screened and
                       provided with care and essential medicines. Each screening
                       represents not just treatment, but a chance at early
-                      detection and healthier living.
-                    </p>
-                    <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed text-left text-muted-foreground  font-medium">
-                      Our dedicated teams ensure every patient receives
+                      detection and healthier living.       Our dedicated teams ensure every patient receives
                       comprehensive care, making a real difference in their
                       health outcomes and quality of life.
                     </p>
+                   
                   </div>
                 </div>
 
@@ -80,14 +78,12 @@ const Impact = () => {
                       Every year, we organize more than 40 free medical camps
                       across KPK. These camps reach remote communities, offering
                       consultations, medicines, and health awareness where
-                      formal healthcare services are often unavailable.
-                    </p>
-                    <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed text-left text-muted-foreground  font-medium">
-                      From mountainous villages to rural settlements, our mobile
+                      formal healthcare services are often unavailable. From mountainous villages to rural settlements, our mobile
                       health units bring comprehensive medical services directly
                       to those who need them most, ensuring no one is left
                       behind.
                     </p>
+                    
                   </div>
                   <div>
                     <img
