@@ -133,7 +133,7 @@ const HeroSection = () => {
                 </h1>
 
                 <p
-                  className="text-white/95 leading-relaxed whitespace-pre-line"
+                  className="text-white/95  leading-relaxed whitespace-pre-line"
                   style={{ fontSize: "16px" }}
                 >
                   {slide.text}

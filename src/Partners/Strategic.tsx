@@ -65,7 +65,7 @@ const StrategicPartnersPage = () => {
                 </h1>
                 <p className="font-roboto text-base sm:text-lg md:text-xl  lg:text-lg xl:text-xl 2xl:text-xl text-gray-700 max-w-4xl mx-auto text-muted-foreground leading-relaxed px-4">
                   We are proud to collaborate with visionary organizations that
-                  share our commitment to excellence, innovation, and community
+                  share  our commitment<br/> to excellence, innovation, and community
                   well-being. Together, we advance sustainable healthcare and
                   impactful social initiatives across the region.
                 </p>
@@ -117,7 +117,7 @@ const StrategicPartnersPage = () => {
           <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-4xl mx-auto text-center">
               {/* BLUE CARD WITH CIRCLES INSIDE */}
-              <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-primary rounded-2xl shadow-2xl p-8 sm:p-10 lg:p-12 xl:p-14 overflow-hidden">
+              <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-[#055baa] rounded-2xl shadow-2xl p-8 sm:p-10 lg:p-12 xl:p-14 overflow-hidden">
                 {/* Circles inside card */}
                 <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-white opacity-20 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
                 <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-white opacity-20 rounded-full translate-x-1/2 translate-y-1/2"></div>
@@ -134,7 +134,7 @@ const StrategicPartnersPage = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link to="/get-involved/membership">
-                    <button className="font-roboto bg-white text-primary hover:bg-blue-50 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base lg:text-lg transform hover:scale-105">
+                    <button className="font-roboto bg-white text-[#055baa] hover:bg-[#00adee] hover:text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base lg:text-lg transform hover:scale-105">
                       Become a Partner
                     </button>
                   </Link>

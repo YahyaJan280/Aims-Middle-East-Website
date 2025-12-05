@@ -216,7 +216,7 @@ export default function Donation() {
                           .getElementById("donation-form")
                           .scrollIntoView({ behavior: "smooth" })
                       }
-                      className="bg-primary text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-base sm:text-lg font-semibold transition-colors text-left flex shadow-md hover:shadow-lg"
+                      className="bg-[#00adee] text-white hover:bg-[#055baa] hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-base sm:text-lg font-semibold transition-colors text-left flex shadow-md hover:shadow-lg"
                     >
                       Donate Now
                     </button>
@@ -242,8 +242,8 @@ export default function Donation() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
                   <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-primary/95 p-3 rounded-lg flex-shrink-0">
-                        <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                      <div className="bg-blue-100 p-3 rounded-lg flex-shrink-0">
+                        <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                       </div>
                       <div>
                         <h3 className="font-roboto text-lg sm:text-xl font-bold text-primary  mb-2 text-left">
@@ -258,9 +258,9 @@ export default function Donation() {
 
                   <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-primary/95 p-3 rounded-lg flex-shrink-0">
+                      <div className="bg-blue-100 p-3 rounded-lg flex-shrink-0">
                         <svg
-                          className="w-6 h-6 sm:w-8 sm:h-8 text-white"
+                          className="w-6 h-6 sm:w-8 sm:h-8 text-primary"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -286,8 +286,8 @@ export default function Donation() {
 
                   <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-primary/95 p-3 rounded-lg flex-shrink-0">
-                        <Users className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                      <div className="bg-blue-100 p-3 rounded-lg flex-shrink-0">
+                        <Users className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                       </div>
                       <div>
                         <h3 className="font-roboto text-lg sm:text-xl font-bold text-primary mb-2 text-left">
@@ -302,9 +302,9 @@ export default function Donation() {
 
                   <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-primary/95 p-3 rounded-lg flex-shrink-0">
+                      <div className="bg-blue-100 p-3 rounded-lg flex-shrink-0">
                         <svg
-                          className="w-6 h-6 sm:w-8 sm:h-8 text-white"
+                          className="w-6 h-6 sm:w-8 sm:h-8 text-primary"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -586,7 +586,7 @@ export default function Donation() {
                       <div className="pt-6 flex justify-center">
                         <button
                           onClick={handleProceedToPayment}
-                          className="w-full md:w-auto px-8 sm:px-12 py-3 sm:py-4 bg-primary  text-white font-semibold text-base sm:text-lg rounded-lg transition-colors shadow-md hover:shadow-lg"
+                          className="w-full md:w-auto px-8 sm:px-12 py-3 bg-[#055baa] text-white sm:py-4 bg-primary hover:bg-[#00adee] hover:text-white  font-semibold text-base sm:text-lg rounded-lg transition-colors shadow-md hover:shadow-lg"
                         >
                           Proceed to Payment
                         </button>

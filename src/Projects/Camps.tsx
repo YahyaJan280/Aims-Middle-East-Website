@@ -20,7 +20,7 @@ const CommunityOutreach = () => {
                 <h1 className="text-3xl md:text-4xl lg:text-5xl  font-bold mb-4 md:mb-6">
                   Community Health Camps
                 </h1>
-                <p className="text-base md:text-lg lg:text-xl leading-relaxed">
+                <p className="text-base md:text-lg lg:text-xl  leading-relaxed">
                   At AIMS Middle East, our community health camps are designed
                   to provide essential healthcare services to underserved areas.
                   Through these camps, we ensure that quality medical care
@@ -39,7 +39,7 @@ const CommunityOutreach = () => {
                 <h2 className="text-2xl md:text-3xl lg:text-5xl  font-bold text-primary mb-4 md:mb-6">
                   Accessible Care for Everyone
                 </h2>
-                <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">
+                <p className="text-sm md:text-base lg:text-lg text-muted-foreground text-gray-600 leading-relaxed">
                   We organize mobile and stationary camps that deliver free
                   medical check-ups, consultations, and treatments, targeting
                   communities with limited access to healthcare.
@@ -97,7 +97,7 @@ const CommunityOutreach = () => {
                         <h4 className="text-base md:text-lg lg:text-xl font-bold text-primary mb-1 md:mb-2 text-left">
                           {service.title}
                         </h4>
-                        <p className="text-xs md:text-sm lg:text-base text-gray-700 text-left">
+                        <p className="text-xs md:text-sm lg:text-base text-gray-600 text-muted-foreground text-left">
                           {service.desc}
                         </p>
                       </div>
@@ -183,7 +183,7 @@ const CommunityOutreach = () => {
         </div>
 
         {/* Impact in Numbers - Full Width Background */}
-        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-primary">
+        <div className="relative w-screen left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-[#055baa]">
           <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
             <div className="absolute inset-0 opacity-10 pointer-events-none">
               <div className="absolute top-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
@@ -235,11 +235,11 @@ const CommunityOutreach = () => {
                 </h2>
                 <p className="tefont-roboto text-base sm:text-lg md:text-2xl lg:text-lg xl:text-xl text-gray-700 leading-relaxed mb-6 text-muted-foreground md:mb-8">
                   Your support enables us to extend our reach and bring quality
-                  healthcare to more communities across Khyber Pakhtunkhwa.
+                  healthcare to more <br/>communities across Khyber Pakhtunkhwa.
                   Together, we can build healthier futures.
                 </p>
                 <Link to="/get-involved/donate">
-                  <button className="bg-primary text-white font-semibold px-6 md:px-8 lg:px-10 py-3 md:py-4 rounded-lg text-sm md:text-base lg:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                  <button className="bg-[#055baa] text-white hover:bg-[#00adee] hover:text-white font-semibold px-6 md:px-8 lg:px-10 py-3 md:py-4 rounded-lg text-sm md:text-base lg:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                     Support Our Camps
                   </button>
                 </Link>

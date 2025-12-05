@@ -104,7 +104,7 @@ const BecomePartnerPage = () => {
           <section className="py-12 sm:py-16 lg:py-20">
             <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
               <div className="max-w-[1200px] mx-auto text-center">
-                <div className="relative bg-primary rounded-2xl shadow-2xl p-8 sm:p-10 lg:p-12 xl:p-14 overflow-hidden">
+                <div className="relative bg-[#055baa] rounded-2xl shadow-2xl p-8 sm:p-10 lg:p-12 xl:p-14 overflow-hidden">
                   {/* Subtle decorative circles */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full opacity-20 -mr-32 -mt-32"></div>
                   <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full opacity-20 -ml-32 -mb-32"></div>
@@ -120,7 +120,7 @@ const BecomePartnerPage = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <Link to="/contact">
-                        <button className="font-roboto bg-white text-primary hover:bg-blue-50 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base lg:text-lg transform hover:scale-105">
+                        <button className="font-roboto bg-white text-[#055baa] hover:bg-[#00adee] hover:text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base lg:text-lg transform hover:scale-105">
                           Get in Touch
                         </button>
                       </Link>

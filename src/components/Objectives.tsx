@@ -48,7 +48,7 @@ const Objectives = () => {
         "Patient education and support",
       ],
       gradient: "from-primary to-primary/95",
-      iconBg: "bg-primary/10",
+      iconBg: "bg-blue-100",
       iconColor: "text-primary",
     },
     {
@@ -63,7 +63,7 @@ const Objectives = () => {
         "Knowledge sharing platforms",
       ],
       gradient: "from-primary to-primary/95",
-      iconBg: "bg-primary/10",
+      iconBg: "bg-blue-100",
       iconColor: "text-primary",
     },
     {
@@ -78,7 +78,7 @@ const Objectives = () => {
         "Community outreach initiatives",
       ],
       gradient: "from-primary to-primary/95",
-      iconBg: "bg-primary/10",
+      iconBg: "bg-blue-100",
       iconColor: "text-primary",
     },
   ];
@@ -87,15 +87,15 @@ const Objectives = () => {
     <section
       id="objectives"
       ref={sectionRef}
-      className="relative w-screen left-1/2 right-1/2 -ml-[50vw]  -mr-[50vw] bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 md:py-8"
+      className="relative w-screen left-1/2 right-1/2 -ml-[50vw]  -mr-[50vw] bg-gradient-to-b from-gray-50 to-white py-2 sm:py-16 md:py-8"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Heading */}
         <div className="text-center mb-12 sm:mb-14 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl  font-bold mb-4 animate-on-scroll opacity-0 text-primary/95">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl  font-bold mb-4 animate-on-scroll opacity-0 text-[#0084C7]">
             Our Objectives
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto animate-on-scroll -mt-3 opacity-0  transition-all duration-700 leading-relaxed font-medium text-muted-foreground">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto animate-on-scroll -mt-1 opacity-0  transition-all duration-700 leading-relaxed font-medium text-muted-foreground">
             Three pillars of excellence that guide our mission to <br/> transform
             healthcare delivery across the region
           </p>
@@ -129,7 +129,7 @@ const Objectives = () => {
 
                     {/* Heading */}
                     <div className="flex min-w-0">
-                      <h3 className="text-xl sm:text-3xl md:text-xl font-bold bg-primary bg-clip-text text-transparent leading-tight truncate">
+                      <h3 className="text-xl sm:text-3xl md:text-xl font-bold text-[#0084C7] bg-clip-text  leading-tight truncate">
                         {objective.title}
                       </h3>
                     </div>

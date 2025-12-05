@@ -205,10 +205,10 @@ const Navigation = () => {
                             onClick={handleDropdownLinkClick}
                             className="group/item flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100/50 transition-all duration-200 border-l-4 border-transparent hover:border-blue-600"
                           >
-                            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary group-hover/item:bg-primary transition-colors">
+                            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-blue-100 gtransition-colors">
                               <sub.icon
                                 size={18}
-                                className="text-white group-hover/item:scale-110 transition-transform"
+                                className="text-primary group-hover/item:scale-110 transition-transform"
                               />
                             </div>
                             <span className="font-medium text-sm xl:text-base group-hover/item:text-blue-900 transition-colors">

@@ -188,11 +188,11 @@ const Achievements = () => {
               {/* Header */}
               <div className="text-center mb-10 sm:mb-12 lg:mb-16">
                 <h2 className="font-roboto font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6 animate-on-scroll opacity-0">
-                  <span className="text-primary">Our Impact</span>
+                  <span className="text-[#0084C7]">Our Impact</span>
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto animate-on-scroll -mt-3 opacity-0  transition-all duration-700 leading-relaxed font-medium text-muted-foreground">
-                  Measurable results that demonstrate our commitment to <br/>
-                  transforming healthcare and improving lives across the Middle
+                  Measurable results that demonstrate our commitment to 
+                  <br/>transforming healthcare and improving lives across the Middle
                   East
                 </p>
               </div>
@@ -216,7 +216,7 @@ const Achievements = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 items-start">
                 {/* Left: Transforming Lives */}
                 <div className="animate-on-scroll opacity-0 flex flex-col bg-card/20 rounded-2xl p-5 sm:p-6 lg:p-7 border border-border/30 hover:border-border/50 transition-all duration-300">
-                  <h3 className="font-roboto text-xl flex sm:text-2xl lg:text-3xl font-bold text-primary md:text-center mb-3 sm:mb-4 text-left">
+                  <h3 className="font-roboto text-xl flex sm:text-2xl lg:text-3xl font-bold text-[#0084C7] md:text-center mb-3 sm:mb-4 text-left">
                     Transforming Lives Togather
                   </h3>
                   <p className="font-roboto font-medium text-sm sm:text-base lg:text-base text-muted-foreground mb-5 sm:mb-6 leading-relaxed text-left">
@@ -230,7 +230,7 @@ const Achievements = () => {
                     <div className="flex items-start space-x-3 p-3 sm:p-4 bg-card rounded-lg border-l-4 border-primary hover:shadow-md transition-all duration-300">
                       <Heart className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-roboto font-bold text-sm sm:text-base text-primary text-left">
+                        <h4 className="font-roboto font-bold text-sm sm:text-base text-[#0084C7] text-left">
                           Patient-Centered Care
                         </h4>
                         <p className="font-roboto text-xs sm:text-sm text-muted-foreground">
@@ -243,7 +243,7 @@ const Achievements = () => {
                     <div className="flex items-start space-x-3 p-3 sm:p-4 bg-card rounded-lg border-l-4 border-secondary hover:shadow-md transition-all duration-300">
                       <Users className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-roboto font-bold text-sm sm:text-base text-primary text-left">
+                        <h4 className="font-roboto font-bold text-sm sm:text-base text-[#0084C7] text-left">
                           Community Empowerment
                         </h4>
                         <p className="font-roboto text-xs sm:text-sm text-muted-foreground">
@@ -256,7 +256,7 @@ const Achievements = () => {
                     <div className="flex items-start space-x-3 p-3 sm:p-4 bg-card rounded-lg border-l-4 border-primary hover:shadow-md transition-all duration-300">
                       <TrendingUp className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-roboto font-bold text-sm sm:text-base text-primary text-left">
+                        <h4 className="font-roboto font-bold text-sm sm:text-base text-[#0084C7] text-left">
                           Continuous Improvement
                         </h4>
                         <p className="font-roboto text-xs sm:text-sm text-muted-foreground">
@@ -270,7 +270,7 @@ const Achievements = () => {
 
                 {/* Right: Recognition & Awards */}
                 <div className="animate-on-scroll opacity-0 bg-gradient-primary/5 p-5 sm:p-6 lg:p-7 rounded-2xl border border-primary/10 hover:border-primary/20 transition-all duration-300">
-                  <h4 className="font-roboto text-xl sm:text-2xl lg:text-2xl font-bold text-primary mb-4 sm:mb-5 text-center">
+                  <h4 className="font-roboto text-xl sm:text-2xl lg:text-2xl font-bold text-[#0084C7] mb-4 sm:mb-5 text-center">
                     AIMS' Reputable and Trusted Partners
                   </h4>
 

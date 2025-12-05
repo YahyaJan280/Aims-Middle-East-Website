@@ -36,7 +36,7 @@ const CallToAction = () => {
       description:
         "Support our mission with a contribution that directly impacts patient care and community health",
       buttonText: "Make a Donation",
-      gradient: "bg-gradient-to-br from-primary to-primary/90",
+      gradient: "bg-blue-200",
       path: "/get-involved/donate",
       features: [
         "Direct patient support",
@@ -51,7 +51,7 @@ const CallToAction = () => {
       description:
         "Join our team of dedicated volunteers and make a hands-on difference in healthcare delivery",
       buttonText: "Become a Volunteer",
-      gradient: "bg-gradient-to-br from-primary to-primary/90",
+      gradient: "bg-blue-200",
       path: "/get-involved/volunteer",
       features: [
         "Patient care assistance",
@@ -66,7 +66,7 @@ const CallToAction = () => {
       description:
         "Collaborate with us as an organizational partner to expand our reach and amplify our impact",
       buttonText: "Partner With Us",
-      gradient: "bg-gradient-to-br from-primary to-primary/90",
+      gradient: "bg-blue-200",
       path: "/partners/become",
       features: [
         "Strategic partnerships",
@@ -81,7 +81,7 @@ const CallToAction = () => {
     <section
       id="cta"
       ref={sectionRef}
-      className="relative w-screen left-[50%] right-[50%] -ml-[50vw]  -mr-[50vw] py-16 sm:py-20 lg:py-24 xl:py-28 bg-center bg-no-repeat bg-contain"
+      className="relative w-screen left-[50%] right-[50%] -ml-[50vw]  -mr-[50vw] py-16 sm:py-20 lg:py-32 bg-center bg-no-repeat bg-contain"
       style={{
         backgroundImage: `url(${BgImage})`,
         backgroundSize: "cover",
@@ -89,15 +89,15 @@ const CallToAction = () => {
       }}
     >
       {/* Inner responsive container */}
-      <div className="relative z-10 max-w-[1370px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+      <div className="relative z-10 max-w-[1370px] mx-auto px-4 sm:px-6 md:px-10  lg:px-20">
         {/* Heading */}
-        <div className="text-center mb-8 sm:mb-10 lg:mb-16">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-16 ">
           <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-roboto font-bold text-white mb-3">
             Join Us in
             <br />
             Building Accessible Care
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-white text-muted-foreground max-w-3xl mx-auto animate-on-scroll opacity-0 transition-all duration-700 leading-relaxed font-medium">
+          <p className="text-sm sm:text-base md:text-lg text-white  max-w-2xl mx-auto animate-on-scroll opacity-0 transition-all duration-700 leading-relaxed font-semibold">
             Together, we can flow like the Abaseen river—bringing life, hope,
             and healing to every corner of our region. Your support creates
             ripples of positive change that transform entire communities.
@@ -117,7 +117,7 @@ const CallToAction = () => {
                         className={`w-14 h-14 sm:w-16 sm:h-16 ${card.gradient} rounded-2xl flex items-center justify-center md:group-hover:scale-110 md:group-hover:rotate-6 transition-all duration-500 shadow-lg flex-shrink-0`}
                       >
                         <IconComponent
-                          className="w-7 h-7 sm:w-8 sm:h-8 text-white"
+                          className="w-7 h-7 sm:w-8 sm:h-8 text-primary"
                           strokeWidth={2}
                           style={{ transform: "translateZ(0)" }}
                         />

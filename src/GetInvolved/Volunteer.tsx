@@ -52,14 +52,14 @@ export default function Volunteer() {
                   {/* Make a Difference */}
                   <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-primary/95 p-3 sm:p-4 rounded-lg flex-shrink-0">
-                        <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                      <div className="bg-blue-100 p-3 sm:p-4 rounded-lg flex-shrink-0">
+                        <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
                       </div>
                       <div>
                         <h3 className="font-roboto text-xl sm:text-2xl font-bold text-primary mb-2 sm:mb-3">
                           Make a Difference
                         </h3>
-                        <p className="font-roboto text-base sm:text-lg text-gray-600 leading-relaxed">
+                        <p className="font-roboto text-base sm:text-lg text-gray-600 text-muted-foreground leading-relaxed">
                           Support free medical camps and patient treatments.
                         </p>
                       </div>
@@ -69,8 +69,8 @@ export default function Volunteer() {
                   {/* Meet New People */}
                   <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-primary/95 p-3 sm:p-4 rounded-lg flex-shrink-0">
-                        <Users className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                      <div className="bg-blue-100 p-3 sm:p-4 rounded-lg flex-shrink-0">
+                        <Users className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
                       </div>
                       <div>
                         <h3 className="font-roboto text-xl sm:text-2xl font-bold text-primary mb-2 sm:mb-3">
@@ -86,9 +86,9 @@ export default function Volunteer() {
                   {/* Build Your Skills */}
                   <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-primary/95 p-3 sm:p-4 rounded-lg flex-shrink-0">
+                      <div className="bg-blue-100 p-3 sm:p-4 rounded-lg flex-shrink-0">
                         <svg
-                          className="w-8 h-8 sm:w-10 sm:h-10 text-white"
+                          className="w-8 h-8 sm:w-10 sm:h-10 text-primary"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -115,8 +115,8 @@ export default function Volunteer() {
                   {/* Contribute to the Community */}
                   <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-primary/95 p-3 sm:p-4 rounded-lg flex-shrink-0">
-                        <Globe className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                      <div className="bg-blue-100 p-3 sm:p-4 rounded-lg flex-shrink-0">
+                        <Globe className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
                       </div>
                       <div>
                         <h3 className="font-roboto text-xl sm:text-2xl font-bold text-primary mb-2 sm:mb-3">

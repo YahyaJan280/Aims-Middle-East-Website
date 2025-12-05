@@ -234,7 +234,7 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                 {/* Form Card */}
                 <div className="bg-gray-50 rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                   {/* Form Header */}
-                  <div className="bg-primary px-4 sm:px-6 md:px-8 py-5 sm:py-6">
+                  <div className="bg-gradient-to-br from-[#0553a0] via-[#055baa] to-[#0d7ed6] px-4 sm:px-6 md:px-8 py-5 sm:py-6">
                     <h2 className="font-roboto text-xl sm:text-2xl md:text-3xl font-bold text-center text-white">
                       Corporate Giving & CSR Partnership Form
                     </h2>
@@ -717,7 +717,7 @@ ${fileName ? `Document Attached: ${fileName}` : "No document attached"}
                         <button
                           onClick={handleSubmit}
                           disabled={isSubmitting}
-                          className="w-full bg-primary/95 hover:bg-primary disabled:bg-gray-400 text-white text-base sm:text-lg font-semibold py-3 sm:py-5 px-6 rounded-xl transition-all duration-200 shadow-xl hover:shadow-2xl disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                          className="w-full bg-[#055baa] hover:bg-primary disabled:bg-gray-400 text-white text-base sm:text-lg font-semibold py-3 sm:py-5 px-6 rounded-xl transition-all duration-200 shadow-xl hover:shadow-2xl disabled:cursor-not-allowed flex items-center justify-center gap-3"
                         >
                           {isSubmitting ? (
                             <>
