@@ -96,8 +96,8 @@ const Objectives = () => {
             Our Objectives
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto animate-on-scroll -mt-1 opacity-0  transition-all duration-700 leading-relaxed font-medium text-muted-foreground">
-            Three pillars of excellence that guide our mission to <br/> transform
-            healthcare delivery across the region
+            Three pillars of excellence that guide our mission to <br />{" "}
+            transform healthcare delivery across the region
           </p>
         </div>
 
@@ -129,7 +129,7 @@ const Objectives = () => {
 
                     {/* Heading */}
                     <div className="flex min-w-0">
-                      <h3 className="text-xl sm:text-3xl md:text-xl font-bold text-[#0084C7] bg-clip-text  leading-tight truncate">
+                      <h3 className="text-xl sm:text-3xl md:text-xl font-bold text-[#0084C7] bg-clip-text leading-tight truncate">
                         {objective.title}
                       </h3>
                     </div>
